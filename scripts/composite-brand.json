@@ -1,0 +1,21 @@
+{
+  "company": "BREAKING GROUND",
+  "company_title": "Breaking Ground Land Services and Demolition LLC",
+  "brand": "bg",
+  "website_url": "https://breakinggroundlsad.com",
+  "contact_url": "https://breakinggroundlsad.com/contact/",
+  "logo": "assets/images/brand/Logo-Square-scaled-1024x1024.png",
+  "background": "#0f172a",
+  "surface": "#1e293b",
+  "accent": "#eab308",
+  "text": "#f8fafc",
+  "muted": "#94a3b8",
+  "phone": "(863) 899-9717",
+  "email": "contact@breakinggroundlsad.com",
+  "website": "breakinggroundlsad.com",
+  "area": "KATHLEEN • LAKELAND • CENTRAL FLORIDA",
+  "footer_area": "OWNER-OPERATED DEMOLITION • LAND CLEARING • SITE WORK",
+  "services": "Demolition | Land Clearing | Tree Removal | Stump Excavation | Pond Work",
+  "gallery_dir": "assets/images/projects",
+  "serif_title": false
+}

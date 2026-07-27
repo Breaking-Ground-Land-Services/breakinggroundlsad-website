@@ -215,7 +215,7 @@ def head(
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=mirrors1" />
   {schema_business(extras)}
 </head>
 <body>
@@ -233,12 +233,18 @@ def foot() -> str:
 """
 
 
-def page_hero(h1: str, crumbs_html: str, image: str, lead: str = "") -> str:
+def page_hero(h1: str, crumbs_html: str, image: str = "", lead: str = "", *, with_media: bool = True) -> str:
     lead_html = f"<p class=\"hero-lead\">{esc(lead)}</p>" if lead else ""
-    return f"""
-  <section class="page-hero">
+    compact = not with_media or not image
+    media_html = ""
+    if not compact:
+        media_html = f"""
     <div class="page-hero__media"><img src="{esc(image)}" alt="" width="1600" height="900" /></div>
-    <div class="page-hero__overlay"></div>
+    <div class="page-hero__overlay"></div>"""
+    klass = "page-hero page-hero--compact" if compact else "page-hero"
+    return f"""
+  <section class="{klass}">
+    {media_html}
     <div class="page-hero__copy">
       <div class="breadcrumbs">{crumbs_html}</div>
       <h1>{esc(h1)}</h1>
@@ -747,9 +753,56 @@ def build_service_pages() -> None:
         )
 
 
+def _split_article_sections(article_html: str) -> tuple[str, list[tuple[str, str]]]:
+    """Split article HTML into intro + [(heading_html_block, body_html), ...]."""
+    import re
+
+    parts = re.split(r"(?=<h2\b)", article_html.strip(), flags=re.I)
+    intro = parts[0].strip() if parts else ""
+    sections: list[tuple[str, str]] = []
+    for part in parts[1:]:
+        part = part.strip()
+        if not part:
+            continue
+        m = re.match(r"(<h2\b[^>]*>.*?</h2>)(.*)", part, flags=re.I | re.S)
+        if not m:
+            sections.append(("", part))
+            continue
+        sections.append((m.group(1).strip(), m.group(2).strip()))
+    return intro, sections
+
+
+def _gallery_buckets(gallery_items: list[dict]) -> list[dict]:
+    """Order gallery as before → process → after, preserving relative order within each stage."""
+
+    def stage(item: dict) -> int:
+        caption = (item.get("caption") or "").lower()
+        src = Path(item.get("src") or "").name.lower()
+        blob = f"{caption} {src}"
+        if blob.startswith("before") or " before" in f" {blob}":
+            return 0
+        if blob.startswith("after") or " after" in f" {blob}":
+            return 2
+        return 1
+
+    indexed = list(enumerate(gallery_items))
+    indexed.sort(key=lambda pair: (stage(pair[1]), pair[0]))
+    return [item for _, item in indexed]
+
+
+def _mirror_figure(item: dict, fallback_alt: str) -> str:
+    caption = item.get("caption") or fallback_alt
+    return (
+        f'<figure class="project-mirror__media">'
+        f'<img src="{esc(item["src"])}" alt="{esc(caption)}" title="{esc(caption)}" loading="lazy" />'
+        f'<figcaption>{esc(caption)}</figcaption>'
+        f"</figure>"
+    )
+
+
 def build_projects() -> None:
     cards = "".join(
-        f"""<article class="project-card reveal"><a href="{esc(p['path'])}"><img src="{esc(p['image'])}" alt="" loading="lazy" /></a>
+        f"""<article class="project-card reveal"><a href="{esc(p['path'])}"><img src="{esc(p.get('composite') or p['image'])}" alt="" loading="lazy" /></a>
         <div class="project-card__body"><p class="project-meta">{esc(p['city'])} · {esc(p['service'])}</p>
         <h3><a href="{esc(p['path'])}">{esc(p['h1'])}</a></h3><p>{esc(p['summary'])}</p></div></article>"""
         for p in PROJECTS
@@ -758,34 +811,104 @@ def build_projects() -> None:
         "projects/index.html",
         head(
             f"Project Gallery | {SHORT}",
-            "Before-and-after land clearing, stump excavation, shed demolition, and storm cleanup projects across Central Florida.",
+            "Before-and-after land clearing, stump excavation, tree removal, and pond projects across Central Florida.",
             "/projects/",
             breadcrumbs=[("Home", "/"), ("Projects", "/projects/")],
         )
-        + page_hero("Projects", crumb([("Home", "/"), ("Projects", "/projects/")]), PROJECTS[0]["image"])
+        + page_hero("Projects", crumb([("Home", "/"), ("Projects", "/projects/")]), PROJECTS[0].get("composite") or PROJECTS[0]["image"])
         + f'<section class="section-pad"><div class="container"><div class="project-grid">{cards}</div>{related_links("/projects/")}</div></section>'
         + cta_band("Have a similar property?", "Send photos for a free estimate.")
         + foot(),
     )
+    articles_dir = DATA / "project-articles"
     for p in PROJECTS:
-        gallery = "".join(
-            f'<div class="media-stage" style="margin-bottom:1rem;"><img src="{esc(img)}" alt="{esc(p["h1"])}" loading="lazy" /></div>'
-            for img in p.get("images", [p["image"]])
+        gallery_items = _gallery_buckets(
+            p.get("gallery")
+            or [{"src": img, "caption": p["h1"]} for img in p.get("images", [p["image"]])]
         )
+        # Skip embedding the composite file itself if it sneaks into gallery
+        gallery_items = [
+            item
+            for item in gallery_items
+            if "before-process-after-" not in Path(item.get("src") or "").name
+        ]
+        article_path = articles_dir / f"{p['slug']}.html"
+        article_html = article_path.read_text(encoding="utf-8") if article_path.is_file() else (
+            f"<p>{esc(p['summary'])}</p><h3>Challenge</h3><p>{esc(p['challenge'])}</p>"
+        )
+        intro, sections = _split_article_sections(article_html)
+        hero_src = p.get("composite") or p["image"]
+        composite_blurb = esc(
+            p.get("compositeCaption")
+            or f"Before / process / after composite for {p.get('navLabel') or p['h1']} with numbered frames."
+        )
+
+        photo_queue = list(gallery_items)
+        mirror_blocks: list[str] = []
+
+        # Lead mirror: first before/process shot beside opening copy
+        if intro and photo_queue:
+            lead_photo = photo_queue.pop(0)
+            mirror_blocks.append(
+                f'<div class="project-mirror">'
+                f"{_mirror_figure(lead_photo, p['h1'])}"
+                f'<div class="prose project-mirror__copy">{intro}</div>'
+                f"</div>"
+            )
+            intro = ""
+        elif intro:
+            mirror_blocks.append(f'<div class="prose project-case__intro">{intro}</div>')
+
+        for idx, (heading, body) in enumerate(sections):
+            photo = photo_queue.pop(0) if photo_queue else None
+            flip = " project-mirror--flip" if idx % 2 == 1 else ""
+            copy = f"{heading}{body}"
+            if photo:
+                mirror_blocks.append(
+                    f'<div class="project-mirror{flip}">'
+                    f"{_mirror_figure(photo, p['h1'])}"
+                    f'<div class="prose project-mirror__copy">{copy}</div>'
+                    f"</div>"
+                )
+            else:
+                mirror_blocks.append(f'<div class="prose project-case__section">{copy}</div>')
+
+        leftovers = "".join(
+            f'<figure class="project-shot">'
+            f'<img src="{esc(item["src"])}" alt="{esc(item.get("caption") or p["h1"])}" '
+            f'title="{esc(item.get("caption") or p["h1"])}" loading="lazy" />'
+            f'<figcaption><span class="project-shot__label">{esc(item.get("caption") or "")}</span></figcaption>'
+            f"</figure>"
+            for item in photo_queue
+        )
+        more_gallery = ""
+        if leftovers:
+            more_gallery = f"""
+    <section class="project-more" aria-label="Additional process photos">
+      <h2 class="project-gallery-title">More process photos</h2>
+      <p class="project-meta">Additional angles and steps from this job — captions follow each filename.</p>
+      <div class="project-more__grid">{leftovers}</div>
+    </section>"""
+
         body = f"""
-{page_hero(p["h1"], crumb([("Home","/"),("Projects","/projects/"),(p["h1"], p["path"])]), p["image"])}
-<section class="section-pad"><div class="container split">
-<div class="prose">
-<p class="project-meta">{esc(p["city"])} · <a href="{esc(p["servicePath"])}">{esc(p["service"])}</a></p>
-<p>{esc(p["summary"])}</p>
-<h3>Challenge</h3><p>{esc(p["challenge"])}</p>
-<p>This project is part of our public portfolio for Breaking Ground Land Services and Demolition. Results vary by site access, vegetation, structure type, and disposal requirements.</p>
-<p><a class="btn btn-primary" href="/contact/">Request a similar estimate</a>
-<a class="btn btn-dark" href="{esc(p["servicePath"])}" style="margin-left:0.5rem;">{esc(p["service"])} service</a></p>
-{related_links(p["path"])}
-</div>
-<div>{gallery}</div>
-</div></section>
+{page_hero(p["h1"], crumb([("Home","/"),("Projects","/projects/"),(p["h1"], p["path"])]), with_media=False)}
+<section class="section-pad project-case">
+  <div class="container">
+    <figure class="project-composite">
+      <img src="{esc(hero_src)}" alt="{esc(p['h1'])} before process after composite" title="{composite_blurb}" width="1600" height="900" />
+      <figcaption>{composite_blurb}</figcaption>
+    </figure>
+    <div class="project-case__story">
+      {"".join(mirror_blocks)}
+    </div>
+    {more_gallery}
+    <div class="project-case__cta prose">
+      <p><a class="btn btn-primary" href="/contact/">Request a similar estimate</a>
+      <a class="btn btn-dark" href="{esc(p["servicePath"])}" style="margin-left:0.5rem;">{esc(p["service"])} service</a></p>
+      {related_links(p["path"])}
+    </div>
+  </div>
+</section>
 """
         write(
             f"projects/{p['slug']}/index.html",
@@ -793,7 +916,7 @@ def build_projects() -> None:
                 p["title"],
                 p["meta"],
                 p["path"],
-                og_image=p["image"],
+                og_image=hero_src,
                 breadcrumbs=[("Home", "/"), ("Projects", "/projects/"), (p["h1"], p["path"])],
             )
             + body
@@ -1036,13 +1159,26 @@ def build_redirects() -> None:
     redirects = {
         "landscaping/index.html": "/pond-drainage/",
         "posts/index.html": "/projects/",
-        "brooksville-land-clearing/index.html": "/projects/brooksville-land-clearing/",
-        "hurricane-clean-up/index.html": "/projects/hurricane-cleanup/",
-        "8-16-2024-better-than-stump-grinding/index.html": "/projects/lakeland-stump-excavation/",
-        "stump-removal-in-lakeland/index.html": "/projects/lakeland-stump-excavation/",
-        "12-30-25-shed-removal-near-me/index.html": "/projects/shed-removal/",
-        "how-to-dig-a-pond/index.html": "/projects/pond-earthwork-support/",
+        "brooksville-land-clearing/index.html": "/projects/shawns-clearing/",
+        "hurricane-clean-up/index.html": "/projects/",
+        "8-16-2024-better-than-stump-grinding/index.html": "/projects/stump-removal-portfolio/",
+        "stump-removal-in-lakeland/index.html": "/projects/stump-removal-portfolio/",
+        "12-30-25-shed-removal-near-me/index.html": "/projects/",
+        "how-to-dig-a-pond/index.html": "/projects/bills-pond/",
+        # Old featured project slugs
+        "projects/brooksville-land-clearing/index.html": "/projects/shawns-clearing/",
+        "projects/lakeland-stump-excavation/index.html": "/projects/stump-removal-portfolio/",
+        "projects/shed-removal/index.html": "/projects/",
+        "projects/hurricane-cleanup/index.html": "/projects/",
+        "projects/lakeland-highlands-tree-removal/index.html": "/projects/dawns-job/",
+        "projects/pond-earthwork-support/index.html": "/projects/bills-pond/",
     }
+    for p in PROJECTS:
+        for legacy in p.get("legacyUrls", []):
+            legacy = legacy.strip("/")
+            if not legacy:
+                continue
+            redirects[f"{legacy}/index.html"] = p["path"]
     for rel, dest in redirects.items():
         write(
             rel,
@@ -1167,7 +1303,7 @@ Change only website A/CNAME. Preserve MX, SPF, DKIM, DMARC for Zoho email.
 
 ## Before DNS cutover
 - [ ] Replace Formspree ID in `formspree.json` and `data/site.json`, then re-run `python scripts/build_site.py`
-- [ ] Confirm Zoho email `info@breakinggroundlsad.com` receives Formspree notifications
+- [ ] Confirm Zoho email `contact@breakinggroundlsad.com` receives Formspree notifications
 - [ ] Client approves staging site on GitHub Pages
 - [ ] Document current DNS (especially MX/SPF/DKIM/DMARC)
 

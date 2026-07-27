@@ -10,3 +10,4 @@ __pycache__/
 .gsc-audit-latest.json
 website-audit/
 gsc-audit/
+_incoming/

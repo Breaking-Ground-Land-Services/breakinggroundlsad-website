@@ -2,7 +2,7 @@
 
 ## Before DNS cutover
 - [ ] Replace Formspree ID in `formspree.json` and `data/site.json`, then re-run `python scripts/build_site.py`
-- [ ] Confirm Zoho email `info@breakinggroundlsad.com` receives Formspree notifications
+- [ ] Confirm Zoho email `contact@breakinggroundlsad.com` receives Formspree notifications
 - [ ] Client approves staging site on GitHub Pages
 - [ ] Document current DNS (especially MX/SPF/DKIM/DMARC)
 

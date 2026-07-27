@@ -11,7 +11,7 @@
 ## Public contact
 
 - Phone: `(863) 899-9717`
-- Email: `info@breakinggroundlsad.com` (Zoho domain email — do **not** publish Gmail)
+- Email: `contact@breakinggroundlsad.com` (Zoho domain email — do **not** publish Gmail)
 - HQ area: Kathleen / Lakeland, Polk County, Florida
 - Legal: Breaking Ground Land Services and Demolition LLC (formed 2024)
 - Owners: Guy S. McMillen & Andrew S. McMillen (father-and-son)
