@@ -329,6 +329,7 @@ img.hero-slide-bg.hero-lcp-img {
   grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.9fr);
   gap: clamp(1.25rem, 3vw, 2.5rem);
   align-items: center;
+  justify-items: center;
 }
 .hero__copy {
   color: var(--cream);
@@ -356,6 +357,8 @@ img.hero-slide-bg.hero-lcp-img {
 
 .hero-card {
   width: min(100%, 456px);
+  justify-self: center;
+  margin-inline: auto;
   padding: 1.05rem 1.2rem 1.15rem;
   border-radius: 20px;
   color: var(--cream);
@@ -769,6 +772,28 @@ h3 { font-family: var(--font-display); font-size: 1.25rem; text-transform: upper
   line-height: 1.35;
 }
 .form-grid label { display: grid; gap: 0.3rem; font-size: 0.88rem; font-weight: 600; color: var(--soil); }
+.form-label-text {
+  display: block;
+  line-height: 1.3;
+}
+label .req {
+  color: var(--rust);
+  margin-left: 0.12em;
+  font-weight: 700;
+}
+.form-grid--hero label .req,
+.form-grid.form-grid--hero label .req {
+  color: #fde68a;
+}
+.form-required-note {
+  margin: 0.2rem 0 0;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.form-required-note--hero {
+  color: rgba(248, 250, 252, 0.72);
+}
 .form-grid input, .form-grid select, .form-grid textarea {
   width: 100%; padding: 0.75rem 0.85rem; border: 1px solid #d5cbbd; border-radius: var(--radius);
   font: inherit; background: #fff; color: var(--ink);

@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/breakinggroundlsad-website/assets/css/style.css?v=contact1" />
+  <link rel="stylesheet" href="/breakinggroundlsad-website/assets/css/style.css?v=forms1" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -196,16 +196,16 @@
         <h3>Free estimate</h3>
         <p class="service-aside__note">Tell us about the structure or lot — Guy or Andrew will follow up.</p>
         
-<form class="form-grid form-grid--area" data-bg-form method="POST" action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID">
+<form class="form-grid form-grid--area" data-bg-form method="POST" action="https://formspree.io/contact@breakinggroundlsad.com">
   <input type="hidden" name="_next" value="https://breakinggroundlsad.com/thank-you/" />
   <input type="hidden" name="_subject" value="New estimate request — Breaking Ground" />
   <input type="hidden" name="page" value="" />
   <div class="form-grid__row">
-    <label>Name<input name="name" required autocomplete="name" placeholder="Your name" /></label>
-    <label>Phone<input name="phone" type="tel" required autocomplete="tel" placeholder="(863) 899-9717" /></label>
+    <label><span class="form-label-text">Name<span class="req" aria-hidden="true">*</span></span><input name="name" required autocomplete="name" placeholder="Your name" /></label>
+    <label><span class="form-label-text">Phone<span class="req" aria-hidden="true">*</span></span><input name="phone" type="tel" required autocomplete="tel" placeholder="(863) 899-9717" /></label>
   </div>
-  <label>Job location<input name="job_location" required autocomplete="address-level2" placeholder="City or address area" /></label>
-  <label>Service needed
+  <label><span class="form-label-text">Job location<span class="req" aria-hidden="true">*</span></span><input name="job_location" required autocomplete="address-level2" placeholder="City or address area" /></label>
+  <label><span class="form-label-text">Service needed<span class="req" aria-hidden="true">*</span></span>
     <select name="service" required>
       <option value="">Select a service</option>
       <option value="Demolition">Demolition</option>
@@ -220,9 +220,10 @@
       <option value="Other">Other</option>
     </select>
   </label>
-  <label>What do you need?<textarea name="message" rows="2" required placeholder="e.g. singlewide demo, stump removal…"></textarea></label>
+  <label><span class="form-label-text">What do you need?<span class="req" aria-hidden="true">*</span></span><textarea name="message" rows="2" required placeholder="e.g. singlewide demo, stump removal…"></textarea></label>
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
   <p class="form-note">Or call <a href="tel:+18638999717">(863) 899-9717</a>. Text photos for a faster quote.</p>
+  <p class="form-required-note"><span class="req" aria-hidden="true">*</span> Required</p>
 </form>
       </div>
     </aside>
@@ -309,14 +310,14 @@
         <h3 class="hero-card__title">Talk to the owners</h3>
         <p class="hero-card__note">Quick form — Guy or Andrew will follow up by phone or text.</p>
         
-<form class="form-grid form-grid--hero" data-bg-form method="POST" action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID">
+<form class="form-grid form-grid--hero" data-bg-form method="POST" action="https://formspree.io/contact@breakinggroundlsad.com">
   <input type="hidden" name="_next" value="https://breakinggroundlsad.com/thank-you/" />
   <input type="hidden" name="_subject" value="New estimate request — Breaking Ground" />
   <input type="hidden" name="page" value="" />
-  <label>Name<input name="name" required autocomplete="name" placeholder="Your name" /></label>
-  <label>Phone<input name="phone" type="tel" required autocomplete="tel" placeholder="(863) 899-9717" /></label>
-  <label>Job location / city<input name="job_location" required placeholder="City or address area" /></label>
-  <label>Service needed
+  <label><span class="form-label-text">Name<span class="req" aria-hidden="true">*</span></span><input name="name" required autocomplete="name" placeholder="Your name" /></label>
+  <label><span class="form-label-text">Phone<span class="req" aria-hidden="true">*</span></span><input name="phone" type="tel" required autocomplete="tel" placeholder="(863) 899-9717" /></label>
+  <label><span class="form-label-text">Job location / city<span class="req" aria-hidden="true">*</span></span><input name="job_location" required placeholder="City or address area" /></label>
+  <label><span class="form-label-text">Service needed<span class="req" aria-hidden="true">*</span></span>
     <select name="service" required>
       <option value="">Select a service</option>
       <option value="Demolition">Demolition</option>
@@ -331,9 +332,10 @@
       <option value="Other">Other</option>
     </select>
   </label>
-  <label>Project details<textarea name="message" rows="2" placeholder="Structure type, access, timeline…"></textarea></label>
+  <label><span class="form-label-text">What do you need?<span class="req" aria-hidden="true">*</span></span><textarea name="message" rows="2" required placeholder="Structure type, access, timeline…"></textarea></label>
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
   <p class="form-note">Or call <a href="tel:+18638999717">(863) 899-9717</a>. Photos by text speed up quotes.</p>
+  <p class="form-required-note  form-required-note--hero"><span class="req" aria-hidden="true">*</span> Required</p>
 </form>
       </aside>
     </div>

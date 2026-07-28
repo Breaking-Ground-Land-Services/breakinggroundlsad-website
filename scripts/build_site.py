@@ -16,7 +16,11 @@ SERVICES = json.loads((DATA / "services.json").read_text(encoding="utf-8"))
 PROJECTS = json.loads((DATA / "projects.json").read_text(encoding="utf-8"))
 AREAS = json.loads((DATA / "service-areas.json").read_text(encoding="utf-8"))
 REVIEWS = json.loads((DATA / "google-reviews.json").read_text(encoding="utf-8"))
-FORM = SITE.get("formspreeEndpoint", "https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID")
+_FORMSPREE_CFG = json.loads((ROOT / "formspree.json").read_text(encoding="utf-8")) if (ROOT / "formspree.json").is_file() else {}
+FORM = (
+    _FORMSPREE_CFG.get("forms", {}).get("estimateForm", {}).get("endpoint")
+    or SITE.get("formspreeEndpoint", "https://formspree.io/contact@breakinggroundlsad.com")
+)
 DOMAIN = SITE["domain"].rstrip("/")
 BASE = (SITE.get("siteBase") or "").rstrip("/")
 PHONE = SITE["phone"]
@@ -67,6 +71,26 @@ def write(rel: str, content: str) -> None:
     print("wrote", rel)
 
 
+def _label(text: str, *, required: bool = False) -> str:
+    mark = '<span class="req" aria-hidden="true">*</span>' if required else ""
+    return f'<span class="form-label-text">{text}{mark}</span>'
+
+
+def _req(text: str) -> str:
+    return _label(text, required=True)
+
+
+def _form_hidden() -> str:
+    return f"""  <input type="hidden" name="_next" value="{DOMAIN}/thank-you/" />
+  <input type="hidden" name="_subject" value="New estimate request — Breaking Ground" />
+  <input type="hidden" name="page" value="" />"""
+
+
+def _form_required_note(klass: str = "") -> str:
+    extra = f" {klass}" if klass else ""
+    return f'<p class="form-required-note{extra}"><span class="req" aria-hidden="true">*</span> Required</p>'
+
+
 def estimate_form(default_service: str = "") -> str:
     opts = "\n".join(
         f'<option value="{esc(s["navLabel"])}"{" selected" if s["navLabel"] == default_service else ""}>{esc(s["navLabel"])}</option>'
@@ -74,31 +98,45 @@ def estimate_form(default_service: str = "") -> str:
     )
     return f"""
 <form class="form-grid" data-bg-form method="POST" action="{esc(FORM)}" enctype="multipart/form-data">
-  <input type="hidden" name="_next" value="{DOMAIN}/thank-you/" />
-  <input type="hidden" name="_subject" value="New estimate request — Breaking Ground" />
-  <input type="hidden" name="page" value="" />
-  <label>Name<input name="name" required autocomplete="name" /></label>
-  <label>Phone<input name="phone" type="tel" required autocomplete="tel" /></label>
-  <label>Email<input name="email" type="email" autocomplete="email" /></label>
-  <label>Job location / city<input name="job_location" required /></label>
-  <label>Service needed
+{_form_hidden()}
+  <label>{_req("Name")}<input name="name" required autocomplete="name" /></label>
+  <label>{_req("Phone")}<input name="phone" type="tel" required autocomplete="tel" /></label>
+  <label>{_label("Email")}<input name="email" type="email" autocomplete="email" /></label>
+  <label>{_req("Job location / city")}<input name="job_location" required /></label>
+  <label>{_req("Service needed")}
     <select name="service" required>
       <option value="">Select a service</option>
       {opts}
       <option value="Other">Other</option>
     </select>
   </label>
-  <label>Project details<textarea name="message" placeholder="Structure type, acreage, access notes…"></textarea></label>
-  <label>Best time to call<input name="best_time" /></label>
-  <label>Can we text you for photos?
+  <label>{_label("Project details")}<textarea name="message" placeholder="Structure type, acreage, access notes…"></textarea></label>
+  <label>{_label("Best time to call")}<input name="best_time" /></label>
+  <label>{_req("Can we text you for photos?")}
     <select name="can_text_photos" required>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
     </select>
   </label>
-  <label>Photos (optional)<input name="photos" type="file" accept="image/*" multiple /></label>
+  <label>{_label("Photos (optional)")}<input name="photos" type="file" accept="image/*" multiple /></label>
   <button class="btn btn-primary" type="submit">Request Free Estimate</button>
   <p class="form-note">Estimates are free and informational. Final pricing is confirmed in writing before work begins.</p>
+  {_form_required_note()}
+</form>"""
+
+
+def estimate_form_hero() -> str:
+    """Homepage hero — minimal fields."""
+    return f"""
+<form class="form-grid form-grid--hero" data-bg-form method="POST" action="{esc(FORM)}">
+{_form_hidden()}
+  <label>{_req("Name")}<input name="name" required autocomplete="name" placeholder="Your name" /></label>
+  <label>{_req("Phone")}<input name="phone" type="tel" required autocomplete="tel" placeholder="{esc(PHONE)}" /></label>
+  <label>{_req("Job location / city")}<input name="job_location" required autocomplete="address-level2" placeholder="City or address area" /></label>
+  <label>{_req("What do you need?")}<textarea name="message" rows="2" required placeholder="e.g. singlewide demo in Lakeland"></textarea></label>
+  <button class="btn btn-primary" type="submit">Get Free Estimate</button>
+  <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Photos by text speed up estimates.</p>
+  {_form_required_note(" form-required-note--hero")}
 </form>"""
 
 
@@ -110,24 +148,23 @@ def estimate_form_contact() -> str:
     )
     return f"""
 <form class="form-grid form-grid--area" data-bg-form method="POST" action="{esc(FORM)}">
-  <input type="hidden" name="_next" value="{DOMAIN}/thank-you/" />
-  <input type="hidden" name="_subject" value="New estimate request — Breaking Ground" />
-  <input type="hidden" name="page" value="" />
+{_form_hidden()}
   <div class="form-grid__row">
-    <label>Name<input name="name" required autocomplete="name" placeholder="Your name" /></label>
-    <label>Phone<input name="phone" type="tel" required autocomplete="tel" placeholder="{esc(PHONE)}" /></label>
+    <label>{_req("Name")}<input name="name" required autocomplete="name" placeholder="Your name" /></label>
+    <label>{_req("Phone")}<input name="phone" type="tel" required autocomplete="tel" placeholder="{esc(PHONE)}" /></label>
   </div>
-  <label>Job location / city<input name="job_location" required autocomplete="address-level2" placeholder="City or address area" /></label>
-  <label>Service needed
+  <label>{_req("Job location / city")}<input name="job_location" required autocomplete="address-level2" placeholder="City or address area" /></label>
+  <label>{_req("Service needed")}
     <select name="service" required>
       <option value="">Select a service</option>
       {opts}
       <option value="Other">Other</option>
     </select>
   </label>
-  <label>What do you need?<textarea name="message" rows="3" required placeholder="Structure type, access, timeline…"></textarea></label>
+  <label>{_req("What do you need?")}<textarea name="message" rows="3" required placeholder="Structure type, access, timeline…"></textarea></label>
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
   <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Text photos for a faster quote.</p>
+  {_form_required_note()}
 </form>"""
 
 
@@ -138,22 +175,21 @@ def estimate_form_compact(default_service: str = "") -> str:
     )
     return f"""
 <form class="form-grid form-grid--hero" data-bg-form method="POST" action="{esc(FORM)}">
-  <input type="hidden" name="_next" value="{DOMAIN}/thank-you/" />
-  <input type="hidden" name="_subject" value="New estimate request — Breaking Ground" />
-  <input type="hidden" name="page" value="" />
-  <label>Name<input name="name" required autocomplete="name" placeholder="Your name" /></label>
-  <label>Phone<input name="phone" type="tel" required autocomplete="tel" placeholder="{esc(PHONE)}" /></label>
-  <label>Job location / city<input name="job_location" required placeholder="City or address area" /></label>
-  <label>Service needed
+{_form_hidden()}
+  <label>{_req("Name")}<input name="name" required autocomplete="name" placeholder="Your name" /></label>
+  <label>{_req("Phone")}<input name="phone" type="tel" required autocomplete="tel" placeholder="{esc(PHONE)}" /></label>
+  <label>{_req("Job location / city")}<input name="job_location" required placeholder="City or address area" /></label>
+  <label>{_req("Service needed")}
     <select name="service" required>
       <option value="">Select a service</option>
       {opts}
       <option value="Other">Other</option>
     </select>
   </label>
-  <label>Project details<textarea name="message" rows="2" placeholder="Structure type, access, timeline…"></textarea></label>
+  <label>{_req("What do you need?")}<textarea name="message" rows="2" required placeholder="Structure type, access, timeline…"></textarea></label>
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
   <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Photos by text speed up quotes.</p>
+  {_form_required_note(" form-required-note--hero")}
 </form>"""
 
 
@@ -168,24 +204,23 @@ def estimate_form_area(city: str = "", default_service: str = "Mobile Home Demol
     loc_ph = esc(f"{loc}, FL" if loc else "City or address area")
     return f"""
 <form class="form-grid form-grid--area" data-bg-form method="POST" action="{esc(FORM)}">
-  <input type="hidden" name="_next" value="{DOMAIN}/thank-you/" />
-  <input type="hidden" name="_subject" value="New estimate request — Breaking Ground" />
-  <input type="hidden" name="page" value="" />
+{_form_hidden()}
   <div class="form-grid__row">
-    <label>Name<input name="name" required autocomplete="name" placeholder="Your name" /></label>
-    <label>Phone<input name="phone" type="tel" required autocomplete="tel" placeholder="{esc(PHONE)}" /></label>
+    <label>{_req("Name")}<input name="name" required autocomplete="name" placeholder="Your name" /></label>
+    <label>{_req("Phone")}<input name="phone" type="tel" required autocomplete="tel" placeholder="{esc(PHONE)}" /></label>
   </div>
-  <label>Job location<input name="job_location" required autocomplete="address-level2" placeholder="{loc_ph}"{loc_value} /></label>
-  <label>Service needed
+  <label>{_req("Job location")}<input name="job_location" required autocomplete="address-level2" placeholder="{loc_ph}"{loc_value} /></label>
+  <label>{_req("Service needed")}
     <select name="service" required>
       <option value="">Select a service</option>
       {opts}
       <option value="Other">Other</option>
     </select>
   </label>
-  <label>What do you need?<textarea name="message" rows="2" required placeholder="e.g. singlewide demo, stump removal…"></textarea></label>
+  <label>{_req("What do you need?")}<textarea name="message" rows="2" required placeholder="e.g. singlewide demo, stump removal…"></textarea></label>
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
   <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Text photos for a faster quote.</p>
+  {_form_required_note()}
 </form>"""
 
 
@@ -292,7 +327,7 @@ def head(
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=contact1" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=forms2" />
   {schema_business(extras)}
 </head>
 <body>
@@ -801,19 +836,7 @@ def build_home() -> None:
           <p class="hero-card__eyebrow">Free Estimate</p>
           <h2 class="hero-card__title">Talk to the owners</h2>
           <p class="hero-card__note">Tell us about the structure or lot — we’ll follow up by phone or text.</p>
-          <form class="form-grid form-grid--hero" data-bg-form method="POST" action="{esc(FORM)}" enctype="multipart/form-data">
-            <input type="hidden" name="_next" value="{DOMAIN}/thank-you/" />
-            <input type="hidden" name="_subject" value="New estimate request — Breaking Ground" />
-            <input type="hidden" name="page" value="" />
-            <label>Name<input name="name" required autocomplete="name" placeholder="Your name" /></label>
-            <label>Phone<input name="phone" type="tel" required autocomplete="tel" placeholder="{esc(PHONE)}" /></label>
-            <label>Job location / city<input name="job_location" required placeholder="City or address area" /></label>
-            <label>What do you need?
-              <textarea name="message" rows="2" required placeholder="e.g. singlewide demo in Lakeland"></textarea>
-            </label>
-            <button class="btn btn-primary" type="submit">Get Free Estimate</button>
-            <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Photos by text speed up estimates.</p>
-          </form>
+          {estimate_form_hero()}
         </aside>
       </div>
     </div>
