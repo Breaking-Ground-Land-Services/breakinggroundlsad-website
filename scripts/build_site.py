@@ -15,6 +15,7 @@ SITE = json.loads((DATA / "site.json").read_text(encoding="utf-8"))
 SERVICES = json.loads((DATA / "services.json").read_text(encoding="utf-8"))
 PROJECTS = json.loads((DATA / "projects.json").read_text(encoding="utf-8"))
 AREAS = json.loads((DATA / "service-areas.json").read_text(encoding="utf-8"))
+REVIEWS = json.loads((DATA / "google-reviews.json").read_text(encoding="utf-8"))
 FORM = SITE.get("formspreeEndpoint", "https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID")
 DOMAIN = SITE["domain"].rstrip("/")
 BASE = (SITE.get("siteBase") or "").rstrip("/")
@@ -26,6 +27,14 @@ SHORT = SITE["shortName"]
 LEGAL = SITE["legalName"]
 LOGO = SITE["logo"]
 OG = SITE["defaultOgImage"]
+GOOGLE_MAPS_URL = REVIEWS.get(
+    "googleMapsUrl",
+    "https://www.google.com/maps?cid=9571487126708767252",
+)
+MAP_EMBED_SRC = REVIEWS.get(
+    "mapEmbedSrc",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28664363.395064767!2d-120.9932133287108!3d28.717519809660633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xadfede66cc9b47f9%3A0x84d4c0d46fb34a14!2sBreaking%20Ground%20Land%20Services%20and%20Demolition!5e0!3m2!1sen!2sus!4v1785159366164!5m2!1sen!2sus",
+)
 
 
 def p(path: str) -> str:
@@ -93,6 +102,35 @@ def estimate_form(default_service: str = "") -> str:
 </form>"""
 
 
+def estimate_form_contact() -> str:
+    """Short contact-page form — fewer fields, faster to complete."""
+    opts = "\n".join(
+        f'<option value="{esc(s["navLabel"])}">{esc(s["navLabel"])}</option>'
+        for s in SERVICES
+    )
+    return f"""
+<form class="form-grid form-grid--area" data-bg-form method="POST" action="{esc(FORM)}">
+  <input type="hidden" name="_next" value="{DOMAIN}/thank-you/" />
+  <input type="hidden" name="_subject" value="New estimate request — Breaking Ground" />
+  <input type="hidden" name="page" value="" />
+  <div class="form-grid__row">
+    <label>Name<input name="name" required autocomplete="name" placeholder="Your name" /></label>
+    <label>Phone<input name="phone" type="tel" required autocomplete="tel" placeholder="{esc(PHONE)}" /></label>
+  </div>
+  <label>Job location / city<input name="job_location" required autocomplete="address-level2" placeholder="City or address area" /></label>
+  <label>Service needed
+    <select name="service" required>
+      <option value="">Select a service</option>
+      {opts}
+      <option value="Other">Other</option>
+    </select>
+  </label>
+  <label>What do you need?<textarea name="message" rows="3" required placeholder="Structure type, access, timeline…"></textarea></label>
+  <button class="btn btn-primary" type="submit">Get Free Estimate</button>
+  <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Text photos for a faster quote.</p>
+</form>"""
+
+
 def estimate_form_compact(default_service: str = "") -> str:
     opts = "\n".join(
         f'<option value="{esc(s["navLabel"])}"{" selected" if s["navLabel"] == default_service else ""}>{esc(s["navLabel"])}</option>'
@@ -116,6 +154,38 @@ def estimate_form_compact(default_service: str = "") -> str:
   <label>Project details<textarea name="message" rows="2" placeholder="Structure type, access, timeline…"></textarea></label>
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
   <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Photos by text speed up quotes.</p>
+</form>"""
+
+
+def estimate_form_area(city: str = "", default_service: str = "Mobile Home Demolition") -> str:
+    """Short sticky-sidebar form for service area pages."""
+    opts = "\n".join(
+        f'<option value="{esc(s["navLabel"])}"{" selected" if s["navLabel"] == default_service else ""}>{esc(s["navLabel"])}</option>'
+        for s in SERVICES
+    )
+    loc = city.strip()
+    loc_value = f' value="{esc(loc)}"' if loc else ""
+    loc_ph = esc(f"{loc}, FL" if loc else "City or address area")
+    return f"""
+<form class="form-grid form-grid--area" data-bg-form method="POST" action="{esc(FORM)}">
+  <input type="hidden" name="_next" value="{DOMAIN}/thank-you/" />
+  <input type="hidden" name="_subject" value="New estimate request — Breaking Ground" />
+  <input type="hidden" name="page" value="" />
+  <div class="form-grid__row">
+    <label>Name<input name="name" required autocomplete="name" placeholder="Your name" /></label>
+    <label>Phone<input name="phone" type="tel" required autocomplete="tel" placeholder="{esc(PHONE)}" /></label>
+  </div>
+  <label>Job location<input name="job_location" required autocomplete="address-level2" placeholder="{loc_ph}"{loc_value} /></label>
+  <label>Service needed
+    <select name="service" required>
+      <option value="">Select a service</option>
+      {opts}
+      <option value="Other">Other</option>
+    </select>
+  </label>
+  <label>What do you need?<textarea name="message" rows="2" required placeholder="e.g. singlewide demo, stump removal…"></textarea></label>
+  <button class="btn btn-primary" type="submit">Get Free Estimate</button>
+  <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Text photos for a faster quote.</p>
 </form>"""
 
 
@@ -144,6 +214,13 @@ def schema_business(extra: list | None = None) -> str:
                 **SITE["geo"],
             },
             "areaServed": "Florida",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": REVIEWS.get("ratingValue", 5),
+                "reviewCount": REVIEWS.get("reviewCount", len(REVIEWS.get("reviews") or [])),
+                "bestRating": 5,
+                "worstRating": 1,
+            },
             "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": PHONE_TEL,
@@ -215,7 +292,7 @@ def head(
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=mirrors1" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=contact1" />
   {schema_business(extras)}
 </head>
 <body>
@@ -227,20 +304,115 @@ def foot() -> str:
     return """
   <div id="site-footer-include"></div>
   <script src="/includes.js" defer></script>
-  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/main.js?v=reveal2" defer></script>
 </body>
 </html>
 """
 
 
-def page_hero(h1: str, crumbs_html: str, image: str = "", lead: str = "", *, with_media: bool = True) -> str:
+def _review_stars(count: int = 5) -> str:
+    n = max(1, min(5, int(count or 5)))
+    return "&#9733;" * n
+
+
+def _review_card(review: dict, index: int) -> str:
+    name = review.get("name") or "Google User"
+    meta = review.get("meta") or "Google review"
+    colors = ["#1a56c4", "#c0392b", "#1e6b2e", "#FBBC05", "#0f766e", "#7c3aed"]
+    bg = review.get("avatarColor") or colors[index % len(colors)]
+    text_style = ' style="color:#0f172a;"' if bg.lower() == "#fbbc05" else ""
+    initial = esc(name.strip()[:1].upper() or "?")
+    stars = int(review.get("stars") or 5)
+    return f"""
+<article class="bg-review-card">
+  <div class="bg-review-header">
+    <span class="bg-review-avatar" style="background:{esc(bg)};"{text_style} aria-hidden="true">{initial}</span>
+    <div>
+      <h3 class="bg-review-name">{esc(name)}</h3>
+      <div class="bg-review-sub">{esc(meta)}</div>
+    </div>
+  </div>
+  <div class="bg-stars" role="img" aria-label="{stars} stars">{_review_stars(stars)}</div>
+  <p class="bg-review-text">{esc(review.get("text") or "")}</p>
+  <div class="bg-review-date">{esc(review.get("date") or "")}</div>
+</article>"""
+
+
+def local_trust_section() -> str:
+    """Static Google reviews carousel + map embed (Knight Group pattern, no live GBP feed)."""
+    reviews = REVIEWS.get("reviews") or []
+    rating = float(REVIEWS.get("ratingValue") or 5)
+    count = int(REVIEWS.get("reviewCount") or len(reviews) or 0)
+    cards = "".join(_review_card(r, i) for i, r in enumerate(reviews))
+    return f"""
+  <section class="section-pad bg-local-trust" id="reviews" aria-label="Google reviews and map">
+    <div class="container">
+      <p class="section-eyebrow">Local Trust</p>
+      <h2>Google reviews and map proof across Central Florida</h2>
+      <div class="bg-map-review-shell">
+        <div class="bg-google-reviews-showcase" aria-label="Customer Reviews">
+          <div class="bg-google-reviews-header">
+            <svg class="bg-google-g-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+            </svg>
+            <span>Google Reviews</span>
+            <div class="bg-google-stars-display" role="img" aria-label="5 star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="bg-google-reviews-summary" id="bg-review-summary">{rating:.1f} &middot; {count} reviews</div>
+          </div>
+          <div class="bg-review-carousel-wrapper">
+            <button class="bg-review-carousel-btn" type="button" id="bg-review-prev" aria-label="Previous reviews">&#8249;</button>
+            <div class="bg-review-carousel-track-outer">
+              <div class="bg-review-carousel-track" id="bg-review-track">{cards}
+              </div>
+            </div>
+            <button class="bg-review-carousel-btn" type="button" id="bg-review-next" aria-label="Next reviews">&#8250;</button>
+          </div>
+          <div class="bg-review-carousel-dots" id="bg-review-dots" role="group" aria-label="Google review pages"></div>
+          <p class="bg-google-review-links">
+            <a href="{esc(GOOGLE_MAPS_URL)}" target="_blank" rel="noopener noreferrer">See our Google profile</a>
+            <span aria-hidden="true">&middot;</span>
+            <a href="{esc(GOOGLE_MAPS_URL)}" target="_blank" rel="noopener noreferrer">Leave a review</a>
+          </p>
+        </div>
+        <div class="bg-map-panel is-map-loaded" id="bg-map-shell" aria-label="Breaking Ground Google map">
+          <iframe class="bg-map-frame" id="bg-map-frame" title="Breaking Ground Land Services and Demolition on Google Maps" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="{esc(MAP_EMBED_SRC)}"></iframe>
+          <div class="bg-map-overlay">
+            <strong>{esc(NAME)}</strong>
+            <span class="bg-map-rating" aria-label="{rating:.1f} out of 5 stars, {count} Google reviews">&#9733;&#9733;&#9733;&#9733;&#9733; {rating:.1f} &middot; {count} Google reviews</span>
+            <span>Kathleen, FL &bull; Central Florida service area</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+"""
+
+
+def page_hero(
+    h1: str,
+    crumbs_html: str,
+    image: str = "",
+    lead: str = "",
+    *,
+    with_media: bool = True,
+    image_alt: str = "",
+    image_credit: str = "",
+) -> str:
     lead_html = f"<p class=\"hero-lead\">{esc(lead)}</p>" if lead else ""
     compact = not with_media or not image
     media_html = ""
     if not compact:
+        alt = image_alt or h1
+        credit_html = (
+            f'<p class="page-hero__credit">{esc(image_credit)}</p>' if image_credit else ""
+        )
         media_html = f"""
-    <div class="page-hero__media"><img src="{esc(image)}" alt="" width="1600" height="900" /></div>
-    <div class="page-hero__overlay"></div>"""
+    <div class="page-hero__media"><img src="{esc(image)}" alt="{esc(alt)}" width="1600" height="900" /></div>
+    <div class="page-hero__overlay"></div>
+    {credit_html}"""
     klass = "page-hero page-hero--compact" if compact else "page-hero"
     return f"""
   <section class="{klass}">
@@ -497,6 +669,75 @@ def area_body(area: dict) -> str:
 """
 
 
+def contact_body() -> str:
+  service_links = "\n".join(
+      f'<li><a href="{esc(s["path"])}">{esc(s["navLabel"])}</a> — {esc(s["meta"][:100])}…</li>'
+      for s in SERVICES
+  )
+  return f"""
+<p class="section-eyebrow">Contact</p>
+<h2>Request a free demolition or land-services estimate</h2>
+<p>Breaking Ground Land Services and Demolition LLC is an owner-operated equipment company based in Kathleen, Florida. Guy and Andrew McMillen handle estimates directly — no call center, no franchise script. When you call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a> or submit the short form on this page, you are reaching the people who will plan access, select equipment, and show up on your lot.</p>
+<p><strong>Phone:</strong> <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a><br/>
+<strong>Email:</strong> <a href="mailto:{EMAIL}">{esc(EMAIL)}</a><br/>
+<strong>Office:</strong> 4633 Clayton Road, Kathleen, FL 33849<br/>
+<strong>Hours:</strong> Monday–Saturday, 7:00 a.m.–6:00 p.m.</p>
+
+<h3>How free estimates work</h3>
+<p>Every estimate starts with a conversation about what is on the property and what you want gone when we leave. That might be a singlewide mobile home, a leaning shed, a quarter-acre of brush, or a combination of structure removal and land clearing on the same lot. We do not charge for scoping calls or site visits within our normal Central Florida travel area, and we do not pressure you to book on the spot.</p>
+<p>After we understand the job, we provide a written scope that lists what is included: teardown or clearing work, debris handling, haul-off, and any add-ons such as concrete pad removal or rough grading. Final pricing is confirmed in that scope before mobilization. If something changes once we are on site — buried concrete, extra structures, restricted access — we discuss it before doing additional work.</p>
+<p>Estimates are informational until accepted in writing. That protects you from surprise line items and protects our schedule from jobs that were never clearly defined. If you are comparing contractors, ask each one whether haul-off, permit coordination, and utility disconnect planning are included. Those details change the real cost of a Florida demolition job.</p>
+
+<h3>What to send for a faster quote</h3>
+<p>Photos are the fastest way to narrow a price range. You do not need professional images — phone pictures taken from the street, driveway, or back gate are enough for a first pass. Helpful shots include:</p>
+<ul>
+<li>Wide views of the structure or lot from two angles</li>
+<li>Gate width, fence lines, and anything overhead (power lines, tree limbs)</li>
+<li>Interior photos for mobile homes if you can safely capture them</li>
+<li>Debris piles, stumps, or brush density for clearing jobs</li>
+<li>Driveway or access path equipment would use to reach the work zone</li>
+</ul>
+<p>Text photos to {esc(PHONE)} if that is easier than uploading. Mention your city or neighborhood, whether utilities are still connected, and your timeline (urgent storm cleanup vs. planning a sale six months out). The more honest you are about access constraints, the more accurate the first estimate will be.</p>
+
+<h3>Services we quote every week</h3>
+<p>Demolition is our lead specialty. Most estimate requests involve manufactured housing, sheds, barns, carports, and other light structures that need to come down before a lot can be sold, rebuilt, or cleared. We also provide land clearing, tree and stump work, pond and drainage earthwork support, grading after teardown, and storm debris haul-off when equipment access allows.</p>
+<ul>
+{service_links}
+</ul>
+<p>Browse individual service pages for scope details, project photos, and pricing context: <a href="/mobile-home-demolition/">mobile home demolition</a>, <a href="/shed-barn-removal/">shed &amp; barn removal</a>, <a href="/land-clearing/">land clearing</a>, and the full <a href="/services/">services hub</a>. Our <a href="/projects/">project gallery</a> shows real before-and-after work across Polk County and nearby communities.</p>
+
+<h3>Where we work</h3>
+<p>We are based in Kathleen and routinely serve Lakeland, Plant City, Winter Haven, Bartow, Mulberry, Zephyrhills, Brooksville, Tampa, and surrounding Central Florida communities. Polk County is our home base; Hillsborough, Pasco, Hernando, Orange, Osceola, and Marion counties are common travel zones for the right scope.</p>
+<p>Larger demolition and multi-day site jobs are considered statewide when schedule and logistics allow. If you are outside our usual map, send the address area and photos anyway — we will tell you honestly whether travel and disposal costs make the job practical for both sides.</p>
+<p>City-specific pages with local context and estimate forms are listed on our <a href="/service-areas/">service areas</a> hub, including <a href="/areas/kathleen-fl/">Kathleen</a>, <a href="/areas/lakeland-fl/">Lakeland</a>, and <a href="/areas/polk-county-fl/">Polk County</a>.</p>
+
+<h3>What happens after you contact us</h3>
+<p>When you submit the form or leave a voicemail, Guy or Andrew typically responds the same business day during normal hours. We may call back with clarifying questions, request additional photos, or schedule a walk-through if the site is local and access is unclear from pictures alone.</p>
+<p>Once scope is agreed, we coordinate mobilization dates, permit steps if required, and utility disconnect timing for structure removals. Payment terms follow our published <a href="/payment-deposit-policy/">payment &amp; deposit policy</a>. We do not ask for full payment upfront on standard residential demolition work; deposits and progress milestones are spelled out in writing.</p>
+<p>If we are not the right fit — specialty hazardous abatement, crane-only tree work, engineered drainage design — we will say so early rather than take a job we cannot execute safely.</p>
+
+<h3>Permits, utilities, and realistic scope</h3>
+<p>Florida jurisdictions differ on when a demolition permit is required for manufactured homes, sheds, and accessory structures. Utility disconnects (electric, water, sewer or septic) must be confirmed before teardown begins. We discuss who pulls permits and who coordinates disconnects as part of scoping so responsibilities are clear before work starts.</p>
+<p>We are not a general contractor and do not provide architectural, engineering, or environmental consulting. We excavate, demolish, clear, haul, and grade within the limits of the written estimate. Wetlands, asbestos, and other regulated materials may require licensed specialists; we flag those conditions when photos or walk-throughs reveal them.</p>
+
+<h3>Pricing context</h3>
+<p>Ballpark ranges for common job types are published on our <a href="/pricing/">pricing guide</a>. Every property is different — access, debris volume, structure size, and disposal distance all move the number. The guide helps set expectations; your written estimate reflects the actual site.</p>
+<p>Combining scopes in one mobilization often saves money. If you need a mobile home removed and the lot cleared afterward, or a shed demolished plus stumps excavated, mention both when you contact us so we can plan one equipment trip instead of two.</p>
+
+<h3>Why property owners call the owners directly</h3>
+<p>Breaking Ground was founded in 2024 by Guy and Andrew McMillen, but Andrew has operated heavy equipment since 1975. That field experience shows up in how we sequence teardown, protect driveways and fences when possible, and leave a pad or cleared footprint that matches what you told us you needed.</p>
+<p>You will see real project photography throughout this site — not stock excavator clips. We prefer honest scopes over oversized promises. If you want a straight answer about whether your gate is wide enough, whether a permit is likely, or whether grinding vs. excavation is the right stump approach, call us.</p>
+
+<div class="faq">
+  <details open><summary>Do you offer free estimates?</summary><p>Yes. Estimates are free. Final pricing is confirmed in a written scope before work begins.</p></details>
+  <details><summary>Can I text photos instead of using the form?</summary><p>Yes. Text photos and your city to <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Include gate width, overhead lines, and structure type for the fastest response.</p></details>
+  <details><summary>How soon will you call back?</summary><p>During business hours we aim for same-day response. After storms or on heavy schedule weeks, allow 24–48 hours — we respond to every serious inquiry.</p></details>
+  <details><summary>Do you handle permits?</summary><p>Permit requirements vary by jurisdiction and structure. We evaluate each project and coordinate required permitting based on the scope of work.</p></details>
+  <details><summary>Are you a general contractor?</summary><p>No. We provide demolition, structure removal, land clearing, and related site services as an owner-operated equipment company.</p></details>
+</div>
+"""
+
+
 # ── Page generators ───────────────────────────────────────────────
 
 
@@ -600,17 +841,22 @@ def build_home() -> None:
       <p class="section-eyebrow">Services</p>
       <h2>What we take on</h2>
       <div class="service-grid">{tiles}</div>
-      <p style="margin-top:1.5rem;"><a class="btn btn-dark" href="/services/">View all services</a>
-      <a class="btn btn-primary" href="/mobile-home-demolition/" style="margin-left:0.5rem;">Mobile Home Demolition</a></p>
+      <div class="project-case__actions" style="margin-top:1.5rem;">
+        <a class="btn btn-dark" href="/services/">View all services</a>
+        <a class="btn btn-primary" href="/mobile-home-demolition/">Mobile Home Demolition</a>
+      </div>
     </div>
   </section>
+  {local_trust_section()}
   <section class="section-pad">
     <div class="container">
       <p class="section-eyebrow">Projects</p>
       <h2>Recent work</h2>
       <div class="project-grid">{projects}</div>
-      <p style="margin-top:1.5rem;"><a class="btn btn-dark" href="/projects/">Full project gallery</a>
-      <a class="btn btn-primary" href="/areas/lakeland-fl/" style="margin-left:0.5rem;">Lakeland service area</a></p>
+      <div class="project-case__actions" style="margin-top:1.5rem;">
+        <a class="btn btn-dark" href="/projects/">Full project gallery</a>
+        <a class="btn btn-primary" href="/areas/lakeland-fl/">Lakeland service area</a>
+      </div>
       {related_links("/")}
     </div>
   </section>
@@ -658,26 +904,60 @@ def build_about() -> None:
 
 
 def build_contact() -> None:
+    faq_schema = {
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Do you offer free estimates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Estimates are free. Final pricing is confirmed in a written scope before work begins.",
+                },
+            },
+            {
+                "@type": "Question",
+                "name": "Can I text photos instead of using the form?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": f"Yes. Text photos and your city to {PHONE}. Include gate width, overhead lines, and structure type for the fastest response.",
+                },
+            },
+            {
+                "@type": "Question",
+                "name": "Where does Breaking Ground work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We are based in Kathleen, Florida and serve Central Florida routinely, with larger demolition jobs considered statewide by scope.",
+                },
+            },
+        ],
+    }
     body = f"""
 {page_hero("Request an Estimate", crumb([("Home","/"),("Contact","/contact/")]), "/assets/images/hero/IMG_9083-scaled.jpg")}
-<section class="section-pad"><div class="container cta-band-grid">
-<div class="prose">
-<p class="section-eyebrow">Contact</p>
-<h2>Tell us about the job</h2>
-<p>Phone: <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a><br/>Email: <a href="mailto:{EMAIL}">{esc(EMAIL)}</a></p>
-<p>Based in Kathleen, Florida. Central Florida regularly; statewide by scope for larger demolition and site jobs.</p>
-<p>Hours: Monday–Saturday, 7:00 a.m.–6:00 p.m.</p>
-</div>
-<div class="form-card"><h3>Estimate form</h3>{estimate_form()}</div>
-</div></section>
-"""
+<section class="section-pad contact-page">
+  <div class="container split split--contact">
+    <div class="prose reveal">{contact_body()}{related_links("/contact/")}</div>
+    <div class="form-card form-card--sticky reveal reveal--fade">
+      <h3>Quick estimate</h3>
+      <p class="service-aside__note">Five fields — Guy or Andrew will follow up by phone or text.</p>
+      {estimate_form_contact()}
+    </div>
+  </div>
+</section>
+""" + cta_band(
+        "Prefer to talk it through?",
+        "Call with photos ready — we can often ballpark demolition and clearing jobs in one conversation.",
+        "Mobile Home Demolition",
+    )
     write(
         "contact/index.html",
         head(
             f"Contact & Free Estimate | {SHORT}",
-            f"Request a free estimate from Breaking Ground. Call {PHONE} or send project details online.",
+            f"Request a free demolition or land-services estimate from Breaking Ground in Kathleen, FL. Call {PHONE}, email {EMAIL}, or send project details online.",
             "/contact/",
             breadcrumbs=[("Home", "/"), ("Contact", "/contact/")],
+            extra_schema=[faq_schema],
         )
         + body
         + foot(),
@@ -706,7 +986,172 @@ def build_services_hub() -> None:
     )
 
 
+def _split_article_sections(article_html: str) -> tuple[str, list[tuple[str, str]]]:
+    """Split article HTML into intro + [(heading_html_block, body_html), ...]."""
+    return _split_on_heading(article_html, "h2")
+
+
+def _split_on_heading(article_html: str, tag: str = "h2") -> tuple[str, list[tuple[str, str]]]:
+    """Split HTML into intro + [(heading_block, body), ...] on the given heading tag."""
+    import re
+
+    parts = re.split(rf"(?=<{tag}\b)", article_html.strip(), flags=re.I)
+    intro = parts[0].strip() if parts else ""
+    sections: list[tuple[str, str]] = []
+    for part in parts[1:]:
+        part = part.strip()
+        if not part:
+            continue
+        m = re.match(rf"(<{tag}\b[^>]*>.*?</{tag}>)(.*)", part, flags=re.I | re.S)
+        if not m:
+            sections.append(("", part))
+            continue
+        sections.append((m.group(1).strip(), m.group(2).strip()))
+    return intro, sections
+
+
+def _service_media(svc: dict) -> tuple[str, str, list[dict], list[dict]]:
+    """
+    Build featured media + photo queue for a service page.
+    Returns (featured_src, featured_caption, mirror_photos, leftover_photos).
+    Prefers linked project composites/galleries, then services.json gallery/hero.
+    """
+    related = [p for p in PROJECTS if p.get("servicePath") == svc["path"]]
+    featured = ""
+    featured_caption = svc.get("h1") or svc.get("navLabel") or "Project photo"
+    items: list[dict] = []
+    seen: set[str] = set()
+
+    def push(src: str, caption: str) -> None:
+        src = (src or "").strip()
+        if not src or src in seen:
+            return
+        if "before-process-after-" in Path(src).name and featured and src != featured:
+            # Keep composite as featured only; don't also mirror it mid-page.
+            return
+        seen.add(src)
+        items.append({"src": src, "caption": caption or featured_caption})
+
+    for p in related:
+        composite = p.get("composite") or ""
+        if composite and not featured:
+            featured = composite
+            featured_caption = (
+                p.get("compositeCaption")
+                or f"Before / process / after — {p.get('h1') or p.get('navLabel')}"
+            )
+            seen.add(composite)
+        elif not featured and p.get("image"):
+            featured = p["image"]
+            featured_caption = p.get("h1") or featured_caption
+            seen.add(featured)
+        for g in p.get("gallery") or [{"src": img, "caption": p["h1"]} for img in p.get("images", [])]:
+            push(str(g.get("src") or ""), str(g.get("caption") or p.get("h1") or ""))
+
+    for g in svc.get("gallery") or []:
+        if isinstance(g, str):
+            push(g, featured_caption)
+        else:
+            push(str(g.get("src") or ""), str(g.get("caption") or featured_caption))
+
+    if not featured:
+        featured = str(svc.get("featuredImage") or svc.get("heroImage") or OG)
+        if featured in seen:
+            # Allow featured to also appear once in the queue start if it's the only hero.
+            pass
+        else:
+            seen.add(featured)
+
+    # Prefer non-composite gallery items for mirrors; keep order.
+    mirror_candidates = [
+        item
+        for item in items
+        if "before-process-after-" not in Path(item.get("src") or "").name
+    ]
+    if not mirror_candidates and featured:
+        mirror_candidates = [{"src": featured, "caption": featured_caption}]
+
+    return featured, featured_caption, mirror_candidates, []
+
+
+def _service_checks(svc: dict) -> list[str]:
+    """Sidebar checklist bullets per service."""
+    slug = svc["slug"]
+    common = [
+        "Free estimate with photos",
+        "Written scope before work starts",
+        "Owner-operated crew — talk to Guy or Andrew",
+        "Haul-off and lot cleanup included in scope",
+    ]
+    extras = {
+        "mobile-home-demolition": [
+            "Singlewide & doublewide removals",
+            "Utility disconnect coordination",
+            "Permit guidance by city/county",
+            "Pad ready for rebuild or sale",
+        ],
+        "shed-barn-removal": [
+            "Sheds, barns, carports, lean-tos",
+            "Tight-yard access planning",
+            "Concrete pad removal available as add-on",
+            "Debris hauled — footprint cleaned",
+        ],
+        "demolition": [
+            "Mobile homes & light structures",
+            "Outbuildings and storm-damaged units",
+            "Debris staging and disposal",
+            "Honest scope — no overselling",
+        ],
+        "land-clearing": [
+            "Residential & light-commercial lots",
+            "Brush, undergrowth, fence lines",
+            "Build-site vegetation removal",
+            "Debris haul-off options",
+        ],
+        "tree-removal": [
+            "Equipment-assisted tree removal",
+            "Storm-fallen tree cleanup",
+            "Log and brush haul-off",
+            "Honest referral when climbing/crane needed",
+        ],
+        "stump-removal": [
+            "Full stump & root excavation",
+            "Beyond grinding — roots come out",
+            "Backfill expectations in writing",
+            "Haul-off of stump material",
+        ],
+        "pond-drainage": [
+            "Pond cleanup & excavation support",
+            "Ditch / swale earthwork",
+            "Permit awareness for water features",
+            "Clear inclusions vs. engineering limits",
+        ],
+        "grading-site-preparation": [
+            "Rough grade after demo or clearing",
+            "Fill placement & pad shaping",
+            "Driveway / access prep support",
+            "Drainage away from future pads",
+        ],
+        "storm-debris-cleanup": [
+            "Limb, tree, and yard debris haul-off",
+            "Post-storm priority when photos arrive early",
+            "Equipment on site — not just hand crews",
+            "Central Florida storm response",
+        ],
+    }
+    return extras.get(slug, []) + common
+
+
+def _checklist_html(items: list[str], *, klass: str = "check-list") -> str:
+    lis = "".join(f"<li>{esc(item)}</li>" for item in items)
+    return f'<ul class="{klass}">{lis}</ul>'
+
+
 def build_service_pages() -> None:
+    # Reload services so gallery edits in this session apply when run via importlib.
+    global SERVICES
+    SERVICES = json.loads((DATA / "services.json").read_text(encoding="utf-8"))
+
     for s in SERVICES:
         faq_schema = {
             "@type": "FAQPage",
@@ -714,12 +1159,18 @@ def build_service_pages() -> None:
                 {
                     "@type": "Question",
                     "name": "Do you offer free estimates?",
-                    "acceptedAnswer": {"@type": "Answer", "text": "Yes. Estimates are free and informational until confirmed in writing."},
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Estimates are free and informational until confirmed in writing.",
+                    },
                 },
                 {
                     "@type": "Question",
                     "name": f"Do you provide {s['navLabel']} in Central Florida?",
-                    "acceptedAnswer": {"@type": "Answer", "text": f"Yes. Breaking Ground provides {s['navLabel']} from our Kathleen base across Central Florida, with larger jobs considered statewide by scope."},
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": f"Yes. Breaking Ground provides {s['navLabel']} from our Kathleen base across Central Florida, with larger jobs considered statewide by scope.",
+                    },
                 },
             ],
         }
@@ -731,45 +1182,147 @@ def build_service_pages() -> None:
             "url": DOMAIN + s["path"],
             "description": s["meta"],
         }
+
+        featured, featured_caption, photo_queue, _ = _service_media(s)
+        body_html = service_body(s)
+        faq_html = ""
+        related_html = related_links(s["path"])
+        if '<div class="faq">' in body_html:
+            story_html, faq_html = body_html.split('<div class="faq">', 1)
+            faq_html = '<div class="faq">' + faq_html
+        else:
+            story_html = body_html
+
+        intro, sections = _split_on_heading(story_html, "h3")
+
+        # Lead photo: first gallery item (already correct for demo pages)
+        lead = photo_queue[0] if photo_queue else {"src": featured, "caption": featured_caption}
+        rest_photos = photo_queue[1:7] if len(photo_queue) > 1 else []
+
+        lead_figure = (
+            f'<figure class="service-lead-photo">'
+            f'<img src="{esc(lead["src"])}" alt="{esc(lead.get("caption") or s["h1"])}" '
+            f'title="{esc(lead.get("caption") or s["h1"])}" loading="eager" width="1200" height="675" />'
+            f'<figcaption>{esc(lead.get("caption") or featured_caption)}</figcaption>'
+            f"</figure>"
+        )
+
+        section_cards = []
+        for heading, body in sections:
+            # Convert bare <ul> inside section to check-list when it's a feature list
+            body_styled = body.replace("<ul>", '<ul class="check-list">', 1) if "<ul>" in body else body
+            section_cards.append(
+                f'<article class="service-panel">'
+                f'{heading.replace("<h3", "<h2").replace("</h3>", "</h2>")}'
+                f'<div class="prose">{body_styled}</div>'
+                f"</article>"
+            )
+
+        photos_block = ""
+        if rest_photos:
+            shots = "".join(
+                f'<figure class="service-shot">'
+                f'<img src="{esc(item["src"])}" alt="{esc(item.get("caption") or s["h1"])}" '
+                f'title="{esc(item.get("caption") or s["h1"])}" loading="lazy" />'
+                f'<figcaption>{esc(item.get("caption") or "Job photo")}</figcaption>'
+                f"</figure>"
+                for item in rest_photos
+            )
+            photos_block = f"""
+        <section class="service-panel service-panel--photos" aria-label="{esc(s['navLabel'])} project photos">
+          <h2>Real job photos</h2>
+          <p class="service-panel__lead">Proof from Breaking Ground sites — structures coming down, pads cleaned, equipment on the ground.</p>
+          <div class="service-shot-grid">{shots}</div>
+        </section>"""
+
+        checks = _service_checks(s)
+        aside_checks = _checklist_html(checks[:6], klass="check-list check-list--aside")
+        checks_card = f"""
+      <aside class="service-aside__card service-aside__card--checks" aria-label="Why call Breaking Ground">
+        <h3>Why call us</h3>
+        {aside_checks}
+        <a class="btn btn-primary" href="tel:{PHONE_TEL}" style="width:100%;margin-top:0.75rem;">Call {esc(PHONE)}</a>
+      </aside>"""
+
+        photos_row = ""
+        if photos_block:
+            photos_row = f"""
+  <div class="container service-photos-row">
+    {photos_block}
+    {checks_card}
+  </div>"""
+        else:
+            photos_row = f"""
+  <div class="container service-photos-row service-photos-row--checks-only">
+    {checks_card}
+  </div>"""
+
+        related_projects = [p for p in PROJECTS if p.get("servicePath") == s["path"]]
+        project_cta = "".join(
+            f'<a class="btn btn-dark" href="{esc(p["path"])}">{esc(p.get("navLabel") or p["h1"])}</a>'
+            for p in related_projects[:2]
+        )
+
         body = f"""
-{page_hero(s["h1"], crumb([("Home","/"),("Services","/services/"),(s["navLabel"], s["path"])]), s["heroImage"], s["meta"])}
-<section class="section-pad"><div class="container split">
-<div class="prose reveal">{service_body(s)}{related_links(s["path"])}</div>
-<div class="media-stage reveal"><img src="{esc(s["heroImage"])}" alt="{esc(s["h1"])}" /></div>
-</div></section>
-""" + cta_band(f"Get a {s['navLabel'].lower()} estimate", "Share photos and your city for a faster response.", s["navLabel"])
+{page_hero(s["h1"], crumb([("Home","/"),("Services","/services/"),(s["navLabel"], s["path"])]), with_media=False)}
+<section class="section-pad service-page">
+  <div class="container service-layout">
+    <div class="service-main">
+      <article class="service-panel service-panel--intro">
+        <p class="section-eyebrow">{esc(s.get("eyebrow") or s["navLabel"])} · Central Florida</p>
+        <div class="prose">{intro}</div>
+        {lead_figure}
+        <div class="service-panel__actions">
+          <a class="btn btn-primary" href="/contact/">Request a {esc(s["navLabel"].lower())} estimate</a>
+          <a class="btn btn-dark" href="tel:{PHONE_TEL}">Call {esc(PHONE)}</a>
+        </div>
+      </article>
+      <article class="service-panel">
+        <h2>What’s included on a typical job</h2>
+        <p class="service-panel__lead">Clear scope up front — so you know what the estimate covers before we mobilize.</p>
+        {_checklist_html(checks)}
+      </article>
+      {"".join(section_cards)}
+    </div>
+    <aside class="service-aside" aria-label="Estimate form">
+      <div class="service-aside__card form-card form-card--sticky">
+        <h3>Free estimate</h3>
+        <p class="service-aside__note">Tell us about the structure or lot — Guy or Andrew will follow up.</p>
+        {estimate_form_area("", s["navLabel"])}
+      </div>
+    </aside>
+  </div>
+  {photos_row}
+  <div class="container service-tail">
+    <div class="service-panel">
+      <div class="service-panel__actions">
+        <a class="btn btn-primary" href="/contact/">Request a {esc(s["navLabel"].lower())} estimate</a>
+        <a class="btn btn-dark" href="/projects/">See project gallery</a>
+        {project_cta}
+      </div>
+      {faq_html}
+      {related_html}
+    </div>
+  </div>
+</section>
+""" + cta_band(
+            f"Get a {s['navLabel'].lower()} estimate",
+            "Share photos and your city for a faster response.",
+            s["navLabel"],
+        )
         write(
             f"{s['slug']}/index.html",
             head(
                 s["title"],
                 s["meta"],
                 s["path"],
-                og_image=s["heroImage"],
+                og_image=featured or s["heroImage"],
                 breadcrumbs=[("Home", "/"), ("Services", "/services/"), (s["navLabel"], s["path"])],
                 extra_schema=[service_schema, faq_schema],
             )
             + body
             + foot(),
         )
-
-
-def _split_article_sections(article_html: str) -> tuple[str, list[tuple[str, str]]]:
-    """Split article HTML into intro + [(heading_html_block, body_html), ...]."""
-    import re
-
-    parts = re.split(r"(?=<h2\b)", article_html.strip(), flags=re.I)
-    intro = parts[0].strip() if parts else ""
-    sections: list[tuple[str, str]] = []
-    for part in parts[1:]:
-        part = part.strip()
-        if not part:
-            continue
-        m = re.match(r"(<h2\b[^>]*>.*?</h2>)(.*)", part, flags=re.I | re.S)
-        if not m:
-            sections.append(("", part))
-            continue
-        sections.append((m.group(1).strip(), m.group(2).strip()))
-    return intro, sections
 
 
 def _gallery_buckets(gallery_items: list[dict]) -> list[dict]:
@@ -903,8 +1456,10 @@ def build_projects() -> None:
     </div>
     {more_gallery}
     <div class="project-case__cta prose">
-      <p><a class="btn btn-primary" href="/contact/">Request a similar estimate</a>
-      <a class="btn btn-dark" href="{esc(p["servicePath"])}" style="margin-left:0.5rem;">{esc(p["service"])} service</a></p>
+      <div class="project-case__actions">
+        <a class="btn btn-primary" href="/contact/">Request a similar estimate</a>
+        <a class="btn btn-dark" href="{esc(p["servicePath"])}">{esc(p["service"])} service</a>
+      </div>
       {related_links(p["path"])}
     </div>
   </div>
@@ -1104,11 +1659,30 @@ def build_service_areas() -> None:
             title = f"Demolition & Land Services in {short}, FL | {SHORT}"
             h1 = f"Demolition & Land Services in {short}"
             meta = f"Mobile home demolition, shed removal, land clearing, and stump work in {short}, FL. Call {PHONE}."
+        hero_img = a.get("heroImage") or "/assets/images/projects/IMG_8286-scaled.jpg"
+        credit = a.get("heroImageCredit") or {}
+        lic = (credit.get("license") or "").strip()
+        credit_line = "Photo via Wikimedia Commons"
+        if lic:
+            credit_line = f"Photo via Wikimedia Commons ({lic})"
+        body_figure = f"""
+<figure class="area-local-shot">
+  <img src="{esc(hero_img)}" alt="{esc(short)}, Florida" title="{esc(short)}, Florida" loading="lazy" width="1600" height="900" />
+  <figcaption><strong>{esc(short)}, Florida</strong> — local landmark / area photo. {esc(credit_line)}.</figcaption>
+</figure>
+"""
         body = f"""
-{page_hero(h1, crumb([("Home","/"),("Service Areas","/service-areas/"),(short, f"/areas/{a['slug']}/")]), "/assets/images/projects/IMG_8286-scaled.jpg", meta)}
-<section class="section-pad"><div class="container split">
-<div class="prose reveal">{area_body(a)}{related_links(f"/areas/{a['slug']}/")}</div>
-<div class="form-card reveal"><h3>Estimate for {esc(short)}</h3>{estimate_form("Mobile Home Demolition")}</div>
+{page_hero(
+    h1,
+    crumb([("Home","/"),("Service Areas","/service-areas/"),(short, f"/areas/{a['slug']}/")]),
+    hero_img,
+    meta,
+    image_alt=f"{short}, Florida",
+    image_credit=credit_line,
+)}
+<section class="section-pad"><div class="container split split--area">
+<div class="form-card form-card--sticky reveal"><h3>Estimate for {esc(short)}</h3>{estimate_form_area(short, "Mobile Home Demolition")}</div>
+<div class="prose reveal">{body_figure}{area_body(a)}{related_links(f"/areas/{a['slug']}/")}</div>
 </div></section>
 """
         write(
@@ -1117,6 +1691,7 @@ def build_service_areas() -> None:
                 title,
                 meta,
                 f"/areas/{a['slug']}/",
+                og_image=hero_img,
                 breadcrumbs=[("Home", "/"), ("Service Areas", "/service-areas/"), (short, f"/areas/{a['slug']}/")],
                 extra_schema=[
                     {

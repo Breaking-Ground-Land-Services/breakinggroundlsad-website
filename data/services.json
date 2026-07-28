@@ -7,7 +7,16 @@
     "h1": "Small Structure Demolition & Removal",
     "meta": "Mobile homes, sheds, barns, and light-structure demolition and debris removal across Central Florida. Free estimates from Breaking Ground in Kathleen.",
     "eyebrow": "Demolition Services",
-    "heroImage": "/assets/images/projects/IMG_8345-scaled.jpg",
+    "heroImage": "/assets/images/projects/Timeline-1_01_01_18_11.jpg",
+    "featuredImage": "/assets/images/projects/Timeline-1_01_01_18_11.jpg",
+    "gallery": [
+      {"src": "/assets/images/projects/Timeline-1_01_01_18_11.jpg", "caption": "Light-structure demolition with excavator"},
+      {"src": "/assets/images/projects/Timeline-1_01_00_40_23.jpg", "caption": "Outbuilding teardown in progress"},
+      {"src": "/assets/images/projects/Timeline-1_01_00_16_22.jpg", "caption": "Manual dismantling of roof and wall panels"},
+      {"src": "/assets/images/projects/Timeline-1_01_01_49_20.jpg", "caption": "Pad cleanup after structure removal"},
+      {"src": "/assets/images/projects/IMG_8495-scaled.jpg", "caption": "Lot ready for the next use"},
+      {"src": "/assets/images/projects/IMG_0071.jpg", "caption": "Father-and-son crew with excavator and haul trucks"}
+    ],
     "priority": 1,
     "focus": "demo"
   },
@@ -19,7 +28,16 @@
     "h1": "Mobile Home & Manufactured Home Demolition",
     "meta": "Singlewide and doublewide mobile home demolition, hauling, and lot cleanup for Florida property owners. Owner-operated crews based in Kathleen.",
     "eyebrow": "Priority Service",
-    "heroImage": "/assets/images/projects/IMG_8286-scaled.jpg",
+    "heroImage": "/assets/images/projects/Timeline-1_01_01_49_20.jpg",
+    "featuredImage": "/assets/images/projects/Timeline-1_01_01_49_20.jpg",
+    "gallery": [
+      {"src": "/assets/images/projects/Timeline-1_01_01_49_20.jpg", "caption": "Manufactured-home lot — structure teardown and pad cleanup underway"},
+      {"src": "/assets/images/projects/Timeline-1_01_01_18_11.jpg", "caption": "Excavator tearing down a light structure beside a mobile home"},
+      {"src": "/assets/images/projects/Timeline-1_01_00_40_23.jpg", "caption": "Outbuilding framed for removal on a residential lot"},
+      {"src": "/assets/images/projects/Timeline-1_01_00_16_22.jpg", "caption": "Crew dismantling roof panels during structure removal"},
+      {"src": "/assets/images/projects/IMG_8495-scaled.jpg", "caption": "Cleared pad after structure removal"},
+      {"src": "/assets/images/projects/IMG_0071.jpg", "caption": "Owner-operated excavator and haul trucks ready for demo work"}
+    ],
     "priority": 1,
     "focus": "demo"
   },
@@ -31,7 +49,16 @@
     "h1": "Shed, Barn & Outbuilding Removal",
     "meta": "Remove outdated sheds, barns, and outbuildings with debris hauling and site cleanup. Serving Polk County and Central Florida.",
     "eyebrow": "Structure Removal",
-    "heroImage": "/assets/images/projects/IMG_8038-scaled.jpg",
+    "heroImage": "/assets/images/projects/Timeline-1_01_01_18_11.jpg",
+    "featuredImage": "/assets/images/projects/Timeline-1_01_01_18_11.jpg",
+    "gallery": [
+      {"src": "/assets/images/projects/Timeline-1_01_01_18_11.jpg", "caption": "Excavator demolishing a shed / outbuilding"},
+      {"src": "/assets/images/projects/Timeline-1_01_00_16_22.jpg", "caption": "Before: shed and attached frame ready for teardown"},
+      {"src": "/assets/images/projects/Timeline-1_01_00_40_23.jpg", "caption": "Siding and roof stripped — frame coming down"},
+      {"src": "/assets/images/projects/Timeline-1_01_01_49_20.jpg", "caption": "Footprint cleared after outbuilding removal"},
+      {"src": "/assets/images/projects/Timeline-1_01_04_56_01.jpg", "caption": "Shed roof work during dismantling"},
+      {"src": "/assets/images/projects/IMG_0071.jpg", "caption": "Equipment staged for structure removal and haul-off"}
+    ],
     "priority": 1,
     "focus": "demo"
   },
@@ -92,6 +119,15 @@
     "meta": "Rough grading, fill placement, driveway prep, and build-pad support after clearing or demolition across Central Florida.",
     "eyebrow": "Earthwork",
     "heroImage": "/assets/images/projects/IMG_8495-scaled.jpg",
+    "featuredImage": "/assets/images/projects/IMG_8495-scaled.jpg",
+    "gallery": [
+      {"src": "/assets/images/projects/IMG_8495-scaled.jpg", "caption": "Rough grade after site work"},
+      {"src": "/assets/images/projects/IMG_0249-scaled.jpg", "caption": "Cleared lot ready for grading"},
+      {"src": "/assets/images/projects/IMG_8416-scaled.jpg", "caption": "Earthwork and spoil management"},
+      {"src": "/assets/images/projects/IMG_8451-scaled.jpg", "caption": "Excavation for pad and drainage"},
+      {"src": "/assets/images/projects/IMG_9164-scaled.jpg", "caption": "Equipment shaping the lot"},
+      {"src": "/assets/images/projects/IMG_8537-scaled.jpg", "caption": "Finished grade for next contractor"}
+    ],
     "priority": 2,
     "focus": "clear"
   },
@@ -104,6 +140,15 @@
     "meta": "Hurricane and storm debris removal, fallen trees, and property cleanup for Polk County and Central Florida homeowners.",
     "eyebrow": "Emergency Response",
     "heroImage": "/assets/images/projects/IMG_9083-scaled.jpg",
+    "featuredImage": "/assets/images/projects/IMG_9083-scaled.jpg",
+    "gallery": [
+      {"src": "/assets/images/projects/IMG_9083-scaled.jpg", "caption": "Storm debris on a Central Florida lot"},
+      {"src": "/assets/images/projects/IMG_9082-scaled-e1761360675760.jpg", "caption": "Fallen limbs and brush piles"},
+      {"src": "/assets/images/projects/IMG_8145-scaled.jpg", "caption": "Storm tree cleanup"},
+      {"src": "/assets/images/projects/IMG_8152-scaled.jpg", "caption": "Equipment-assisted tree work"},
+      {"src": "/assets/images/projects/IMG_8188-scaled.jpg", "caption": "Debris load for haul-off"},
+      {"src": "/assets/images/projects/IMG_8532-scaled.jpg", "caption": "Property after storm cleanup"}
+    ],
     "priority": 2,
     "focus": "clear"
   }

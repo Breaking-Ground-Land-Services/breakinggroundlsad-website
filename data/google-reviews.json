@@ -1,0 +1,64 @@
+{
+  "ratingValue": 5.0,
+  "reviewCount": 7,
+  "googleMapsUrl": "https://www.google.com/maps?cid=9571487126708767252",
+  "mapEmbedSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28664363.395064767!2d-120.9932133287108!3d28.717519809660633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xadfede66cc9b47f9%3A0x84d4c0d46fb34a14!2sBreaking%20Ground%20Land%20Services%20and%20Demolition!5e0!3m2!1sen!2sus!4v1785159366164!5m2!1sen!2sus",
+  "reviews": [
+    {
+      "name": "Evan Patton",
+      "meta": "2 reviews · 4 photos",
+      "stars": 5,
+      "date": "7 months ago",
+      "text": "FEMA left my lot in Clermont Florida a wreck. Local opportunists gave me unreasonable prices to finish cleaning the tree debris and an oak stump.",
+      "avatarColor": "#1a56c4"
+    },
+    {
+      "name": "Rachel Harris",
+      "meta": "Local Guide · 14 reviews · 5 photos",
+      "stars": 5,
+      "date": "7 months ago",
+      "text": "Guy simply blew me away with his exceptional service! We really got a bang for our buck! We are highly satisfied and would definitely recommend him to anyone and everyone!",
+      "avatarColor": "#c0392b"
+    },
+    {
+      "name": "Trevor Williams",
+      "meta": "4 reviews",
+      "stars": 5,
+      "date": "7 months ago",
+      "text": "They did great work removing 14 stumps on my quarter acre backyard. The land looks nice and smooth and they’re easy to work with!",
+      "avatarColor": "#1e6b2e"
+    },
+    {
+      "name": "Kent",
+      "meta": "Local Guide · 549 reviews · 566 photos",
+      "stars": 5,
+      "date": "8 months ago",
+      "text": "I couldn’t be happier with the work that Guy and his father did. They were extremely professional and didn’t leave until the job was done right. They went above and beyond. Easy five stars.",
+      "avatarColor": "#0f766e"
+    },
+    {
+      "name": "Jason Moss",
+      "meta": "4 reviews",
+      "stars": 5,
+      "date": "8 months ago",
+      "text": "Father and son, they are the best work great together and did better than I expected on a timely manner very very impressed.",
+      "avatarColor": "#1a56c4"
+    },
+    {
+      "name": "Kaden A",
+      "meta": "3 reviews",
+      "stars": 5,
+      "date": "9 months ago",
+      "text": "Best guys ever! Did some work and I'm very happy with it.",
+      "avatarColor": "#c0392b"
+    },
+    {
+      "name": "Nancy Summitt",
+      "meta": "7 reviews · 1 photo",
+      "stars": 5,
+      "date": "a day ago",
+      "text": "Recently hired Guy and his dad to clear out a tree line and remove stumps in preparation of a new fence. They did a great job and I appreciate the communication. Guy was kind enough to tend to my plants as well when we left town. Thanks for all your help.",
+      "avatarColor": "#FBBC05"
+    }
+  ]
+}
