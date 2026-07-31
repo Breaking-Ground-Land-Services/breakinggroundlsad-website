@@ -17,57 +17,49 @@
     "challenge": "Empty-basin earthwork needed controlled slopes, spoil management, and drainage detailing before natural groundwater fill.",
     "image": "/assets/images/projects/bills-pond/before-process-after-bills-pond.webp",
     "images": [
-      "/assets/images/projects/bills-pond/after-01-this is a pond.webp",
-      "/assets/images/projects/bills-pond/before-vertical.webp",
       "/assets/images/projects/bills-pond/before.webp",
-      "/assets/images/projects/bills-pond/a-berm-to-prevent-washouts.webp",
       "/assets/images/projects/bills-pond/defining-the-shape-of-the-pond.webp",
-      "/assets/images/projects/bills-pond/excavator-on-a-pile-of-dirt.webp",
-      "/assets/images/projects/bills-pond/guy-standing-infront-of-a-hill.webp",
-      "/assets/images/projects/bills-pond/installed-an-airator-to-prevent-algae.webp",
+      "/assets/images/projects/bills-pond/removing-dirt-from-the-center-01.webp",
       "/assets/images/projects/bills-pond/piling-the-dirt-into-a-mountain.webp",
+      "/assets/images/projects/bills-pond/excavator-on-a-pile-of-dirt.webp",
+      "/assets/images/projects/bills-pond/pulling-the-slopes-01.webp",
+      "/assets/images/projects/bills-pond/pond-while-still-empty.webp",
       "/assets/images/projects/bills-pond/pipe-to-allow-drainage.webp",
       "/assets/images/projects/bills-pond/pond-before-final-berm.webp",
-      "/assets/images/projects/bills-pond/pond-while-still-empty.webp",
-      "/assets/images/projects/bills-pond/process-01-guy-standing-in-the-bottom-of-a-pond.webp",
-      "/assets/images/projects/bills-pond/pulling-the-slopes-01.webp"
+      "/assets/images/projects/bills-pond/installed-an-airator-to-prevent-algae.webp",
+      "/assets/images/projects/bills-pond/guy-standing-infront-of-a-hill.webp",
+      "/assets/images/projects/bills-pond/after-01-this is a pond.webp",
+      "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-01.webp",
+      "/assets/images/projects/bills-pond/a-berm-to-prevent-washouts.webp"
     ],
     "gallery": [
       {
-        "src": "/assets/images/projects/bills-pond/after-01-this is a pond.webp",
-        "caption": "After: This Is a Pond"
-      },
-      {
-        "src": "/assets/images/projects/bills-pond/before-vertical.webp",
-        "caption": "Before (vertical)"
-      },
-      {
         "src": "/assets/images/projects/bills-pond/before.webp",
         "caption": "Before"
-      },
-      {
-        "src": "/assets/images/projects/bills-pond/a-berm-to-prevent-washouts.webp",
-        "caption": "A Berm to Prevent Washouts"
       },
       {
         "src": "/assets/images/projects/bills-pond/defining-the-shape-of-the-pond.webp",
         "caption": "Defining the Shape of the Pond"
       },
       {
-        "src": "/assets/images/projects/bills-pond/excavator-on-a-pile-of-dirt.webp",
-        "caption": "Excavator on a Pile of Dirt"
+        "src": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-01.webp",
+        "caption": "Removing Dirt from the Center"
       },
       {
         "src": "/assets/images/projects/bills-pond/piling-the-dirt-into-a-mountain.webp",
         "caption": "Piling the Dirt into a Mountain"
       },
       {
-        "src": "/assets/images/projects/bills-pond/guy-standing-infront-of-a-hill.webp",
-        "caption": "Spoil Turned into a Sodded Play Hill for the Kids"
+        "src": "/assets/images/projects/bills-pond/excavator-on-a-pile-of-dirt.webp",
+        "caption": "Excavator on a Pile of Dirt"
       },
       {
-        "src": "/assets/images/projects/bills-pond/installed-an-airator-to-prevent-algae.webp",
-        "caption": "Installed an Aerator to Prevent Algae"
+        "src": "/assets/images/projects/bills-pond/pulling-the-slopes-01.webp",
+        "caption": "Pulling the Slopes"
+      },
+      {
+        "src": "/assets/images/projects/bills-pond/pond-while-still-empty.webp",
+        "caption": "Pond While Still Empty"
       },
       {
         "src": "/assets/images/projects/bills-pond/pipe-to-allow-drainage.webp",
@@ -78,74 +70,97 @@
         "caption": "Pond Before Final Berm"
       },
       {
-        "src": "/assets/images/projects/bills-pond/pond-while-still-empty.webp",
-        "caption": "Pond While Still Empty"
+        "src": "/assets/images/projects/bills-pond/installed-an-airator-to-prevent-algae.webp",
+        "caption": "Installed an Aerator to Prevent Algae"
       },
       {
-        "src": "/assets/images/projects/bills-pond/process-01-guy-standing-in-the-bottom-of-a-pond.webp",
-        "caption": "Guy Standing in the Bottom of a Pond"
+        "src": "/assets/images/projects/bills-pond/guy-standing-infront-of-a-hill.webp",
+        "caption": "Spoil Turned into a Sodded Play Hill for the Kids"
       },
       {
-        "src": "/assets/images/projects/bills-pond/pulling-the-slopes-01.webp",
-        "caption": "Pulling the Slopes"
+        "src": "/assets/images/projects/bills-pond/after-01-this is a pond.webp",
+        "caption": "After: This Is a Pond"
+      },
+      {
+        "src": "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-01.webp",
+        "caption": "The Pond Draws Water from the Ground"
+      },
+      {
+        "src": "/assets/images/projects/bills-pond/a-berm-to-prevent-washouts.webp",
+        "caption": "A Berm to Prevent Washouts"
       }
     ],
     "composite": "/assets/images/projects/bills-pond/before-process-after-bills-pond.webp",
-    "compositeCaption": "Before / process / after composite for Pond Excavation \u2014 numbered frames pair with the story sections below. Call (863) 899-9717 for a similar estimate."
+    "compositeCaption": "Before / process / after composite for Pond Excavation \u2014 numbered frames pair with the story sections below. Call (863) 899-9717 for a similar estimate.",
+    "compositeFrames": {
+      "before": [
+        "before.webp"
+      ],
+      "process": [
+        "removing-dirt-from-the-center-01.webp",
+        "piling-the-dirt-into-a-mountain.webp",
+        "pond-while-still-empty.webp",
+        "pond-before-final-berm.webp"
+      ],
+      "after": [
+        "after-01-this is a pond.webp"
+      ]
+    }
   },
   {
     "slug": "caroline-holt",
     "path": "/projects/caroline-holt/",
-    "navLabel": "Tree & Stump Clearing",
+    "navLabel": "Storm Cleanup",
     "legacyUrls": [],
-    "title": "Tree & Stump Clearing Project | Breaking Ground",
-    "h1": "Tree & Stump Clearing",
-    "meta": "Tree cutting, stump excavation, and site cleanup by Breaking Ground Land Services and Demolition.",
+    "title": "Storm Tree Cleanup Project | Breaking Ground",
+    "h1": "Storm Tree Cleanup",
+    "meta": "Storm-fallen tree cutting, stump excavation, and property cleanup by Breaking Ground Land Services and Demolition.",
     "city": "Central Florida",
-    "service": "Tree Removal",
-    "servicePath": "/tree-removal/",
-    "summary": "Cut and processed trees, dug out stumps, and left the property cleaned up \u2014 with a six-month follow-up look.",
-    "challenge": "Mixed tree work and stump excavation required sequencing cut-down, stump removal, and haul-off without leaving the yard unfinished.",
+    "service": "Storm Cleanup",
+    "servicePath": "/storm-debris-cleanup/",
+    "summary": "Cut and processed storm-damaged trees, dug out stumps, and left the property cleaned up \u2014 with a six-month follow-up look.",
+    "challenge": "Storm debris and mixed tree work required sequenced cutting, stump removal, and haul-off without leaving the yard unfinished.",
     "image": "/assets/images/projects/caroline-holt/before-process-after-caroline-holt.webp",
     "images": [
-      "/assets/images/projects/caroline-holt/after-01.webp",
       "/assets/images/projects/caroline-holt/before-01.webp",
       "/assets/images/projects/caroline-holt/before-02.webp",
       "/assets/images/projects/caroline-holt/before-03.webp",
+      "/assets/images/projects/caroline-holt/before-04.webp",
       "/assets/images/projects/caroline-holt/cutting-up-the-trees.webp",
       "/assets/images/projects/caroline-holt/digging-out-the-stumps.webp",
-      "/assets/images/projects/caroline-holt/six-months-later.webp",
+      "/assets/images/projects/caroline-holt/after-01.webp",
       "/assets/images/projects/caroline-holt/after-02.webp",
-      "/assets/images/projects/caroline-holt/after-03.webp"
+      "/assets/images/projects/caroline-holt/after-03.webp",
+      "/assets/images/projects/caroline-holt/six-months-later.webp"
     ],
     "gallery": [
       {
-        "src": "/assets/images/projects/caroline-holt/after-01.webp",
-        "caption": "After"
-      },
-      {
         "src": "/assets/images/projects/caroline-holt/before-01.webp",
-        "caption": "Before"
+        "caption": "Before \u2014 storm damage"
       },
       {
         "src": "/assets/images/projects/caroline-holt/before-02.webp",
-        "caption": "Before"
+        "caption": "Before \u2014 fallen timber"
       },
       {
         "src": "/assets/images/projects/caroline-holt/before-03.webp",
-        "caption": "Before"
+        "caption": "Before \u2014 yard obstruction"
+      },
+      {
+        "src": "/assets/images/projects/caroline-holt/before-04.webp",
+        "caption": "Before \u2014 work zone"
       },
       {
         "src": "/assets/images/projects/caroline-holt/cutting-up-the-trees.webp",
-        "caption": "Cutting Up the Trees"
+        "caption": "Cutting up the trees"
       },
       {
         "src": "/assets/images/projects/caroline-holt/digging-out-the-stumps.webp",
-        "caption": "Digging Out the Stumps"
+        "caption": "Digging out the stumps"
       },
       {
-        "src": "/assets/images/projects/caroline-holt/six-months-later.webp",
-        "caption": "Six Months Later"
+        "src": "/assets/images/projects/caroline-holt/after-01.webp",
+        "caption": "After"
       },
       {
         "src": "/assets/images/projects/caroline-holt/after-02.webp",
@@ -154,20 +169,39 @@
       {
         "src": "/assets/images/projects/caroline-holt/after-03.webp",
         "caption": "After"
+      },
+      {
+        "src": "/assets/images/projects/caroline-holt/six-months-later.webp",
+        "caption": "Six months later"
       }
     ],
     "composite": "/assets/images/projects/caroline-holt/before-process-after-caroline-holt.webp",
-    "compositeCaption": "Before / process / after composite for Tree & Stump Clearing \u2014 numbered frames pair with the story sections below. Call (863) 899-9717 for a similar estimate."
+    "compositeCaption": "Before / process / after composite for Storm Cleanup \u2014 numbered frames pair with the story sections below. Call (863) 899-9717 for a similar estimate.",
+    "compositeFrames": {
+      "before": [
+        "before-01.webp",
+        "before-02.webp",
+        "before-03.webp"
+      ],
+      "process": [
+        "cutting-up-the-trees.webp"
+      ],
+      "after": [
+        "after-01.webp",
+        "after-02.webp",
+        "six-months-later.webp"
+      ]
+    }
   },
   {
     "slug": "dawns-job",
     "path": "/projects/dawns-job/",
-    "navLabel": "Tree Takedown",
+    "navLabel": "Tree Removal",
     "legacyUrls": [
       "/projects/lakeland-highlands-tree-removal/"
     ],
-    "title": "Tree Takedown Project | Breaking Ground",
-    "h1": "Tree Takedown & Stump Dig-Out",
+    "title": "Tree Removal Project | Breaking Ground",
+    "h1": "Tree Removal",
     "meta": "Full tree takedown, branch cleanup, stump excavation, and dump-truck haul-off by Breaking Ground.",
     "city": "Central Florida",
     "service": "Tree Removal",
@@ -240,7 +274,23 @@
       }
     ],
     "composite": "/assets/images/projects/dawns-job/before-process-after-dawns-job.webp",
-    "compositeCaption": "Before / process / after composite for Tree Takedown \u2014 numbered frames pair with the story sections below. Call (863) 899-9717 for a similar estimate."
+    "compositeCaption": "Before / process / after composite for Tree Removal \u2014 numbered frames pair with the story sections below. Call (863) 899-9717 for a similar estimate.",
+    "compositeFrames": {
+      "before": [
+        "before.webp"
+      ],
+      "process": [
+        "cutting-off-branches-01.webp",
+        "cutting-down-the-trunk-of-the-tree-01.webp",
+        "digging-out-the-stump-01.webp",
+        "loading-a-stump-into-the-dump-truck-01.webp"
+      ],
+      "after": [
+        "after.webp",
+        "tree-is-now-a-stump.webp",
+        "stumps-in-the-dump-truck.webp"
+      ]
+    }
   },
   {
     "slug": "shawns-clearing",
@@ -334,7 +384,21 @@
       }
     ],
     "composite": "/assets/images/projects/shawns-clearing/before-process-after-shawns-clearing.webp",
-    "compositeCaption": "Before / process / after composite for Residential Clearing \u2014 numbered frames pair with the story sections below. Call (863) 899-9717 for a similar estimate."
+    "compositeCaption": "Before / process / after composite for Residential Clearing \u2014 numbered frames pair with the story sections below. Call (863) 899-9717 for a similar estimate.",
+    "compositeFrames": {
+      "before": [
+        "before.webp"
+      ],
+      "process": [
+        "excavator-clearing-land-01.webp",
+        "piling-up-logs.webp",
+        "sorting-through-logs.webp",
+        "cleaning-up-01.webp"
+      ],
+      "after": [
+        "after-01.webp"
+      ]
+    }
   },
   {
     "slug": "stolte-land-clearing",
@@ -415,7 +479,23 @@
       }
     ],
     "composite": "/assets/images/projects/stolte-land-clearing/before-process-after-stolte-land-clearing.webp",
-    "compositeCaption": "Before / process / after composite for Heavy Land Clearing \u2014 numbered frames pair with the story sections below. Call (863) 899-9717 for a similar estimate."
+    "compositeCaption": "Before / process / after composite for Heavy Land Clearing \u2014 numbered frames pair with the story sections below. Call (863) 899-9717 for a similar estimate.",
+    "compositeFrames": {
+      "before": [
+        "before-01.webp",
+        "before-02.webp",
+        "before-03.webp"
+      ],
+      "process": [
+        "removing-the-trees-01.webp",
+        "all-of-the-trees-cut-down-01.webp",
+        "pile-of-logs-01.webp",
+        "pile-of-stumps-to-burn-01.webp"
+      ],
+      "after": [
+        "after-12.webp"
+      ]
+    }
   },
   {
     "slug": "stump-removal-portfolio",
@@ -436,29 +516,69 @@
     "challenge": "Varying stump sizes and root masses needed full excavation rather than surface grinding alone.",
     "image": "/assets/images/projects/stump-removal-portfolio/before-process-after-stump-removal-portfolio.webp",
     "images": [
-      "/assets/images/projects/stump-removal-portfolio/after-01.webp",
-      "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-01.webp",
-      "/assets/images/projects/stump-removal-portfolio/cleaning-the-dirt-out-of-a-stump.webp",
-      "/assets/images/projects/stump-removal-portfolio/guy-next-to-a-stump-01.webp",
-      "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-01.webp",
-      "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-01.webp",
-      "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-01.webp",
       "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-01.webp",
       "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-01.webp",
       "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-c-01.webp",
       "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-d-01.webp",
-      "/assets/images/projects/stump-removal-portfolio/after-02.webp",
+      "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-02.webp",
+      "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-02.webp",
+      "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-02.webp",
+      "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-03.webp",
+      "/assets/images/projects/stump-removal-portfolio/after-01.webp",
       "/assets/images/projects/stump-removal-portfolio/after-04.webp",
-      "/assets/images/projects/stump-removal-portfolio/after-06.webp"
+      "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-03.webp",
+      "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-04.webp",
+      "/assets/images/projects/stump-removal-portfolio/cleaning-the-dirt-out-of-a-stump.webp",
+      "/assets/images/projects/stump-removal-portfolio/guy-next-to-a-stump-01.webp"
     ],
     "gallery": [
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-01.webp",
+        "caption": "Stump Removal Instance A \u2014 Before"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-01.webp",
+        "caption": "Stump Removal Instance B \u2014 Before"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-c-01.webp",
+        "caption": "Stump Removal Instance C \u2014 Before"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-d-01.webp",
+        "caption": "Stump Removal Instance D \u2014 Before"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-02.webp",
+        "caption": "Stump Removal Instance A \u2014 Process"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-02.webp",
+        "caption": "Stump Removal Instance B \u2014 Process"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-02.webp",
+        "caption": "Carrying a Stump"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-03.webp",
+        "caption": "Hauling Away a Stump"
+      },
       {
         "src": "/assets/images/projects/stump-removal-portfolio/after-01.webp",
         "caption": "After"
       },
       {
-        "src": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-01.webp",
-        "caption": "Carrying a Stump"
+        "src": "/assets/images/projects/stump-removal-portfolio/after-04.webp",
+        "caption": "After"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-03.webp",
+        "caption": "Stump Removal Instance B \u2014 After"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-04.webp",
+        "caption": "Stump Removal Instance A \u2014 After"
       },
       {
         "src": "/assets/images/projects/stump-removal-portfolio/cleaning-the-dirt-out-of-a-stump.webp",
@@ -467,50 +587,31 @@
       {
         "src": "/assets/images/projects/stump-removal-portfolio/guy-next-to-a-stump-01.webp",
         "caption": "Guy Next to a Stump"
-      },
-      {
-        "src": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-01.webp",
-        "caption": "Hauling Away a Stump"
-      },
-      {
-        "src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-01.webp",
-        "caption": "Stump Grinding After One Year"
-      },
-      {
-        "src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-01.webp",
-        "caption": "Stump Grinding Companies"
-      },
-      {
-        "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-01.webp",
-        "caption": "Stump Removal Instance a"
-      },
-      {
-        "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-01.webp",
-        "caption": "Stump Removal Instance B"
-      },
-      {
-        "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-c-01.webp",
-        "caption": "Stump Removal Instance C"
-      },
-      {
-        "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-d-01.webp",
-        "caption": "Stump Removal Instance D"
-      },
-      {
-        "src": "/assets/images/projects/stump-removal-portfolio/after-02.webp",
-        "caption": "After"
-      },
-      {
-        "src": "/assets/images/projects/stump-removal-portfolio/after-04.webp",
-        "caption": "After"
-      },
-      {
-        "src": "/assets/images/projects/stump-removal-portfolio/after-06.webp",
-        "caption": "After"
       }
     ],
     "composite": "/assets/images/projects/stump-removal-portfolio/before-process-after-stump-removal-portfolio.webp",
-    "compositeCaption": "Before / process / after composite for Stump Removal \u2014 numbered frames pair with the story sections below. Call (863) 899-9717 for a similar estimate."
+    "compositeCaption": "Before / process / after composite for Stump Removal \u2014 numbered frames pair with the story sections below. Call (863) 899-9717 for a similar estimate.",
+    "compositeFrames": {
+      "before": [
+        "stump-removal-instance-a-01.webp",
+        "stump-removal-instance-b-01.webp",
+        "stump-removal-instance-c-01.webp",
+        "stump-removal-instance-d-01.webp"
+      ],
+      "process": [
+        "stump-removal-instance-a-02.webp",
+        "stump-removal-instance-b-02.webp",
+        "carrying-a-stump-02.webp",
+        "hauling-away-a-stump-03.webp"
+      ],
+      "after": [
+        "after-01.webp",
+        "after-04.webp",
+        "stump-removal-instance-b-03.webp",
+        "stump-removal-instance-a-04.webp"
+      ]
+    },
+    "comparisonComposite": "/assets/images/projects/stump-removal-portfolio/grinding-vs-removal-comparison.webp"
   },
   {
     "slug": "tree-removal-portfolio",
@@ -580,14 +681,14 @@
     "images": [
       "/assets/images/projects/wanes-stump/before.webp",
       "/assets/images/projects/wanes-stump/32-inch-chainsaw-for-reference.webp",
-      "/assets/images/projects/wanes-stump/covering-up-the-hole.webp",
       "/assets/images/projects/wanes-stump/digging-out-the-stump-01.webp",
-      "/assets/images/projects/wanes-stump/hauling-the-stump-away.webp",
-      "/assets/images/projects/wanes-stump/loading-the-stump.webp",
       "/assets/images/projects/wanes-stump/man-next-to-the-stump.webp",
       "/assets/images/projects/wanes-stump/pulling-the-stump-out-of-the-hole.webp",
       "/assets/images/projects/wanes-stump/stump-is-out.webp",
-      "/assets/images/projects/wanes-stump/weight-of-what-we-hauled-away.webp"
+      "/assets/images/projects/wanes-stump/loading-the-stump.webp",
+      "/assets/images/projects/wanes-stump/weight-of-what-we-hauled-away.webp",
+      "/assets/images/projects/wanes-stump/hauling-the-stump-away.webp",
+      "/assets/images/projects/wanes-stump/covering-up-the-hole.webp"
     ],
     "gallery": [
       {
@@ -599,20 +700,8 @@
         "caption": "32 Inch Chainsaw for Reference"
       },
       {
-        "src": "/assets/images/projects/wanes-stump/covering-up-the-hole.webp",
-        "caption": "Covering Up the Hole"
-      },
-      {
         "src": "/assets/images/projects/wanes-stump/digging-out-the-stump-01.webp",
         "caption": "Digging Out the Stump"
-      },
-      {
-        "src": "/assets/images/projects/wanes-stump/hauling-the-stump-away.webp",
-        "caption": "Hauling the Stump Away"
-      },
-      {
-        "src": "/assets/images/projects/wanes-stump/loading-the-stump.webp",
-        "caption": "Loading the Stump"
       },
       {
         "src": "/assets/images/projects/wanes-stump/man-next-to-the-stump.webp",
@@ -627,11 +716,40 @@
         "caption": "Stump Is Out"
       },
       {
+        "src": "/assets/images/projects/wanes-stump/loading-the-stump.webp",
+        "caption": "Loading the Stump"
+      },
+      {
         "src": "/assets/images/projects/wanes-stump/weight-of-what-we-hauled-away.webp",
         "caption": "Weight of What We Hauled Away"
+      },
+      {
+        "src": "/assets/images/projects/wanes-stump/hauling-the-stump-away.webp",
+        "caption": "Hauling the Stump Away"
+      },
+      {
+        "src": "/assets/images/projects/wanes-stump/covering-up-the-hole.webp",
+        "caption": "Covering Up the Hole"
       }
     ],
     "composite": "/assets/images/projects/wanes-stump/before-process-after-wanes-stump.webp",
-    "compositeCaption": "Before / process / after composite for Large Stump Excavation \u2014 numbered frames pair with the story sections below. Call (863) 899-9717 for a similar estimate."
+    "compositeCaption": "Before / process / after composite for Large Stump Excavation \u2014 numbered frames pair with the story sections below. Call (863) 899-9717 for a similar estimate.",
+    "compositeFrames": {
+      "before": [
+        "before.webp"
+      ],
+      "process": [
+        "digging-out-the-stump-01.webp",
+        "man-next-to-the-stump.webp",
+        "pulling-the-stump-out-of-the-hole.webp",
+        "stump-is-out.webp"
+      ],
+      "after": [
+        "loading-the-stump.webp",
+        "weight-of-what-we-hauled-away.webp"
+      ]
+    },
+    "youtubeUrl": "https://youtube.com/shorts/iiDs5IUCmBM?feature=share",
+    "youtubeLabel": "Watch us remove this stump on YouTube"
   }
 ]

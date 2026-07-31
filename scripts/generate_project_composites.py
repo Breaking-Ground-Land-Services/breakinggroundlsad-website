@@ -18,19 +18,16 @@ OUT_ROOT = ROOT / "assets" / "images" / "projects"
 
 def classify(name: str) -> str | None:
     stem = Path(name).stem.lower().replace(" ", "-")
-    if stem.startswith("before") or stem in {"man-next-to-the-stump", "guy-next-to-a-stump-01", "guy-next-to-a-stump-02"}:
+    if stem.startswith("before") or stem in {"guy-next-to-a-stump-01", "guy-next-to-a-stump-02"}:
         return "before"
     if stem.startswith("after") or "months-later" in stem or "one-year-later" in stem or stem in {
-        "stump-is-out",
         "covering-up-the-hole",
-        "weight-of-what-we-hauled-away",
         "six-months-later",
         "three-months-later",
     }:
         return "after"
     if stem.startswith("process"):
         return "process"
-    # Instance portfolios: first shot before-ish, last after-ish handled in stage_portfolio
     if "instance" in stem:
         return None
     return "process"
@@ -41,6 +38,40 @@ def pick(files: list[Path], kind: str, limit: int) -> list[Path]:
     return matched[:limit]
 
 
+def resolve_named(src: Path, names: list[str]) -> list[Path]:
+    """Resolve client-specified filenames inside a project folder (stem or full name)."""
+    by_stem = {p.stem.lower(): p for p in src.glob("*") if p.is_file() and not p.name.startswith("before-process-after")}
+    by_name = {p.name.lower(): p for p in by_stem.values()}
+    found: list[Path] = []
+    for raw in names:
+        key = Path(raw).name.lower()
+        stem = Path(raw).stem.lower()
+        path = by_name.get(key) or by_stem.get(stem)
+        if path is None:
+            # Fuzzy: stem startswith / contains
+            matches = [p for s, p in by_stem.items() if s == stem or s.startswith(stem) or stem in s]
+            path = matches[0] if matches else None
+        if path is None:
+            raise FileNotFoundError(f"compositeFrames missing {raw!r} in {src}")
+        found.append(path)
+    return found
+
+
+def stage_explicit(src: Path, staging: Path, frames: dict) -> dict[str, int]:
+    if staging.exists():
+        shutil.rmtree(staging)
+    staging.mkdir(parents=True)
+    counts = {"before": 0, "process": 0, "after": 0}
+    for kind in ("before", "process", "after"):
+        names = frames.get(kind) or []
+        paths = resolve_named(src, names)
+        for i, path in enumerate(paths, start=1):
+            dest = staging / f"{kind}-{i:02d}{path.suffix.lower()}"
+            shutil.copy2(path, dest)
+            counts[kind] += 1
+    return counts
+
+
 def stage_standard(src: Path, staging: Path) -> dict[str, int]:
     files = sorted(src.glob("*.webp"), key=lambda p: p.name.lower())
     counts = {"before": 0, "process": 0, "after": 0}
@@ -49,7 +80,6 @@ def stage_standard(src: Path, staging: Path) -> dict[str, int]:
         "after": pick(files, "after", 3),
         "process": pick(files, "process", 4),
     }
-    # Fallback if a phase is empty
     unused = [p for p in files if p not in buckets["before"] + buckets["process"] + buckets["after"]]
     if not buckets["before"] and unused:
         buckets["before"] = [unused.pop(0)]
@@ -107,7 +137,13 @@ def build_one(project: dict) -> dict:
         return {"slug": slug, "status": "missing-source"}
 
     staging = STAGING_ROOT / slug
-    if any("instance-" in p.name for p in src.glob("*.webp")):
+    frames = project.get("compositeFrames")
+    if frames:
+        try:
+            counts = stage_explicit(src, staging, frames)
+        except FileNotFoundError as exc:
+            return {"slug": slug, "status": "error", "stderr": str(exc), "counts": {}}
+    elif any("instance-" in p.name for p in src.glob("*.webp")) and slug != "stump-removal-portfolio":
         counts = stage_portfolio(src, staging)
     else:
         counts = stage_standard(src, staging)
@@ -158,9 +194,9 @@ def main() -> int:
         if result["status"] == "error":
             print(result.get("stderr", ""))
 
-    # Patch projects.json with composite fields
     by_slug = {r["slug"]: r for r in results if r.get("status") == "built"}
     updated = []
+    phone = json.loads((ROOT / "data" / "site.json").read_text(encoding="utf-8"))["phone"]
     for project in PROJECTS:
         item = dict(project)
         built = by_slug.get(project["slug"])
@@ -169,9 +205,8 @@ def main() -> int:
             item["compositeCaption"] = (
                 f"Before / process / after composite for {project['navLabel']} — "
                 f"numbered frames pair with the story sections below. "
-                f"Call {json.loads((ROOT / 'data' / 'site.json').read_text(encoding='utf-8'))['phone']} for a similar estimate."
+                f"Call {phone} for a similar estimate."
             )
-            # Prefer composite as card/hero image
             item["image"] = built["composite"]
         updated.append(item)
     (ROOT / "data" / "projects.json").write_text(json.dumps(updated, indent=2) + "\n", encoding="utf-8")

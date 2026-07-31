@@ -327,7 +327,7 @@ def head(
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=forms2" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=nav1" />
   {schema_business(extras)}
 </head>
 <body>
@@ -338,7 +338,7 @@ def head(
 def foot() -> str:
     return """
   <div id="site-footer-include"></div>
-  <script src="/includes.js" defer></script>
+  <script src="/includes.js?v=nav1" defer></script>
   <script src="/assets/js/main.js?v=reveal2" defer></script>
 </body>
 </html>
@@ -626,21 +626,59 @@ def service_body(svc: dict) -> str:
 </ul>
 """,
         "stump-removal": """
-<p>Stump grinding leaves roots behind. When you need the stump and root ball gone so you can grade, plant, or build, excavation is the better answer. Breaking Ground specializes in stump excavation and removal throughout Lakeland, Kathleen, and Polk County.</p>
-<p>Our project gallery includes large Lakeland stump excavations where grinding alone would not have delivered a clean result. We dig, extract, backfill expectations, and haul debris according to the written scope.</p>
+<p>Stump grinding leaves roots behind. When you need the stump and root ball gone so you can grade, plant, fence, or build, excavation is the better answer. Breaking Ground digs stumps out, hauls the mass away, and leaves a usable hole ready for backfill — throughout Lakeland, Kathleen, and Polk County.</p>
+<p>Our project photos show full stump removal: before, digging, carrying, loading, and after. That is different from a ground-out stump that still owns the yard. If you have been quoted grinding only, ask what happens to the roots — then compare it to excavation.</p>
+<h3>What full stump removal includes</h3>
+<ul>
+<li>Excavating the stump and major root mass</li>
+<li>Loading and hauling stump material to disposal</li>
+<li>Backfill expectations stated in the written scope</li>
+<li>Honest guidance when grinding is enough for cosmetics only</li>
+</ul>
 """,
         "pond-drainage": """
-<p>Breaking Ground provides pond cleanup support, ditch clearing, swale restoration, and drainage-related earthwork subject to site conditions and applicable permitting. We excavate and move dirt — we do not design engineered drainage systems or guarantee hydrological outcomes.</p>
-<p>Projects that affect wetlands, alter surface-water flow, or involve public rights-of-way may require Environmental Resource Permits or local approvals. We evaluate each site and coordinate specialty requirements based on scope.</p>
-<p>Safer framing for what we do: excavation support, cleanup, and earthwork — not “we know it all” drainage design.</p>
+<p>Property owners call us for ponds when they want livestock water, irrigation buffering, wildlife habitat, a family water feature, or a practical wet area that will not wash out after the first Florida storm. Breaking Ground excavates and shapes ponds, builds berms, stages spoil, and installs drainage and aeration details that keep the finished basin usable.</p>
+<p>We know this work. Empty-basin earthwork, slope geometry, berm height, overflow pipe, and spoil placement are sequenced on purpose — not guessed on site. If your lot needs a farm pond, ornamental basin, or drainage-related earthwork, we walk the goals first, then dig to a written scope.</p>
+<h3>Why customers dig a pond</h3>
+<ul>
+<li>Livestock or pasture water on acreage</li>
+<li>Irrigation buffering and groundwater access</li>
+<li>Wildlife habitat and a usable water feature for the family</li>
+<li>Managing low spots and storm runoff with intentional banks and berms</li>
+</ul>
+<h3>What we deliver on pond jobs</h3>
+<ul>
+<li>Defined pond geometry with intentional slopes</li>
+<li>Berm and high-side protection against washouts</li>
+<li>Drainage / overflow detailing when the site needs it</li>
+<li>Spoil management — berms, grading, or landscape features instead of abandoned piles</li>
+<li>Aerator install when Florida heat and algae risk call for it</li>
+</ul>
+<p>Wetlands, surface-water connections, and local rules can change scope. We flag those conditions early and coordinate permitting based on the job — while staying focused on excavation and earthwork, not engineered drainage design.</p>
 """,
         "grading-site-preparation": """
-<p>After demolition or clearing, many properties need rough grading, fill placement, or a cleaner pad before the next contractor arrives. Breaking Ground provides grading and site preparation support for residential and light-commercial projects in Central Florida.</p>
-<p>Scopes commonly include rough grade after structure removal, spreading fill, driveway prep, and shaping disturbed ground for drainage away from future building pads — always within the limits of the written estimate.</p>
+<p>Home builders, developers, and GC teams need a lot that is ready for the next trade — not a leftover demo pile or uneven clearing scar. Breaking Ground provides rough grading and site preparation after demolition or clearing so builders can mobilize pads, driveways, and foundations without reworking our mess.</p>
+<p>We are an owner-operated father-and-son crew. Guy and Andrew handle estimates and equipment directly, which keeps communication short when you are sequencing subcontractors on a Central Florida build schedule.</p>
+<h3>Builder-focused site prep</h3>
+<ul>
+<li>Rough grade after mobile-home or structure demolition</li>
+<li>Fill placement and spreading for workable pads</li>
+<li>Shaping disturbed ground so water drains away from future building areas</li>
+<li>Driveway and access prep support for material deliveries</li>
+<li>Combined scopes: demo + clear + grade in one mobilization when the lot allows</li>
+</ul>
+<h3>What builders should send for a fast quote</h3>
+<ul>
+<li>Address or subdivision, gate width, and overhead line notes</li>
+<li>Pad / building footprint goals and any survey stakes already on site</li>
+<li>Whether demolition or clearing is still needed before grade</li>
+<li>Timeline for foundation or shell crews</li>
+</ul>
+<p>Project-specific grading photos will be added as those jobs are documented. Until then, this page shows the crew and equipment that show up for builder site work — and the scope language you can put in front of your superintendent.</p>
 """,
         "storm-debris-cleanup": """
 <p>Hurricanes and seasonal storms leave yards buried in limbs, sheets of debris, and downed trees. Breaking Ground provides storm debris cleanup and haul-off for Polk County and Central Florida property owners who need a crew that shows up with equipment and leaves the site clear.</p>
-<p>After major storm events, schedule can tighten quickly. Contact us early with photos so we can prioritize access, safety, and disposal logistics.</p>
+<p>The photos on this page come from a real storm tree cleanup job — cutting, processing, stump work, and follow-up — not unrelated clearing galleries. After major storm events, schedule can tighten quickly. Contact us early with photos so we can prioritize access, safety, and disposal logistics.</p>
 """,
     }
     base = bodies.get(slug, f"<p>{esc(svc['meta'])}</p>")
@@ -895,8 +933,9 @@ def build_home() -> None:
 
 
 def build_about() -> None:
+    about_photo = "/assets/images/brand/guy-and-andrew-glasses.jpg"
     body = f"""
-{page_hero("About Breaking Ground", crumb([("Home","/"),("About","/about/")]), "/assets/images/projects/IMG_9164-scaled.jpg", "Father-and-son. Equipment-driven. Built in 2024 on decades of field experience.")}
+{page_hero("About Breaking Ground", crumb([("Home","/"),("About","/about/")]), about_photo, "Father-and-son. Equipment-driven. Built in 2024 on decades of field experience.")}
 <section class="section-pad"><div class="container split">
 <div class="prose reveal">
 <p class="section-eyebrow">Our Story</p>
@@ -910,7 +949,7 @@ def build_about() -> None:
 <div><strong>2</strong><span>Owner-operators</span></div>
 </div>
 </div>
-<div class="media-stage reveal"><img src="/assets/images/brand/Logo-Square-scaled-1024x1024.png" alt="Breaking Ground logo" style="object-fit:contain;background:#241811;padding:2rem;" /></div>
+<div class="media-stage reveal"><img src="{about_photo}" alt="Guy and Andrew McMillen standing in front of their excavator and haul trucks" /></div>
 </div></section>
 """ + related_links("/about/") + cta_band("Talk with the owners", "Call or send project photos for a free estimate.", "Demolition")
     write(
@@ -1037,13 +1076,15 @@ def _service_media(svc: dict) -> tuple[str, str, list[dict], list[dict]]:
     """
     Build featured media + photo queue for a service page.
     Returns (featured_src, featured_caption, mirror_photos, leftover_photos).
-    Prefers linked project composites/galleries, then services.json gallery/hero.
+    When preferOwnGallery is set (or an explicit gallery exists), use services.json
+    photos so service pages are not flooded by unrelated project galleries.
     """
     related = [p for p in PROJECTS if p.get("servicePath") == svc["path"]]
     featured = ""
     featured_caption = svc.get("h1") or svc.get("navLabel") or "Project photo"
     items: list[dict] = []
     seen: set[str] = set()
+    prefer_own = bool(svc.get("preferOwnGallery") or svc.get("gallery"))
 
     def push(src: str, caption: str) -> None:
         src = (src or "").strip()
@@ -1055,21 +1096,22 @@ def _service_media(svc: dict) -> tuple[str, str, list[dict], list[dict]]:
         seen.add(src)
         items.append({"src": src, "caption": caption or featured_caption})
 
-    for p in related:
-        composite = p.get("composite") or ""
-        if composite and not featured:
-            featured = composite
-            featured_caption = (
-                p.get("compositeCaption")
-                or f"Before / process / after — {p.get('h1') or p.get('navLabel')}"
-            )
-            seen.add(composite)
-        elif not featured and p.get("image"):
-            featured = p["image"]
-            featured_caption = p.get("h1") or featured_caption
-            seen.add(featured)
-        for g in p.get("gallery") or [{"src": img, "caption": p["h1"]} for img in p.get("images", [])]:
-            push(str(g.get("src") or ""), str(g.get("caption") or p.get("h1") or ""))
+    if not prefer_own:
+        for p in related:
+            composite = p.get("composite") or ""
+            if composite and not featured:
+                featured = composite
+                featured_caption = (
+                    p.get("compositeCaption")
+                    or f"Before / process / after — {p.get('h1') or p.get('navLabel')}"
+                )
+                seen.add(composite)
+            elif not featured and p.get("image"):
+                featured = p["image"]
+                featured_caption = p.get("h1") or featured_caption
+                seen.add(featured)
+            for g in p.get("gallery") or [{"src": img, "caption": p["h1"]} for img in p.get("images", [])]:
+                push(str(g.get("src") or ""), str(g.get("caption") or p.get("h1") or ""))
 
     for g in svc.get("gallery") or []:
         if isinstance(g, str):
@@ -1079,10 +1121,7 @@ def _service_media(svc: dict) -> tuple[str, str, list[dict], list[dict]]:
 
     if not featured:
         featured = str(svc.get("featuredImage") or svc.get("heroImage") or OG)
-        if featured in seen:
-            # Allow featured to also appear once in the queue start if it's the only hero.
-            pass
-        else:
+        if featured not in seen:
             seen.add(featured)
 
     # Prefer non-composite gallery items for mirrors; keep order.
@@ -1220,7 +1259,8 @@ def build_service_pages() -> None:
 
         # Lead photo: first gallery item (already correct for demo pages)
         lead = photo_queue[0] if photo_queue else {"src": featured, "caption": featured_caption}
-        rest_photos = photo_queue[1:7] if len(photo_queue) > 1 else []
+        vault_limit = int(s.get("vaultLimit") or 6)
+        rest_photos = photo_queue[1 : 1 + vault_limit] if len(photo_queue) > 1 else []
 
         lead_figure = (
             f'<figure class="service-lead-photo">'
@@ -1258,6 +1298,25 @@ def build_service_pages() -> None:
           <div class="service-shot-grid">{shots}</div>
         </section>"""
 
+        comparison_block = ""
+        comparison_gallery = s.get("comparisonGallery") or []
+        if comparison_gallery:
+            cmp_shots = "".join(
+                f'<figure class="service-shot">'
+                f'<img src="{esc(item["src"])}" alt="{esc(item.get("caption") or "Stump grinding example")}" '
+                f'title="{esc(item.get("caption") or "Stump grinding example")}" loading="lazy" />'
+                f'<figcaption>{esc(item.get("caption") or "Stump grinding example")}</figcaption>'
+                f"</figure>"
+                for item in comparison_gallery
+            )
+            comparison_block = f"""
+        <section class="service-panel service-panel--photos" aria-label="Stump grinding vs stump removal">
+          <h2>Why full stump removal beats grinding alone</h2>
+          <p class="service-panel__lead">These photos show what stump grinding companies typically leave behind — wood chips, leftover roots, and a hole that is not a finished yard. Breaking Ground excavates the stump and root mass, hauls it away, and backfills to a usable grade. We show grinding results here so you do not mistake them for our finished work.</p>
+          <div class="service-shot-grid">{cmp_shots}</div>
+          <p class="service-panel__lead" style="margin-top:1rem;">Want the excavation approach instead? See our <a href="/projects/stump-removal-portfolio/">stump removal projects</a> and <a href="/projects/wanes-stump/">large stump excavation</a> pages.</p>
+        </section>"""
+
         checks = _service_checks(s)
         aside_checks = _checklist_html(checks[:6], klass="check-list check-list--aside")
         checks_card = f"""
@@ -1268,10 +1327,11 @@ def build_service_pages() -> None:
       </aside>"""
 
         photos_row = ""
-        if photos_block:
+        if photos_block or comparison_block:
             photos_row = f"""
   <div class="container service-photos-row">
     {photos_block}
+    {comparison_block}
     {checks_card}
   </div>"""
         else:
@@ -1377,6 +1437,8 @@ def _mirror_figure(item: dict, fallback_alt: str) -> str:
 
 
 def build_projects() -> None:
+    global PROJECTS
+    PROJECTS = json.loads((DATA / "projects.json").read_text(encoding="utf-8"))
     cards = "".join(
         f"""<article class="project-card reveal"><a href="{esc(p['path'])}"><img src="{esc(p.get('composite') or p['image'])}" alt="" loading="lazy" /></a>
         <div class="project-card__body"><p class="project-meta">{esc(p['city'])} · {esc(p['service'])}</p>
@@ -1387,7 +1449,7 @@ def build_projects() -> None:
         "projects/index.html",
         head(
             f"Project Gallery | {SHORT}",
-            "Before-and-after land clearing, stump excavation, tree removal, and pond projects across Central Florida.",
+            "Before-and-after land clearing, stump excavation, tree removal, storm cleanup, and pond projects across Central Florida.",
             "/projects/",
             breadcrumbs=[("Home", "/"), ("Projects", "/projects/")],
         )
@@ -1397,8 +1459,14 @@ def build_projects() -> None:
         + foot(),
     )
     articles_dir = DATA / "project-articles"
+    import re
+
+    seo_heading_re = re.compile(
+        r"Local SEO|Search topics|Florida Trends|Google Trends interest",
+        re.I,
+    )
     for p in PROJECTS:
-        gallery_items = _gallery_buckets(
+        gallery_items = list(
             p.get("gallery")
             or [{"src": img, "caption": p["h1"]} for img in p.get("images", [p["image"]])]
         )
@@ -1407,12 +1475,25 @@ def build_projects() -> None:
             item
             for item in gallery_items
             if "before-process-after-" not in Path(item.get("src") or "").name
+            and "grinding-vs-removal" not in Path(item.get("src") or "").name
         ]
+        # Prefer author-intended order; only bucket when no explicit gallery order
+        if not p.get("gallery"):
+            gallery_items = _gallery_buckets(gallery_items)
         article_path = articles_dir / f"{p['slug']}.html"
         article_html = article_path.read_text(encoding="utf-8") if article_path.is_file() else (
             f"<p>{esc(p['summary'])}</p><h3>Challenge</h3><p>{esc(p['challenge'])}</p>"
         )
         intro, sections = _split_article_sections(article_html)
+        main_sections: list[tuple[str, str]] = []
+        seo_sections: list[tuple[str, str]] = []
+        for heading, body in sections:
+            blob = f"{heading} {body}"
+            if seo_heading_re.search(blob):
+                seo_sections.append((heading, body))
+            else:
+                main_sections.append((heading, body))
+
         hero_src = p.get("composite") or p["image"]
         composite_blurb = esc(
             p.get("compositeCaption")
@@ -1435,19 +1516,49 @@ def build_projects() -> None:
         elif intro:
             mirror_blocks.append(f'<div class="prose project-case__intro">{intro}</div>')
 
-        for idx, (heading, body) in enumerate(sections):
-            photo = photo_queue.pop(0) if photo_queue else None
+        for idx, (heading, body) in enumerate(main_sections):
+            has_embedded = "<figure" in body.lower() or "<img" in body.lower()
             flip = " project-mirror--flip" if idx % 2 == 1 else ""
             copy = f"{heading}{body}"
-            if photo:
+            if has_embedded:
                 mirror_blocks.append(
-                    f'<div class="project-mirror{flip}">'
-                    f"{_mirror_figure(photo, p['h1'])}"
+                    f'<div class="project-mirror{flip} project-mirror--embedded">'
                     f'<div class="prose project-mirror__copy">{copy}</div>'
                     f"</div>"
                 )
             else:
-                mirror_blocks.append(f'<div class="prose project-case__section">{copy}</div>')
+                photo = photo_queue.pop(0) if photo_queue else None
+                if photo:
+                    mirror_blocks.append(
+                        f'<div class="project-mirror{flip}">'
+                        f"{_mirror_figure(photo, p['h1'])}"
+                        f'<div class="prose project-mirror__copy">{copy}</div>'
+                        f"</div>"
+                    )
+                else:
+                    mirror_blocks.append(f'<div class="prose project-case__section">{copy}</div>')
+
+        youtube_block = ""
+        if p.get("youtubeUrl"):
+            label = esc(p.get("youtubeLabel") or "Watch the job on YouTube")
+            youtube_block = f"""
+    <section class="project-more" aria-label="Job video">
+      <h2 class="project-gallery-title">See this stump removal on video</h2>
+      <p class="project-meta">Even after we cut over half of the stump off, it still weighed almost 5 tons by the time we hauled it to the landfill.</p>
+      <p><a class="btn btn-primary" href="{esc(p['youtubeUrl'])}" target="_blank" rel="noopener noreferrer">{label}</a></p>
+    </section>"""
+
+        comparison_block = ""
+        if p.get("comparisonComposite"):
+            comparison_block = f"""
+    <section class="project-more" aria-label="Stump grinding vs stump removal">
+      <h2 class="project-gallery-title">Stump grinding vs stump removal</h2>
+      <p class="project-meta">Grinding leaves roots and chips in the ground. Full excavation pulls the mass, hauls it away, and leaves a hole you can backfill for a usable yard.</p>
+      <figure class="project-composite">
+        <img src="{esc(p['comparisonComposite'])}" alt="Stump grinding versus stump removal comparison" loading="lazy" width="1600" height="900" />
+        <figcaption>Left: typical stump grinding leftovers. Right: Breaking Ground excavation and haul-off results.</figcaption>
+      </figure>
+    </section>"""
 
         leftovers = "".join(
             f'<figure class="project-shot">'
@@ -1466,6 +1577,19 @@ def build_projects() -> None:
       <div class="project-more__grid">{leftovers}</div>
     </section>"""
 
+        seo_html = ""
+        if seo_sections:
+            seo_parts = "".join(
+                f'<div class="prose project-case__section">{heading}{body}</div>'
+                for heading, body in seo_sections
+            )
+            seo_html = f"""
+    <section class="project-more project-seo-notes" aria-label="Additional search topics">
+      <h2 class="project-gallery-title">Additional search topics</h2>
+      <p class="project-meta">Reference notes for owners comparing related Florida service searches.</p>
+      {seo_parts}
+    </section>"""
+
         body = f"""
 {page_hero(p["h1"], crumb([("Home","/"),("Projects","/projects/"),(p["h1"], p["path"])]), with_media=False)}
 <section class="section-pad project-case">
@@ -1477,7 +1601,10 @@ def build_projects() -> None:
     <div class="project-case__story">
       {"".join(mirror_blocks)}
     </div>
+    {youtube_block}
+    {comparison_block}
     {more_gallery}
+    {seo_html}
     <div class="project-case__cta prose">
       <div class="project-case__actions">
         <a class="btn btn-primary" href="/contact/">Request a similar estimate</a>

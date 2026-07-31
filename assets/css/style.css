@@ -244,9 +244,47 @@ a.btn-dark:focus-visible,
 .header-social .social-icon { width: 1.55rem; height: 1.55rem; }
 
 .hamburger-btn {
-  display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.4rem;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+  background: none;
+  border: 1px solid rgba(226, 232, 240, 0.2);
+  border-radius: var(--radius);
+  cursor: pointer;
+  padding: 0;
+  color: var(--sand);
+  transition: border-color var(--transition), background var(--transition);
+  -webkit-tap-highlight-color: transparent;
 }
-.hamburger-btn span { width: 22px; height: 2px; background: var(--sand); display: block; }
+.hamburger-btn:hover,
+.hamburger-btn:focus-visible {
+  border-color: rgba(var(--accent-rgb), 0.55);
+  background: rgba(var(--accent-rgb), 0.1);
+  outline: none;
+}
+.hamburger-btn__bar {
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  display: block;
+  border-radius: 1px;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+.hamburger-btn.is-open .hamburger-btn__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger-btn.is-open .hamburger-btn__bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn.is-open .hamburger-btn__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+body.nav-open { overflow: hidden; }
 
 .nav-social { display: none; align-items: center; gap: 0.45rem; margin: 0.75rem 0 0.25rem; }
 .footer-social { display: flex; align-items: center; gap: 0.45rem; margin: 1rem 0 0; }
@@ -1141,8 +1179,9 @@ label .req {
   .nav-social { display: flex; }
   .header-social { display: none; }
   .header-cta { align-items: center; }
-  .hamburger-btn { display: flex; }
+  .hamburger-btn { display: flex; z-index: 130; }
   .header-inner { position: relative; }
+  .site-header { z-index: 140; }
 }
 @media (max-width: 640px) {
   .service-grid, .project-grid, .area-grid, .stat-row, .footer-grid, .cta-band-grid, .cta-band__inner, .split, .related-links-grid {
