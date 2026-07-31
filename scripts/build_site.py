@@ -1503,6 +1503,21 @@ def build_projects() -> None:
         photo_queue = list(gallery_items)
         mirror_blocks: list[str] = []
 
+        # Images already placed via article <figure> tags should not also appear as
+        # auto-paired mirror photos later on the page.
+        embedded_srcs = {
+            m.group(1)
+            for m in re.finditer(r'<img[^>]+src=["\']([^"\']+)["\']', article_html, flags=re.I)
+        }
+
+        def _src_key(src: str) -> str:
+            return Path(src or "").name.lower()
+
+        embedded_names = {_src_key(s) for s in embedded_srcs}
+        photo_queue = [
+            item for item in photo_queue if _src_key(item.get("src") or "") not in embedded_names
+        ]
+
         # Lead mirror: first before/process shot beside opening copy
         if intro and photo_queue:
             lead_photo = photo_queue.pop(0)
@@ -1519,15 +1534,46 @@ def build_projects() -> None:
         for idx, (heading, body) in enumerate(main_sections):
             has_embedded = "<figure" in body.lower() or "<img" in body.lower()
             flip = " project-mirror--flip" if idx % 2 == 1 else ""
-            copy = f"{heading}{body}"
             if has_embedded:
-                mirror_blocks.append(
-                    f'<div class="project-mirror{flip} project-mirror--embedded">'
-                    f'<div class="prose project-mirror__copy">{copy}</div>'
-                    f"</div>"
-                )
+                # Pull the first figure into the media column so the card stays a
+                # normal two-column mirror (avoids empty grid track / white space).
+                figures = re.findall(r"<figure\b[^>]*>.*?</figure>", body, flags=re.I | re.S)
+                body_rest = body
+                media_html = ""
+                if figures:
+                    first = figures[0]
+                    body_rest = body.replace(first, "", 1)
+                    if 'class="' in first[:80].lower():
+                        media_html = re.sub(
+                            r'(<figure\b[^>]*class=")([^"]*)(")',
+                            r'\1\2 project-mirror__media\3',
+                            first,
+                            count=1,
+                            flags=re.I,
+                        )
+                    else:
+                        media_html = re.sub(
+                            r"<figure\b",
+                            '<figure class="project-mirror__media"',
+                            first,
+                            count=1,
+                            flags=re.I,
+                        )
+                copy = f"{heading}{body_rest}"
+                if media_html:
+                    mirror_blocks.append(
+                        f'<div class="project-mirror{flip}">'
+                        f"{media_html}"
+                        f'<div class="prose project-mirror__copy">{copy}</div>'
+                        f"</div>"
+                    )
+                else:
+                    mirror_blocks.append(
+                        f'<div class="prose project-case__section">{copy}</div>'
+                    )
             else:
                 photo = photo_queue.pop(0) if photo_queue else None
+                copy = f"{heading}{body}"
                 if photo:
                     mirror_blocks.append(
                         f'<div class="project-mirror{flip}">'

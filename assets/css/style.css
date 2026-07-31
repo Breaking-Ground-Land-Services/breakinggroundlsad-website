@@ -968,6 +968,26 @@ label .req {
   margin-top: 0;
   font-size: clamp(1.15rem, 2vw, 1.4rem);
 }
+.project-mirror__copy figure {
+  margin: 1rem 0 0;
+  border-radius: calc(var(--radius) + 2px);
+  overflow: hidden;
+  background: #0f172a;
+}
+.project-mirror__copy figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.project-mirror__copy figure figcaption {
+  padding: 0.65rem 0.8rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 650;
+  color: #e2e8f0;
+  line-height: 1.35;
+}
 .project-more {
   margin-top: clamp(1.75rem, 3vw, 2.5rem);
 }
