@@ -255,6 +255,14 @@ function initForms() {
   });
 }
 
+function applySlideBg(bg) {
+  if (!bg || bg.dataset.bgLoaded) return;
+  const url = bg.getAttribute('data-bg');
+  if (!url) return;
+  bg.style.backgroundImage = `url("${url}")`;
+  bg.dataset.bgLoaded = '1';
+}
+
 function initHeroSlider() {
   const slides = document.querySelectorAll('.hero-slide');
   if (slides.length < 2) return;
@@ -278,6 +286,7 @@ function initHeroSlider() {
     slides[current].classList.add('active');
 
     const newBg = slides[current].querySelector('.hero-slide-bg');
+    applySlideBg(newBg);
     if (newBg) {
       newBg.style.animation = 'none';
       void newBg.offsetWidth;
@@ -291,6 +300,9 @@ function initHeroSlider() {
   }
 
   startSlider();
+
+  const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1500));
+  idle(() => applySlideBg(slides[1]?.querySelector('.hero-slide-bg[data-bg]')));
 
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {

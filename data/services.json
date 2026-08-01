@@ -7,16 +7,34 @@
     "h1": "Small Structure Demolition & Removal",
     "meta": "Mobile homes, sheds, barns, and light-structure demolition and debris removal across Central Florida. Free estimates from Breaking Ground in Kathleen.",
     "eyebrow": "Demolition Services",
-    "heroImage": "/assets/images/projects/Timeline-1_01_01_18_11.jpg",
-    "featuredImage": "/assets/images/projects/Timeline-1_01_01_18_11.jpg",
+    "heroImage": "/assets/images/projects/Timeline-1_01_01_18_11.webp",
+    "featuredImage": "/assets/images/projects/Timeline-1_01_01_18_11.webp",
     "preferOwnGallery": true,
     "gallery": [
-      {"src": "/assets/images/projects/Timeline-1_01_01_18_11.jpg", "caption": "Light-structure demolition with excavator"},
-      {"src": "/assets/images/projects/Timeline-1_01_00_40_23.jpg", "caption": "Outbuilding teardown in progress"},
-      {"src": "/assets/images/projects/Timeline-1_01_00_16_22.jpg", "caption": "Manual dismantling of roof and wall panels"},
-      {"src": "/assets/images/projects/Timeline-1_01_01_49_20.jpg", "caption": "Pad cleanup after structure removal"},
-      {"src": "/assets/images/projects/IMG_8345-scaled.jpg", "caption": "Lot ready for the next use"},
-      {"src": "/assets/images/brand/guy-and-andrew-glasses.jpg", "caption": "Father-and-son crew — Guy and Andrew with excavator and haul trucks"}
+      {
+        "src": "/assets/images/projects/Timeline-1_01_01_18_11.webp",
+        "caption": "Light-structure demolition with excavator"
+      },
+      {
+        "src": "/assets/images/projects/Timeline-1_01_00_40_23.webp",
+        "caption": "Outbuilding teardown in progress"
+      },
+      {
+        "src": "/assets/images/projects/Timeline-1_01_00_16_22.webp",
+        "caption": "Manual dismantling of roof and wall panels"
+      },
+      {
+        "src": "/assets/images/projects/Timeline-1_01_01_49_20.webp",
+        "caption": "Pad cleanup after structure removal"
+      },
+      {
+        "src": "/assets/images/projects/IMG_8345-scaled.webp",
+        "caption": "Lot ready for the next use"
+      },
+      {
+        "src": "/assets/images/brand/guy-and-andrew-glasses.webp",
+        "caption": "Father-and-son crew \u2014 Guy and Andrew with excavator and haul trucks"
+      }
     ],
     "priority": 1,
     "focus": "demo"
@@ -29,16 +47,34 @@
     "h1": "Mobile Home & Manufactured Home Demolition",
     "meta": "Singlewide and doublewide mobile home demolition, hauling, and lot cleanup for Florida property owners. Owner-operated crews based in Kathleen.",
     "eyebrow": "Priority Service",
-    "heroImage": "/assets/images/projects/Timeline-1_01_01_49_20.jpg",
-    "featuredImage": "/assets/images/projects/Timeline-1_01_01_49_20.jpg",
+    "heroImage": "/assets/images/projects/Timeline-1_01_01_49_20.webp",
+    "featuredImage": "/assets/images/projects/Timeline-1_01_01_49_20.webp",
     "preferOwnGallery": true,
     "gallery": [
-      {"src": "/assets/images/projects/Timeline-1_01_01_49_20.jpg", "caption": "Manufactured-home lot — structure teardown and pad cleanup underway"},
-      {"src": "/assets/images/projects/Timeline-1_01_01_18_11.jpg", "caption": "Excavator tearing down a light structure beside a mobile home"},
-      {"src": "/assets/images/projects/Timeline-1_01_00_40_23.jpg", "caption": "Outbuilding framed for removal on a residential lot"},
-      {"src": "/assets/images/projects/Timeline-1_01_00_16_22.jpg", "caption": "Crew dismantling roof panels during structure removal"},
-      {"src": "/assets/images/projects/IMG_8345-scaled.jpg", "caption": "Cleared pad ready for rebuild or sale"},
-      {"src": "/assets/images/brand/guy-and-andrew-glasses.jpg", "caption": "Owner-operated father-and-son crew — Guy and Andrew with equipment"}
+      {
+        "src": "/assets/images/projects/Timeline-1_01_01_49_20.webp",
+        "caption": "Manufactured-home lot \u2014 structure teardown and pad cleanup underway"
+      },
+      {
+        "src": "/assets/images/projects/Timeline-1_01_01_18_11.webp",
+        "caption": "Excavator tearing down a light structure beside a mobile home"
+      },
+      {
+        "src": "/assets/images/projects/Timeline-1_01_00_40_23.webp",
+        "caption": "Outbuilding framed for removal on a residential lot"
+      },
+      {
+        "src": "/assets/images/projects/Timeline-1_01_00_16_22.webp",
+        "caption": "Crew dismantling roof panels during structure removal"
+      },
+      {
+        "src": "/assets/images/projects/IMG_8345-scaled.webp",
+        "caption": "Cleared pad ready for rebuild or sale"
+      },
+      {
+        "src": "/assets/images/brand/guy-and-andrew-glasses.webp",
+        "caption": "Owner-operated father-and-son crew \u2014 Guy and Andrew with equipment"
+      }
     ],
     "priority": 1,
     "focus": "demo"
@@ -51,16 +87,34 @@
     "h1": "Shed, Barn & Outbuilding Removal",
     "meta": "Remove outdated sheds, barns, and outbuildings with debris hauling and site cleanup. Serving Polk County and Central Florida.",
     "eyebrow": "Structure Removal",
-    "heroImage": "/assets/images/projects/Timeline-1_01_00_16_22.jpg",
-    "featuredImage": "/assets/images/projects/Timeline-1_01_00_16_22.jpg",
+    "heroImage": "/assets/images/projects/Timeline-1_01_00_16_22.webp",
+    "featuredImage": "/assets/images/projects/Timeline-1_01_00_16_22.webp",
     "preferOwnGallery": true,
     "gallery": [
-      {"src": "/assets/images/projects/Timeline-1_01_00_16_22.jpg", "caption": "Step 1 — Shed and attached frame ready for teardown"},
-      {"src": "/assets/images/projects/Timeline-1_01_04_56_01.jpg", "caption": "Step 2 — Roof panels coming off during dismantling"},
-      {"src": "/assets/images/projects/Timeline-1_01_00_40_23.jpg", "caption": "Step 3 — Siding stripped and structure opened up"},
-      {"src": "/assets/images/projects/Timeline-1_01_01_18_11.jpg", "caption": "Step 4 — Excavator finishes the teardown"},
-      {"src": "/assets/images/projects/Timeline-1_01_01_49_20.jpg", "caption": "Step 5 — Footprint cleared and debris staged for haul-off"},
-      {"src": "/assets/images/brand/guy-and-andrew-glasses.jpg", "caption": "Step 6 — Equipment and crew ready for structure removal jobs"}
+      {
+        "src": "/assets/images/projects/Timeline-1_01_00_16_22.webp",
+        "caption": "Step 1 \u2014 Shed and attached frame ready for teardown"
+      },
+      {
+        "src": "/assets/images/projects/Timeline-1_01_04_56_01.webp",
+        "caption": "Step 2 \u2014 Roof panels coming off during dismantling"
+      },
+      {
+        "src": "/assets/images/projects/Timeline-1_01_00_40_23.webp",
+        "caption": "Step 3 \u2014 Siding stripped and structure opened up"
+      },
+      {
+        "src": "/assets/images/projects/Timeline-1_01_01_18_11.webp",
+        "caption": "Step 4 \u2014 Excavator finishes the teardown"
+      },
+      {
+        "src": "/assets/images/projects/Timeline-1_01_01_49_20.webp",
+        "caption": "Step 5 \u2014 Footprint cleared and debris staged for haul-off"
+      },
+      {
+        "src": "/assets/images/brand/guy-and-andrew-glasses.webp",
+        "caption": "Step 6 \u2014 Equipment and crew ready for structure removal jobs"
+      }
     ],
     "priority": 1,
     "focus": "demo"
@@ -86,23 +140,59 @@
     "h1": "Tree Removal & Storm Tree Cleanup",
     "meta": "Tree removal, fallen-tree cleanup, and equipment-assisted takedowns for Central Florida properties. Call Breaking Ground for an estimate.",
     "eyebrow": "Tree Services",
-    "heroImage": "/assets/images/projects/IMG_8145-scaled.jpg",
-    "featuredImage": "/assets/images/projects/IMG_8145-scaled.jpg",
+    "heroImage": "/assets/images/projects/IMG_8145-scaled.webp",
+    "featuredImage": "/assets/images/projects/IMG_8145-scaled.webp",
     "preferOwnGallery": true,
     "vaultLimit": 11,
     "gallery": [
-      {"src": "/assets/images/projects/IMG_8145-scaled.jpg", "caption": "Equipment-assisted tree removal on a Central Florida lot"},
-      {"src": "/assets/images/projects/dawns-job/before.webp", "caption": "Before — tree marked for full takedown"},
-      {"src": "/assets/images/projects/dawns-job/cutting-off-branches-01.webp", "caption": "Sectional branch removal before the trunk comes down"},
-      {"src": "/assets/images/projects/dawns-job/cutting-down-the-trunk-of-the-tree-01.webp", "caption": "Cutting the trunk in controlled sections"},
-      {"src": "/assets/images/projects/dawns-job/branches-on-the-ground-01.webp", "caption": "Branches processed and staged for cleanup"},
-      {"src": "/assets/images/projects/dawns-job/digging-out-the-stump-01.webp", "caption": "Stump excavation after the tree is down"},
-      {"src": "/assets/images/projects/dawns-job/loading-a-stump-into-the-dump-truck-01.webp", "caption": "Loading the stump for haul-off"},
-      {"src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-01.webp", "caption": "Tree removal project — standing timber before work"},
-      {"src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-03.webp", "caption": "Tree removal project — cutting and processing underway"},
-      {"src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-02.webp", "caption": "Tree removal project — equipment in the work zone"},
-      {"src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-02.webp", "caption": "Tree removal project — cleared work area after takedown"},
-      {"src": "/assets/images/projects/dawns-job/after.webp", "caption": "After — tree removed, stump excavated, debris hauled"}
+      {
+        "src": "/assets/images/projects/IMG_8145-scaled.webp",
+        "caption": "Equipment-assisted tree removal on a Central Florida lot"
+      },
+      {
+        "src": "/assets/images/projects/dawns-job/before.webp",
+        "caption": "Before \u2014 tree marked for full takedown"
+      },
+      {
+        "src": "/assets/images/projects/dawns-job/cutting-off-branches-01.webp",
+        "caption": "Sectional branch removal before the trunk comes down"
+      },
+      {
+        "src": "/assets/images/projects/dawns-job/cutting-down-the-trunk-of-the-tree-01.webp",
+        "caption": "Cutting the trunk in controlled sections"
+      },
+      {
+        "src": "/assets/images/projects/dawns-job/branches-on-the-ground-01.webp",
+        "caption": "Branches processed and staged for cleanup"
+      },
+      {
+        "src": "/assets/images/projects/dawns-job/digging-out-the-stump-01.webp",
+        "caption": "Stump excavation after the tree is down"
+      },
+      {
+        "src": "/assets/images/projects/dawns-job/loading-a-stump-into-the-dump-truck-01.webp",
+        "caption": "Loading the stump for haul-off"
+      },
+      {
+        "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-01.webp",
+        "caption": "Tree removal project \u2014 standing timber before work"
+      },
+      {
+        "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-03.webp",
+        "caption": "Tree removal project \u2014 cutting and processing underway"
+      },
+      {
+        "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-02.webp",
+        "caption": "Tree removal project \u2014 equipment in the work zone"
+      },
+      {
+        "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-02.webp",
+        "caption": "Tree removal project \u2014 cleared work area after takedown"
+      },
+      {
+        "src": "/assets/images/projects/dawns-job/after.webp",
+        "caption": "After \u2014 tree removed, stump excavated, debris hauled"
+      }
     ],
     "priority": 2,
     "focus": "clear"
@@ -113,27 +203,63 @@
     "navLabel": "Stump Removal",
     "title": "Stump Removal & Excavation in Lakeland FL | Breaking Ground",
     "h1": "Stump Removal & Root Excavation",
-    "meta": "Stump excavation and removal that goes beyond grinding — clear roots and restore usable yard space in Lakeland and Polk County.",
+    "meta": "Stump excavation and removal that goes beyond grinding \u2014 clear roots and restore usable yard space in Lakeland and Polk County.",
     "eyebrow": "Stump Services",
     "heroImage": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-01.webp",
     "featuredImage": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-01.webp",
     "preferOwnGallery": true,
     "vaultLimit": 8,
     "gallery": [
-      {"src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-01.webp", "caption": "Before — stump ready for full excavation"},
-      {"src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-01.webp", "caption": "Before — another stump sized for dig-out"},
-      {"src": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-02.webp", "caption": "Process — excavator carrying the extracted stump"},
-      {"src": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-03.webp", "caption": "Process — stump loaded for landfill haul-off"},
-      {"src": "/assets/images/projects/stump-removal-portfolio/after-01.webp", "caption": "After — stump gone and hole ready for backfill"},
-      {"src": "/assets/images/projects/stump-removal-portfolio/after-04.webp", "caption": "After — yard restored for the next use"},
-      {"src": "/assets/images/projects/wanes-stump/before.webp", "caption": "Large stump excavation — before dig-out"},
-      {"src": "/assets/images/projects/wanes-stump/stump-is-out.webp", "caption": "Large stump excavation — stump pulled free"}
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-01.webp",
+        "caption": "Before \u2014 stump ready for full excavation"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-01.webp",
+        "caption": "Before \u2014 another stump sized for dig-out"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-02.webp",
+        "caption": "Process \u2014 excavator carrying the extracted stump"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-03.webp",
+        "caption": "Process \u2014 stump loaded for landfill haul-off"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/after-01.webp",
+        "caption": "After \u2014 stump gone and hole ready for backfill"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/after-04.webp",
+        "caption": "After \u2014 yard restored for the next use"
+      },
+      {
+        "src": "/assets/images/projects/wanes-stump/before.webp",
+        "caption": "Large stump excavation \u2014 before dig-out"
+      },
+      {
+        "src": "/assets/images/projects/wanes-stump/stump-is-out.webp",
+        "caption": "Large stump excavation \u2014 stump pulled free"
+      }
     ],
     "comparisonGallery": [
-      {"src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-01.webp", "caption": "Typical stump grinding result — wood chips and roots left in place"},
-      {"src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-03.webp", "caption": "Ground-out stump hole — not the finish we leave for customers"},
-      {"src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-01.webp", "caption": "Stump grinding a year later — settling and leftover wood still visible"},
-      {"src": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-01.webp", "caption": "Stump grinding on a clearing site — useful in some scopes, not a full removal"}
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-01.webp",
+        "caption": "Typical stump grinding result \u2014 wood chips and roots left in place"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-03.webp",
+        "caption": "Ground-out stump hole \u2014 not the finish we leave for customers"
+      },
+      {
+        "src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-01.webp",
+        "caption": "Stump grinding a year later \u2014 settling and leftover wood still visible"
+      },
+      {
+        "src": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-01.webp",
+        "caption": "Stump grinding on a clearing site \u2014 useful in some scopes, not a full removal"
+      }
     ],
     "priority": 2,
     "focus": "clear"
@@ -151,18 +277,54 @@
     "preferOwnGallery": true,
     "vaultLimit": 11,
     "gallery": [
-      {"src": "/assets/images/projects/bills-pond/before.webp", "caption": "Before — site prepared for pond excavation"},
-      {"src": "/assets/images/projects/bills-pond/defining-the-shape-of-the-pond.webp", "caption": "Defining the pond footprint and working grades"},
-      {"src": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-01.webp", "caption": "Excavating the center of the basin"},
-      {"src": "/assets/images/projects/bills-pond/piling-the-dirt-into-a-mountain.webp", "caption": "Staging spoil for berms, grading, and landscape use"},
-      {"src": "/assets/images/projects/bills-pond/pulling-the-slopes-01.webp", "caption": "Pulling and shaping the pond slopes"},
-      {"src": "/assets/images/projects/bills-pond/pond-while-still-empty.webp", "caption": "Empty basin with slopes established"},
-      {"src": "/assets/images/projects/bills-pond/pipe-to-allow-drainage.webp", "caption": "Drainage pipe installed for overflow control"},
-      {"src": "/assets/images/projects/bills-pond/pond-before-final-berm.webp", "caption": "Pond shaped and ready for the final berm"},
-      {"src": "/assets/images/projects/bills-pond/installed-an-airator-to-prevent-algae.webp", "caption": "Aerator installed to help limit algae in Florida heat"},
-      {"src": "/assets/images/projects/bills-pond/after-01-this is a pond.webp", "caption": "After — finished pond holding water"},
-      {"src": "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-01.webp", "caption": "Pond drawing groundwater as it fills"},
-      {"src": "/assets/images/projects/bills-pond/a-berm-to-prevent-washouts.webp", "caption": "A berm to prevent washouts"}
+      {
+        "src": "/assets/images/projects/bills-pond/before.webp",
+        "caption": "Before \u2014 site prepared for pond excavation"
+      },
+      {
+        "src": "/assets/images/projects/bills-pond/defining-the-shape-of-the-pond.webp",
+        "caption": "Defining the pond footprint and working grades"
+      },
+      {
+        "src": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-01.webp",
+        "caption": "Excavating the center of the basin"
+      },
+      {
+        "src": "/assets/images/projects/bills-pond/piling-the-dirt-into-a-mountain.webp",
+        "caption": "Staging spoil for berms, grading, and landscape use"
+      },
+      {
+        "src": "/assets/images/projects/bills-pond/pulling-the-slopes-01.webp",
+        "caption": "Pulling and shaping the pond slopes"
+      },
+      {
+        "src": "/assets/images/projects/bills-pond/pond-while-still-empty.webp",
+        "caption": "Empty basin with slopes established"
+      },
+      {
+        "src": "/assets/images/projects/bills-pond/pipe-to-allow-drainage.webp",
+        "caption": "Drainage pipe installed for overflow control"
+      },
+      {
+        "src": "/assets/images/projects/bills-pond/pond-before-final-berm.webp",
+        "caption": "Pond shaped and ready for the final berm"
+      },
+      {
+        "src": "/assets/images/projects/bills-pond/installed-an-airator-to-prevent-algae.webp",
+        "caption": "Aerator installed to help limit algae in Florida heat"
+      },
+      {
+        "src": "/assets/images/projects/bills-pond/after-01-this is a pond.webp",
+        "caption": "After \u2014 finished pond holding water"
+      },
+      {
+        "src": "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-01.webp",
+        "caption": "Pond drawing groundwater as it fills"
+      },
+      {
+        "src": "/assets/images/projects/bills-pond/a-berm-to-prevent-washouts.webp",
+        "caption": "A berm to prevent washouts"
+      }
     ],
     "priority": 3,
     "focus": "clear"
@@ -175,13 +337,22 @@
     "h1": "Grading & Site Preparation for Builders",
     "meta": "Builder-ready rough grading, fill placement, and pad prep after demolition or clearing across Central Florida. Direct line to Guy and Andrew.",
     "eyebrow": "Builder Site Work",
-    "heroImage": "/assets/images/brand/guy-and-andrew-glasses.jpg",
-    "featuredImage": "/assets/images/brand/guy-and-andrew-glasses.jpg",
+    "heroImage": "/assets/images/brand/guy-and-andrew-glasses.webp",
+    "featuredImage": "/assets/images/brand/guy-and-andrew-glasses.webp",
     "preferOwnGallery": true,
     "gallery": [
-      {"src": "/assets/images/brand/guy-and-andrew-glasses.jpg", "caption": "Guy and Andrew — owner-operators ready for builder site prep"},
-      {"src": "/assets/images/brand/guy-and-andrew-equipment.jpg", "caption": "Father-and-son crew with excavator and haul trucks"},
-      {"src": "/assets/images/hero/IMG_0078-hero.jpg", "caption": "Equipment staged for grading and pad preparation"}
+      {
+        "src": "/assets/images/brand/guy-and-andrew-glasses.webp",
+        "caption": "Guy and Andrew \u2014 owner-operators ready for builder site prep"
+      },
+      {
+        "src": "/assets/images/brand/guy-and-andrew-equipment.webp",
+        "caption": "Father-and-son crew with excavator and haul trucks"
+      },
+      {
+        "src": "/assets/images/hero/IMG_0078-hero.webp",
+        "caption": "Equipment staged for grading and pad preparation"
+      }
     ],
     "priority": 2,
     "focus": "clear"
@@ -199,16 +370,46 @@
     "preferOwnGallery": true,
     "vaultLimit": 10,
     "gallery": [
-      {"src": "/assets/images/projects/caroline-holt/before-01.webp", "caption": "After the storm — trees and debris across the property"},
-      {"src": "/assets/images/projects/caroline-holt/before-02.webp", "caption": "Storm damage before cleanup begins"},
-      {"src": "/assets/images/projects/caroline-holt/before-03.webp", "caption": "Fallen timber and yard obstruction after high winds"},
-      {"src": "/assets/images/projects/caroline-holt/before-04.webp", "caption": "Access and landing zones planned before cutting"},
-      {"src": "/assets/images/projects/caroline-holt/cutting-up-the-trees.webp", "caption": "Cutting and processing storm-fallen trees"},
-      {"src": "/assets/images/projects/caroline-holt/digging-out-the-stumps.webp", "caption": "Stump excavation after storm tree removal"},
-      {"src": "/assets/images/projects/caroline-holt/after-01.webp", "caption": "Property cleared after storm cleanup"},
-      {"src": "/assets/images/projects/caroline-holt/after-02.webp", "caption": "Yard restored for normal use"},
-      {"src": "/assets/images/projects/caroline-holt/after-03.webp", "caption": "Finished storm cleanup — debris hauled"},
-      {"src": "/assets/images/projects/caroline-holt/six-months-later.webp", "caption": "Six months later — site still clean and usable"}
+      {
+        "src": "/assets/images/projects/caroline-holt/before-01.webp",
+        "caption": "After the storm \u2014 trees and debris across the property"
+      },
+      {
+        "src": "/assets/images/projects/caroline-holt/before-02.webp",
+        "caption": "Storm damage before cleanup begins"
+      },
+      {
+        "src": "/assets/images/projects/caroline-holt/before-03.webp",
+        "caption": "Fallen timber and yard obstruction after high winds"
+      },
+      {
+        "src": "/assets/images/projects/caroline-holt/before-04.webp",
+        "caption": "Access and landing zones planned before cutting"
+      },
+      {
+        "src": "/assets/images/projects/caroline-holt/cutting-up-the-trees.webp",
+        "caption": "Cutting and processing storm-fallen trees"
+      },
+      {
+        "src": "/assets/images/projects/caroline-holt/digging-out-the-stumps.webp",
+        "caption": "Stump excavation after storm tree removal"
+      },
+      {
+        "src": "/assets/images/projects/caroline-holt/after-01.webp",
+        "caption": "Property cleared after storm cleanup"
+      },
+      {
+        "src": "/assets/images/projects/caroline-holt/after-02.webp",
+        "caption": "Yard restored for normal use"
+      },
+      {
+        "src": "/assets/images/projects/caroline-holt/after-03.webp",
+        "caption": "Finished storm cleanup \u2014 debris hauled"
+      },
+      {
+        "src": "/assets/images/projects/caroline-holt/six-months-later.webp",
+        "caption": "Six months later \u2014 site still clean and usable"
+      }
     ],
     "priority": 2,
     "focus": "clear"

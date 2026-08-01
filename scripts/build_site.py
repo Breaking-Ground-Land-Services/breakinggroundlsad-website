@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import html
 import json
+import re
 from datetime import date
 from pathlib import Path
 
@@ -39,6 +40,16 @@ MAP_EMBED_SRC = REVIEWS.get(
     "mapEmbedSrc",
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28664363.395064767!2d-120.9932133287108!3d28.717519809660633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xadfede66cc9b47f9%3A0x84d4c0d46fb34a14!2sBreaking%20Ground%20Land%20Services%20and%20Demolition!5e0!3m2!1sen!2sus!4v1785159366164!5m2!1sen!2sus",
 )
+_MANIFEST_PATH = DATA / "image-manifest.json"
+IMAGE_MANIFEST: dict = {}
+if _MANIFEST_PATH.is_file():
+    IMAGE_MANIFEST = json.loads(_MANIFEST_PATH.read_text(encoding="utf-8"))
+
+TILE_SIZES = "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+CARD_SIZES = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+HERO_SIZES = "100vw"
+PAGE_HERO_SIZES = "(max-width: 900px) 100vw, 50vw"
+LCP_HERO = "/assets/images/hero/IMG_0078-hero.jpg"
 
 
 def p(path: str) -> str:
@@ -52,6 +63,92 @@ def esc(s: str) -> str:
     return html.escape(s, quote=True)
 
 
+def best_webp(path: str) -> str:
+    if not path:
+        return path
+    key = path if path.startswith("/") else "/" + path.lstrip("/")
+    if key.lower().endswith((".jpg", ".jpeg", ".png")):
+        webp_key = f"{key.rsplit('.', 1)[0]}.webp"
+        if webp_key in IMAGE_MANIFEST:
+            return webp_key
+    if key in IMAGE_MANIFEST:
+        return key
+    if key.lower().endswith((".jpg", ".jpeg", ".png")):
+        return f"{key.rsplit('.', 1)[0]}.webp"
+    return key
+
+
+def img_entry(path: str) -> dict:
+    key = best_webp(path)
+    return IMAGE_MANIFEST.get(
+        key,
+        {"src": key, "width": None, "height": None, "variants": {}},
+    )
+
+
+def img_responsive(
+    path: str,
+    alt: str = "",
+    *,
+    sizes: str = "100vw",
+    loading: str = "lazy",
+    fetchpriority: str | None = None,
+    width: int | None = None,
+    height: int | None = None,
+    klass: str = "",
+    decoding: str = "async",
+) -> str:
+    entry = img_entry(path)
+    variants = entry.get("variants") or {}
+    src = entry["src"]
+    if variants:
+        src = variants.get("800") or variants.get("1200") or list(variants.values())[-1]
+    attrs: list[str] = []
+    if klass:
+        attrs.append(f'class="{esc(klass)}"')
+    attrs.append(f'alt="{esc(alt)}"')
+    if variants:
+        parts = [f"{esc(variants[w])} {w}w" for w in sorted(variants, key=int)]
+        attrs.append(f'srcset="{", ".join(parts)}"')
+        attrs.append(f'sizes="{esc(sizes)}"')
+    attrs.append(f'src="{esc(src)}"')
+    w = width or entry.get("width")
+    h = height or entry.get("height")
+    if w:
+        attrs.append(f'width="{w}"')
+    if h:
+        attrs.append(f'height="{h}"')
+    if loading:
+        attrs.append(f'loading="{loading}"')
+    if fetchpriority:
+        attrs.append(f'fetchpriority="{fetchpriority}"')
+    attrs.append(f'decoding="{decoding}"')
+    return f"<img {' '.join(attrs)} />"
+
+
+def lcp_preload_href(path: str) -> str:
+    entry = img_entry(path)
+    variants = entry.get("variants") or {}
+    return variants.get("1200") or variants.get("800") or entry["src"]
+
+
+def rewrite_html_images(fragment: str, *, sizes: str = CARD_SIZES) -> str:
+    """Replace raw <img> tags with responsive webp markup."""
+
+    def upgrade(match: re.Match[str]) -> str:
+        tag = match.group(0)
+        src_m = re.search(r'src=["\']([^"\']+)["\']', tag, re.I)
+        if not src_m:
+            return tag
+        alt_m = re.search(r'alt=["\']([^"\']*)["\']', tag, re.I)
+        alt = alt_m.group(1) if alt_m else ""
+        loading_m = re.search(r'loading=["\']([^"\']+)["\']', tag, re.I)
+        loading = loading_m.group(1) if loading_m else "lazy"
+        return img_responsive(src_m.group(1), alt, sizes=sizes, loading=loading)
+
+    return re.sub(r"<img\b[^>]*/?>", upgrade, fragment, flags=re.I)
+
+
 def write(rel: str, content: str) -> None:
     path = ROOT / rel
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -61,7 +158,18 @@ def write(rel: str, content: str) -> None:
         content = content.replace("href='/", f"href='{BASE}/")
         content = content.replace('src="/', f'src="{BASE}/')
         content = content.replace("src='/", f"src='{BASE}/")
+        content = content.replace('data-bg="/', f'data-bg="{BASE}/')
         content = content.replace('content="/', f'content="{BASE}/')
+
+        def _prefix_srcset(match: re.Match[str]) -> str:
+            inner = re.sub(
+                r"(/assets/[^\s,]+)",
+                lambda u: f"{BASE}{u.group(1)}",
+                match.group(1),
+            )
+            return f'srcset="{inner}"'
+
+        content = re.sub(r'srcset="([^"]+)"', _prefix_srcset, content)
         content = content.replace('url(/', f"url({BASE}/")
         content = content.replace(
             'action="https://formspree.io',
@@ -272,6 +380,16 @@ def schema_business(extra: list | None = None) -> str:
     return f'<script type="application/ld+json">\n{json.dumps(payload, indent=2)}\n</script>'
 
 
+def chrome_partial(name: str) -> str:
+    """Read header/footer and apply siteBase for inlined chrome."""
+    text = (ROOT / name).read_text(encoding="utf-8")
+    if BASE:
+        text = re.sub(rf"(?:{re.escape(BASE)})+/", "/", text)
+        text = text.replace('href="/', f'href="{BASE}/')
+        text = text.replace('src="/', f'src="{BASE}/')
+    return text.strip()
+
+
 def head(
     title: str,
     description: str,
@@ -280,8 +398,9 @@ def head(
     og_image: str | None = None,
     breadcrumbs: list[tuple[str, str]] | None = None,
     extra_schema: list | None = None,
+    lcp_preload: str | None = None,
 ) -> str:
-    img = DOMAIN + (og_image or OG)
+    img = DOMAIN + best_webp(og_image or OG)
     can = canonical if canonical.startswith("http") else DOMAIN + canonical
     crumbs = breadcrumbs or [("Home", "/")]
     crumb_schema = {
@@ -294,6 +413,12 @@ def head(
     }
     extras = list(extra_schema or [])
     extras.append(crumb_schema)
+    preload = ""
+    if lcp_preload:
+        preload = (
+            f'  <link rel="preload" as="image" href="{esc(lcp_preload_href(lcp_preload))}" '
+            f'fetchpriority="high" />\n'
+        )
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -324,22 +449,25 @@ def head(
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/cropped-Logo-Square-192x192.png" />
   <link rel="apple-touch-icon" href="/assets/icons/cropped-Logo-Square-192x192.png" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site summary" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=nav1" />
+  {preload}  <link rel="stylesheet" href="/assets/css/style.css?v=nav3" />
   {schema_business(extras)}
 </head>
 <body>
-  <div id="site-header-include"></div>
+  {chrome_partial("header.html")}
+  <main id="main-content">
 """
 
 
 def foot() -> str:
-    return """
-  <div id="site-footer-include"></div>
-  <script src="/includes.js?v=nav1" defer></script>
-  <script src="/assets/js/main.js?v=reveal2" defer></script>
+    return f"""
+  </main>
+  {chrome_partial("footer.html")}
+  <script src="/includes.js?v=nav2" defer></script>
+  <script src="/assets/js/main.js?v=reveal3" defer></script>
 </body>
 </html>
 """
@@ -445,7 +573,7 @@ def page_hero(
             f'<p class="page-hero__credit">{esc(image_credit)}</p>' if image_credit else ""
         )
         media_html = f"""
-    <div class="page-hero__media"><img src="{esc(image)}" alt="{esc(alt)}" width="1600" height="900" /></div>
+    <div class="page-hero__media">{img_responsive(image, alt, sizes=PAGE_HERO_SIZES, loading="eager", width=1600, height=900)}</div>
     <div class="page-hero__overlay"></div>
     {credit_html}"""
     klass = "page-hero page-hero--compact" if compact else "page-hero"
@@ -504,7 +632,7 @@ def cta_band(headline: str, blurb: str, service: str = "") -> str:
     return f"""
   <section class="cta-band cta-band--parallax" data-parallax-band aria-label="Request an estimate">
     <div class="cta-band__bg" aria-hidden="true">
-      <img src="/assets/images/projects/IMG_9164-scaled.jpg" alt="" width="1600" height="1200" loading="lazy" decoding="async" />
+      {img_responsive("/assets/images/projects/IMG_9164-scaled.jpg", "", sizes=HERO_SIZES, width=1600, height=1200)}
     </div>
     <div class="cta-band__overlay" aria-hidden="true"></div>
     <div class="container cta-band__inner">
@@ -818,7 +946,7 @@ def build_home() -> None:
     tiles = "".join(
         f"""
         <a class="service-tile reveal" href="{esc(s['path'])}">
-          <img src="{esc(s['heroImage'])}" alt="" loading="lazy" />
+          {img_responsive(s['heroImage'], "", sizes=TILE_SIZES)}
           <div class="service-tile__body">
             <h3>{esc(s['navLabel'])}</h3>
             <p>{esc(s['meta'][:110])}…</p>
@@ -829,7 +957,7 @@ def build_home() -> None:
     projects = "".join(
         f"""
         <article class="project-card reveal">
-          <a href="{esc(p['path'])}"><img src="{esc(p['image'])}" alt="{esc(p['h1'])}" loading="lazy" /></a>
+          <a href="{esc(p['path'])}">{img_responsive(p['image'], p['h1'], sizes=CARD_SIZES)}</a>
           <div class="project-card__body">
             <p class="project-meta">{esc(p['city'])} · {esc(p['service'])}</p>
             <h3><a href="{esc(p['path'])}">{esc(p['h1'])}</a></h3>
@@ -844,19 +972,20 @@ def build_home() -> None:
             "Owner-operated mobile home demolition, shed removal, land clearing, and site work based in Kathleen, FL. Free estimates.",
             "/",
             breadcrumbs=[("Home", "/")],
+            lcp_preload=LCP_HERO,
         )
         + f"""
   <section class="hero-stage">
     <div class="hero">
       <div class="hero-slides" aria-hidden="true">
         <div class="hero-slide active">
-          <img class="hero-slide-bg ken-burns hero-lcp-img" src="/assets/images/hero/IMG_0078-hero.jpg" alt="Breaking Ground Land Services and Demolition — Guy and Andrew with excavator and dump trucks" width="2400" height="1799" fetchpriority="high" decoding="async" />
+          {img_responsive(LCP_HERO, "Breaking Ground Land Services and Demolition — Guy and Andrew with excavator and dump trucks", sizes=HERO_SIZES, loading="eager", fetchpriority="high", klass="hero-slide-bg ken-burns hero-lcp-img", width=2400, height=1799)}
         </div>
         <div class="hero-slide">
-          <div class="hero-slide-bg ken-burns bg-hero-slide-2"></div>
+          <div class="hero-slide-bg ken-burns" data-bg="{esc(best_webp('/assets/images/hero/IMG_8286-scaled.jpg'))}"></div>
         </div>
         <div class="hero-slide">
-          <div class="hero-slide-bg ken-burns bg-hero-slide-3"></div>
+          <div class="hero-slide-bg ken-burns" data-bg="{esc(best_webp('/assets/images/hero/IMG_9083-scaled.jpg'))}"></div>
         </div>
       </div>
       <div class="hero__overlay"></div>
@@ -894,10 +1023,10 @@ def build_home() -> None:
           <li><span class="mark">03</span><span>Real project photos from Polk County &amp; beyond</span></li>
         </ul>
       </div>
-      <div class="media-stage reveal"><img src="/assets/images/projects/IMG_8345-scaled.jpg" alt="Demolition and site work in progress" /></div>
+      <div class="media-stage reveal">{img_responsive("/assets/images/projects/IMG_8345-scaled.jpg", "Demolition and site work in progress", sizes=PAGE_HERO_SIZES)}</div>
     </div>
   </section>
-  <section class="section-pad" style="background:#e2e8f0;">
+  <section class="section-pad section-pad--muted">
     <div class="container">
       <p class="section-eyebrow">Services</p>
       <h2>What we take on</h2>
@@ -949,7 +1078,7 @@ def build_about() -> None:
 <div><strong>2</strong><span>Owner-operators</span></div>
 </div>
 </div>
-<div class="media-stage reveal"><img src="{about_photo}" alt="Guy and Andrew McMillen standing in front of their excavator and haul trucks" /></div>
+<div class="media-stage reveal">{img_responsive(about_photo, "Guy and Andrew McMillen standing in front of their excavator and haul trucks", sizes=PAGE_HERO_SIZES)}</div>
 </div></section>
 """ + related_links("/about/") + cta_band("Talk with the owners", "Call or send project photos for a free estimate.", "Demolition")
     write(
@@ -1028,7 +1157,7 @@ def build_contact() -> None:
 
 def build_services_hub() -> None:
     cards = "".join(
-        f'<a class="service-tile reveal" href="{esc(s["path"])}"><img src="{esc(s["heroImage"])}" alt="" loading="lazy" /><div class="service-tile__body"><h3>{esc(s["navLabel"])}</h3><p>{esc(s["meta"][:120])}…</p></div></a>'
+        f'<a class="service-tile reveal" href="{esc(s["path"])}">{img_responsive(s["heroImage"], "", sizes=TILE_SIZES)}<div class="service-tile__body"><h3>{esc(s["navLabel"])}</h3><p>{esc(s["meta"][:120])}…</p></div></a>'
         for s in SERVICES
     )
     body = f"""
@@ -1264,8 +1393,7 @@ def build_service_pages() -> None:
 
         lead_figure = (
             f'<figure class="service-lead-photo">'
-            f'<img src="{esc(lead["src"])}" alt="{esc(lead.get("caption") or s["h1"])}" '
-            f'title="{esc(lead.get("caption") or s["h1"])}" loading="eager" width="1200" height="675" />'
+            f'{img_responsive(lead["src"], lead.get("caption") or s["h1"], sizes=HERO_SIZES, loading="eager", width=1200, height=675)}'
             f'<figcaption>{esc(lead.get("caption") or featured_caption)}</figcaption>'
             f"</figure>"
         )
@@ -1285,8 +1413,7 @@ def build_service_pages() -> None:
         if rest_photos:
             shots = "".join(
                 f'<figure class="service-shot">'
-                f'<img src="{esc(item["src"])}" alt="{esc(item.get("caption") or s["h1"])}" '
-                f'title="{esc(item.get("caption") or s["h1"])}" loading="lazy" />'
+                f'{img_responsive(item["src"], item.get("caption") or s["h1"], sizes=CARD_SIZES)}'
                 f'<figcaption>{esc(item.get("caption") or "Job photo")}</figcaption>'
                 f"</figure>"
                 for item in rest_photos
@@ -1303,8 +1430,7 @@ def build_service_pages() -> None:
         if comparison_gallery:
             cmp_shots = "".join(
                 f'<figure class="service-shot">'
-                f'<img src="{esc(item["src"])}" alt="{esc(item.get("caption") or "Stump grinding example")}" '
-                f'title="{esc(item.get("caption") or "Stump grinding example")}" loading="lazy" />'
+                f'{img_responsive(item["src"], item.get("caption") or "Stump grinding example", sizes=CARD_SIZES)}'
                 f'<figcaption>{esc(item.get("caption") or "Stump grinding example")}</figcaption>'
                 f"</figure>"
                 for item in comparison_gallery
@@ -1430,7 +1556,7 @@ def _mirror_figure(item: dict, fallback_alt: str) -> str:
     caption = item.get("caption") or fallback_alt
     return (
         f'<figure class="project-mirror__media">'
-        f'<img src="{esc(item["src"])}" alt="{esc(caption)}" title="{esc(caption)}" loading="lazy" />'
+        f'{img_responsive(item["src"], caption, sizes=PAGE_HERO_SIZES)}'
         f'<figcaption>{esc(caption)}</figcaption>'
         f"</figure>"
     )
@@ -1440,7 +1566,7 @@ def build_projects() -> None:
     global PROJECTS
     PROJECTS = json.loads((DATA / "projects.json").read_text(encoding="utf-8"))
     cards = "".join(
-        f"""<article class="project-card reveal"><a href="{esc(p['path'])}"><img src="{esc(p.get('composite') or p['image'])}" alt="" loading="lazy" /></a>
+        f"""<article class="project-card reveal"><a href="{esc(p['path'])}">{img_responsive(p.get('composite') or p['image'], p['h1'], sizes=CARD_SIZES)}</a>
         <div class="project-card__body"><p class="project-meta">{esc(p['city'])} · {esc(p['service'])}</p>
         <h3><a href="{esc(p['path'])}">{esc(p['h1'])}</a></h3><p>{esc(p['summary'])}</p></div></article>"""
         for p in PROJECTS
@@ -1484,6 +1610,7 @@ def build_projects() -> None:
         article_html = article_path.read_text(encoding="utf-8") if article_path.is_file() else (
             f"<p>{esc(p['summary'])}</p><h3>Challenge</h3><p>{esc(p['challenge'])}</p>"
         )
+        article_html = rewrite_html_images(article_html)
         intro, sections = _split_article_sections(article_html)
         main_sections: list[tuple[str, str]] = []
         seo_sections: list[tuple[str, str]] = []
@@ -1601,15 +1728,14 @@ def build_projects() -> None:
       <h2 class="project-gallery-title">Stump grinding vs stump removal</h2>
       <p class="project-meta">Grinding leaves roots and chips in the ground. Full excavation pulls the mass, hauls it away, and leaves a hole you can backfill for a usable yard.</p>
       <figure class="project-composite">
-        <img src="{esc(p['comparisonComposite'])}" alt="Stump grinding versus stump removal comparison" loading="lazy" width="1600" height="900" />
+        {img_responsive(p['comparisonComposite'], "Stump grinding versus stump removal comparison", sizes=HERO_SIZES, width=1600, height=900)}
         <figcaption>Left: typical stump grinding leftovers. Right: Breaking Ground excavation and haul-off results.</figcaption>
       </figure>
     </section>"""
 
         leftovers = "".join(
             f'<figure class="project-shot">'
-            f'<img src="{esc(item["src"])}" alt="{esc(item.get("caption") or p["h1"])}" '
-            f'title="{esc(item.get("caption") or p["h1"])}" loading="lazy" />'
+            f'{img_responsive(item["src"], item.get("caption") or p["h1"], sizes=CARD_SIZES)}'
             f'<figcaption><span class="project-shot__label">{esc(item.get("caption") or "")}</span></figcaption>'
             f"</figure>"
             for item in photo_queue
@@ -1641,7 +1767,7 @@ def build_projects() -> None:
 <section class="section-pad project-case">
   <div class="container">
     <figure class="project-composite">
-      <img src="{esc(hero_src)}" alt="{esc(p['h1'])} before process after composite" title="{composite_blurb}" width="1600" height="900" />
+      {img_responsive(hero_src, f"{p['h1']} before process after composite", sizes=HERO_SIZES, width=1600, height=900)}
       <figcaption>{composite_blurb}</figcaption>
     </figure>
     <div class="project-case__story">
@@ -1863,7 +1989,7 @@ def build_service_areas() -> None:
             credit_line = f"Photo via Wikimedia Commons ({lic})"
         body_figure = f"""
 <figure class="area-local-shot">
-  <img src="{esc(hero_img)}" alt="{esc(short)}, Florida" title="{esc(short)}, Florida" loading="lazy" width="1600" height="900" />
+  {img_responsive(hero_img, f"{short}, Florida", sizes=HERO_SIZES, width=1600, height=900)}
   <figcaption><strong>{esc(short)}, Florida</strong> — local landmark / area photo. {esc(credit_line)}.</figcaption>
 </figure>
 """
@@ -1983,10 +2109,18 @@ Contact: {PHONE} | {EMAIL}
 Site: {DOMAIN}
 
 ## Primary services
-- Mobile home demolition: {DOMAIN}/mobile-home-demolition/
-- Demolition: {DOMAIN}/demolition/
-- Land clearing: {DOMAIN}/land-clearing/
-- Stump removal: {DOMAIN}/stump-removal/
+- [Mobile home demolition]({DOMAIN}/mobile-home-demolition/)
+- [Demolition]({DOMAIN}/demolition/)
+- [Land clearing]({DOMAIN}/land-clearing/)
+- [Stump removal]({DOMAIN}/stump-removal/)
+- [Tree removal]({DOMAIN}/tree-removal/)
+- [Storm cleanup]({DOMAIN}/storm-debris-cleanup/)
+
+## Key pages
+- [Request a free estimate]({DOMAIN}/contact/)
+- [About Guy and Andrew]({DOMAIN}/about/)
+- [Project gallery]({DOMAIN}/projects/)
+- [Service areas]({DOMAIN}/service-areas/)
 
 ## Notes
 - Founded 2024 (not a GC marketing unrestricted building demolition)
@@ -2120,6 +2254,7 @@ def apply_base_to_chrome() -> None:
 
 
 def main() -> None:
+    apply_base_to_chrome()
     build_home()
     build_about()
     build_contact()
@@ -2133,7 +2268,6 @@ def main() -> None:
     build_redirects()
     build_robots_llms()
     build_docs()
-    apply_base_to_chrome()
     print("DONE")
     if BASE:
         print(f"Preview base: {BASE}/ -> https://nicholasjknight.github.io{BASE}/")

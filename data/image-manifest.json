@@ -1,0 +1,3646 @@
+{
+  "/assets/images/areas/alachua-county-fl.webp": {
+    "src": "/assets/images/areas/alachua-county-fl.webp",
+    "width": 1270,
+    "height": 958,
+    "variants": {}
+  },
+  "/assets/images/areas/arcadia-fl.webp": {
+    "src": "/assets/images/areas/arcadia-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/arcadia-fl-480w.webp",
+      "800": "/assets/images/areas/arcadia-fl-800w.webp",
+      "1200": "/assets/images/areas/arcadia-fl-1200w.webp",
+      "1600": "/assets/images/areas/arcadia-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/auburndale-fl.webp": {
+    "src": "/assets/images/areas/auburndale-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/auburndale-fl-480w.webp",
+      "800": "/assets/images/areas/auburndale-fl-800w.webp",
+      "1200": "/assets/images/areas/auburndale-fl-1200w.webp",
+      "1600": "/assets/images/areas/auburndale-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/bartow-fl.webp": {
+    "src": "/assets/images/areas/bartow-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/bartow-fl-480w.webp",
+      "800": "/assets/images/areas/bartow-fl-800w.webp",
+      "1200": "/assets/images/areas/bartow-fl-1200w.webp",
+      "1600": "/assets/images/areas/bartow-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/bradenton-fl.webp": {
+    "src": "/assets/images/areas/bradenton-fl.webp",
+    "width": 768,
+    "height": 576,
+    "variants": {}
+  },
+  "/assets/images/areas/brandon-fl.webp": {
+    "src": "/assets/images/areas/brandon-fl.webp",
+    "width": 1600,
+    "height": 1066,
+    "variants": {
+      "480": "/assets/images/areas/brandon-fl-480w.webp",
+      "800": "/assets/images/areas/brandon-fl-800w.webp",
+      "1200": "/assets/images/areas/brandon-fl-1200w.webp",
+      "1600": "/assets/images/areas/brandon-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/brooksville-fl.webp": {
+    "src": "/assets/images/areas/brooksville-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/brooksville-fl-480w.webp",
+      "800": "/assets/images/areas/brooksville-fl-800w.webp",
+      "1200": "/assets/images/areas/brooksville-fl-1200w.webp",
+      "1600": "/assets/images/areas/brooksville-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/cape-coral-fl.webp": {
+    "src": "/assets/images/areas/cape-coral-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/cape-coral-fl-480w.webp",
+      "800": "/assets/images/areas/cape-coral-fl-800w.webp",
+      "1200": "/assets/images/areas/cape-coral-fl-1200w.webp",
+      "1600": "/assets/images/areas/cape-coral-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/clearwater-fl.webp": {
+    "src": "/assets/images/areas/clearwater-fl.webp",
+    "width": 1600,
+    "height": 1094,
+    "variants": {
+      "480": "/assets/images/areas/clearwater-fl-480w.webp",
+      "800": "/assets/images/areas/clearwater-fl-800w.webp",
+      "1200": "/assets/images/areas/clearwater-fl-1200w.webp",
+      "1600": "/assets/images/areas/clearwater-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/clermont-fl.webp": {
+    "src": "/assets/images/areas/clermont-fl.webp",
+    "width": 1600,
+    "height": 1142,
+    "variants": {
+      "480": "/assets/images/areas/clermont-fl-480w.webp",
+      "800": "/assets/images/areas/clermont-fl-800w.webp",
+      "1200": "/assets/images/areas/clermont-fl-1200w.webp",
+      "1600": "/assets/images/areas/clermont-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/dade-city-fl.webp": {
+    "src": "/assets/images/areas/dade-city-fl.webp",
+    "width": 1600,
+    "height": 898,
+    "variants": {
+      "480": "/assets/images/areas/dade-city-fl-480w.webp",
+      "800": "/assets/images/areas/dade-city-fl-800w.webp",
+      "1200": "/assets/images/areas/dade-city-fl-1200w.webp",
+      "1600": "/assets/images/areas/dade-city-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/davenport-fl.webp": {
+    "src": "/assets/images/areas/davenport-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/davenport-fl-480w.webp",
+      "800": "/assets/images/areas/davenport-fl-800w.webp",
+      "1200": "/assets/images/areas/davenport-fl-1200w.webp",
+      "1600": "/assets/images/areas/davenport-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/daytona-beach-fl.webp": {
+    "src": "/assets/images/areas/daytona-beach-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/daytona-beach-fl-480w.webp",
+      "800": "/assets/images/areas/daytona-beach-fl-800w.webp",
+      "1200": "/assets/images/areas/daytona-beach-fl-1200w.webp",
+      "1600": "/assets/images/areas/daytona-beach-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/duval-county-fl.webp": {
+    "src": "/assets/images/areas/duval-county-fl.webp",
+    "width": 1600,
+    "height": 1070,
+    "variants": {
+      "480": "/assets/images/areas/duval-county-fl-480w.webp",
+      "800": "/assets/images/areas/duval-county-fl-800w.webp",
+      "1200": "/assets/images/areas/duval-county-fl-1200w.webp",
+      "1600": "/assets/images/areas/duval-county-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/fort-meade-fl.webp": {
+    "src": "/assets/images/areas/fort-meade-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/fort-meade-fl-480w.webp",
+      "800": "/assets/images/areas/fort-meade-fl-800w.webp",
+      "1200": "/assets/images/areas/fort-meade-fl-1200w.webp",
+      "1600": "/assets/images/areas/fort-meade-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/fort-myers-fl.webp": {
+    "src": "/assets/images/areas/fort-myers-fl.webp",
+    "width": 1600,
+    "height": 960,
+    "variants": {
+      "480": "/assets/images/areas/fort-myers-fl-480w.webp",
+      "800": "/assets/images/areas/fort-myers-fl-800w.webp",
+      "1200": "/assets/images/areas/fort-myers-fl-1200w.webp",
+      "1600": "/assets/images/areas/fort-myers-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/frostproof-fl.webp": {
+    "src": "/assets/images/areas/frostproof-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/frostproof-fl-480w.webp",
+      "800": "/assets/images/areas/frostproof-fl-800w.webp",
+      "1200": "/assets/images/areas/frostproof-fl-1200w.webp",
+      "1600": "/assets/images/areas/frostproof-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/gainesville-fl.webp": {
+    "src": "/assets/images/areas/gainesville-fl.webp",
+    "width": 1600,
+    "height": 1066,
+    "variants": {
+      "480": "/assets/images/areas/gainesville-fl-480w.webp",
+      "800": "/assets/images/areas/gainesville-fl-800w.webp",
+      "1200": "/assets/images/areas/gainesville-fl-1200w.webp",
+      "1600": "/assets/images/areas/gainesville-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/haines-city-fl.webp": {
+    "src": "/assets/images/areas/haines-city-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/haines-city-fl-480w.webp",
+      "800": "/assets/images/areas/haines-city-fl-800w.webp",
+      "1200": "/assets/images/areas/haines-city-fl-1200w.webp",
+      "1600": "/assets/images/areas/haines-city-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/hernando-county-fl.webp": {
+    "src": "/assets/images/areas/hernando-county-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/hernando-county-fl-480w.webp",
+      "800": "/assets/images/areas/hernando-county-fl-800w.webp",
+      "1200": "/assets/images/areas/hernando-county-fl-1200w.webp",
+      "1600": "/assets/images/areas/hernando-county-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/hillsborough-county-fl.webp": {
+    "src": "/assets/images/areas/hillsborough-county-fl.webp",
+    "width": 1600,
+    "height": 920,
+    "variants": {
+      "480": "/assets/images/areas/hillsborough-county-fl-480w.webp",
+      "800": "/assets/images/areas/hillsborough-county-fl-800w.webp",
+      "1200": "/assets/images/areas/hillsborough-county-fl-1200w.webp",
+      "1600": "/assets/images/areas/hillsborough-county-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/jacksonville-fl.webp": {
+    "src": "/assets/images/areas/jacksonville-fl.webp",
+    "width": 1600,
+    "height": 1030,
+    "variants": {
+      "480": "/assets/images/areas/jacksonville-fl-480w.webp",
+      "800": "/assets/images/areas/jacksonville-fl-800w.webp",
+      "1200": "/assets/images/areas/jacksonville-fl-1200w.webp",
+      "1600": "/assets/images/areas/jacksonville-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/kathleen-fl.webp": {
+    "src": "/assets/images/areas/kathleen-fl.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": {}
+  },
+  "/assets/images/areas/kissimmee-fl.webp": {
+    "src": "/assets/images/areas/kissimmee-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/kissimmee-fl-480w.webp",
+      "800": "/assets/images/areas/kissimmee-fl-800w.webp",
+      "1200": "/assets/images/areas/kissimmee-fl-1200w.webp",
+      "1600": "/assets/images/areas/kissimmee-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/lake-county-fl.webp": {
+    "src": "/assets/images/areas/lake-county-fl.webp",
+    "width": 1600,
+    "height": 1066,
+    "variants": {
+      "480": "/assets/images/areas/lake-county-fl-480w.webp",
+      "800": "/assets/images/areas/lake-county-fl-800w.webp",
+      "1200": "/assets/images/areas/lake-county-fl-1200w.webp",
+      "1600": "/assets/images/areas/lake-county-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/lake-wales-fl.webp": {
+    "src": "/assets/images/areas/lake-wales-fl.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/areas/lake-wales-fl-480w.webp",
+      "800": "/assets/images/areas/lake-wales-fl-800w.webp",
+      "1200": "/assets/images/areas/lake-wales-fl-1200w.webp",
+      "1600": "/assets/images/areas/lake-wales-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/lakeland-fl.webp": {
+    "src": "/assets/images/areas/lakeland-fl.webp",
+    "width": 1600,
+    "height": 376,
+    "variants": {
+      "480": "/assets/images/areas/lakeland-fl-480w.webp",
+      "800": "/assets/images/areas/lakeland-fl-800w.webp",
+      "1200": "/assets/images/areas/lakeland-fl-1200w.webp",
+      "1600": "/assets/images/areas/lakeland-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/lee-county-fl.webp": {
+    "src": "/assets/images/areas/lee-county-fl.webp",
+    "width": 1500,
+    "height": 996,
+    "variants": {}
+  },
+  "/assets/images/areas/leesburg-fl.webp": {
+    "src": "/assets/images/areas/leesburg-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/leesburg-fl-480w.webp",
+      "800": "/assets/images/areas/leesburg-fl-800w.webp",
+      "1200": "/assets/images/areas/leesburg-fl-1200w.webp",
+      "1600": "/assets/images/areas/leesburg-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/manatee-county-fl.webp": {
+    "src": "/assets/images/areas/manatee-county-fl.webp",
+    "width": 1600,
+    "height": 1066,
+    "variants": {
+      "480": "/assets/images/areas/manatee-county-fl-480w.webp",
+      "800": "/assets/images/areas/manatee-county-fl-800w.webp",
+      "1200": "/assets/images/areas/manatee-county-fl-1200w.webp",
+      "1600": "/assets/images/areas/manatee-county-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/marion-county-fl.webp": {
+    "src": "/assets/images/areas/marion-county-fl.webp",
+    "width": 1600,
+    "height": 1066,
+    "variants": {
+      "480": "/assets/images/areas/marion-county-fl-480w.webp",
+      "800": "/assets/images/areas/marion-county-fl-800w.webp",
+      "1200": "/assets/images/areas/marion-county-fl-1200w.webp",
+      "1600": "/assets/images/areas/marion-county-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/melbourne-fl.webp": {
+    "src": "/assets/images/areas/melbourne-fl.webp",
+    "width": 804,
+    "height": 1116,
+    "variants": {}
+  },
+  "/assets/images/areas/mulberry-fl.webp": {
+    "src": "/assets/images/areas/mulberry-fl.webp",
+    "width": 750,
+    "height": 500,
+    "variants": {}
+  },
+  "/assets/images/areas/naples-fl.webp": {
+    "src": "/assets/images/areas/naples-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/naples-fl-480w.webp",
+      "800": "/assets/images/areas/naples-fl-800w.webp",
+      "1200": "/assets/images/areas/naples-fl-1200w.webp",
+      "1600": "/assets/images/areas/naples-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/ocala-fl.webp": {
+    "src": "/assets/images/areas/ocala-fl.webp",
+    "width": 1600,
+    "height": 1066,
+    "variants": {
+      "480": "/assets/images/areas/ocala-fl-480w.webp",
+      "800": "/assets/images/areas/ocala-fl-800w.webp",
+      "1200": "/assets/images/areas/ocala-fl-1200w.webp",
+      "1600": "/assets/images/areas/ocala-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/orange-county-fl.webp": {
+    "src": "/assets/images/areas/orange-county-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/orange-county-fl-480w.webp",
+      "800": "/assets/images/areas/orange-county-fl-800w.webp",
+      "1200": "/assets/images/areas/orange-county-fl-1200w.webp",
+      "1600": "/assets/images/areas/orange-county-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/orlando-fl.webp": {
+    "src": "/assets/images/areas/orlando-fl.webp",
+    "width": 1600,
+    "height": 960,
+    "variants": {
+      "480": "/assets/images/areas/orlando-fl-480w.webp",
+      "800": "/assets/images/areas/orlando-fl-800w.webp",
+      "1200": "/assets/images/areas/orlando-fl-1200w.webp",
+      "1600": "/assets/images/areas/orlando-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/osceola-county-fl.webp": {
+    "src": "/assets/images/areas/osceola-county-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/osceola-county-fl-480w.webp",
+      "800": "/assets/images/areas/osceola-county-fl-800w.webp",
+      "1200": "/assets/images/areas/osceola-county-fl-1200w.webp",
+      "1600": "/assets/images/areas/osceola-county-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/pasco-county-fl.webp": {
+    "src": "/assets/images/areas/pasco-county-fl.webp",
+    "width": 1600,
+    "height": 904,
+    "variants": {
+      "480": "/assets/images/areas/pasco-county-fl-480w.webp",
+      "800": "/assets/images/areas/pasco-county-fl-800w.webp",
+      "1200": "/assets/images/areas/pasco-county-fl-1200w.webp",
+      "1600": "/assets/images/areas/pasco-county-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/plant-city-fl.webp": {
+    "src": "/assets/images/areas/plant-city-fl.webp",
+    "width": 420,
+    "height": 234,
+    "variants": {}
+  },
+  "/assets/images/areas/polk-city-fl.webp": {
+    "src": "/assets/images/areas/polk-city-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/polk-city-fl-480w.webp",
+      "800": "/assets/images/areas/polk-city-fl-800w.webp",
+      "1200": "/assets/images/areas/polk-city-fl-1200w.webp",
+      "1600": "/assets/images/areas/polk-city-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/polk-county-fl.webp": {
+    "src": "/assets/images/areas/polk-county-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/polk-county-fl-480w.webp",
+      "800": "/assets/images/areas/polk-county-fl-800w.webp",
+      "1200": "/assets/images/areas/polk-county-fl-1200w.webp",
+      "1600": "/assets/images/areas/polk-county-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/sarasota-fl.webp": {
+    "src": "/assets/images/areas/sarasota-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/sarasota-fl-480w.webp",
+      "800": "/assets/images/areas/sarasota-fl-800w.webp",
+      "1200": "/assets/images/areas/sarasota-fl-1200w.webp",
+      "1600": "/assets/images/areas/sarasota-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/sebring-fl.webp": {
+    "src": "/assets/images/areas/sebring-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {}
+  },
+  "/assets/images/areas/st-petersburg-fl.webp": {
+    "src": "/assets/images/areas/st-petersburg-fl.webp",
+    "width": 1600,
+    "height": 898,
+    "variants": {
+      "480": "/assets/images/areas/st-petersburg-fl-480w.webp",
+      "800": "/assets/images/areas/st-petersburg-fl-800w.webp",
+      "1200": "/assets/images/areas/st-petersburg-fl-1200w.webp",
+      "1600": "/assets/images/areas/st-petersburg-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/tampa-fl.webp": {
+    "src": "/assets/images/areas/tampa-fl.webp",
+    "width": 1600,
+    "height": 1066,
+    "variants": {
+      "480": "/assets/images/areas/tampa-fl-480w.webp",
+      "800": "/assets/images/areas/tampa-fl-800w.webp",
+      "1200": "/assets/images/areas/tampa-fl-1200w.webp",
+      "1600": "/assets/images/areas/tampa-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/the-villages-fl.webp": {
+    "src": "/assets/images/areas/the-villages-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/the-villages-fl-480w.webp",
+      "800": "/assets/images/areas/the-villages-fl-800w.webp",
+      "1200": "/assets/images/areas/the-villages-fl-1200w.webp",
+      "1600": "/assets/images/areas/the-villages-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/wauchula-fl.webp": {
+    "src": "/assets/images/areas/wauchula-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/wauchula-fl-480w.webp",
+      "800": "/assets/images/areas/wauchula-fl-800w.webp",
+      "1200": "/assets/images/areas/wauchula-fl-1200w.webp",
+      "1600": "/assets/images/areas/wauchula-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/winter-haven-fl.webp": {
+    "src": "/assets/images/areas/winter-haven-fl.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/areas/winter-haven-fl-480w.webp",
+      "800": "/assets/images/areas/winter-haven-fl-800w.webp",
+      "1200": "/assets/images/areas/winter-haven-fl-1200w.webp",
+      "1600": "/assets/images/areas/winter-haven-fl-1600w.webp"
+    }
+  },
+  "/assets/images/areas/zephyrhills-fl.webp": {
+    "src": "/assets/images/areas/zephyrhills-fl.webp",
+    "width": 1600,
+    "height": 1066,
+    "variants": {
+      "480": "/assets/images/areas/zephyrhills-fl-480w.webp",
+      "800": "/assets/images/areas/zephyrhills-fl-800w.webp",
+      "1200": "/assets/images/areas/zephyrhills-fl-1200w.webp",
+      "1600": "/assets/images/areas/zephyrhills-fl-1600w.webp"
+    }
+  },
+  "/assets/images/brand/Breaking-Ground-Land-Services-and-Demolition-01.webp": {
+    "src": "/assets/images/brand/Breaking-Ground-Land-Services-and-Demolition-01.webp",
+    "width": 991,
+    "height": 418,
+    "variants": {
+      "480": "/assets/images/brand/Breaking-Ground-Land-Services-and-Demolition-01-480w.webp",
+      "800": "/assets/images/brand/Breaking-Ground-Land-Services-and-Demolition-01-800w.webp",
+      "1600": "/assets/images/brand/Breaking-Ground-Land-Services-and-Demolition-01-1600w.webp"
+    }
+  },
+  "/assets/images/brand/guy-and-andrew-equipment.webp": {
+    "src": "/assets/images/brand/guy-and-andrew-equipment.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/brand/guy-and-andrew-equipment-480w.webp",
+      "800": "/assets/images/brand/guy-and-andrew-equipment-800w.webp",
+      "1200": "/assets/images/brand/guy-and-andrew-equipment-1200w.webp",
+      "1600": "/assets/images/brand/guy-and-andrew-equipment-1600w.webp"
+    }
+  },
+  "/assets/images/brand/guy-and-andrew-glasses.webp": {
+    "src": "/assets/images/brand/guy-and-andrew-glasses.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/brand/guy-and-andrew-glasses-480w.webp",
+      "800": "/assets/images/brand/guy-and-andrew-glasses-800w.webp",
+      "1200": "/assets/images/brand/guy-and-andrew-glasses-1200w.webp",
+      "1600": "/assets/images/brand/guy-and-andrew-glasses-1600w.webp"
+    }
+  },
+  "/assets/images/brand/logo-96.webp": {
+    "src": "/assets/images/brand/logo-96.webp",
+    "width": 96,
+    "height": 96,
+    "variants": {}
+  },
+  "/assets/images/brand/Logo-Square-scaled-1024x1024.webp": {
+    "src": "/assets/images/brand/Logo-Square-scaled-1024x1024.webp",
+    "width": 1024,
+    "height": 1024,
+    "variants": {
+      "480": "/assets/images/brand/Logo-Square-scaled-1024x1024-480w.webp",
+      "800": "/assets/images/brand/Logo-Square-scaled-1024x1024-800w.webp",
+      "1600": "/assets/images/brand/Logo-Square-scaled-1024x1024-1600w.webp"
+    }
+  },
+  "/assets/images/brand/Logo-with-white.webp": {
+    "src": "/assets/images/brand/Logo-with-white.webp",
+    "width": 991,
+    "height": 418,
+    "variants": {
+      "480": "/assets/images/brand/Logo-with-white-480w.webp",
+      "800": "/assets/images/brand/Logo-with-white-800w.webp",
+      "1600": "/assets/images/brand/Logo-with-white-1600w.webp"
+    }
+  },
+  "/assets/images/hero/IMG_0078-hero.webp": {
+    "src": "/assets/images/hero/IMG_0078-hero.webp",
+    "width": 1920,
+    "height": 1440,
+    "variants": {
+      "480": "/assets/images/hero/IMG_0078-hero-480w.webp",
+      "800": "/assets/images/hero/IMG_0078-hero-800w.webp",
+      "1200": "/assets/images/hero/IMG_0078-hero-1200w.webp",
+      "1600": "/assets/images/hero/IMG_0078-hero-1600w.webp"
+    }
+  },
+  "/assets/images/hero/IMG_0078-scaled.webp": {
+    "src": "/assets/images/hero/IMG_0078-scaled.webp",
+    "width": 1920,
+    "height": 1440,
+    "variants": {
+      "480": "/assets/images/hero/IMG_0078-scaled-480w.webp",
+      "800": "/assets/images/hero/IMG_0078-scaled-800w.webp",
+      "1200": "/assets/images/hero/IMG_0078-scaled-1200w.webp",
+      "1600": "/assets/images/hero/IMG_0078-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/hero/IMG_0078-source.webp": {
+    "src": "/assets/images/hero/IMG_0078-source.webp",
+    "width": 1920,
+    "height": 1440,
+    "variants": {
+      "480": "/assets/images/hero/IMG_0078-source-480w.webp",
+      "800": "/assets/images/hero/IMG_0078-source-800w.webp",
+      "1200": "/assets/images/hero/IMG_0078-source-1200w.webp",
+      "1600": "/assets/images/hero/IMG_0078-source-1600w.webp"
+    }
+  },
+  "/assets/images/hero/IMG_6857.webp": {
+    "src": "/assets/images/hero/IMG_6857.webp",
+    "width": 1920,
+    "height": 2400,
+    "variants": {
+      "480": "/assets/images/hero/IMG_6857-480w.webp",
+      "800": "/assets/images/hero/IMG_6857-800w.webp",
+      "1200": "/assets/images/hero/IMG_6857-1200w.webp",
+      "1600": "/assets/images/hero/IMG_6857-1600w.webp"
+    }
+  },
+  "/assets/images/hero/IMG_68781.webp": {
+    "src": "/assets/images/hero/IMG_68781.webp",
+    "width": 1854,
+    "height": 1854,
+    "variants": {
+      "480": "/assets/images/hero/IMG_68781-480w.webp",
+      "800": "/assets/images/hero/IMG_68781-800w.webp",
+      "1200": "/assets/images/hero/IMG_68781-1200w.webp",
+      "1600": "/assets/images/hero/IMG_68781-1600w.webp"
+    }
+  },
+  "/assets/images/hero/IMG_8286-scaled.webp": {
+    "src": "/assets/images/hero/IMG_8286-scaled.webp",
+    "width": 1920,
+    "height": 1536,
+    "variants": {
+      "480": "/assets/images/hero/IMG_8286-scaled-480w.webp",
+      "800": "/assets/images/hero/IMG_8286-scaled-800w.webp",
+      "1200": "/assets/images/hero/IMG_8286-scaled-1200w.webp",
+      "1600": "/assets/images/hero/IMG_8286-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/hero/IMG_8345-scaled.webp": {
+    "src": "/assets/images/hero/IMG_8345-scaled.webp",
+    "width": 1920,
+    "height": 2400,
+    "variants": {
+      "480": "/assets/images/hero/IMG_8345-scaled-480w.webp",
+      "800": "/assets/images/hero/IMG_8345-scaled-800w.webp",
+      "1200": "/assets/images/hero/IMG_8345-scaled-1200w.webp",
+      "1600": "/assets/images/hero/IMG_8345-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/hero/IMG_9083-scaled.webp": {
+    "src": "/assets/images/hero/IMG_9083-scaled.webp",
+    "width": 1920,
+    "height": 2400,
+    "variants": {
+      "480": "/assets/images/hero/IMG_9083-scaled-480w.webp",
+      "800": "/assets/images/hero/IMG_9083-scaled-800w.webp",
+      "1200": "/assets/images/hero/IMG_9083-scaled-1200w.webp",
+      "1600": "/assets/images/hero/IMG_9083-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/hero/IMG_9164-scaled.webp": {
+    "src": "/assets/images/hero/IMG_9164-scaled.webp",
+    "width": 1920,
+    "height": 2400,
+    "variants": {
+      "480": "/assets/images/hero/IMG_9164-scaled-480w.webp",
+      "800": "/assets/images/hero/IMG_9164-scaled-800w.webp",
+      "1200": "/assets/images/hero/IMG_9164-scaled-1200w.webp",
+      "1600": "/assets/images/hero/IMG_9164-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/1195320083637366596.webp": {
+    "src": "/assets/images/projects/1195320083637366596.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/1195320083637366596-480w.webp",
+      "800": "/assets/images/projects/1195320083637366596-800w.webp",
+      "1200": "/assets/images/projects/1195320083637366596-1200w.webp",
+      "1600": "/assets/images/projects/1195320083637366596-1600w.webp"
+    }
+  },
+  "/assets/images/projects/1904286548060220054.webp": {
+    "src": "/assets/images/projects/1904286548060220054.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/1904286548060220054-480w.webp",
+      "800": "/assets/images/projects/1904286548060220054-800w.webp",
+      "1200": "/assets/images/projects/1904286548060220054-1200w.webp",
+      "1600": "/assets/images/projects/1904286548060220054-1600w.webp"
+    }
+  },
+  "/assets/images/projects/20250405_133021-1-scaled.webp": {
+    "src": "/assets/images/projects/20250405_133021-1-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/20250405_133021-1-scaled-480w.webp",
+      "800": "/assets/images/projects/20250405_133021-1-scaled-800w.webp",
+      "1200": "/assets/images/projects/20250405_133021-1-scaled-1200w.webp",
+      "1600": "/assets/images/projects/20250405_133021-1-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/20250405_144538-1.webp": {
+    "src": "/assets/images/projects/20250405_144538-1.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/20250405_144538-1-480w.webp",
+      "800": "/assets/images/projects/20250405_144538-1-800w.webp",
+      "1200": "/assets/images/projects/20250405_144538-1-1200w.webp",
+      "1600": "/assets/images/projects/20250405_144538-1-1600w.webp"
+    }
+  },
+  "/assets/images/projects/20250522_174706-scaled.webp": {
+    "src": "/assets/images/projects/20250522_174706-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/20250522_174706-scaled-480w.webp",
+      "800": "/assets/images/projects/20250522_174706-scaled-800w.webp",
+      "1200": "/assets/images/projects/20250522_174706-scaled-1200w.webp",
+      "1600": "/assets/images/projects/20250522_174706-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/20250611_142156-scaled.webp": {
+    "src": "/assets/images/projects/20250611_142156-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/20250611_142156-scaled-480w.webp",
+      "800": "/assets/images/projects/20250611_142156-scaled-800w.webp",
+      "1200": "/assets/images/projects/20250611_142156-scaled-1200w.webp",
+      "1600": "/assets/images/projects/20250611_142156-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/20250712_1852409-scaled.webp": {
+    "src": "/assets/images/projects/20250712_1852409-scaled.webp",
+    "width": 1600,
+    "height": 1600,
+    "variants": {
+      "480": "/assets/images/projects/20250712_1852409-scaled-480w.webp",
+      "800": "/assets/images/projects/20250712_1852409-scaled-800w.webp",
+      "1200": "/assets/images/projects/20250712_1852409-scaled-1200w.webp",
+      "1600": "/assets/images/projects/20250712_1852409-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/20250712_185409-1-scaled.webp": {
+    "src": "/assets/images/projects/20250712_185409-1-scaled.webp",
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "/assets/images/projects/20250712_185409-1-scaled-480w.webp",
+      "800": "/assets/images/projects/20250712_185409-1-scaled-800w.webp",
+      "1200": "/assets/images/projects/20250712_185409-1-scaled-1200w.webp",
+      "1600": "/assets/images/projects/20250712_185409-1-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/20250712_185409-2-scaled.webp": {
+    "src": "/assets/images/projects/20250712_185409-2-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/20250712_185409-2-scaled-480w.webp",
+      "800": "/assets/images/projects/20250712_185409-2-scaled-800w.webp",
+      "1200": "/assets/images/projects/20250712_185409-2-scaled-1200w.webp",
+      "1600": "/assets/images/projects/20250712_185409-2-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/20250712_1854333-scaled.webp": {
+    "src": "/assets/images/projects/20250712_1854333-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/20250712_1854333-scaled-480w.webp",
+      "800": "/assets/images/projects/20250712_1854333-scaled-800w.webp",
+      "1200": "/assets/images/projects/20250712_1854333-scaled-1200w.webp",
+      "1600": "/assets/images/projects/20250712_1854333-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/20250712_185447.webp": {
+    "src": "/assets/images/projects/20250712_185447.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/20250712_185447-480w.webp",
+      "800": "/assets/images/projects/20250712_185447-800w.webp",
+      "1200": "/assets/images/projects/20250712_185447-1200w.webp",
+      "1600": "/assets/images/projects/20250712_185447-1600w.webp"
+    }
+  },
+  "/assets/images/projects/20250728_1330591-scaled.webp": {
+    "src": "/assets/images/projects/20250728_1330591-scaled.webp",
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "/assets/images/projects/20250728_1330591-scaled-480w.webp",
+      "800": "/assets/images/projects/20250728_1330591-scaled-800w.webp",
+      "1200": "/assets/images/projects/20250728_1330591-scaled-1200w.webp",
+      "1600": "/assets/images/projects/20250728_1330591-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/244381057475205158.webp": {
+    "src": "/assets/images/projects/244381057475205158.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/244381057475205158-480w.webp",
+      "800": "/assets/images/projects/244381057475205158-800w.webp",
+      "1200": "/assets/images/projects/244381057475205158-1200w.webp",
+      "1600": "/assets/images/projects/244381057475205158-1600w.webp"
+    }
+  },
+  "/assets/images/projects/2827870064748260149.webp": {
+    "src": "/assets/images/projects/2827870064748260149.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/2827870064748260149-480w.webp",
+      "800": "/assets/images/projects/2827870064748260149-800w.webp",
+      "1200": "/assets/images/projects/2827870064748260149-1200w.webp",
+      "1600": "/assets/images/projects/2827870064748260149-1600w.webp"
+    }
+  },
+  "/assets/images/projects/3729103499049253279.webp": {
+    "src": "/assets/images/projects/3729103499049253279.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/3729103499049253279-480w.webp",
+      "800": "/assets/images/projects/3729103499049253279-800w.webp",
+      "1200": "/assets/images/projects/3729103499049253279-1200w.webp",
+      "1600": "/assets/images/projects/3729103499049253279-1600w.webp"
+    }
+  },
+  "/assets/images/projects/4227709326286941885.webp": {
+    "src": "/assets/images/projects/4227709326286941885.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/4227709326286941885-480w.webp",
+      "800": "/assets/images/projects/4227709326286941885-800w.webp",
+      "1200": "/assets/images/projects/4227709326286941885-1200w.webp",
+      "1600": "/assets/images/projects/4227709326286941885-1600w.webp"
+    }
+  },
+  "/assets/images/projects/7324893597792864518.webp": {
+    "src": "/assets/images/projects/7324893597792864518.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/7324893597792864518-480w.webp",
+      "800": "/assets/images/projects/7324893597792864518-800w.webp",
+      "1200": "/assets/images/projects/7324893597792864518-1200w.webp",
+      "1600": "/assets/images/projects/7324893597792864518-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/a-berm-to-prevent-washouts.webp": {
+    "src": "/assets/images/projects/bills-pond/a-berm-to-prevent-washouts.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/a-berm-to-prevent-washouts-480w.webp",
+      "800": "/assets/images/projects/bills-pond/a-berm-to-prevent-washouts-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/a-berm-to-prevent-washouts-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/a-berm-to-prevent-washouts-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/after-01-this is a pond.webp": {
+    "src": "/assets/images/projects/bills-pond/after-01-this is a pond.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/after-01-this is a pond-480w.webp",
+      "800": "/assets/images/projects/bills-pond/after-01-this is a pond-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/after-01-this is a pond-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/after-01-this is a pond-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/after-02.webp": {
+    "src": "/assets/images/projects/bills-pond/after-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/after-02-480w.webp",
+      "800": "/assets/images/projects/bills-pond/after-02-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/after-02-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/after-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/after-03.webp": {
+    "src": "/assets/images/projects/bills-pond/after-03.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/after-03-480w.webp",
+      "800": "/assets/images/projects/bills-pond/after-03-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/after-03-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/after-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/after-04.webp": {
+    "src": "/assets/images/projects/bills-pond/after-04.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/after-04-480w.webp",
+      "800": "/assets/images/projects/bills-pond/after-04-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/after-04-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/after-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/after-05.webp": {
+    "src": "/assets/images/projects/bills-pond/after-05.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/after-05-480w.webp",
+      "800": "/assets/images/projects/bills-pond/after-05-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/after-05-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/after-05-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/after-06.webp": {
+    "src": "/assets/images/projects/bills-pond/after-06.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/after-06-480w.webp",
+      "800": "/assets/images/projects/bills-pond/after-06-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/after-06-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/after-06-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/after-07.webp": {
+    "src": "/assets/images/projects/bills-pond/after-07.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/after-07-480w.webp",
+      "800": "/assets/images/projects/bills-pond/after-07-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/after-07-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/after-07-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/after-08.webp": {
+    "src": "/assets/images/projects/bills-pond/after-08.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/after-08-480w.webp",
+      "800": "/assets/images/projects/bills-pond/after-08-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/after-08-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/after-08-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/after-09.webp": {
+    "src": "/assets/images/projects/bills-pond/after-09.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/after-09-480w.webp",
+      "800": "/assets/images/projects/bills-pond/after-09-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/after-09-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/after-09-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/before-process-after-bills-pond.webp": {
+    "src": "/assets/images/projects/bills-pond/before-process-after-bills-pond.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": {}
+  },
+  "/assets/images/projects/bills-pond/before.webp": {
+    "src": "/assets/images/projects/bills-pond/before.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/before-480w.webp",
+      "800": "/assets/images/projects/bills-pond/before-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/before-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/before-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/defining-the-shape-of-the-pond.webp": {
+    "src": "/assets/images/projects/bills-pond/defining-the-shape-of-the-pond.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/defining-the-shape-of-the-pond-480w.webp",
+      "800": "/assets/images/projects/bills-pond/defining-the-shape-of-the-pond-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/defining-the-shape-of-the-pond-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/defining-the-shape-of-the-pond-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/excavator-on-a-pile-of-dirt.webp": {
+    "src": "/assets/images/projects/bills-pond/excavator-on-a-pile-of-dirt.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/excavator-on-a-pile-of-dirt-480w.webp",
+      "800": "/assets/images/projects/bills-pond/excavator-on-a-pile-of-dirt-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/excavator-on-a-pile-of-dirt-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/excavator-on-a-pile-of-dirt-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/guy-standing-infront-of-a-hill.webp": {
+    "src": "/assets/images/projects/bills-pond/guy-standing-infront-of-a-hill.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/guy-standing-infront-of-a-hill-480w.webp",
+      "800": "/assets/images/projects/bills-pond/guy-standing-infront-of-a-hill-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/guy-standing-infront-of-a-hill-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/guy-standing-infront-of-a-hill-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/installed-an-airator-to-prevent-algae.webp": {
+    "src": "/assets/images/projects/bills-pond/installed-an-airator-to-prevent-algae.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/installed-an-airator-to-prevent-algae-480w.webp",
+      "800": "/assets/images/projects/bills-pond/installed-an-airator-to-prevent-algae-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/installed-an-airator-to-prevent-algae-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/installed-an-airator-to-prevent-algae-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/piling-the-dirt-into-a-mountain.webp": {
+    "src": "/assets/images/projects/bills-pond/piling-the-dirt-into-a-mountain.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/piling-the-dirt-into-a-mountain-480w.webp",
+      "800": "/assets/images/projects/bills-pond/piling-the-dirt-into-a-mountain-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/piling-the-dirt-into-a-mountain-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/piling-the-dirt-into-a-mountain-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/pipe-to-allow-drainage.webp": {
+    "src": "/assets/images/projects/bills-pond/pipe-to-allow-drainage.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/pipe-to-allow-drainage-480w.webp",
+      "800": "/assets/images/projects/bills-pond/pipe-to-allow-drainage-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/pipe-to-allow-drainage-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/pipe-to-allow-drainage-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/pond-before-final-berm.webp": {
+    "src": "/assets/images/projects/bills-pond/pond-before-final-berm.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/pond-before-final-berm-480w.webp",
+      "800": "/assets/images/projects/bills-pond/pond-before-final-berm-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/pond-before-final-berm-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/pond-before-final-berm-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/pond-while-still-empty.webp": {
+    "src": "/assets/images/projects/bills-pond/pond-while-still-empty.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/pond-while-still-empty-480w.webp",
+      "800": "/assets/images/projects/bills-pond/pond-while-still-empty-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/pond-while-still-empty-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/pond-while-still-empty-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/process-01-guy-standing-in-the-bottom-of-a-pond.webp": {
+    "src": "/assets/images/projects/bills-pond/process-01-guy-standing-in-the-bottom-of-a-pond.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/process-01-guy-standing-in-the-bottom-of-a-pond-480w.webp",
+      "800": "/assets/images/projects/bills-pond/process-01-guy-standing-in-the-bottom-of-a-pond-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/process-01-guy-standing-in-the-bottom-of-a-pond-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/process-01-guy-standing-in-the-bottom-of-a-pond-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/pulling-the-slopes-01.webp": {
+    "src": "/assets/images/projects/bills-pond/pulling-the-slopes-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/pulling-the-slopes-01-480w.webp",
+      "800": "/assets/images/projects/bills-pond/pulling-the-slopes-01-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/pulling-the-slopes-01-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/pulling-the-slopes-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/pulling-the-slopes-02.webp": {
+    "src": "/assets/images/projects/bills-pond/pulling-the-slopes-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/pulling-the-slopes-02-480w.webp",
+      "800": "/assets/images/projects/bills-pond/pulling-the-slopes-02-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/pulling-the-slopes-02-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/pulling-the-slopes-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/pulling-the-slopes-03.webp": {
+    "src": "/assets/images/projects/bills-pond/pulling-the-slopes-03.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/pulling-the-slopes-03-480w.webp",
+      "800": "/assets/images/projects/bills-pond/pulling-the-slopes-03-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/pulling-the-slopes-03-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/pulling-the-slopes-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/removing-dirt-from-the-center-01.webp": {
+    "src": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-01-480w.webp",
+      "800": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-01-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-01-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/removing-dirt-from-the-center-02.webp": {
+    "src": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-02-480w.webp",
+      "800": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-02-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-02-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/removing-dirt-from-the-center-03.webp": {
+    "src": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-03.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-03-480w.webp",
+      "800": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-03-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-03-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/removing-dirt-from-the-center-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-01.webp": {
+    "src": "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-01-480w.webp",
+      "800": "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-01-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-01-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-02.webp": {
+    "src": "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-02-480w.webp",
+      "800": "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-02-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-02-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/the-pond-draws-water-from-the-ground-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/bills-pond/water-filling-in-the-pond.webp": {
+    "src": "/assets/images/projects/bills-pond/water-filling-in-the-pond.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/bills-pond/water-filling-in-the-pond-480w.webp",
+      "800": "/assets/images/projects/bills-pond/water-filling-in-the-pond-800w.webp",
+      "1200": "/assets/images/projects/bills-pond/water-filling-in-the-pond-1200w.webp",
+      "1600": "/assets/images/projects/bills-pond/water-filling-in-the-pond-1600w.webp"
+    }
+  },
+  "/assets/images/projects/caroline-holt/after-01.webp": {
+    "src": "/assets/images/projects/caroline-holt/after-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/caroline-holt/after-01-480w.webp",
+      "800": "/assets/images/projects/caroline-holt/after-01-800w.webp",
+      "1200": "/assets/images/projects/caroline-holt/after-01-1200w.webp",
+      "1600": "/assets/images/projects/caroline-holt/after-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/caroline-holt/after-02.webp": {
+    "src": "/assets/images/projects/caroline-holt/after-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/caroline-holt/after-02-480w.webp",
+      "800": "/assets/images/projects/caroline-holt/after-02-800w.webp",
+      "1200": "/assets/images/projects/caroline-holt/after-02-1200w.webp",
+      "1600": "/assets/images/projects/caroline-holt/after-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/caroline-holt/after-03.webp": {
+    "src": "/assets/images/projects/caroline-holt/after-03.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/caroline-holt/after-03-480w.webp",
+      "800": "/assets/images/projects/caroline-holt/after-03-800w.webp",
+      "1200": "/assets/images/projects/caroline-holt/after-03-1200w.webp",
+      "1600": "/assets/images/projects/caroline-holt/after-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/caroline-holt/before-01.webp": {
+    "src": "/assets/images/projects/caroline-holt/before-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/caroline-holt/before-01-480w.webp",
+      "800": "/assets/images/projects/caroline-holt/before-01-800w.webp",
+      "1200": "/assets/images/projects/caroline-holt/before-01-1200w.webp",
+      "1600": "/assets/images/projects/caroline-holt/before-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/caroline-holt/before-02.webp": {
+    "src": "/assets/images/projects/caroline-holt/before-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/caroline-holt/before-02-480w.webp",
+      "800": "/assets/images/projects/caroline-holt/before-02-800w.webp",
+      "1200": "/assets/images/projects/caroline-holt/before-02-1200w.webp",
+      "1600": "/assets/images/projects/caroline-holt/before-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/caroline-holt/before-03.webp": {
+    "src": "/assets/images/projects/caroline-holt/before-03.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/caroline-holt/before-03-480w.webp",
+      "800": "/assets/images/projects/caroline-holt/before-03-800w.webp",
+      "1200": "/assets/images/projects/caroline-holt/before-03-1200w.webp",
+      "1600": "/assets/images/projects/caroline-holt/before-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/caroline-holt/before-04.webp": {
+    "src": "/assets/images/projects/caroline-holt/before-04.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/caroline-holt/before-04-480w.webp",
+      "800": "/assets/images/projects/caroline-holt/before-04-800w.webp",
+      "1200": "/assets/images/projects/caroline-holt/before-04-1200w.webp",
+      "1600": "/assets/images/projects/caroline-holt/before-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/caroline-holt/before-process-after-caroline-holt.webp": {
+    "src": "/assets/images/projects/caroline-holt/before-process-after-caroline-holt.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": {}
+  },
+  "/assets/images/projects/caroline-holt/cutting-up-the-trees.webp": {
+    "src": "/assets/images/projects/caroline-holt/cutting-up-the-trees.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/caroline-holt/cutting-up-the-trees-480w.webp",
+      "800": "/assets/images/projects/caroline-holt/cutting-up-the-trees-800w.webp",
+      "1200": "/assets/images/projects/caroline-holt/cutting-up-the-trees-1200w.webp",
+      "1600": "/assets/images/projects/caroline-holt/cutting-up-the-trees-1600w.webp"
+    }
+  },
+  "/assets/images/projects/caroline-holt/digging-out-the-stumps.webp": {
+    "src": "/assets/images/projects/caroline-holt/digging-out-the-stumps.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/caroline-holt/digging-out-the-stumps-480w.webp",
+      "800": "/assets/images/projects/caroline-holt/digging-out-the-stumps-800w.webp",
+      "1200": "/assets/images/projects/caroline-holt/digging-out-the-stumps-1200w.webp",
+      "1600": "/assets/images/projects/caroline-holt/digging-out-the-stumps-1600w.webp"
+    }
+  },
+  "/assets/images/projects/caroline-holt/six-months-later.webp": {
+    "src": "/assets/images/projects/caroline-holt/six-months-later.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/caroline-holt/six-months-later-480w.webp",
+      "800": "/assets/images/projects/caroline-holt/six-months-later-800w.webp",
+      "1200": "/assets/images/projects/caroline-holt/six-months-later-1200w.webp",
+      "1600": "/assets/images/projects/caroline-holt/six-months-later-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/after.webp": {
+    "src": "/assets/images/projects/dawns-job/after.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/after-480w.webp",
+      "800": "/assets/images/projects/dawns-job/after-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/after-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/after-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/before-02.webp": {
+    "src": "/assets/images/projects/dawns-job/before-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/before-02-480w.webp",
+      "800": "/assets/images/projects/dawns-job/before-02-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/before-02-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/before-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/before-process-after-dawns-job.webp": {
+    "src": "/assets/images/projects/dawns-job/before-process-after-dawns-job.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": {}
+  },
+  "/assets/images/projects/dawns-job/before-vertical.webp": {
+    "src": "/assets/images/projects/dawns-job/before-vertical.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/before-vertical-480w.webp",
+      "800": "/assets/images/projects/dawns-job/before-vertical-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/before-vertical-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/before-vertical-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/before.webp": {
+    "src": "/assets/images/projects/dawns-job/before.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/before-480w.webp",
+      "800": "/assets/images/projects/dawns-job/before-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/before-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/before-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/branches-on-the-ground-01.webp": {
+    "src": "/assets/images/projects/dawns-job/branches-on-the-ground-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/branches-on-the-ground-01-480w.webp",
+      "800": "/assets/images/projects/dawns-job/branches-on-the-ground-01-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/branches-on-the-ground-01-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/branches-on-the-ground-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/branches-on-the-ground-02.webp": {
+    "src": "/assets/images/projects/dawns-job/branches-on-the-ground-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/branches-on-the-ground-02-480w.webp",
+      "800": "/assets/images/projects/dawns-job/branches-on-the-ground-02-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/branches-on-the-ground-02-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/branches-on-the-ground-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/cleaning-branches-on-the-ground.webp": {
+    "src": "/assets/images/projects/dawns-job/cleaning-branches-on-the-ground.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/cleaning-branches-on-the-ground-480w.webp",
+      "800": "/assets/images/projects/dawns-job/cleaning-branches-on-the-ground-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/cleaning-branches-on-the-ground-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/cleaning-branches-on-the-ground-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/cutting-down-the-trunk-of-the-tree-01.webp": {
+    "src": "/assets/images/projects/dawns-job/cutting-down-the-trunk-of-the-tree-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/cutting-down-the-trunk-of-the-tree-01-480w.webp",
+      "800": "/assets/images/projects/dawns-job/cutting-down-the-trunk-of-the-tree-01-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/cutting-down-the-trunk-of-the-tree-01-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/cutting-down-the-trunk-of-the-tree-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/cutting-down-the-trunk-of-the-tree-02.webp": {
+    "src": "/assets/images/projects/dawns-job/cutting-down-the-trunk-of-the-tree-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/cutting-down-the-trunk-of-the-tree-02-480w.webp",
+      "800": "/assets/images/projects/dawns-job/cutting-down-the-trunk-of-the-tree-02-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/cutting-down-the-trunk-of-the-tree-02-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/cutting-down-the-trunk-of-the-tree-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/cutting-off-branches-01.webp": {
+    "src": "/assets/images/projects/dawns-job/cutting-off-branches-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/cutting-off-branches-01-480w.webp",
+      "800": "/assets/images/projects/dawns-job/cutting-off-branches-01-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/cutting-off-branches-01-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/cutting-off-branches-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/cutting-off-branches-02.webp": {
+    "src": "/assets/images/projects/dawns-job/cutting-off-branches-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/cutting-off-branches-02-480w.webp",
+      "800": "/assets/images/projects/dawns-job/cutting-off-branches-02-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/cutting-off-branches-02-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/cutting-off-branches-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/cutting-off-branches-03.webp": {
+    "src": "/assets/images/projects/dawns-job/cutting-off-branches-03.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/cutting-off-branches-03-480w.webp",
+      "800": "/assets/images/projects/dawns-job/cutting-off-branches-03-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/cutting-off-branches-03-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/cutting-off-branches-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/cutting-off-branches-04.webp": {
+    "src": "/assets/images/projects/dawns-job/cutting-off-branches-04.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/cutting-off-branches-04-480w.webp",
+      "800": "/assets/images/projects/dawns-job/cutting-off-branches-04-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/cutting-off-branches-04-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/cutting-off-branches-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/digging-out-the-stump-01.webp": {
+    "src": "/assets/images/projects/dawns-job/digging-out-the-stump-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/digging-out-the-stump-01-480w.webp",
+      "800": "/assets/images/projects/dawns-job/digging-out-the-stump-01-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/digging-out-the-stump-01-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/digging-out-the-stump-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/digging-out-the-stump-02.webp": {
+    "src": "/assets/images/projects/dawns-job/digging-out-the-stump-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/digging-out-the-stump-02-480w.webp",
+      "800": "/assets/images/projects/dawns-job/digging-out-the-stump-02-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/digging-out-the-stump-02-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/digging-out-the-stump-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/loading-a-stump-into-the-dump-truck-01.webp": {
+    "src": "/assets/images/projects/dawns-job/loading-a-stump-into-the-dump-truck-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/loading-a-stump-into-the-dump-truck-01-480w.webp",
+      "800": "/assets/images/projects/dawns-job/loading-a-stump-into-the-dump-truck-01-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/loading-a-stump-into-the-dump-truck-01-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/loading-a-stump-into-the-dump-truck-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/loading-a-stump-into-the-dump-truck-02.webp": {
+    "src": "/assets/images/projects/dawns-job/loading-a-stump-into-the-dump-truck-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/loading-a-stump-into-the-dump-truck-02-480w.webp",
+      "800": "/assets/images/projects/dawns-job/loading-a-stump-into-the-dump-truck-02-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/loading-a-stump-into-the-dump-truck-02-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/loading-a-stump-into-the-dump-truck-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/stumps-in-the-dump-truck.webp": {
+    "src": "/assets/images/projects/dawns-job/stumps-in-the-dump-truck.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/stumps-in-the-dump-truck-480w.webp",
+      "800": "/assets/images/projects/dawns-job/stumps-in-the-dump-truck-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/stumps-in-the-dump-truck-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/stumps-in-the-dump-truck-1600w.webp"
+    }
+  },
+  "/assets/images/projects/dawns-job/tree-is-now-a-stump.webp": {
+    "src": "/assets/images/projects/dawns-job/tree-is-now-a-stump.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/dawns-job/tree-is-now-a-stump-480w.webp",
+      "800": "/assets/images/projects/dawns-job/tree-is-now-a-stump-800w.webp",
+      "1200": "/assets/images/projects/dawns-job/tree-is-now-a-stump-1200w.webp",
+      "1600": "/assets/images/projects/dawns-job/tree-is-now-a-stump-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_0071.webp": {
+    "src": "/assets/images/projects/IMG_0071.webp",
+    "width": 1183,
+    "height": 1480,
+    "variants": {
+      "480": "/assets/images/projects/IMG_0071-480w.webp",
+      "800": "/assets/images/projects/IMG_0071-800w.webp",
+      "1600": "/assets/images/projects/IMG_0071-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_0249-scaled.webp": {
+    "src": "/assets/images/projects/IMG_0249-scaled.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/IMG_0249-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_0249-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_0249-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_0249-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_0792-scaled.webp": {
+    "src": "/assets/images/projects/IMG_0792-scaled.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": {
+      "480": "/assets/images/projects/IMG_0792-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_0792-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_0792-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_0792-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_3-scaled.webp": {
+    "src": "/assets/images/projects/IMG_3-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_3-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_3-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_3-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_3-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_6857.webp": {
+    "src": "/assets/images/projects/IMG_6857.webp",
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "/assets/images/projects/IMG_6857-480w.webp",
+      "800": "/assets/images/projects/IMG_6857-800w.webp",
+      "1200": "/assets/images/projects/IMG_6857-1200w.webp",
+      "1600": "/assets/images/projects/IMG_6857-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_6873-edited.webp": {
+    "src": "/assets/images/projects/IMG_6873-edited.webp",
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "/assets/images/projects/IMG_6873-edited-480w.webp",
+      "800": "/assets/images/projects/IMG_6873-edited-800w.webp",
+      "1200": "/assets/images/projects/IMG_6873-edited-1200w.webp",
+      "1600": "/assets/images/projects/IMG_6873-edited-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_6876.webp": {
+    "src": "/assets/images/projects/IMG_6876.webp",
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "/assets/images/projects/IMG_6876-480w.webp",
+      "800": "/assets/images/projects/IMG_6876-800w.webp",
+      "1200": "/assets/images/projects/IMG_6876-1200w.webp",
+      "1600": "/assets/images/projects/IMG_6876-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_68781.webp": {
+    "src": "/assets/images/projects/IMG_68781.webp",
+    "width": 1600,
+    "height": 1600,
+    "variants": {
+      "480": "/assets/images/projects/IMG_68781-480w.webp",
+      "800": "/assets/images/projects/IMG_68781-800w.webp",
+      "1200": "/assets/images/projects/IMG_68781-1200w.webp",
+      "1600": "/assets/images/projects/IMG_68781-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8038-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8038-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8038-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8038-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8038-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8038-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8039-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8039-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8039-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8039-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8039-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8039-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8040-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8040-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8040-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8040-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8040-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8040-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8127-1-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8127-1-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8127-1-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8127-1-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8127-1-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8127-1-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8145-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8145-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8145-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8145-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8145-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8145-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8152-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8152-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8152-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8152-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8152-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8152-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8188-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8188-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8188-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8188-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8188-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8188-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8248-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8248-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8248-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8248-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8248-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8248-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8249-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8249-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8249-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8249-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8249-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8249-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8250-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8250-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8250-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8250-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8250-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8250-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8252-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8252-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8252-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8252-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8252-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8252-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8286-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8286-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8286-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8286-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8286-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8286-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8344-EDIT-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8344-EDIT-scaled.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8344-EDIT-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8344-EDIT-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8344-EDIT-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8344-EDIT-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8345-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8345-scaled.webp",
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8345-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8345-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8345-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8345-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8416-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8416-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8416-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8416-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8416-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8416-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8442-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8442-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8442-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8442-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8442-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8442-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8445-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8445-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8445-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8445-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8445-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8445-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8446-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8446-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8446-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8446-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8446-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8446-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8451-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8451-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8451-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8451-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8451-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8451-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8456-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8456-scaled.webp",
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8456-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8456-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8456-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8456-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8457-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8457-scaled.webp",
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8457-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8457-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8457-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8457-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8478-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8478-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8478-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8478-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8478-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8478-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8495-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8495-scaled.webp",
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8495-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8495-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8495-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8495-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8532-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8532-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8532-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8532-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8532-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8532-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8537-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8537-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8537-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8537-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8537-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8537-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8632-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8632-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8632-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8632-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8632-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8632-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8939-scaled.webp": {
+    "src": "/assets/images/projects/IMG_8939-scaled.webp",
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8939-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_8939-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_8939-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8939-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_8993-scaled-e1761154072145.webp": {
+    "src": "/assets/images/projects/IMG_8993-scaled-e1761154072145.webp",
+    "width": 1600,
+    "height": 2002,
+    "variants": {
+      "480": "/assets/images/projects/IMG_8993-scaled-e1761154072145-480w.webp",
+      "800": "/assets/images/projects/IMG_8993-scaled-e1761154072145-800w.webp",
+      "1200": "/assets/images/projects/IMG_8993-scaled-e1761154072145-1200w.webp",
+      "1600": "/assets/images/projects/IMG_8993-scaled-e1761154072145-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_9082-scaled-e1761360675760.webp": {
+    "src": "/assets/images/projects/IMG_9082-scaled-e1761360675760.webp",
+    "width": 1600,
+    "height": 1600,
+    "variants": {
+      "480": "/assets/images/projects/IMG_9082-scaled-e1761360675760-480w.webp",
+      "800": "/assets/images/projects/IMG_9082-scaled-e1761360675760-800w.webp",
+      "1200": "/assets/images/projects/IMG_9082-scaled-e1761360675760-1200w.webp",
+      "1600": "/assets/images/projects/IMG_9082-scaled-e1761360675760-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_9083-scaled.webp": {
+    "src": "/assets/images/projects/IMG_9083-scaled.webp",
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "/assets/images/projects/IMG_9083-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_9083-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_9083-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_9083-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_9164-scaled.webp": {
+    "src": "/assets/images/projects/IMG_9164-scaled.webp",
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "/assets/images/projects/IMG_9164-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_9164-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_9164-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_9164-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_9219-scaled.webp": {
+    "src": "/assets/images/projects/IMG_9219-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_9219-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_9219-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_9219-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_9219-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_9300-scaled.webp": {
+    "src": "/assets/images/projects/IMG_9300-scaled.webp",
+    "width": 1600,
+    "height": 1280,
+    "variants": {
+      "480": "/assets/images/projects/IMG_9300-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_9300-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_9300-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_9300-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/IMG_93001-scaled.webp": {
+    "src": "/assets/images/projects/IMG_93001-scaled.webp",
+    "width": 1600,
+    "height": 1600,
+    "variants": {
+      "480": "/assets/images/projects/IMG_93001-scaled-480w.webp",
+      "800": "/assets/images/projects/IMG_93001-scaled-800w.webp",
+      "1200": "/assets/images/projects/IMG_93001-scaled-1200w.webp",
+      "1600": "/assets/images/projects/IMG_93001-scaled-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/after-01.webp": {
+    "src": "/assets/images/projects/shawns-clearing/after-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/after-01-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/after-01-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/after-01-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/after-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/after-02.webp": {
+    "src": "/assets/images/projects/shawns-clearing/after-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/after-02-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/after-02-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/after-02-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/after-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/after-vertical.webp": {
+    "src": "/assets/images/projects/shawns-clearing/after-vertical.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/after-vertical-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/after-vertical-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/after-vertical-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/after-vertical-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/before-process-after-shawns-clearing.webp": {
+    "src": "/assets/images/projects/shawns-clearing/before-process-after-shawns-clearing.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": {}
+  },
+  "/assets/images/projects/shawns-clearing/before.webp": {
+    "src": "/assets/images/projects/shawns-clearing/before.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/before-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/before-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/before-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/before-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/cleaning-up-01.webp": {
+    "src": "/assets/images/projects/shawns-clearing/cleaning-up-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/cleaning-up-01-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/cleaning-up-01-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/cleaning-up-01-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/cleaning-up-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/cleaning-up-02.webp": {
+    "src": "/assets/images/projects/shawns-clearing/cleaning-up-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/cleaning-up-02-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/cleaning-up-02-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/cleaning-up-02-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/cleaning-up-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/dump-truck-empty.webp": {
+    "src": "/assets/images/projects/shawns-clearing/dump-truck-empty.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/dump-truck-empty-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/dump-truck-empty-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/dump-truck-empty-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/dump-truck-empty-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/dump-truck-logs.webp": {
+    "src": "/assets/images/projects/shawns-clearing/dump-truck-logs.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/dump-truck-logs-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/dump-truck-logs-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/dump-truck-logs-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/dump-truck-logs-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/dump-truck-stump.webp": {
+    "src": "/assets/images/projects/shawns-clearing/dump-truck-stump.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/dump-truck-stump-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/dump-truck-stump-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/dump-truck-stump-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/dump-truck-stump-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/excavator-clearing-land-01.webp": {
+    "src": "/assets/images/projects/shawns-clearing/excavator-clearing-land-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/excavator-clearing-land-01-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/excavator-clearing-land-01-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/excavator-clearing-land-01-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/excavator-clearing-land-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/excavator-clearing-land-02.webp": {
+    "src": "/assets/images/projects/shawns-clearing/excavator-clearing-land-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/excavator-clearing-land-02-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/excavator-clearing-land-02-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/excavator-clearing-land-02-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/excavator-clearing-land-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/guy-standing-infront-of-a-pine-stump-01.webp": {
+    "src": "/assets/images/projects/shawns-clearing/guy-standing-infront-of-a-pine-stump-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/guy-standing-infront-of-a-pine-stump-01-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/guy-standing-infront-of-a-pine-stump-01-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/guy-standing-infront-of-a-pine-stump-01-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/guy-standing-infront-of-a-pine-stump-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/guy-standing-infront-of-a-pine-stump-02.webp": {
+    "src": "/assets/images/projects/shawns-clearing/guy-standing-infront-of-a-pine-stump-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/guy-standing-infront-of-a-pine-stump-02-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/guy-standing-infront-of-a-pine-stump-02-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/guy-standing-infront-of-a-pine-stump-02-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/guy-standing-infront-of-a-pine-stump-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/large-stump.webp": {
+    "src": "/assets/images/projects/shawns-clearing/large-stump.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/large-stump-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/large-stump-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/large-stump-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/large-stump-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/one-year-later-one-year-later.webp": {
+    "src": "/assets/images/projects/shawns-clearing/one-year-later-one-year-later.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/one-year-later-one-year-later-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/one-year-later-one-year-later-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/one-year-later-one-year-later-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/one-year-later-one-year-later-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/our-dump-truck-fully-loaded.webp": {
+    "src": "/assets/images/projects/shawns-clearing/our-dump-truck-fully-loaded.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/our-dump-truck-fully-loaded-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/our-dump-truck-fully-loaded-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/our-dump-truck-fully-loaded-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/our-dump-truck-fully-loaded-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/piling-up-logs.webp": {
+    "src": "/assets/images/projects/shawns-clearing/piling-up-logs.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/piling-up-logs-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/piling-up-logs-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/piling-up-logs-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/piling-up-logs-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/saving-a-magnolia-tree.webp": {
+    "src": "/assets/images/projects/shawns-clearing/saving-a-magnolia-tree.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/saving-a-magnolia-tree-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/saving-a-magnolia-tree-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/saving-a-magnolia-tree-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/saving-a-magnolia-tree-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/sorting-through-logs.webp": {
+    "src": "/assets/images/projects/shawns-clearing/sorting-through-logs.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/sorting-through-logs-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/sorting-through-logs-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/sorting-through-logs-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/sorting-through-logs-1600w.webp"
+    }
+  },
+  "/assets/images/projects/shawns-clearing/three-months-later.webp": {
+    "src": "/assets/images/projects/shawns-clearing/three-months-later.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/shawns-clearing/three-months-later-480w.webp",
+      "800": "/assets/images/projects/shawns-clearing/three-months-later-800w.webp",
+      "1200": "/assets/images/projects/shawns-clearing/three-months-later-1200w.webp",
+      "1600": "/assets/images/projects/shawns-clearing/three-months-later-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-016.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-016.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-016-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-016-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-016-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-016-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-02.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-02-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-02-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-02-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-03.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-03.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-03-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-03-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-03-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-04.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-04.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-04-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-04-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-04-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-05.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-05.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-05-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-05-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-05-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-05-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-07.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-07.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-07-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-07-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-07-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-07-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-08.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-08.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-08-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-08-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-08-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-08-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-09.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-09.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-09-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-09-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-09-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-09-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-10.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-10.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-10-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-10-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-10-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-10-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-11.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-11.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-11-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-11-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-11-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-11-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-12.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-12.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-12-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-12-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-12-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-12-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-13.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-13.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-13-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-13-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-13-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-13-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-14.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-14.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-14-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-14-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-14-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-14-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-15.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-15.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-15-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-15-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-15-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-15-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-16.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-16.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-16-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-16-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-16-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-16-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-17.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-17.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-17-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-17-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-17-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-17-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-18.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-18.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-18-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-18-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-18-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-18-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-19.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-19.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-19-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-19-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-19-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-19-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-20.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-20.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-20-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-20-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-20-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-20-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-21.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-21.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-21-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-21-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-21-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-21-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-22.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-22.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-22-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-22-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-22-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-22-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-23.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-23.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-23-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-23-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-23-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-23-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-24.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-24.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-24-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-24-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-24-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-24-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-25.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-25.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-25-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-25-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-25-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-25-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-26.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-26.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-26-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-26-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-26-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-26-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/after-27.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/after-27.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/after-27-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/after-27-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/after-27-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/after-27-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-01.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-01-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-01-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-01-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-02.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-02-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-02-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-02-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-03.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-03.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-03-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-03-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-03-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-04.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-04.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-04-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-04-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-04-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-05.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-05.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-05-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-05-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-05-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-05-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-06.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-06.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-06-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-06-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-06-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/all-of-the-trees-cut-down-06-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/before-01.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/before-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/before-01-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/before-01-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/before-01-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/before-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/before-02.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/before-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/before-02-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/before-02-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/before-02-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/before-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/before-03.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/before-03.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/before-03-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/before-03-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/before-03-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/before-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/before-04.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/before-04.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/before-04-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/before-04-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/before-04-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/before-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/before-05.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/before-05.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/before-05-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/before-05-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/before-05-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/before-05-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/before-06.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/before-06.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/before-06-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/before-06-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/before-06-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/before-06-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/before-07.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/before-07.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/before-07-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/before-07-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/before-07-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/before-07-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/before-08.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/before-08.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/before-08-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/before-08-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/before-08-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/before-08-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/before-process-after-stolte-land-clearing.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/before-process-after-stolte-land-clearing.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": {}
+  },
+  "/assets/images/projects/stolte-land-clearing/pile-of-logs-01.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/pile-of-logs-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/pile-of-logs-01-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/pile-of-logs-01-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/pile-of-logs-01-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/pile-of-logs-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/pile-of-logs-02.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/pile-of-logs-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/pile-of-logs-02-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/pile-of-logs-02-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/pile-of-logs-02-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/pile-of-logs-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-01.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-01-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-01-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-01-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-02.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-02-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-02-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-02-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-03.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-03.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-03-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-03-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-03-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/pile-of-stumps-to-burn-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/removing-the-trees-01.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/removing-the-trees-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/removing-the-trees-01-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/removing-the-trees-01-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/removing-the-trees-01-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/removing-the-trees-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/removing-the-trees-02.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/removing-the-trees-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/removing-the-trees-02-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/removing-the-trees-02-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/removing-the-trees-02-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/removing-the-trees-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/removing-the-trees-03.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/removing-the-trees-03.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/removing-the-trees-03-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/removing-the-trees-03-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/removing-the-trees-03-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/removing-the-trees-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/removing-the-trees-04.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/removing-the-trees-04.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/removing-the-trees-04-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/removing-the-trees-04-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/removing-the-trees-04-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/removing-the-trees-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/stump-grinding-services-01.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-01-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-01-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-01-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/stump-grinding-services-02.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-02-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-02-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-02-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/stump-grinding-services-03.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-03.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-03-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-03-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-03-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/stump-grinding-services-04.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-04.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-04-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-04-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-04-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/stump-grinding-services-05.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-05.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-05-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-05-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-05-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-05-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/stump-grinding-services-06.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-06.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-06-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-06-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-06-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-06-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/stump-grinding-services-07.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-07.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-07-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-07-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-07-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-07-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/stump-grinding-services-08.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-08.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-08-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-08-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-08-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-08-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/stump-grinding-services-09.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-09.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-09-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-09-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-09-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-09-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stolte-land-clearing/stump-grinding-services-10.webp": {
+    "src": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-10.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-10-480w.webp",
+      "800": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-10-800w.webp",
+      "1200": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-10-1200w.webp",
+      "1600": "/assets/images/projects/stolte-land-clearing/stump-grinding-services-10-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/after-01.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/after-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/after-01-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/after-01-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/after-01-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/after-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/after-02.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/after-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/after-02-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/after-02-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/after-02-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/after-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/after-04.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/after-04.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/after-04-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/after-04-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/after-04-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/after-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/after-06.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/after-06.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/after-06-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/after-06-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/after-06-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/after-06-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/after-07.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/after-07.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/after-07-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/after-07-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/after-07-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/after-07-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/before-process-after-stump-removal-portfolio.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/before-process-after-stump-removal-portfolio.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": {}
+  },
+  "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-01.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-01-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-01-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-01-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-02.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-02-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-02-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-02-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-03.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-03.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-03-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-03-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-03-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-04.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-04.webp",
+    "width": 1600,
+    "height": 2844,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-04-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-04-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-04-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/carrying-a-stump-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/cleaning-the-dirt-out-of-a-stump.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/cleaning-the-dirt-out-of-a-stump.webp",
+    "width": 1600,
+    "height": 2126,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/cleaning-the-dirt-out-of-a-stump-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/cleaning-the-dirt-out-of-a-stump-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/cleaning-the-dirt-out-of-a-stump-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/cleaning-the-dirt-out-of-a-stump-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/grinding-vs-removal-comparison.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/grinding-vs-removal-comparison.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/grinding-vs-removal-comparison-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/grinding-vs-removal-comparison-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/grinding-vs-removal-comparison-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/grinding-vs-removal-comparison-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/guy-next-to-a-stump-01.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/guy-next-to-a-stump-01.webp",
+    "width": 1600,
+    "height": 2132,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/guy-next-to-a-stump-01-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/guy-next-to-a-stump-01-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/guy-next-to-a-stump-01-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/guy-next-to-a-stump-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/guy-next-to-a-stump-02.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/guy-next-to-a-stump-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/guy-next-to-a-stump-02-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/guy-next-to-a-stump-02-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/guy-next-to-a-stump-02-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/guy-next-to-a-stump-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-01.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-01-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-01-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-01-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-02.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-02-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-02-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-02-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-03.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-03.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-03-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-03-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-03-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-04.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-04.webp",
+    "width": 1600,
+    "height": 2126,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-04-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-04-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-04-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/hauling-away-a-stump-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-01.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-01-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-01-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-01-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-02.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-02-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-02-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-02-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-grinding-after-one-year-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-01.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-01-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-01-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-01-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-02.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-02-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-02-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-02-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-03.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-03.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-03-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-03-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-03-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-04.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-04.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-04-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-04-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-04-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-05.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-05.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-05-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-05-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-05-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-05-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-06.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-06.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-06-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-06-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-06-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-grinding-companies-06-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-01.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-01-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-01-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-01-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-02.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-02-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-02-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-02-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-03.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-03.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-03-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-03-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-03-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-04.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-04.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-04-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-04-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-04-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-a-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-01.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-01-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-01-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-01-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-02.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-02-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-02-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-02-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-03.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-03.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-03-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-03-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-03-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-b-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-c-01.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-c-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-c-01-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-c-01-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-c-01-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-c-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-c-02.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-c-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-c-02-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-c-02-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-c-02-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-c-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-d-01.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-d-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-d-01-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-d-01-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-d-01-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-d-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-d-02.webp": {
+    "src": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-d-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-d-02-480w.webp",
+      "800": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-d-02-800w.webp",
+      "1200": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-d-02-1200w.webp",
+      "1600": "/assets/images/projects/stump-removal-portfolio/stump-removal-instance-d-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/Timeline-1_01_00_16_22.webp": {
+    "src": "/assets/images/projects/Timeline-1_01_00_16_22.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": {
+      "480": "/assets/images/projects/Timeline-1_01_00_16_22-480w.webp",
+      "800": "/assets/images/projects/Timeline-1_01_00_16_22-800w.webp",
+      "1200": "/assets/images/projects/Timeline-1_01_00_16_22-1200w.webp",
+      "1600": "/assets/images/projects/Timeline-1_01_00_16_22-1600w.webp"
+    }
+  },
+  "/assets/images/projects/Timeline-1_01_00_40_23.webp": {
+    "src": "/assets/images/projects/Timeline-1_01_00_40_23.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": {
+      "480": "/assets/images/projects/Timeline-1_01_00_40_23-480w.webp",
+      "800": "/assets/images/projects/Timeline-1_01_00_40_23-800w.webp",
+      "1200": "/assets/images/projects/Timeline-1_01_00_40_23-1200w.webp",
+      "1600": "/assets/images/projects/Timeline-1_01_00_40_23-1600w.webp"
+    }
+  },
+  "/assets/images/projects/Timeline-1_01_01_18_11.webp": {
+    "src": "/assets/images/projects/Timeline-1_01_01_18_11.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": {
+      "480": "/assets/images/projects/Timeline-1_01_01_18_11-480w.webp",
+      "800": "/assets/images/projects/Timeline-1_01_01_18_11-800w.webp",
+      "1200": "/assets/images/projects/Timeline-1_01_01_18_11-1200w.webp",
+      "1600": "/assets/images/projects/Timeline-1_01_01_18_11-1600w.webp"
+    }
+  },
+  "/assets/images/projects/Timeline-1_01_01_49_20.webp": {
+    "src": "/assets/images/projects/Timeline-1_01_01_49_20.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": {
+      "480": "/assets/images/projects/Timeline-1_01_01_49_20-480w.webp",
+      "800": "/assets/images/projects/Timeline-1_01_01_49_20-800w.webp",
+      "1200": "/assets/images/projects/Timeline-1_01_01_49_20-1200w.webp",
+      "1600": "/assets/images/projects/Timeline-1_01_01_49_20-1600w.webp"
+    }
+  },
+  "/assets/images/projects/Timeline-1_01_04_56_01-e1772241497635.webp": {
+    "src": "/assets/images/projects/Timeline-1_01_04_56_01-e1772241497635.webp",
+    "width": 1184,
+    "height": 666,
+    "variants": {
+      "480": "/assets/images/projects/Timeline-1_01_04_56_01-e1772241497635-480w.webp",
+      "800": "/assets/images/projects/Timeline-1_01_04_56_01-e1772241497635-800w.webp",
+      "1600": "/assets/images/projects/Timeline-1_01_04_56_01-e1772241497635-1600w.webp"
+    }
+  },
+  "/assets/images/projects/Timeline-1_01_04_56_01.webp": {
+    "src": "/assets/images/projects/Timeline-1_01_04_56_01.webp",
+    "width": 1184,
+    "height": 666,
+    "variants": {
+      "480": "/assets/images/projects/Timeline-1_01_04_56_01-480w.webp",
+      "800": "/assets/images/projects/Timeline-1_01_04_56_01-800w.webp",
+      "1600": "/assets/images/projects/Timeline-1_01_04_56_01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/before-process-after-tree-removal-portfolio.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/before-process-after-tree-removal-portfolio.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": {}
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-01.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-01-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-01-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-01-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-02.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-02-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-02-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-02-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-03.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-03.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-03-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-03-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-03-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-04.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-04.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-04-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-04-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-04-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-05.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-05.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-05-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-05-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-05-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-05-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-06.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-06.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-06-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-06-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-06-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-06-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-07.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-07.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-07-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-07-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-07-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-07-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-08.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-08.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-08-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-08-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-08-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-a-08-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-01.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-01-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-01-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-01-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-02.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-02.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-02-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-02-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-02-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-03.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-03.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-03-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-03-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-03-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-04.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-04.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-04-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-04-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-04-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-b-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-01.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-01.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-01-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-01-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-01-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-02.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-02-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-02-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-02-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-03.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-03.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-03-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-03-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-03-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-04.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-04.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-04-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-04-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-04-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-04-1600w.webp"
+    }
+  },
+  "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-05.webp": {
+    "src": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-05.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-05-480w.webp",
+      "800": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-05-800w.webp",
+      "1200": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-05-1200w.webp",
+      "1600": "/assets/images/projects/tree-removal-portfolio/tree-removal-instance-c-05-1600w.webp"
+    }
+  },
+  "/assets/images/projects/wanes-stump/32-inch-chainsaw-for-reference.webp": {
+    "src": "/assets/images/projects/wanes-stump/32-inch-chainsaw-for-reference.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/wanes-stump/32-inch-chainsaw-for-reference-480w.webp",
+      "800": "/assets/images/projects/wanes-stump/32-inch-chainsaw-for-reference-800w.webp",
+      "1200": "/assets/images/projects/wanes-stump/32-inch-chainsaw-for-reference-1200w.webp",
+      "1600": "/assets/images/projects/wanes-stump/32-inch-chainsaw-for-reference-1600w.webp"
+    }
+  },
+  "/assets/images/projects/wanes-stump/before-process-after-wanes-stump.webp": {
+    "src": "/assets/images/projects/wanes-stump/before-process-after-wanes-stump.webp",
+    "width": 1600,
+    "height": 900,
+    "variants": {}
+  },
+  "/assets/images/projects/wanes-stump/before.webp": {
+    "src": "/assets/images/projects/wanes-stump/before.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/wanes-stump/before-480w.webp",
+      "800": "/assets/images/projects/wanes-stump/before-800w.webp",
+      "1200": "/assets/images/projects/wanes-stump/before-1200w.webp",
+      "1600": "/assets/images/projects/wanes-stump/before-1600w.webp"
+    }
+  },
+  "/assets/images/projects/wanes-stump/covering-up-the-hole.webp": {
+    "src": "/assets/images/projects/wanes-stump/covering-up-the-hole.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/wanes-stump/covering-up-the-hole-480w.webp",
+      "800": "/assets/images/projects/wanes-stump/covering-up-the-hole-800w.webp",
+      "1200": "/assets/images/projects/wanes-stump/covering-up-the-hole-1200w.webp",
+      "1600": "/assets/images/projects/wanes-stump/covering-up-the-hole-1600w.webp"
+    }
+  },
+  "/assets/images/projects/wanes-stump/digging-out-the-stump-01.webp": {
+    "src": "/assets/images/projects/wanes-stump/digging-out-the-stump-01.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/wanes-stump/digging-out-the-stump-01-480w.webp",
+      "800": "/assets/images/projects/wanes-stump/digging-out-the-stump-01-800w.webp",
+      "1200": "/assets/images/projects/wanes-stump/digging-out-the-stump-01-1200w.webp",
+      "1600": "/assets/images/projects/wanes-stump/digging-out-the-stump-01-1600w.webp"
+    }
+  },
+  "/assets/images/projects/wanes-stump/digging-out-the-stump-02.webp": {
+    "src": "/assets/images/projects/wanes-stump/digging-out-the-stump-02.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/wanes-stump/digging-out-the-stump-02-480w.webp",
+      "800": "/assets/images/projects/wanes-stump/digging-out-the-stump-02-800w.webp",
+      "1200": "/assets/images/projects/wanes-stump/digging-out-the-stump-02-1200w.webp",
+      "1600": "/assets/images/projects/wanes-stump/digging-out-the-stump-02-1600w.webp"
+    }
+  },
+  "/assets/images/projects/wanes-stump/digging-out-the-stump-03.webp": {
+    "src": "/assets/images/projects/wanes-stump/digging-out-the-stump-03.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/wanes-stump/digging-out-the-stump-03-480w.webp",
+      "800": "/assets/images/projects/wanes-stump/digging-out-the-stump-03-800w.webp",
+      "1200": "/assets/images/projects/wanes-stump/digging-out-the-stump-03-1200w.webp",
+      "1600": "/assets/images/projects/wanes-stump/digging-out-the-stump-03-1600w.webp"
+    }
+  },
+  "/assets/images/projects/wanes-stump/hauling-the-stump-away.webp": {
+    "src": "/assets/images/projects/wanes-stump/hauling-the-stump-away.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/wanes-stump/hauling-the-stump-away-480w.webp",
+      "800": "/assets/images/projects/wanes-stump/hauling-the-stump-away-800w.webp",
+      "1200": "/assets/images/projects/wanes-stump/hauling-the-stump-away-1200w.webp",
+      "1600": "/assets/images/projects/wanes-stump/hauling-the-stump-away-1600w.webp"
+    }
+  },
+  "/assets/images/projects/wanes-stump/loading-the-stump.webp": {
+    "src": "/assets/images/projects/wanes-stump/loading-the-stump.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/wanes-stump/loading-the-stump-480w.webp",
+      "800": "/assets/images/projects/wanes-stump/loading-the-stump-800w.webp",
+      "1200": "/assets/images/projects/wanes-stump/loading-the-stump-1200w.webp",
+      "1600": "/assets/images/projects/wanes-stump/loading-the-stump-1600w.webp"
+    }
+  },
+  "/assets/images/projects/wanes-stump/man-next-to-the-stump.webp": {
+    "src": "/assets/images/projects/wanes-stump/man-next-to-the-stump.webp",
+    "width": 519,
+    "height": 372,
+    "variants": {}
+  },
+  "/assets/images/projects/wanes-stump/pulling-the-stump-out-of-the-hole.webp": {
+    "src": "/assets/images/projects/wanes-stump/pulling-the-stump-out-of-the-hole.webp",
+    "width": 1600,
+    "height": 1200,
+    "variants": {
+      "480": "/assets/images/projects/wanes-stump/pulling-the-stump-out-of-the-hole-480w.webp",
+      "800": "/assets/images/projects/wanes-stump/pulling-the-stump-out-of-the-hole-800w.webp",
+      "1200": "/assets/images/projects/wanes-stump/pulling-the-stump-out-of-the-hole-1200w.webp",
+      "1600": "/assets/images/projects/wanes-stump/pulling-the-stump-out-of-the-hole-1600w.webp"
+    }
+  },
+  "/assets/images/projects/wanes-stump/stump-is-out.webp": {
+    "src": "/assets/images/projects/wanes-stump/stump-is-out.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/wanes-stump/stump-is-out-480w.webp",
+      "800": "/assets/images/projects/wanes-stump/stump-is-out-800w.webp",
+      "1200": "/assets/images/projects/wanes-stump/stump-is-out-1200w.webp",
+      "1600": "/assets/images/projects/wanes-stump/stump-is-out-1600w.webp"
+    }
+  },
+  "/assets/images/projects/wanes-stump/weight-of-what-we-hauled-away.webp": {
+    "src": "/assets/images/projects/wanes-stump/weight-of-what-we-hauled-away.webp",
+    "width": 1600,
+    "height": 2134,
+    "variants": {
+      "480": "/assets/images/projects/wanes-stump/weight-of-what-we-hauled-away-480w.webp",
+      "800": "/assets/images/projects/wanes-stump/weight-of-what-we-hauled-away-800w.webp",
+      "1200": "/assets/images/projects/wanes-stump/weight-of-what-we-hauled-away-1200w.webp",
+      "1600": "/assets/images/projects/wanes-stump/weight-of-what-we-hauled-away-1600w.webp"
+    }
+  }
+}

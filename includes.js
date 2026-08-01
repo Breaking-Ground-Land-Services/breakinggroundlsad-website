@@ -160,10 +160,12 @@ function markActiveNav() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  await Promise.all([
-    injectPartial('site-header-include', 'header.html'),
-    injectPartial('site-footer-include', 'footer.html'),
-  ]);
+  if (!document.querySelector('.site-header')) {
+    await injectPartial('site-header-include', 'header.html');
+  }
+  if (!document.querySelector('.site-footer')) {
+    await injectPartial('site-footer-include', 'footer.html');
+  }
   initNav();
   markActiveNav();
 });
