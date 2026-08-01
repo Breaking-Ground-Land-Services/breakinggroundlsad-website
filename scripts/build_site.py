@@ -305,7 +305,7 @@ def estimate_form_hero() -> str:
   {_labeled(p, "job_location", "Job location / city", _input(f"{p}-job_location", name="job_location", required=True, autocomplete="address-level2", placeholder="City or address area"), required=True)}
   {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="2", required=True, placeholder="e.g. singlewide demo in Lakeland"), required=True)}
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
-  <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Photos by text speed up estimates.</p>
+  <p class="form-note">Or call {esc(PHONE)}. Photos by text speed up estimates.</p>
   {_form_required_note("form-required-note--hero")}
 </form>"""
 
@@ -341,7 +341,7 @@ def estimate_form_compact(default_service: str = "") -> str:
   {_labeled(p, "service", "Service needed", _select(f"{p}-service", f'      <option value="">Select a service</option>\n      {opts}\n      <option value="Other">Other</option>', name="service", required=True), required=True)}
   {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="2", required=True, placeholder="Structure type, access, timeline…"), required=True)}
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
-  <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Photos by text speed up quotes.</p>
+  <p class="form-note">Or call {esc(PHONE)}. Photos by text speed up quotes.</p>
   {_form_required_note("form-required-note--hero")}
 </form>"""
 
@@ -975,7 +975,7 @@ def head(
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  {preload}  <link rel="stylesheet" href="/assets/css/style.css?v=a11y1" />
+  {preload}  <link rel="stylesheet" href="/assets/css/style.css?v=a11y2" />
   {schema_html}
 </head>
 <body>
@@ -1003,15 +1003,17 @@ def _review_stars(count: int = 5) -> str:
 def _review_card(review: dict, index: int) -> str:
     name = review.get("name") or "Google User"
     meta = review.get("meta") or "Google review"
-    colors = ["#1a56c4", "#c0392b", "#1e6b2e", "#FBBC05", "#0f766e", "#7c3aed"]
+    colors = ["#1a56c4", "#c0392b", "#1e6b2e", "#0f766e", "#7c3aed", "#854d0e"]
     bg = review.get("avatarColor") or colors[index % len(colors)]
-    text_style = ' style="color:#0f172a;"' if bg.lower() == "#fbbc05" else ""
+    # Yellow/amber avatars need dark initials for WCAG contrast
+    dark_initial = bg.lower() in {"#fbbc05", "#fbbc04", "#eab308", "#fde047", "#facc15"}
+    color = "#0f172a" if dark_initial else "#ffffff"
     initial = esc(name.strip()[:1].upper() or "?")
     stars = int(review.get("stars") or 5)
     return f"""
 <article class="bg-review-card">
   <div class="bg-review-header">
-    <span class="bg-review-avatar" style="background:{esc(bg)};"{text_style} aria-hidden="true">{initial}</span>
+    <span class="bg-review-avatar" style="background:{esc(bg)};color:{color};" aria-hidden="true">{initial}</span>
     <div>
       <h3 class="bg-review-name">{esc(name)}</h3>
       <div class="bg-review-sub">{esc(meta)}</div>
@@ -1057,9 +1059,7 @@ def local_trust_section() -> str:
           </div>
           <div class="bg-review-carousel-dots" id="bg-review-dots" role="group" aria-label="Google review pages"></div>
           <p class="bg-google-review-links">
-            <a href="{esc(GOOGLE_MAPS_URL)}" target="_blank" rel="noopener noreferrer">See our Google profile</a>
-            <span aria-hidden="true">&middot;</span>
-            <a href="{esc(GOOGLE_MAPS_URL)}" target="_blank" rel="noopener noreferrer">Leave a review</a>
+            <a href="{esc(GOOGLE_MAPS_URL)}" target="_blank" rel="noopener noreferrer">See our Google profile &amp; leave a review</a>
           </p>
         </div>
         <div class="bg-map-panel is-map-loaded" id="bg-map-shell" aria-label="Breaking Ground Google map">
