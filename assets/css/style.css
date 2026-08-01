@@ -549,7 +549,7 @@ img.hero-slide-bg.hero-lcp-img {
 /* Sections */
 .section-eyebrow {
   font-family: var(--font-display); font-size: 0.8rem; letter-spacing: 0.16em;
-  text-transform: uppercase; color: var(--rust); margin-bottom: 0.6rem;
+  text-transform: uppercase; color: #9a3412; margin-bottom: 0.6rem;
 }
 .section-pad--muted { background: #e2e8f0; }
 .section-pad--muted .section-eyebrow { color: #7c2d12; }

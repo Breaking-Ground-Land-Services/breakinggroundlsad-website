@@ -149,28 +149,55 @@ def rewrite_html_images(fragment: str, *, sizes: str = CARD_SIZES) -> str:
     return re.sub(r"<img\b[^>]*/?>", upgrade, fragment, flags=re.I)
 
 
+def _with_base(url: str) -> str:
+    """Prefix siteBase once for root-absolute paths."""
+    if not url.startswith("/"):
+        return url
+    if BASE:
+        url = re.sub(rf"^(?:{re.escape(BASE)})+", "", url)
+        if not url.startswith("/"):
+            url = "/" + url.lstrip("/")
+        return f"{BASE}{url}"
+    return re.sub(r"^(?:/breakinggroundlsad-website)+", "", url) or "/"
+
+
 def write(rel: str, content: str) -> None:
     path = ROOT / rel
     path.parent.mkdir(parents=True, exist_ok=True)
     if BASE and rel.endswith((".html",)):
-        # Rewrite root-absolute URLs for project Pages hosting
-        content = content.replace('href="/', f'href="{BASE}/')
-        content = content.replace("href='/", f"href='{BASE}/")
-        content = content.replace('src="/', f'src="{BASE}/')
-        content = content.replace("src='/", f"src='{BASE}/")
-        content = content.replace('data-bg="/', f'data-bg="{BASE}/')
-        content = content.replace('content="/', f'content="{BASE}/')
+        # Rewrite root-absolute URLs for project Pages hosting (idempotent).
+        def _prefix_attr(match: re.Match[str]) -> str:
+            return f'{match.group(1)}{_with_base(match.group(2))}"'
+
+        content = re.sub(r'(href=")(/[^"]*)"', _prefix_attr, content)
+        content = re.sub(r"(href=')(/[^']*)'", lambda m: f"{m.group(1)}{_with_base(m.group(2))}'", content)
+        content = re.sub(r'(src=")(/[^"]*)"', _prefix_attr, content)
+        content = re.sub(r"(src=')(/[^']*)'", lambda m: f"{m.group(1)}{_with_base(m.group(2))}'", content)
+        content = re.sub(
+            r'(data-bg=")(/[^"]*)"',
+            lambda m: f'{m.group(1)}{_with_base(m.group(2))}"',
+            content,
+        )
+        content = re.sub(
+            r'(content=")(/[^"]*)"',
+            lambda m: f'{m.group(1)}{_with_base(m.group(2))}"',
+            content,
+        )
 
         def _prefix_srcset(match: re.Match[str]) -> str:
             inner = re.sub(
-                r"(/assets/[^\s,]+)",
-                lambda u: f"{BASE}{u.group(1)}",
+                r"(/[^\s,]+)",
+                lambda u: _with_base(u.group(1)),
                 match.group(1),
             )
             return f'srcset="{inner}"'
 
         content = re.sub(r'srcset="([^"]+)"', _prefix_srcset, content)
-        content = content.replace('url(/', f"url({BASE}/")
+        content = re.sub(
+            r"url\((/[^)]+)\)",
+            lambda m: f"url({_with_base(m.group(1))})",
+            content,
+        )
         content = content.replace(
             'action="https://formspree.io',
             'action="https://formspree.io',
@@ -381,13 +408,22 @@ def schema_business(extra: list | None = None) -> str:
 
 
 def chrome_partial(name: str) -> str:
-    """Read header/footer and apply siteBase for inlined chrome."""
+    """Read header/footer chrome (root-absolute paths only)."""
     text = (ROOT / name).read_text(encoding="utf-8")
     if BASE:
         text = re.sub(rf"(?:{re.escape(BASE)})+/", "/", text)
-        text = text.replace('href="/', f'href="{BASE}/')
-        text = text.replace('src="/', f'src="{BASE}/')
+    elif "/breakinggroundlsad-website/" in text:
+        text = re.sub(r"(?:/breakinggroundlsad-website)+/", "/", text)
     return text.strip()
+
+
+def normalize_chrome_paths() -> None:
+    """Keep editable header/footer at root-absolute paths in the repo."""
+    for name in ("header.html", "footer.html"):
+        path = ROOT / name
+        text = path.read_text(encoding="utf-8")
+        text = re.sub(r"(?:/breakinggroundlsad-website)+/", "/", text)
+        path.write_text(text, encoding="utf-8")
 
 
 def head(
@@ -453,7 +489,7 @@ def head(
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  {preload}  <link rel="stylesheet" href="/assets/css/style.css?v=nav3" />
+  {preload}  <link rel="stylesheet" href="/assets/css/style.css?v=nav4" />
   {schema_business(extras)}
 </head>
 <body>
@@ -611,7 +647,7 @@ def related_links(current: str = "") -> str:
         ("/areas/brooksville-fl/", "Brooksville"),
         ("/areas/tampa-fl/", "Tampa"),
         ("/about/", "About Us"),
-        ("/contact/", "Request Estimate"),
+        ("/contact/", "Free Estimate"),
     ]
     items = []
     for href, label in service_links + extra_links:
@@ -647,7 +683,7 @@ def cta_band(headline: str, blurb: str, service: str = "") -> str:
         </ul>
         <div class="cta-band__actions">
           <a class="btn btn-primary" href="tel:{PHONE_TEL}">Call {esc(PHONE)}</a>
-          <a class="btn btn-ghost" href="/contact/">Full estimate form</a>
+          <a class="btn btn-ghost" href="/contact/">Free Estimate</a>
         </div>
       </div>
       <aside class="cta-band__form hero-card reveal" aria-label="Quick estimate request">
@@ -995,7 +1031,7 @@ def build_home() -> None:
           <h1>Breaking Ground</h1>
           <p class="hero-lead">Mobile home demolition, light structure removal, and land services — father-and-son owned, equipment ready.</p>
           <div class="hero__actions">
-            <a class="btn btn-primary" href="/contact/">Request Free Estimate</a>
+            <a class="btn btn-primary" href="/contact/">Free Estimate</a>
             <a class="btn btn-ghost" href="tel:{PHONE_TEL}">{esc(PHONE)}</a>
           </div>
         </div>
@@ -2254,7 +2290,7 @@ def apply_base_to_chrome() -> None:
 
 
 def main() -> None:
-    apply_base_to_chrome()
+    normalize_chrome_paths()
     build_home()
     build_about()
     build_contact()
