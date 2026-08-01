@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/breakinggroundlsad-website/assets/css/style.css?v=nav4" />
+    <link rel="stylesheet" href="/breakinggroundlsad-website/assets/css/style.css?v=a11y1" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -521,12 +521,11 @@
   <input type="hidden" name="_subject" value="New estimate request — Breaking Ground" />
   <input type="hidden" name="page" value="" />
   <div class="form-grid__row">
-    <label><span class="form-label-text">Name<span class="req" aria-hidden="true">*</span></span><input name="name" required autocomplete="name" placeholder="Your name" /></label>
-    <label><span class="form-label-text">Phone<span class="req" aria-hidden="true">*</span></span><input name="phone" type="tel" required autocomplete="tel" placeholder="(863) 899-9717" /></label>
+    <label for="area-name"><span class="form-label-text">Name<span class="req" aria-hidden="true">*</span></span><input id="area-name" name="name" required autocomplete="name" placeholder="Your name" /></label>
+    <label for="area-phone"><span class="form-label-text">Phone<span class="req" aria-hidden="true">*</span></span><input id="area-phone" name="phone" type="tel" required autocomplete="tel" placeholder="(863) 899-9717" /></label>
   </div>
-  <label><span class="form-label-text">Job location<span class="req" aria-hidden="true">*</span></span><input name="job_location" required autocomplete="address-level2" placeholder="Zephyrhills, FL" value="Zephyrhills" /></label>
-  <label><span class="form-label-text">Service needed<span class="req" aria-hidden="true">*</span></span>
-    <select name="service" required>
+  <label for="area-job_location"><span class="form-label-text">Job location<span class="req" aria-hidden="true">*</span></span><input id="area-job_location" name="job_location" required autocomplete="address-level2" placeholder="Zephyrhills, FL" value="Zephyrhills" /></label>
+  <label for="area-service"><span class="form-label-text">Service needed<span class="req" aria-hidden="true">*</span></span><select id="area-service" name="service" required>
       <option value="">Select a service</option>
       <option value="Demolition">Demolition</option>
 <option value="Mobile Home Demolition" selected>Mobile Home Demolition</option>
@@ -538,9 +537,8 @@
 <option value="Grading &amp; Site Prep">Grading &amp; Site Prep</option>
 <option value="Storm Cleanup">Storm Cleanup</option>
       <option value="Other">Other</option>
-    </select>
-  </label>
-  <label><span class="form-label-text">What do you need?<span class="req" aria-hidden="true">*</span></span><textarea name="message" rows="2" required placeholder="e.g. singlewide demo, stump removal…"></textarea></label>
+    </select></label>
+  <label for="area-message"><span class="form-label-text">What do you need?<span class="req" aria-hidden="true">*</span></span><textarea id="area-message" name="message" rows="2" required placeholder="e.g. singlewide demo, stump removal…"></textarea></label>
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
   <p class="form-note">Or call <a href="tel:+18638999717">(863) 899-9717</a>. Text photos for a faster quote.</p>
   <p class="form-required-note"><span class="req" aria-hidden="true">*</span> Required</p>

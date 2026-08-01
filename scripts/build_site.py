@@ -215,6 +215,47 @@ def _req(text: str) -> str:
     return _label(text, required=True)
 
 
+def _input(fid: str, **attrs) -> str:
+    parts = [f'id="{esc(fid)}"']
+    for k, v in attrs.items():
+        if v is True:
+            parts.append(k)
+        elif v is False or v is None:
+            continue
+        else:
+            parts.append(f'{k}="{esc(str(v))}"')
+    return f"<input {' '.join(parts)} />"
+
+
+def _textarea(fid: str, **attrs) -> str:
+    parts = [f'id="{esc(fid)}"']
+    for k, v in attrs.items():
+        if v is True:
+            parts.append(k)
+        elif v is False or v is None:
+            continue
+        else:
+            parts.append(f'{k}="{esc(str(v))}"')
+    return f"<textarea {' '.join(parts)}></textarea>"
+
+
+def _select(fid: str, options_html: str, **attrs) -> str:
+    parts = [f'id="{esc(fid)}"']
+    for k, v in attrs.items():
+        if v is True:
+            parts.append(k)
+        elif v is False or v is None:
+            continue
+        else:
+            parts.append(f'{k}="{esc(str(v))}"')
+    return f"<select {' '.join(parts)}>\n{options_html}\n    </select>"
+
+
+def _labeled(prefix: str, name: str, label: str, control: str, *, required: bool = False) -> str:
+    fid = f"{prefix}-{name}"
+    return f'<label for="{esc(fid)}">{_label(label, required=required)}{control}</label>'
+
+
 def _form_hidden() -> str:
     return f"""  <input type="hidden" name="_next" value="{DOMAIN}/thank-you/" />
   <input type="hidden" name="_subject" value="New estimate request — Breaking Ground" />
@@ -226,34 +267,28 @@ def _form_required_note(klass: str = "") -> str:
     return f'<p class="form-required-note{extra}"><span class="req" aria-hidden="true">*</span> Required</p>'
 
 
-def estimate_form(default_service: str = "") -> str:
-    opts = "\n".join(
+def _service_options(default_service: str = "") -> str:
+    return "\n".join(
         f'<option value="{esc(s["navLabel"])}"{" selected" if s["navLabel"] == default_service else ""}>{esc(s["navLabel"])}</option>'
         for s in SERVICES
     )
+
+
+def estimate_form(default_service: str = "") -> str:
+    p = "full"
+    opts = _service_options(default_service)
     return f"""
 <form class="form-grid" data-bg-form method="POST" action="{esc(FORM)}" enctype="multipart/form-data">
 {_form_hidden()}
-  <label>{_req("Name")}<input name="name" required autocomplete="name" /></label>
-  <label>{_req("Phone")}<input name="phone" type="tel" required autocomplete="tel" /></label>
-  <label>{_label("Email")}<input name="email" type="email" autocomplete="email" /></label>
-  <label>{_req("Job location / city")}<input name="job_location" required /></label>
-  <label>{_req("Service needed")}
-    <select name="service" required>
-      <option value="">Select a service</option>
-      {opts}
-      <option value="Other">Other</option>
-    </select>
-  </label>
-  <label>{_label("Project details")}<textarea name="message" placeholder="Structure type, acreage, access notes…"></textarea></label>
-  <label>{_label("Best time to call")}<input name="best_time" /></label>
-  <label>{_req("Can we text you for photos?")}
-    <select name="can_text_photos" required>
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-    </select>
-  </label>
-  <label>{_label("Photos (optional)")}<input name="photos" type="file" accept="image/*" multiple /></label>
+  {_labeled(p, "name", "Name", _input(f"{p}-name", name="name", required=True, autocomplete="name"), required=True)}
+  {_labeled(p, "phone", "Phone", _input(f"{p}-phone", name="phone", type="tel", required=True, autocomplete="tel"), required=True)}
+  {_labeled(p, "email", "Email", _input(f"{p}-email", name="email", type="email", autocomplete="email"))}
+  {_labeled(p, "job_location", "Job location / city", _input(f"{p}-job_location", name="job_location", required=True), required=True)}
+  {_labeled(p, "service", "Service needed", _select(f"{p}-service", f'      <option value="">Select a service</option>\n      {opts}\n      <option value="Other">Other</option>', name="service", required=True), required=True)}
+  {_labeled(p, "message", "Project details", _textarea(f"{p}-message", name="message", placeholder="Structure type, acreage, access notes…"))}
+  {_labeled(p, "best_time", "Best time to call", _input(f"{p}-best_time", name="best_time"))}
+  {_labeled(p, "can_text_photos", "Can we text you for photos?", _select(f"{p}-can_text_photos", '      <option value="Yes">Yes</option>\n      <option value="No">No</option>', name="can_text_photos", required=True), required=True)}
+  {_labeled(p, "photos", "Photos (optional)", _input(f"{p}-photos", name="photos", type="file", accept="image/*", multiple=True))}
   <button class="btn btn-primary" type="submit">Request Free Estimate</button>
   <p class="form-note">Estimates are free and informational. Final pricing is confirmed in writing before work begins.</p>
   {_form_required_note()}
@@ -261,42 +296,33 @@ def estimate_form(default_service: str = "") -> str:
 
 
 def estimate_form_hero() -> str:
-    """Homepage hero — minimal fields."""
+    p = "hero"
     return f"""
 <form class="form-grid form-grid--hero" data-bg-form method="POST" action="{esc(FORM)}">
 {_form_hidden()}
-  <label>{_req("Name")}<input name="name" required autocomplete="name" placeholder="Your name" /></label>
-  <label>{_req("Phone")}<input name="phone" type="tel" required autocomplete="tel" placeholder="{esc(PHONE)}" /></label>
-  <label>{_req("Job location / city")}<input name="job_location" required autocomplete="address-level2" placeholder="City or address area" /></label>
-  <label>{_req("What do you need?")}<textarea name="message" rows="2" required placeholder="e.g. singlewide demo in Lakeland"></textarea></label>
+  {_labeled(p, "name", "Name", _input(f"{p}-name", name="name", required=True, autocomplete="name", placeholder="Your name"), required=True)}
+  {_labeled(p, "phone", "Phone", _input(f"{p}-phone", name="phone", type="tel", required=True, autocomplete="tel", placeholder=PHONE), required=True)}
+  {_labeled(p, "job_location", "Job location / city", _input(f"{p}-job_location", name="job_location", required=True, autocomplete="address-level2", placeholder="City or address area"), required=True)}
+  {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="2", required=True, placeholder="e.g. singlewide demo in Lakeland"), required=True)}
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
   <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Photos by text speed up estimates.</p>
-  {_form_required_note(" form-required-note--hero")}
+  {_form_required_note("form-required-note--hero")}
 </form>"""
 
 
 def estimate_form_contact() -> str:
-    """Short contact-page form — fewer fields, faster to complete."""
-    opts = "\n".join(
-        f'<option value="{esc(s["navLabel"])}">{esc(s["navLabel"])}</option>'
-        for s in SERVICES
-    )
+    p = "contact"
+    opts = _service_options()
     return f"""
 <form class="form-grid form-grid--area" data-bg-form method="POST" action="{esc(FORM)}">
 {_form_hidden()}
   <div class="form-grid__row">
-    <label>{_req("Name")}<input name="name" required autocomplete="name" placeholder="Your name" /></label>
-    <label>{_req("Phone")}<input name="phone" type="tel" required autocomplete="tel" placeholder="{esc(PHONE)}" /></label>
+    {_labeled(p, "name", "Name", _input(f"{p}-name", name="name", required=True, autocomplete="name", placeholder="Your name"), required=True)}
+    {_labeled(p, "phone", "Phone", _input(f"{p}-phone", name="phone", type="tel", required=True, autocomplete="tel", placeholder=PHONE), required=True)}
   </div>
-  <label>{_req("Job location / city")}<input name="job_location" required autocomplete="address-level2" placeholder="City or address area" /></label>
-  <label>{_req("Service needed")}
-    <select name="service" required>
-      <option value="">Select a service</option>
-      {opts}
-      <option value="Other">Other</option>
-    </select>
-  </label>
-  <label>{_req("What do you need?")}<textarea name="message" rows="3" required placeholder="Structure type, access, timeline…"></textarea></label>
+  {_labeled(p, "job_location", "Job location / city", _input(f"{p}-job_location", name="job_location", required=True, autocomplete="address-level2", placeholder="City or address area"), required=True)}
+  {_labeled(p, "service", "Service needed", _select(f"{p}-service", f'      <option value="">Select a service</option>\n      {opts}\n      <option value="Other">Other</option>', name="service", required=True), required=True)}
+  {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="3", required=True, placeholder="Structure type, access, timeline…"), required=True)}
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
   <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Text photos for a faster quote.</p>
   {_form_required_note()}
@@ -304,55 +330,44 @@ def estimate_form_contact() -> str:
 
 
 def estimate_form_compact(default_service: str = "") -> str:
-    opts = "\n".join(
-        f'<option value="{esc(s["navLabel"])}"{" selected" if s["navLabel"] == default_service else ""}>{esc(s["navLabel"])}</option>'
-        for s in SERVICES
-    )
+    p = "cta"
+    opts = _service_options(default_service)
     return f"""
 <form class="form-grid form-grid--hero" data-bg-form method="POST" action="{esc(FORM)}">
 {_form_hidden()}
-  <label>{_req("Name")}<input name="name" required autocomplete="name" placeholder="Your name" /></label>
-  <label>{_req("Phone")}<input name="phone" type="tel" required autocomplete="tel" placeholder="{esc(PHONE)}" /></label>
-  <label>{_req("Job location / city")}<input name="job_location" required placeholder="City or address area" /></label>
-  <label>{_req("Service needed")}
-    <select name="service" required>
-      <option value="">Select a service</option>
-      {opts}
-      <option value="Other">Other</option>
-    </select>
-  </label>
-  <label>{_req("What do you need?")}<textarea name="message" rows="2" required placeholder="Structure type, access, timeline…"></textarea></label>
+  {_labeled(p, "name", "Name", _input(f"{p}-name", name="name", required=True, autocomplete="name", placeholder="Your name"), required=True)}
+  {_labeled(p, "phone", "Phone", _input(f"{p}-phone", name="phone", type="tel", required=True, autocomplete="tel", placeholder=PHONE), required=True)}
+  {_labeled(p, "job_location", "Job location / city", _input(f"{p}-job_location", name="job_location", required=True, placeholder="City or address area"), required=True)}
+  {_labeled(p, "service", "Service needed", _select(f"{p}-service", f'      <option value="">Select a service</option>\n      {opts}\n      <option value="Other">Other</option>', name="service", required=True), required=True)}
+  {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="2", required=True, placeholder="Structure type, access, timeline…"), required=True)}
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
   <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Photos by text speed up quotes.</p>
-  {_form_required_note(" form-required-note--hero")}
+  {_form_required_note("form-required-note--hero")}
 </form>"""
 
 
 def estimate_form_area(city: str = "", default_service: str = "Mobile Home Demolition") -> str:
-    """Short sticky-sidebar form for service area pages."""
-    opts = "\n".join(
-        f'<option value="{esc(s["navLabel"])}"{" selected" if s["navLabel"] == default_service else ""}>{esc(s["navLabel"])}</option>'
-        for s in SERVICES
-    )
+    p = "area"
+    opts = _service_options(default_service)
     loc = city.strip()
-    loc_value = f' value="{esc(loc)}"' if loc else ""
-    loc_ph = esc(f"{loc}, FL" if loc else "City or address area")
+    loc_attrs = {
+        "name": "job_location",
+        "required": True,
+        "autocomplete": "address-level2",
+        "placeholder": f"{loc}, FL" if loc else "City or address area",
+    }
+    if loc:
+        loc_attrs["value"] = loc
     return f"""
 <form class="form-grid form-grid--area" data-bg-form method="POST" action="{esc(FORM)}">
 {_form_hidden()}
   <div class="form-grid__row">
-    <label>{_req("Name")}<input name="name" required autocomplete="name" placeholder="Your name" /></label>
-    <label>{_req("Phone")}<input name="phone" type="tel" required autocomplete="tel" placeholder="{esc(PHONE)}" /></label>
+    {_labeled(p, "name", "Name", _input(f"{p}-name", name="name", required=True, autocomplete="name", placeholder="Your name"), required=True)}
+    {_labeled(p, "phone", "Phone", _input(f"{p}-phone", name="phone", type="tel", required=True, autocomplete="tel", placeholder=PHONE), required=True)}
   </div>
-  <label>{_req("Job location")}<input name="job_location" required autocomplete="address-level2" placeholder="{loc_ph}"{loc_value} /></label>
-  <label>{_req("Service needed")}
-    <select name="service" required>
-      <option value="">Select a service</option>
-      {opts}
-      <option value="Other">Other</option>
-    </select>
-  </label>
-  <label>{_req("What do you need?")}<textarea name="message" rows="2" required placeholder="e.g. singlewide demo, stump removal…"></textarea></label>
+  {_labeled(p, "job_location", "Job location", _input(f"{p}-job_location", **loc_attrs), required=True)}
+  {_labeled(p, "service", "Service needed", _select(f"{p}-service", f'      <option value="">Select a service</option>\n      {opts}\n      <option value="Other">Other</option>', name="service", required=True), required=True)}
+  {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="2", required=True, placeholder="e.g. singlewide demo, stump removal…"), required=True)}
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
   <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Text photos for a faster quote.</p>
   {_form_required_note()}
@@ -960,7 +975,7 @@ def head(
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  {preload}  <link rel="stylesheet" href="/assets/css/style.css?v=nav4" />
+  {preload}  <link rel="stylesheet" href="/assets/css/style.css?v=a11y1" />
   {schema_html}
 </head>
 <body>
@@ -1453,7 +1468,7 @@ def build_home() -> None:
     tiles = "".join(
         f"""
         <a class="service-tile reveal" href="{esc(s['path'])}">
-          {img_responsive(s['heroImage'], "", sizes=TILE_SIZES)}
+          {img_responsive(s['heroImage'], f"{s['navLabel']} — Central Florida", sizes=TILE_SIZES)}
           <div class="service-tile__body">
             <h3>{esc(s['navLabel'])}</h3>
             <p>{esc(s['meta'][:110])}…</p>
@@ -1464,12 +1479,14 @@ def build_home() -> None:
     projects = "".join(
         f"""
         <article class="project-card reveal">
-          <a href="{esc(p['path'])}">{img_responsive(p['image'], p['h1'], sizes=CARD_SIZES)}</a>
-          <div class="project-card__body">
-            <p class="project-meta">{esc(p['city'])} · {esc(p['service'])}</p>
-            <h3><a href="{esc(p['path'])}">{esc(p['h1'])}</a></h3>
-            <p>{esc(p['summary'])}</p>
-          </div>
+          <a class="project-card__link" href="{esc(p['path'])}">
+            {img_responsive(p['image'], p['h1'], sizes=CARD_SIZES)}
+            <div class="project-card__body">
+              <p class="project-meta">{esc(p['city'])} · {esc(p['service'])}</p>
+              <h3>{esc(p['h1'])}</h3>
+              <p>{esc(p['summary'])}</p>
+            </div>
+          </a>
         </article>"""
         for p in PROJECTS[:4]
     )
@@ -1679,7 +1696,7 @@ def build_contact() -> None:
 
 def build_services_hub() -> None:
     cards = "".join(
-        f'<a class="service-tile reveal" href="{esc(s["path"])}">{img_responsive(s["heroImage"], "", sizes=TILE_SIZES)}<div class="service-tile__body"><h3>{esc(s["navLabel"])}</h3><p>{esc(s["meta"][:120])}…</p></div></a>'
+        f'<a class="service-tile reveal" href="{esc(s["path"])}">{img_responsive(s["heroImage"], f"{s["navLabel"]} — Central Florida", sizes=TILE_SIZES)}<div class="service-tile__body"><h3>{esc(s["navLabel"])}</h3><p>{esc(s["meta"][:120])}…</p></div></a>'
         for s in SERVICES
     )
     body = f"""
@@ -2074,9 +2091,9 @@ def build_projects() -> None:
     global PROJECTS
     PROJECTS = json.loads((DATA / "projects.json").read_text(encoding="utf-8"))
     cards = "".join(
-        f"""<article class="project-card reveal"><a href="{esc(p['path'])}">{img_responsive(p.get('composite') or p['image'], p['h1'], sizes=CARD_SIZES)}</a>
+        f"""<article class="project-card reveal"><a class="project-card__link" href="{esc(p['path'])}">{img_responsive(p.get('composite') or p['image'], p['h1'], sizes=CARD_SIZES)}
         <div class="project-card__body"><p class="project-meta">{esc(p['city'])} · {esc(p['service'])}</p>
-        <h3><a href="{esc(p['path'])}">{esc(p['h1'])}</a></h3><p>{esc(p['summary'])}</p></div></article>"""
+        <h3>{esc(p['h1'])}</h3><p>{esc(p['summary'])}</p></div></a></article>"""
         for p in PROJECTS
     )
     write(
