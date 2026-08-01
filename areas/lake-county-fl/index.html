@@ -46,15 +46,20 @@
       "@id": "https://breakinggroundlsad.com/#business",
       "name": "Breaking Ground",
       "legalName": "Breaking Ground Land Services and Demolition LLC",
-      "url": "https://breakinggroundlsad.com",
+      "alternateName": "Breaking Ground Land Services and Demolition",
+      "url": "https://breakinggroundlsad.com/",
       "telephone": "+18638999717",
       "email": "contact@breakinggroundlsad.com",
       "foundingDate": "2024",
-      "description": "Owner-operated demolition, land clearing, and site work across Central Florida",
+      "description": "Owner-operated mobile home and light-structure demolition based in Kathleen, FL, with land clearing, stump excavation, and site work as supporting services across Central Florida.",
+      "slogan": "Mobile home demolition first \u2014 father-and-son owned, equipment ready.",
       "image": "https://breakinggroundlsad.com/assets/images/hero/IMG_0078-hero.webp",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://breakinggroundlsad.com/assets/images/brand/logo-96.webp"
+        "@id": "https://breakinggroundlsad.com/#logo",
+        "url": "https://breakinggroundlsad.com/assets/images/brand/logo-96.webp",
+        "width": 96,
+        "height": 96
       },
       "priceRange": "$$",
       "openingHours": "Mo-Sa 07:00-18:00",
@@ -71,7 +76,110 @@
         "latitude": "28.1214",
         "longitude": "-82.0487"
       },
-      "areaServed": "Florida",
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Central Florida"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Polk County, FL"
+        },
+        {
+          "@type": "State",
+          "name": "Florida"
+        }
+      ],
+      "knowsAbout": [
+        "mobile home demolition",
+        "manufactured home removal",
+        "light structure demolition",
+        "shed and barn removal",
+        "debris haul-off",
+        "land clearing support",
+        "stump excavation",
+        "tree removal support",
+        "storm debris cleanup",
+        "grading and site preparation"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Demolition and site services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Demolition",
+              "url": "https://breakinggroundlsad.com/demolition/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile Home Demolition",
+              "url": "https://breakinggroundlsad.com/mobile-home-demolition/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Shed & Barn Removal",
+              "url": "https://breakinggroundlsad.com/shed-barn-removal/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Land Clearing",
+              "url": "https://breakinggroundlsad.com/land-clearing/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Tree Removal",
+              "url": "https://breakinggroundlsad.com/tree-removal/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Stump Removal",
+              "url": "https://breakinggroundlsad.com/stump-removal/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pond & Drainage",
+              "url": "https://breakinggroundlsad.com/pond-drainage/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Grading & Site Prep",
+              "url": "https://breakinggroundlsad.com/grading-site-preparation/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Storm Cleanup",
+              "url": "https://breakinggroundlsad.com/storm-debris-cleanup/"
+            }
+          }
+        ]
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": 5.0,
@@ -86,42 +194,179 @@
         "contactType": "customer service",
         "areaServed": "US-FL",
         "availableLanguage": "English"
-      }
+      },
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Guy S. McMillen",
+          "@id": "https://breakinggroundlsad.com/#person-1"
+        },
+        {
+          "@type": "Person",
+          "name": "Andrew S. McMillen",
+          "@id": "https://breakinggroundlsad.com/#person-2"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61562030751815",
+        "https://www.instagram.com/breakinggroundlsad/",
+        "https://www.youtube.com/@breakinggroundlsad",
+        "https://www.tiktok.com/@breakinggroundlsad"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://breakinggroundlsad.com/#website",
+      "url": "https://breakinggroundlsad.com/",
+      "name": "Breaking Ground",
+      "description": "Owner-operated demolition, land clearing, and site work across Central Florida",
+      "publisher": {
+        "@id": "https://breakinggroundlsad.com/#business"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://breakinggroundlsad.com/areas/lake-county-fl/#webpage",
+      "url": "https://breakinggroundlsad.com/areas/lake-county-fl/",
+      "name": "Mobile Home Demolition in Lake County, FL | Breaking Ground",
+      "description": "Mobile home demolition and light structure removal in Lake County, Lake County. Owner-operated Breaking Ground \u2014 free estimates.",
+      "isPartOf": {
+        "@id": "https://breakinggroundlsad.com/#website"
+      },
+      "publisher": {
+        "@id": "https://breakinggroundlsad.com/#business"
+      },
+      "inLanguage": "en-US",
+      "breadcrumb": {
+        "@id": "https://breakinggroundlsad.com/areas/lake-county-fl/#breadcrumb"
+      },
+      "about": {
+        "@id": "https://breakinggroundlsad.com/areas/lake-county-fl/#place"
+      },
+      "mainEntity": {
+        "@id": "https://breakinggroundlsad.com/areas/lake-county-fl/#service"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://breakinggroundlsad.com/assets/images/areas/lake-county-fl.webp#image"
+      },
+      "image": "https://breakinggroundlsad.com/assets/images/areas/lake-county-fl.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://breakinggroundlsad.com/assets/images/areas/lake-county-fl.webp#image",
+      "contentUrl": "https://breakinggroundlsad.com/assets/images/areas/lake-county-fl.webp",
+      "url": "https://breakinggroundlsad.com/assets/images/areas/lake-county-fl.webp",
+      "caption": "Mobile Home Demolition in Lake County, FL | Breaking Ground"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "@id": "https://breakinggroundlsad.com/areas/lake-county-fl/#place",
+      "name": "Lake County, FL"
     },
     {
       "@type": "Service",
-      "name": "Demolition services in Lake County",
+      "@id": "https://breakinggroundlsad.com/areas/lake-county-fl/#service",
+      "name": "Mobile home demolition in Lake County",
+      "serviceType": "Mobile home demolition",
+      "description": "Owner-operated mobile home and light-structure demolition in Lake County, FL.",
+      "url": "https://breakinggroundlsad.com/areas/lake-county-fl/",
       "provider": {
         "@id": "https://breakinggroundlsad.com/#business"
       },
-      "areaServed": "Lake County, FL",
-      "url": "https://breakinggroundlsad.com/areas/lake-county-fl/"
+      "areaServed": {
+        "@type": "City",
+        "name": "Lake County, FL"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://breakinggroundlsad.com/areas/lake-county-fl/#webpage"
+      }
     },
     {
-      "@type": "BreadcrumbList",
-      "@id": "https://breakinggroundlsad.com/areas/lake-county-fl/#breadcrumb",
+      "@type": "ItemList",
+      "@id": "https://breakinggroundlsad.com/areas/lake-county-fl/#cities",
+      "name": "Cities in Lake County",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Home",
-          "item": "https://breakinggroundlsad.com/"
+          "name": "Leesburg",
+          "url": "https://breakinggroundlsad.com/areas/leesburg-fl/"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Service Areas",
-          "item": "https://breakinggroundlsad.com/service-areas/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Lake County",
-          "item": "https://breakinggroundlsad.com/areas/lake-county-fl/"
+          "name": "Clermont",
+          "url": "https://breakinggroundlsad.com/areas/clermont-fl/"
         }
       ]
     }
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@type": "BreadcrumbList",
+  "@id": "https://breakinggroundlsad.com/areas/lake-county-fl/#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://breakinggroundlsad.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Service Areas",
+      "item": "https://breakinggroundlsad.com/service-areas/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Lake County",
+      "item": "https://breakinggroundlsad.com/areas/lake-county-fl/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@type": "FAQPage",
+  "@id": "https://breakinggroundlsad.com/areas/lake-county-fl/#faq",
+  "url": "https://breakinggroundlsad.com/areas/lake-county-fl/",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you serve all of Lake County?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes \u2014 we consider jobs throughout Lake County and surrounding Lake County, subject to schedule and scope."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you demolish a mobile home in Lake County?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mobile home and manufactured home removal is our priority service. Share photos and location details for an estimate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is land clearing available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Land clearing may be offered as a secondary scope tied to demolition or lot reset. Ask when you request your estimate."
+      }
+    }
+  ],
+  "mainEntityOfPage": {
+    "@id": "https://breakinggroundlsad.com/areas/lake-county-fl/#webpage"
+  },
+  "isPartOf": {
+    "@id": "https://breakinggroundlsad.com/#website"
+  }
 }
 </script>
 </head>

@@ -16,3 +16,5 @@ jobs:
           python-version: "3.12"
       - name: Verify pages and sitemap
         run: python scripts/verify_seo.py
+      - name: Verify JSON-LD schema coverage
+        run: python scripts/verify_schema.py

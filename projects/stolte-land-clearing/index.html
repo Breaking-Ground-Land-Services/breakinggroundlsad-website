@@ -46,15 +46,20 @@
       "@id": "https://breakinggroundlsad.com/#business",
       "name": "Breaking Ground",
       "legalName": "Breaking Ground Land Services and Demolition LLC",
-      "url": "https://breakinggroundlsad.com",
+      "alternateName": "Breaking Ground Land Services and Demolition",
+      "url": "https://breakinggroundlsad.com/",
       "telephone": "+18638999717",
       "email": "contact@breakinggroundlsad.com",
       "foundingDate": "2024",
-      "description": "Owner-operated demolition, land clearing, and site work across Central Florida",
+      "description": "Owner-operated mobile home and light-structure demolition based in Kathleen, FL, with land clearing, stump excavation, and site work as supporting services across Central Florida.",
+      "slogan": "Mobile home demolition first \u2014 father-and-son owned, equipment ready.",
       "image": "https://breakinggroundlsad.com/assets/images/hero/IMG_0078-hero.webp",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://breakinggroundlsad.com/assets/images/brand/logo-96.webp"
+        "@id": "https://breakinggroundlsad.com/#logo",
+        "url": "https://breakinggroundlsad.com/assets/images/brand/logo-96.webp",
+        "width": 96,
+        "height": 96
       },
       "priceRange": "$$",
       "openingHours": "Mo-Sa 07:00-18:00",
@@ -71,7 +76,110 @@
         "latitude": "28.1214",
         "longitude": "-82.0487"
       },
-      "areaServed": "Florida",
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Central Florida"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Polk County, FL"
+        },
+        {
+          "@type": "State",
+          "name": "Florida"
+        }
+      ],
+      "knowsAbout": [
+        "mobile home demolition",
+        "manufactured home removal",
+        "light structure demolition",
+        "shed and barn removal",
+        "debris haul-off",
+        "land clearing support",
+        "stump excavation",
+        "tree removal support",
+        "storm debris cleanup",
+        "grading and site preparation"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Demolition and site services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Demolition",
+              "url": "https://breakinggroundlsad.com/demolition/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile Home Demolition",
+              "url": "https://breakinggroundlsad.com/mobile-home-demolition/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Shed & Barn Removal",
+              "url": "https://breakinggroundlsad.com/shed-barn-removal/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Land Clearing",
+              "url": "https://breakinggroundlsad.com/land-clearing/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Tree Removal",
+              "url": "https://breakinggroundlsad.com/tree-removal/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Stump Removal",
+              "url": "https://breakinggroundlsad.com/stump-removal/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pond & Drainage",
+              "url": "https://breakinggroundlsad.com/pond-drainage/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Grading & Site Prep",
+              "url": "https://breakinggroundlsad.com/grading-site-preparation/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Storm Cleanup",
+              "url": "https://breakinggroundlsad.com/storm-debris-cleanup/"
+            }
+          }
+        ]
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": 5.0,
@@ -86,33 +194,144 @@
         "contactType": "customer service",
         "areaServed": "US-FL",
         "availableLanguage": "English"
+      },
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Guy S. McMillen",
+          "@id": "https://breakinggroundlsad.com/#person-1"
+        },
+        {
+          "@type": "Person",
+          "name": "Andrew S. McMillen",
+          "@id": "https://breakinggroundlsad.com/#person-2"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61562030751815",
+        "https://www.instagram.com/breakinggroundlsad/",
+        "https://www.youtube.com/@breakinggroundlsad",
+        "https://www.tiktok.com/@breakinggroundlsad"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://breakinggroundlsad.com/#website",
+      "url": "https://breakinggroundlsad.com/",
+      "name": "Breaking Ground",
+      "description": "Owner-operated demolition, land clearing, and site work across Central Florida",
+      "publisher": {
+        "@id": "https://breakinggroundlsad.com/#business"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://breakinggroundlsad.com/projects/stolte-land-clearing/#webpage",
+      "url": "https://breakinggroundlsad.com/projects/stolte-land-clearing/",
+      "name": "Heavy Land Clearing Project | Breaking Ground",
+      "description": "Large land clearing with tree takedown, log piles, stump grinding, and a clean finished site by Breaking Ground.",
+      "isPartOf": {
+        "@id": "https://breakinggroundlsad.com/#website"
+      },
+      "publisher": {
+        "@id": "https://breakinggroundlsad.com/#business"
+      },
+      "inLanguage": "en-US",
+      "breadcrumb": {
+        "@id": "https://breakinggroundlsad.com/projects/stolte-land-clearing/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://breakinggroundlsad.com/projects/stolte-land-clearing/#project"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://breakinggroundlsad.com/assets/images/projects/stolte-land-clearing/before-process-after-stolte-land-clearing.webp#image"
+      },
+      "image": "https://breakinggroundlsad.com/assets/images/projects/stolte-land-clearing/before-process-after-stolte-land-clearing.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://breakinggroundlsad.com/assets/images/projects/stolte-land-clearing/before-process-after-stolte-land-clearing.webp#image",
+      "contentUrl": "https://breakinggroundlsad.com/assets/images/projects/stolte-land-clearing/before-process-after-stolte-land-clearing.webp",
+      "url": "https://breakinggroundlsad.com/assets/images/projects/stolte-land-clearing/before-process-after-stolte-land-clearing.webp",
+      "caption": "Heavy Land Clearing Project | Breaking Ground"
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://breakinggroundlsad.com/projects/stolte-land-clearing/#project",
+      "name": "Heavy Land Clearing",
+      "description": "Large land clearing with tree takedown, log piles, stump grinding, and a clean finished site by Breaking Ground.",
+      "url": "https://breakinggroundlsad.com/projects/stolte-land-clearing/",
+      "image": "https://breakinggroundlsad.com/assets/images/projects/stolte-land-clearing/before-process-after-stolte-land-clearing.webp",
+      "about": {
+        "@type": "Service",
+        "name": "Land Clearing"
+      },
+      "creator": {
+        "@id": "https://breakinggroundlsad.com/#business"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://breakinggroundlsad.com/projects/stolte-land-clearing/#webpage"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@type": "BreadcrumbList",
+  "@id": "https://breakinggroundlsad.com/projects/stolte-land-clearing/#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://breakinggroundlsad.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Projects",
+      "item": "https://breakinggroundlsad.com/projects/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Heavy Land Clearing",
+      "item": "https://breakinggroundlsad.com/projects/stolte-land-clearing/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@type": "FAQPage",
+  "@id": "https://breakinggroundlsad.com/projects/stolte-land-clearing/#faq",
+  "url": "https://breakinggroundlsad.com/projects/stolte-land-clearing/",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you offer free estimates for similar jobs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Estimates are free. Share photos and your city for a faster response."
       }
     },
     {
-      "@type": "BreadcrumbList",
-      "@id": "https://breakinggroundlsad.com/projects/stolte-land-clearing/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://breakinggroundlsad.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Projects",
-          "item": "https://breakinggroundlsad.com/projects/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Heavy Land Clearing",
-          "item": "https://breakinggroundlsad.com/projects/stolte-land-clearing/"
-        }
-      ]
+      "@type": "Question",
+      "name": "Do you still take on Land Clearing projects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Breaking Ground continues to provide Land Clearing from Kathleen across Central Florida, with larger demolition jobs considered statewide by scope."
+      }
     }
-  ]
+  ],
+  "mainEntityOfPage": {
+    "@id": "https://breakinggroundlsad.com/projects/stolte-land-clearing/#webpage"
+  },
+  "isPartOf": {
+    "@id": "https://breakinggroundlsad.com/#website"
+  }
 }
 </script>
 </head>
@@ -313,6 +532,10 @@
       <div class="project-case__actions">
         <a class="btn btn-primary" href="/breakinggroundlsad-website/contact/">Request a similar estimate</a>
         <a class="btn btn-dark" href="/breakinggroundlsad-website/land-clearing/">Land Clearing service</a>
+      </div>
+      <div class="faq">
+        <details open><summary>Do you offer free estimates for similar jobs?</summary><p>Yes. Estimates are free. Share photos and your city for a faster response.</p></details>
+        <details><summary>Do you still take on Land Clearing projects?</summary><p>Yes. Breaking Ground continues to provide Land Clearing from Kathleen across Central Florida, with larger demolition jobs considered statewide by scope.</p></details>
       </div>
       
 <aside class="related-links reveal">

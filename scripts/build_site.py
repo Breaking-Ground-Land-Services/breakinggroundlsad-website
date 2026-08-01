@@ -359,52 +359,500 @@ def estimate_form_area(city: str = "", default_service: str = "Mobile Home Demol
 </form>"""
 
 
-def schema_business(extra: list | None = None) -> str:
-    graph = [
+def page_url(path: str) -> str:
+    """Absolute URL for a site path (root-absolute or already absolute)."""
+    if path.startswith("http"):
+        return path
+    if not path.startswith("/"):
+        path = "/" + path
+    return DOMAIN + path
+
+
+def absolute_asset(path: str) -> str:
+    return page_url(best_webp(path) if path.startswith("/assets/") else path)
+
+
+def _ld_script(node: dict) -> str:
+    return (
+        '<script type="application/ld+json">\n'
+        + json.dumps(node, indent=2)
+        + "\n</script>"
+    )
+
+
+def _schema_graph_block(*parts: dict) -> str:
+    nodes: list[dict] = []
+    for part in parts:
+        if not part:
+            continue
+        if isinstance(part, list):
+            nodes.extend(p for p in part if p)
+        else:
+            nodes.append(part)
+    return _ld_script({"@context": "https://schema.org", "@graph": nodes})
+
+
+def same_as_links() -> list[str]:
+    social = SITE.get("social") or {}
+    return [u for u in social.values() if isinstance(u, str) and u.startswith("http")]
+
+
+KNOWS_ABOUT = [
+    "mobile home demolition",
+    "manufactured home removal",
+    "light structure demolition",
+    "shed and barn removal",
+    "debris haul-off",
+    "land clearing support",
+    "stump excavation",
+    "tree removal support",
+    "storm debris cleanup",
+    "grading and site preparation",
+]
+
+
+def business_node() -> dict:
+    """Canonical Organization / LocalBusiness / HomeAndConstructionBusiness."""
+    offers = [
         {
-            "@type": ["Organization", "LocalBusiness", "HomeAndConstructionBusiness"],
-            "@id": f"{DOMAIN}/#business",
-            "name": SHORT,
-            "legalName": LEGAL,
-            "url": DOMAIN,
-            "telephone": PHONE_TEL,
-            "email": EMAIL,
-            "foundingDate": SITE["foundingYear"],
-            "description": SITE["tagline"],
-            "image": DOMAIN + OG,
-            "logo": {"@type": "ImageObject", "url": DOMAIN + LOGO},
-            "priceRange": SITE["priceRange"],
-            "openingHours": SITE["hours"],
-            "address": {
-                "@type": "PostalAddress",
-                **SITE["address"],
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                **SITE["geo"],
-            },
-            "areaServed": "Florida",
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": REVIEWS.get("ratingValue", 5),
-                "reviewCount": REVIEWS.get("reviewCount", len(REVIEWS.get("reviews") or [])),
-                "bestRating": 5,
-                "worstRating": 1,
-            },
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": PHONE_TEL,
-                "email": EMAIL,
-                "contactType": "customer service",
-                "areaServed": "US-FL",
-                "availableLanguage": "English",
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Service",
+                "name": s["navLabel"],
+                "url": page_url(s["path"]),
             },
         }
+        for s in SERVICES
     ]
-    if extra:
-        graph.extend(extra)
-    payload = {"@context": "https://schema.org", "@graph": graph}
-    return f'<script type="application/ld+json">\n{json.dumps(payload, indent=2)}\n</script>'
+    founders = [
+        {"@type": "Person", "name": name, "@id": f"{DOMAIN}/#person-{i + 1}"}
+        for i, name in enumerate(SITE.get("owners") or [])
+    ]
+    node: dict = {
+        "@type": ["Organization", "LocalBusiness", "HomeAndConstructionBusiness"],
+        "@id": f"{DOMAIN}/#business",
+        "name": SHORT,
+        "legalName": LEGAL,
+        "alternateName": NAME,
+        "url": DOMAIN + "/",
+        "telephone": PHONE_TEL,
+        "email": EMAIL,
+        "foundingDate": SITE["foundingYear"],
+        "description": (
+            "Owner-operated mobile home and light-structure demolition based in Kathleen, FL, "
+            "with land clearing, stump excavation, and site work as supporting services across Central Florida."
+        ),
+        "slogan": "Mobile home demolition first — father-and-son owned, equipment ready.",
+        "image": absolute_asset(OG),
+        "logo": {
+            "@type": "ImageObject",
+            "@id": f"{DOMAIN}/#logo",
+            "url": absolute_asset(LOGO),
+            "width": 96,
+            "height": 96,
+        },
+        "priceRange": SITE["priceRange"],
+        "openingHours": SITE["hours"],
+        "address": {"@type": "PostalAddress", **SITE["address"]},
+        "geo": {"@type": "GeoCoordinates", **SITE["geo"]},
+        "areaServed": [
+            {"@type": "AdministrativeArea", "name": "Central Florida"},
+            {"@type": "AdministrativeArea", "name": "Polk County, FL"},
+            {"@type": "State", "name": "Florida"},
+        ],
+        "knowsAbout": KNOWS_ABOUT,
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Demolition and site services",
+            "itemListElement": offers,
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": REVIEWS.get("ratingValue", 5),
+            "reviewCount": REVIEWS.get(
+                "reviewCount", len(REVIEWS.get("reviews") or [])
+            ),
+            "bestRating": 5,
+            "worstRating": 1,
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": PHONE_TEL,
+            "email": EMAIL,
+            "contactType": "customer service",
+            "areaServed": "US-FL",
+            "availableLanguage": "English",
+        },
+    }
+    if founders:
+        node["founder"] = founders if len(founders) > 1 else founders[0]
+    links = same_as_links()
+    if links:
+        node["sameAs"] = links
+    return node
+
+
+def website_node() -> dict:
+    return {
+        "@type": "WebSite",
+        "@id": f"{DOMAIN}/#website",
+        "url": DOMAIN + "/",
+        "name": SHORT,
+        "description": SITE["tagline"],
+        "publisher": {"@id": f"{DOMAIN}/#business"},
+        "inLanguage": "en-US",
+    }
+
+
+def breadcrumb_node(items: list[tuple[str, str]], path: str) -> dict:
+    return {
+        "@type": "BreadcrumbList",
+        "@id": page_url(path) + "#breadcrumb",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": i,
+                "name": name,
+                "item": page_url(item_path),
+            }
+            for i, (name, item_path) in enumerate(items, start=1)
+        ],
+    }
+
+
+def faq_node(faqs: list[tuple[str, str]], path: str) -> dict:
+    return {
+        "@type": "FAQPage",
+        "@id": page_url(path) + "#faq",
+        "url": page_url(path),
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": question,
+                "acceptedAnswer": {"@type": "Answer", "text": answer},
+            }
+            for question, answer in faqs
+        ],
+    }
+
+
+def webpage_node(
+    name: str,
+    description: str,
+    path: str,
+    *,
+    page_type: str | list[str] = "WebPage",
+    about: dict | None = None,
+    main_entity: dict | str | None = None,
+    primary_image: str | None = None,
+) -> dict:
+    types = page_type if isinstance(page_type, list) else [page_type]
+    node: dict = {
+        "@type": types if len(types) > 1 else types[0],
+        "@id": page_url(path) + "#webpage",
+        "url": page_url(path),
+        "name": name,
+        "description": description,
+        "isPartOf": {"@id": f"{DOMAIN}/#website"},
+        "publisher": {"@id": f"{DOMAIN}/#business"},
+        "inLanguage": "en-US",
+        "breadcrumb": {"@id": page_url(path) + "#breadcrumb"},
+    }
+    if about:
+        node["about"] = about
+    if main_entity:
+        node["mainEntity"] = main_entity
+    if primary_image:
+        img_url = absolute_asset(primary_image)
+        node["primaryImageOfPage"] = {"@id": img_url + "#image"}
+        node["image"] = img_url
+    return node
+
+
+def image_object_node(path: str, caption: str = "") -> dict:
+    img_url = absolute_asset(path)
+    node: dict = {
+        "@type": "ImageObject",
+        "@id": img_url + "#image",
+        "contentUrl": img_url,
+        "url": img_url,
+    }
+    if caption:
+        node["caption"] = caption
+    return node
+
+
+def item_list_node(
+    name: str,
+    path: str,
+    items: list[tuple[str, str]],
+    *,
+    list_id: str = "list",
+) -> dict:
+    return {
+        "@type": "ItemList",
+        "@id": page_url(path) + f"#{list_id}",
+        "name": name,
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": i,
+                "name": label,
+                "url": page_url(item_path),
+            }
+            for i, (label, item_path) in enumerate(items, start=1)
+        ],
+    }
+
+
+def service_node(svc: dict) -> dict:
+    path = svc["path"]
+    img = svc.get("heroImage") or svc.get("featuredImage") or OG
+    return {
+        "@type": "Service",
+        "@id": page_url(path) + "#service",
+        "name": svc["navLabel"],
+        "serviceType": svc["navLabel"],
+        "description": svc["meta"],
+        "url": page_url(path),
+        "provider": {"@id": f"{DOMAIN}/#business"},
+        "areaServed": [
+            {"@type": "AdministrativeArea", "name": "Central Florida"},
+            {"@type": "State", "name": "Florida"},
+        ],
+        "image": absolute_asset(img),
+        "mainEntityOfPage": {"@id": page_url(path) + "#webpage"},
+    }
+
+
+def place_node(area: dict) -> dict:
+    path = f"/areas/{area['slug']}/"
+    if area.get("type") == "county" or "county" in area.get("slug", ""):
+        return {
+            "@type": "AdministrativeArea",
+            "@id": page_url(path) + "#place",
+            "name": area.get("name") or area["shortName"],
+        }
+    node: dict = {
+        "@type": "City",
+        "@id": page_url(path) + "#place",
+        "name": f"{area['shortName']}, FL",
+    }
+    if area.get("county"):
+        node["containedInPlace"] = {
+            "@type": "AdministrativeArea",
+            "name": area["county"],
+        }
+    return node
+
+
+def area_service_node(area: dict) -> dict:
+    path = f"/areas/{area['slug']}/"
+    short = area["shortName"]
+    demo = area.get("angle") == "demo"
+    name = (
+        f"Mobile home demolition in {short}"
+        if demo
+        else f"Demolition and site services in {short}"
+    )
+    return {
+        "@type": "Service",
+        "@id": page_url(path) + "#service",
+        "name": name,
+        "serviceType": "Mobile home demolition",
+        "description": (
+            f"Owner-operated mobile home and light-structure demolition in {short}, FL"
+            + (
+                ", with land clearing and site work available as supporting scope."
+                if not demo
+                else "."
+            )
+        ),
+        "url": page_url(path),
+        "provider": {"@id": f"{DOMAIN}/#business"},
+        "areaServed": {"@type": "City", "name": f"{short}, FL"},
+        "mainEntityOfPage": {"@id": page_url(path) + "#webpage"},
+    }
+
+
+def creative_work_node(project: dict) -> dict:
+    path = project["path"]
+    img = project.get("composite") or project.get("image") or OG
+    return {
+        "@type": "CreativeWork",
+        "@id": page_url(path) + "#project",
+        "name": project["h1"],
+        "description": project.get("meta") or project.get("summary") or "",
+        "url": page_url(path),
+        "image": absolute_asset(img),
+        "about": {"@type": "Service", "name": project.get("service") or "Site work"},
+        "creator": {"@id": f"{DOMAIN}/#business"},
+        "mainEntityOfPage": {"@id": page_url(path) + "#webpage"},
+    }
+
+
+def pricing_offer_catalog() -> dict:
+    rows = [
+        ("Mobile home demolition (singlewide)", "3000", "6500"),
+        ("Mobile home demolition (doublewide)", "5000", "11000"),
+        ("Shed / small outbuilding removal", "800", "3500"),
+        ("Stump excavation", "250", "1200"),
+        ("Residential land clearing", "2000", "8000"),
+    ]
+    return {
+        "@type": "OfferCatalog",
+        "@id": page_url("/pricing/") + "#offers",
+        "name": "Planning price ranges",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "name": name,
+                "priceCurrency": "USD",
+                "price": low,
+                "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "minPrice": low,
+                    "maxPrice": high,
+                    "priceCurrency": "USD",
+                },
+                "description": "Planning range only — not a bid. Written estimate required.",
+            }
+            for name, low, high in rows
+        ],
+    }
+
+
+# Shared FAQ tuples aligned with on-page FAQ HTML (demolition-first).
+HOME_FAQS: list[tuple[str, str]] = [
+    (
+        "Do you offer free estimates?",
+        "Yes. Estimates are free. Final pricing is confirmed in a written scope before work begins.",
+    ),
+    (
+        "What is your priority service?",
+        "Mobile home and light-structure demolition — sheds, barns, and similar buildings — with haul-off so the lot is ready for the next use.",
+    ),
+    (
+        "Where do you work?",
+        "We are based in Kathleen and serve Central Florida routinely. Larger demolition and site jobs are considered statewide by project scope.",
+    ),
+    (
+        "Are you a general contractor?",
+        "No. We provide smaller demolition, structure removal, land clearing, and related site services as an owner-operated equipment company.",
+    ),
+    (
+        "Do you handle permits?",
+        "Permit requirements vary by jurisdiction and structure. We evaluate each project and coordinate required permitting based on the scope of work.",
+    ),
+]
+
+CONTACT_FAQS: list[tuple[str, str]] = [
+    (
+        "Do you offer free estimates?",
+        "Yes. Estimates are free. Final pricing is confirmed in a written scope before work begins.",
+    ),
+    (
+        "Can I text photos instead of using the form?",
+        f"Yes. Text photos and your city to {PHONE}. Include gate width, overhead lines, and structure type for the fastest response.",
+    ),
+    (
+        "How soon will you call back?",
+        "During business hours we aim for same-day response. After storms or on heavy schedule weeks, allow 24–48 hours — we respond to every serious inquiry.",
+    ),
+    (
+        "Do you handle permits?",
+        "Permit requirements vary by jurisdiction and structure. We evaluate each project and coordinate required permitting based on the scope of work.",
+    ),
+    (
+        "Are you a general contractor?",
+        "No. We provide demolition, structure removal, land clearing, and related site services as an owner-operated equipment company.",
+    ),
+]
+
+SERVICE_FAQS_COMMON: list[tuple[str, str]] = [
+    (
+        "Do you offer free estimates?",
+        "Yes. Estimates are free. Final pricing is confirmed in a written scope before work begins.",
+    ),
+    (
+        "Do you handle permits?",
+        "Permit requirements vary by jurisdiction and structure. We evaluate each project and coordinate required permitting based on the scope of work.",
+    ),
+    (
+        "Where do you work?",
+        "We are based in Kathleen and serve Central Florida routinely. Larger demolition and site jobs are considered statewide by project scope.",
+    ),
+    (
+        "Are you a general contractor?",
+        "No. We provide smaller demolition, structure removal, land clearing, and related site services as an owner-operated equipment company.",
+    ),
+]
+
+
+def service_faqs(svc: dict) -> list[tuple[str, str]]:
+    label = svc["navLabel"]
+    return SERVICE_FAQS_COMMON + [
+        (
+            f"Do you provide {label} in Central Florida?",
+            f"Yes. Breaking Ground provides {label} from our Kathleen base across Central Florida, "
+            "with larger jobs considered statewide by scope.",
+        ),
+    ]
+
+
+def area_faqs(area: dict) -> list[tuple[str, str]]:
+    short = area["shortName"]
+    county = area["county"]
+    angle = area.get("angle", "full")
+    clearing = (
+        "Yes, land clearing and related site work are available in our Central Florida coverage area."
+        if angle == "full"
+        else "Land clearing may be offered as a secondary scope tied to demolition or lot reset. Ask when you request your estimate."
+    )
+    return [
+        (
+            f"Do you serve all of {short}?",
+            f"Yes — we consider jobs throughout {short} and surrounding {county}, subject to schedule and scope.",
+        ),
+        (
+            f"Can you demolish a mobile home in {short}?",
+            "Mobile home and manufactured home removal is our priority service. Share photos and location details for an estimate.",
+        ),
+        ("Is land clearing available?", clearing),
+    ]
+
+
+def project_faqs(project: dict) -> list[tuple[str, str]]:
+    label = project.get("service") or "this type of work"
+    return [
+        (
+            "Do you offer free estimates for similar jobs?",
+            "Yes. Estimates are free. Share photos and your city for a faster response.",
+        ),
+        (
+            f"Do you still take on {label} projects?",
+            f"Yes. Breaking Ground continues to provide {label} from Kathleen across Central Florida, "
+            "with larger demolition jobs considered statewide by scope.",
+        ),
+    ]
+
+
+def page_schema_bundle(
+    path: str,
+    *graph_parts: dict | list | None,
+    faqs: list[tuple[str, str]] | None = None,
+    breadcrumbs: list[tuple[str, str]] | None = None,
+) -> str:
+    """Primary @graph plus standalone BreadcrumbList / FAQPage for rich-result parsers."""
+    scripts = [_schema_graph_block(*[p for p in graph_parts if p])]
+    if breadcrumbs:
+        scripts.append(_ld_script(breadcrumb_node(breadcrumbs, path)))
+    if faqs:
+        faq = faq_node(faqs, path)
+        faq["mainEntityOfPage"] = {"@id": page_url(path) + "#webpage"}
+        faq["isPartOf"] = {"@id": f"{DOMAIN}/#website"}
+        scripts.append(_ld_script(faq))
+    return "\n".join(scripts)
 
 
 def chrome_partial(name: str) -> str:
@@ -435,20 +883,43 @@ def head(
     breadcrumbs: list[tuple[str, str]] | None = None,
     extra_schema: list | None = None,
     lcp_preload: str | None = None,
+    faqs: list[tuple[str, str]] | None = None,
+    page_type: str | list[str] = "WebPage",
+    main_entity: dict | str | None = None,
+    about: dict | None = None,
+    skip_website: bool = False,
 ) -> str:
-    img = DOMAIN + best_webp(og_image or OG)
-    can = canonical if canonical.startswith("http") else DOMAIN + canonical
+    img = absolute_asset(og_image or OG)
+    path = canonical if not canonical.startswith("http") else canonical.replace(DOMAIN, "") or "/"
+    if not path.startswith("/"):
+        path = "/" + path
+    can = page_url(path)
     crumbs = breadcrumbs or [("Home", "/")]
-    crumb_schema = {
-        "@type": "BreadcrumbList",
-        "@id": can + "#breadcrumb",
-        "itemListElement": [
-            {"@type": "ListItem", "position": i + 1, "name": n, "item": DOMAIN + u}
-            for i, (n, u) in enumerate(crumbs)
-        ],
-    }
-    extras = list(extra_schema or [])
-    extras.append(crumb_schema)
+    webpage = webpage_node(
+        title,
+        description,
+        path,
+        page_type=page_type,
+        about=about,
+        main_entity=main_entity,
+        primary_image=og_image or OG,
+    )
+    graph_parts: list = [business_node()]
+    if not skip_website:
+        graph_parts.append(website_node())
+    graph_parts.append(webpage)
+    if og_image or OG:
+        graph_parts.append(
+            image_object_node(og_image or OG, caption=title)
+        )
+    if extra_schema:
+        graph_parts.extend(extra_schema)
+    schema_html = page_schema_bundle(
+        path,
+        *graph_parts,
+        faqs=faqs,
+        breadcrumbs=crumbs,
+    )
     preload = ""
     if lcp_preload:
         preload = (
@@ -490,7 +961,7 @@ def head(
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   {preload}  <link rel="stylesheet" href="/assets/css/style.css?v=nav4" />
-  {schema_business(extras)}
+  {schema_html}
 </head>
 <body>
   {chrome_partial("header.html")}
@@ -1009,6 +1480,17 @@ def build_home() -> None:
             "/",
             breadcrumbs=[("Home", "/")],
             lcp_preload=LCP_HERO,
+            og_image=LCP_HERO,
+            faqs=HOME_FAQS,
+            page_type="WebPage",
+            extra_schema=[
+                item_list_node(
+                    "Primary services",
+                    "/",
+                    [(s["navLabel"], s["path"]) for s in SERVICES],
+                    list_id="services",
+                ),
+            ],
         )
         + f"""
   <section class="hero-stage">
@@ -1086,6 +1568,19 @@ def build_home() -> None:
       {related_links("/")}
     </div>
   </section>
+  <section class="section-pad section-pad--muted" aria-label="Frequently asked questions">
+    <div class="container">
+      <p class="section-eyebrow">FAQ</p>
+      <h2>Common questions</h2>
+      <div class="faq">
+        <details open><summary>Do you offer free estimates?</summary><p>Yes. Estimates are free. Final pricing is confirmed in a written scope before work begins.</p></details>
+        <details><summary>What is your priority service?</summary><p>Mobile home and light-structure demolition — sheds, barns, and similar buildings — with haul-off so the lot is ready for the next use.</p></details>
+        <details><summary>Where do you work?</summary><p>We are based in Kathleen and serve Central Florida routinely. Larger demolition and site jobs are considered statewide by project scope.</p></details>
+        <details><summary>Are you a general contractor?</summary><p>No. We provide smaller demolition, structure removal, land clearing, and related site services as an owner-operated equipment company.</p></details>
+        <details><summary>Do you handle permits?</summary><p>Permit requirements vary by jurisdiction and structure. We evaluate each project and coordinate required permitting based on the scope of work.</p></details>
+      </div>
+    </div>
+  </section>
 """
         + cta_band(
             "Ready to clear the structure or the lot?",
@@ -1124,6 +1619,24 @@ def build_about() -> None:
             "Meet Guy and Andrew McMillen — father-and-son owners of Breaking Ground Land Services and Demolition in Kathleen, Florida.",
             "/about/",
             breadcrumbs=[("Home", "/"), ("About", "/about/")],
+            page_type=["WebPage", "AboutPage"],
+            og_image=about_photo,
+            extra_schema=[
+                {
+                    "@type": "Person",
+                    "@id": f"{DOMAIN}/#person-1",
+                    "name": "Guy S. McMillen",
+                    "jobTitle": "Owner / Operator",
+                    "worksFor": {"@id": f"{DOMAIN}/#business"},
+                },
+                {
+                    "@type": "Person",
+                    "@id": f"{DOMAIN}/#person-2",
+                    "name": "Andrew S. McMillen",
+                    "jobTitle": "Owner / Operator",
+                    "worksFor": {"@id": f"{DOMAIN}/#business"},
+                },
+            ],
         )
         + body
         + foot(),
@@ -1131,35 +1644,6 @@ def build_about() -> None:
 
 
 def build_contact() -> None:
-    faq_schema = {
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Do you offer free estimates?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. Estimates are free. Final pricing is confirmed in a written scope before work begins.",
-                },
-            },
-            {
-                "@type": "Question",
-                "name": "Can I text photos instead of using the form?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": f"Yes. Text photos and your city to {PHONE}. Include gate width, overhead lines, and structure type for the fastest response.",
-                },
-            },
-            {
-                "@type": "Question",
-                "name": "Where does Breaking Ground work?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We are based in Kathleen, Florida and serve Central Florida routinely, with larger demolition jobs considered statewide by scope.",
-                },
-            },
-        ],
-    }
     body = f"""
 {page_hero("Request an Estimate", crumb([("Home","/"),("Contact","/contact/")]), "/assets/images/hero/IMG_9083-scaled.jpg")}
 <section class="section-pad contact-page">
@@ -1184,7 +1668,9 @@ def build_contact() -> None:
             f"Request a free demolition or land-services estimate from Breaking Ground in Kathleen, FL. Call {PHONE}, email {EMAIL}, or send project details online.",
             "/contact/",
             breadcrumbs=[("Home", "/"), ("Contact", "/contact/")],
-            extra_schema=[faq_schema],
+            page_type=["WebPage", "ContactPage"],
+            faqs=CONTACT_FAQS,
+            og_image="/assets/images/hero/IMG_9083-scaled.jpg",
         )
         + body
         + foot(),
@@ -1207,6 +1693,16 @@ def build_services_hub() -> None:
             "Mobile home demolition, shed removal, land clearing, stump excavation, and storm cleanup in Central Florida.",
             "/services/",
             breadcrumbs=[("Home", "/"), ("Services", "/services/")],
+            page_type=["WebPage", "CollectionPage"],
+            og_image="/assets/images/projects/IMG_8495-scaled.jpg",
+            extra_schema=[
+                item_list_node(
+                    "Breaking Ground services",
+                    "/services/",
+                    [(s["navLabel"], s["path"]) for s in SERVICES],
+                    list_id="services",
+                ),
+            ],
         )
         + body
         + foot(),
@@ -1380,35 +1876,8 @@ def build_service_pages() -> None:
     SERVICES = json.loads((DATA / "services.json").read_text(encoding="utf-8"))
 
     for s in SERVICES:
-        faq_schema = {
-            "@type": "FAQPage",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "Do you offer free estimates?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes. Estimates are free and informational until confirmed in writing.",
-                    },
-                },
-                {
-                    "@type": "Question",
-                    "name": f"Do you provide {s['navLabel']} in Central Florida?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": f"Yes. Breaking Ground provides {s['navLabel']} from our Kathleen base across Central Florida, with larger jobs considered statewide by scope.",
-                    },
-                },
-            ],
-        }
-        service_schema = {
-            "@type": "Service",
-            "name": s["navLabel"],
-            "provider": {"@id": f"{DOMAIN}/#business"},
-            "areaServed": "Florida",
-            "url": DOMAIN + s["path"],
-            "description": s["meta"],
-        }
+        svc_node = service_node(s)
+        faqs = service_faqs(s)
 
         featured, featured_caption, photo_queue, _ = _service_media(s)
         body_html = service_body(s)
@@ -1563,7 +2032,10 @@ def build_service_pages() -> None:
                 s["path"],
                 og_image=featured or s["heroImage"],
                 breadcrumbs=[("Home", "/"), ("Services", "/services/"), (s["navLabel"], s["path"])],
-                extra_schema=[service_schema, faq_schema],
+                faqs=faqs,
+                page_type="WebPage",
+                main_entity={"@id": page_url(s["path"]) + "#service"},
+                extra_schema=[svc_node],
             )
             + body
             + foot(),
@@ -1614,6 +2086,16 @@ def build_projects() -> None:
             "Before-and-after land clearing, stump excavation, tree removal, storm cleanup, and pond projects across Central Florida.",
             "/projects/",
             breadcrumbs=[("Home", "/"), ("Projects", "/projects/")],
+            page_type=["WebPage", "CollectionPage"],
+            og_image=PROJECTS[0].get("composite") or PROJECTS[0]["image"],
+            extra_schema=[
+                item_list_node(
+                    "Project gallery",
+                    "/projects/",
+                    [(p["h1"], p["path"]) for p in PROJECTS],
+                    list_id="projects",
+                ),
+            ],
         )
         + page_hero("Projects", crumb([("Home", "/"), ("Projects", "/projects/")]), PROJECTS[0].get("composite") or PROJECTS[0]["image"])
         + f'<section class="section-pad"><div class="container"><div class="project-grid">{cards}</div>{related_links("/projects/")}</div></section>'
@@ -1818,6 +2300,10 @@ def build_projects() -> None:
         <a class="btn btn-primary" href="/contact/">Request a similar estimate</a>
         <a class="btn btn-dark" href="{esc(p["servicePath"])}">{esc(p["service"])} service</a>
       </div>
+      <div class="faq">
+        <details open><summary>Do you offer free estimates for similar jobs?</summary><p>Yes. Estimates are free. Share photos and your city for a faster response.</p></details>
+        <details><summary>Do you still take on {esc(p.get("service") or "this type of work")} projects?</summary><p>Yes. Breaking Ground continues to provide {esc(p.get("service") or "this work")} from Kathleen across Central Florida, with larger demolition jobs considered statewide by scope.</p></details>
+      </div>
       {related_links(p["path"])}
     </div>
   </div>
@@ -1831,6 +2317,10 @@ def build_projects() -> None:
                 p["path"],
                 og_image=hero_src,
                 breadcrumbs=[("Home", "/"), ("Projects", "/projects/"), (p["h1"], p["path"])],
+                faqs=project_faqs(p),
+                page_type="WebPage",
+                main_entity={"@id": page_url(p["path"]) + "#project"},
+                extra_schema=[creative_work_node(p)],
             )
             + body
             + foot(),
@@ -1872,6 +2362,9 @@ def build_pricing() -> None:
             "Planning ranges for mobile home demolition, shed removal, stump excavation, and land clearing in Central Florida.",
             "/pricing/",
             breadcrumbs=[("Home", "/"), ("Pricing", "/pricing/")],
+            page_type="WebPage",
+            og_image="/assets/images/projects/IMG_8495-scaled.jpg",
+            extra_schema=[pricing_offer_catalog()],
         )
         + body
         + foot(),
@@ -1965,6 +2458,7 @@ def build_policies() -> None:
                 f"{title} for {LEGAL}.",
                 path,
                 breadcrumbs=[("Home", "/"), (title, path)],
+                page_type="WebPage",
             )
             + page_hero(title, crumb([("Home", "/"), (title, path)]), OG)
             + f'<section class="section-pad"><div class="container prose policy-wrap">{content}</div></section>'
@@ -2001,6 +2495,16 @@ def build_service_areas() -> None:
             "Based in Kathleen serving Central Florida; larger mobile home demolition and site jobs considered statewide by scope.",
             "/service-areas/",
             breadcrumbs=[("Home", "/"), ("Service Areas", "/service-areas/")],
+            page_type=["WebPage", "CollectionPage"],
+            og_image="/assets/images/projects/IMG_0249-scaled.jpg",
+            extra_schema=[
+                item_list_node(
+                    "Florida service areas",
+                    "/service-areas/",
+                    [(a["shortName"], f"/areas/{a['slug']}/") for a in areas],
+                    list_id="areas",
+                ),
+            ],
         )
         + hub
         + foot(),
@@ -2043,6 +2547,25 @@ def build_service_areas() -> None:
 <div class="prose reveal">{body_figure}{area_body(a)}{related_links(f"/areas/{a['slug']}/")}</div>
 </div></section>
 """
+        extras: list = [place_node(a), area_service_node(a)]
+        if a.get("type") == "county" or "county" in a.get("slug", ""):
+            # List nearby cities from the same county when available
+            sibling_cities = [
+                (x["shortName"], f"/areas/{x['slug']}/")
+                for x in areas
+                if x.get("county") == a.get("county")
+                and x.get("type") != "county"
+                and "county" not in x.get("slug", "")
+            ][:12]
+            if sibling_cities:
+                extras.append(
+                    item_list_node(
+                        f"Cities in {a['shortName']}",
+                        f"/areas/{a['slug']}/",
+                        sibling_cities,
+                        list_id="cities",
+                    )
+                )
         write(
             f"areas/{a['slug']}/index.html",
             head(
@@ -2050,16 +2573,16 @@ def build_service_areas() -> None:
                 meta,
                 f"/areas/{a['slug']}/",
                 og_image=hero_img,
-                breadcrumbs=[("Home", "/"), ("Service Areas", "/service-areas/"), (short, f"/areas/{a['slug']}/")],
-                extra_schema=[
-                    {
-                        "@type": "Service",
-                        "name": f"Demolition services in {short}",
-                        "provider": {"@id": f"{DOMAIN}/#business"},
-                        "areaServed": short + ", FL",
-                        "url": f"{DOMAIN}/areas/{a['slug']}/",
-                    }
+                breadcrumbs=[
+                    ("Home", "/"),
+                    ("Service Areas", "/service-areas/"),
+                    (short, f"/areas/{a['slug']}/"),
                 ],
+                faqs=area_faqs(a),
+                page_type="WebPage",
+                about={"@id": page_url(f"/areas/{a['slug']}/") + "#place"},
+                main_entity={"@id": page_url(f"/areas/{a['slug']}/") + "#service"},
+                extra_schema=extras,
             )
             + body
             + foot(),

@@ -46,15 +46,20 @@
       "@id": "https://breakinggroundlsad.com/#business",
       "name": "Breaking Ground",
       "legalName": "Breaking Ground Land Services and Demolition LLC",
-      "url": "https://breakinggroundlsad.com",
+      "alternateName": "Breaking Ground Land Services and Demolition",
+      "url": "https://breakinggroundlsad.com/",
       "telephone": "+18638999717",
       "email": "contact@breakinggroundlsad.com",
       "foundingDate": "2024",
-      "description": "Owner-operated demolition, land clearing, and site work across Central Florida",
+      "description": "Owner-operated mobile home and light-structure demolition based in Kathleen, FL, with land clearing, stump excavation, and site work as supporting services across Central Florida.",
+      "slogan": "Mobile home demolition first \u2014 father-and-son owned, equipment ready.",
       "image": "https://breakinggroundlsad.com/assets/images/hero/IMG_0078-hero.webp",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://breakinggroundlsad.com/assets/images/brand/logo-96.webp"
+        "@id": "https://breakinggroundlsad.com/#logo",
+        "url": "https://breakinggroundlsad.com/assets/images/brand/logo-96.webp",
+        "width": 96,
+        "height": 96
       },
       "priceRange": "$$",
       "openingHours": "Mo-Sa 07:00-18:00",
@@ -71,7 +76,110 @@
         "latitude": "28.1214",
         "longitude": "-82.0487"
       },
-      "areaServed": "Florida",
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Central Florida"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Polk County, FL"
+        },
+        {
+          "@type": "State",
+          "name": "Florida"
+        }
+      ],
+      "knowsAbout": [
+        "mobile home demolition",
+        "manufactured home removal",
+        "light structure demolition",
+        "shed and barn removal",
+        "debris haul-off",
+        "land clearing support",
+        "stump excavation",
+        "tree removal support",
+        "storm debris cleanup",
+        "grading and site preparation"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Demolition and site services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Demolition",
+              "url": "https://breakinggroundlsad.com/demolition/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile Home Demolition",
+              "url": "https://breakinggroundlsad.com/mobile-home-demolition/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Shed & Barn Removal",
+              "url": "https://breakinggroundlsad.com/shed-barn-removal/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Land Clearing",
+              "url": "https://breakinggroundlsad.com/land-clearing/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Tree Removal",
+              "url": "https://breakinggroundlsad.com/tree-removal/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Stump Removal",
+              "url": "https://breakinggroundlsad.com/stump-removal/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pond & Drainage",
+              "url": "https://breakinggroundlsad.com/pond-drainage/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Grading & Site Prep",
+              "url": "https://breakinggroundlsad.com/grading-site-preparation/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Storm Cleanup",
+              "url": "https://breakinggroundlsad.com/storm-debris-cleanup/"
+            }
+          }
+        ]
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": 5.0,
@@ -86,64 +194,175 @@
         "contactType": "customer service",
         "areaServed": "US-FL",
         "availableLanguage": "English"
-      }
+      },
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Guy S. McMillen",
+          "@id": "https://breakinggroundlsad.com/#person-1"
+        },
+        {
+          "@type": "Person",
+          "name": "Andrew S. McMillen",
+          "@id": "https://breakinggroundlsad.com/#person-2"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61562030751815",
+        "https://www.instagram.com/breakinggroundlsad/",
+        "https://www.youtube.com/@breakinggroundlsad",
+        "https://www.tiktok.com/@breakinggroundlsad"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://breakinggroundlsad.com/#website",
+      "url": "https://breakinggroundlsad.com/",
+      "name": "Breaking Ground",
+      "description": "Owner-operated demolition, land clearing, and site work across Central Florida",
+      "publisher": {
+        "@id": "https://breakinggroundlsad.com/#business"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://breakinggroundlsad.com/grading-site-preparation/#webpage",
+      "url": "https://breakinggroundlsad.com/grading-site-preparation/",
+      "name": "Grading & Site Preparation for Builders | Breaking Ground",
+      "description": "Builder-ready rough grading, fill placement, and pad prep after demolition or clearing across Central Florida. Direct line to Guy and Andrew.",
+      "isPartOf": {
+        "@id": "https://breakinggroundlsad.com/#website"
+      },
+      "publisher": {
+        "@id": "https://breakinggroundlsad.com/#business"
+      },
+      "inLanguage": "en-US",
+      "breadcrumb": {
+        "@id": "https://breakinggroundlsad.com/grading-site-preparation/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://breakinggroundlsad.com/grading-site-preparation/#service"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://breakinggroundlsad.com/assets/images/brand/guy-and-andrew-glasses.webp#image"
+      },
+      "image": "https://breakinggroundlsad.com/assets/images/brand/guy-and-andrew-glasses.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://breakinggroundlsad.com/assets/images/brand/guy-and-andrew-glasses.webp#image",
+      "contentUrl": "https://breakinggroundlsad.com/assets/images/brand/guy-and-andrew-glasses.webp",
+      "url": "https://breakinggroundlsad.com/assets/images/brand/guy-and-andrew-glasses.webp",
+      "caption": "Grading & Site Preparation for Builders | Breaking Ground"
     },
     {
       "@type": "Service",
+      "@id": "https://breakinggroundlsad.com/grading-site-preparation/#service",
       "name": "Grading & Site Prep",
+      "serviceType": "Grading & Site Prep",
+      "description": "Builder-ready rough grading, fill placement, and pad prep after demolition or clearing across Central Florida. Direct line to Guy and Andrew.",
+      "url": "https://breakinggroundlsad.com/grading-site-preparation/",
       "provider": {
         "@id": "https://breakinggroundlsad.com/#business"
       },
-      "areaServed": "Florida",
-      "url": "https://breakinggroundlsad.com/grading-site-preparation/",
-      "description": "Builder-ready rough grading, fill placement, and pad prep after demolition or clearing across Central Florida. Direct line to Guy and Andrew."
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
+      "areaServed": [
         {
-          "@type": "Question",
-          "name": "Do you offer free estimates?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Estimates are free and informational until confirmed in writing."
-          }
+          "@type": "AdministrativeArea",
+          "name": "Central Florida"
         },
         {
-          "@type": "Question",
-          "name": "Do you provide Grading & Site Prep in Central Florida?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Breaking Ground provides Grading & Site Prep from our Kathleen base across Central Florida, with larger jobs considered statewide by scope."
-          }
+          "@type": "State",
+          "name": "Florida"
         }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://breakinggroundlsad.com/grading-site-preparation/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://breakinggroundlsad.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Services",
-          "item": "https://breakinggroundlsad.com/services/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Grading & Site Prep",
-          "item": "https://breakinggroundlsad.com/grading-site-preparation/"
-        }
-      ]
+      ],
+      "image": "https://breakinggroundlsad.com/assets/images/brand/guy-and-andrew-glasses.webp",
+      "mainEntityOfPage": {
+        "@id": "https://breakinggroundlsad.com/grading-site-preparation/#webpage"
+      }
     }
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@type": "BreadcrumbList",
+  "@id": "https://breakinggroundlsad.com/grading-site-preparation/#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://breakinggroundlsad.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://breakinggroundlsad.com/services/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Grading & Site Prep",
+      "item": "https://breakinggroundlsad.com/grading-site-preparation/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@type": "FAQPage",
+  "@id": "https://breakinggroundlsad.com/grading-site-preparation/#faq",
+  "url": "https://breakinggroundlsad.com/grading-site-preparation/",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you offer free estimates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Estimates are free. Final pricing is confirmed in a written scope before work begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you handle permits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Permit requirements vary by jurisdiction and structure. We evaluate each project and coordinate required permitting based on the scope of work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do you work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We are based in Kathleen and serve Central Florida routinely. Larger demolition and site jobs are considered statewide by project scope."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you a general contractor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We provide smaller demolition, structure removal, land clearing, and related site services as an owner-operated equipment company."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide Grading & Site Prep in Central Florida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Breaking Ground provides Grading & Site Prep from our Kathleen base across Central Florida, with larger jobs considered statewide by scope."
+      }
+    }
+  ],
+  "mainEntityOfPage": {
+    "@id": "https://breakinggroundlsad.com/grading-site-preparation/#webpage"
+  },
+  "isPartOf": {
+    "@id": "https://breakinggroundlsad.com/#website"
+  }
 }
 </script>
 </head>

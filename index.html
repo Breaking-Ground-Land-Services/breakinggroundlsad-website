@@ -47,15 +47,20 @@
       "@id": "https://breakinggroundlsad.com/#business",
       "name": "Breaking Ground",
       "legalName": "Breaking Ground Land Services and Demolition LLC",
-      "url": "https://breakinggroundlsad.com",
+      "alternateName": "Breaking Ground Land Services and Demolition",
+      "url": "https://breakinggroundlsad.com/",
       "telephone": "+18638999717",
       "email": "contact@breakinggroundlsad.com",
       "foundingDate": "2024",
-      "description": "Owner-operated demolition, land clearing, and site work across Central Florida",
+      "description": "Owner-operated mobile home and light-structure demolition based in Kathleen, FL, with land clearing, stump excavation, and site work as supporting services across Central Florida.",
+      "slogan": "Mobile home demolition first \u2014 father-and-son owned, equipment ready.",
       "image": "https://breakinggroundlsad.com/assets/images/hero/IMG_0078-hero.webp",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://breakinggroundlsad.com/assets/images/brand/logo-96.webp"
+        "@id": "https://breakinggroundlsad.com/#logo",
+        "url": "https://breakinggroundlsad.com/assets/images/brand/logo-96.webp",
+        "width": 96,
+        "height": 96
       },
       "priceRange": "$$",
       "openingHours": "Mo-Sa 07:00-18:00",
@@ -72,7 +77,110 @@
         "latitude": "28.1214",
         "longitude": "-82.0487"
       },
-      "areaServed": "Florida",
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Central Florida"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Polk County, FL"
+        },
+        {
+          "@type": "State",
+          "name": "Florida"
+        }
+      ],
+      "knowsAbout": [
+        "mobile home demolition",
+        "manufactured home removal",
+        "light structure demolition",
+        "shed and barn removal",
+        "debris haul-off",
+        "land clearing support",
+        "stump excavation",
+        "tree removal support",
+        "storm debris cleanup",
+        "grading and site preparation"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Demolition and site services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Demolition",
+              "url": "https://breakinggroundlsad.com/demolition/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile Home Demolition",
+              "url": "https://breakinggroundlsad.com/mobile-home-demolition/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Shed & Barn Removal",
+              "url": "https://breakinggroundlsad.com/shed-barn-removal/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Land Clearing",
+              "url": "https://breakinggroundlsad.com/land-clearing/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Tree Removal",
+              "url": "https://breakinggroundlsad.com/tree-removal/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Stump Removal",
+              "url": "https://breakinggroundlsad.com/stump-removal/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pond & Drainage",
+              "url": "https://breakinggroundlsad.com/pond-drainage/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Grading & Site Prep",
+              "url": "https://breakinggroundlsad.com/grading-site-preparation/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Storm Cleanup",
+              "url": "https://breakinggroundlsad.com/storm-debris-cleanup/"
+            }
+          }
+        ]
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": 5.0,
@@ -87,21 +195,196 @@
         "contactType": "customer service",
         "areaServed": "US-FL",
         "availableLanguage": "English"
-      }
+      },
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Guy S. McMillen",
+          "@id": "https://breakinggroundlsad.com/#person-1"
+        },
+        {
+          "@type": "Person",
+          "name": "Andrew S. McMillen",
+          "@id": "https://breakinggroundlsad.com/#person-2"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61562030751815",
+        "https://www.instagram.com/breakinggroundlsad/",
+        "https://www.youtube.com/@breakinggroundlsad",
+        "https://www.tiktok.com/@breakinggroundlsad"
+      ]
     },
     {
-      "@type": "BreadcrumbList",
-      "@id": "https://breakinggroundlsad.com/#breadcrumb",
+      "@type": "WebSite",
+      "@id": "https://breakinggroundlsad.com/#website",
+      "url": "https://breakinggroundlsad.com/",
+      "name": "Breaking Ground",
+      "description": "Owner-operated demolition, land clearing, and site work across Central Florida",
+      "publisher": {
+        "@id": "https://breakinggroundlsad.com/#business"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://breakinggroundlsad.com/#webpage",
+      "url": "https://breakinggroundlsad.com/",
+      "name": "Breaking Ground | Mobile Home Demolition & Land Services in Central Florida",
+      "description": "Owner-operated mobile home demolition, shed removal, land clearing, and site work based in Kathleen, FL. Free estimates.",
+      "isPartOf": {
+        "@id": "https://breakinggroundlsad.com/#website"
+      },
+      "publisher": {
+        "@id": "https://breakinggroundlsad.com/#business"
+      },
+      "inLanguage": "en-US",
+      "breadcrumb": {
+        "@id": "https://breakinggroundlsad.com/#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://breakinggroundlsad.com/assets/images/hero/IMG_0078-hero.webp#image"
+      },
+      "image": "https://breakinggroundlsad.com/assets/images/hero/IMG_0078-hero.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://breakinggroundlsad.com/assets/images/hero/IMG_0078-hero.webp#image",
+      "contentUrl": "https://breakinggroundlsad.com/assets/images/hero/IMG_0078-hero.webp",
+      "url": "https://breakinggroundlsad.com/assets/images/hero/IMG_0078-hero.webp",
+      "caption": "Breaking Ground | Mobile Home Demolition & Land Services in Central Florida"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://breakinggroundlsad.com/#services",
+      "name": "Primary services",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Home",
-          "item": "https://breakinggroundlsad.com/"
+          "name": "Demolition",
+          "url": "https://breakinggroundlsad.com/demolition/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mobile Home Demolition",
+          "url": "https://breakinggroundlsad.com/mobile-home-demolition/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Shed & Barn Removal",
+          "url": "https://breakinggroundlsad.com/shed-barn-removal/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Land Clearing",
+          "url": "https://breakinggroundlsad.com/land-clearing/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Tree Removal",
+          "url": "https://breakinggroundlsad.com/tree-removal/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Stump Removal",
+          "url": "https://breakinggroundlsad.com/stump-removal/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Pond & Drainage",
+          "url": "https://breakinggroundlsad.com/pond-drainage/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Grading & Site Prep",
+          "url": "https://breakinggroundlsad.com/grading-site-preparation/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Storm Cleanup",
+          "url": "https://breakinggroundlsad.com/storm-debris-cleanup/"
         }
       ]
     }
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@type": "BreadcrumbList",
+  "@id": "https://breakinggroundlsad.com/#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://breakinggroundlsad.com/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@type": "FAQPage",
+  "@id": "https://breakinggroundlsad.com/#faq",
+  "url": "https://breakinggroundlsad.com/",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you offer free estimates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Estimates are free. Final pricing is confirmed in a written scope before work begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your priority service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mobile home and light-structure demolition \u2014 sheds, barns, and similar buildings \u2014 with haul-off so the lot is ready for the next use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do you work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We are based in Kathleen and serve Central Florida routinely. Larger demolition and site jobs are considered statewide by project scope."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you a general contractor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We provide smaller demolition, structure removal, land clearing, and related site services as an owner-operated equipment company."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you handle permits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Permit requirements vary by jurisdiction and structure. We evaluate each project and coordinate required permitting based on the scope of work."
+      }
+    }
+  ],
+  "mainEntityOfPage": {
+    "@id": "https://breakinggroundlsad.com/#webpage"
+  },
+  "isPartOf": {
+    "@id": "https://breakinggroundlsad.com/#website"
+  }
 }
 </script>
 </head>
@@ -562,6 +845,19 @@
 <div><a href="/breakinggroundlsad-website/about/">About Us</a></div></div>
 </aside>
 
+    </div>
+  </section>
+  <section class="section-pad section-pad--muted" aria-label="Frequently asked questions">
+    <div class="container">
+      <p class="section-eyebrow">FAQ</p>
+      <h2>Common questions</h2>
+      <div class="faq">
+        <details open><summary>Do you offer free estimates?</summary><p>Yes. Estimates are free. Final pricing is confirmed in a written scope before work begins.</p></details>
+        <details><summary>What is your priority service?</summary><p>Mobile home and light-structure demolition — sheds, barns, and similar buildings — with haul-off so the lot is ready for the next use.</p></details>
+        <details><summary>Where do you work?</summary><p>We are based in Kathleen and serve Central Florida routinely. Larger demolition and site jobs are considered statewide by project scope.</p></details>
+        <details><summary>Are you a general contractor?</summary><p>No. We provide smaller demolition, structure removal, land clearing, and related site services as an owner-operated equipment company.</p></details>
+        <details><summary>Do you handle permits?</summary><p>Permit requirements vary by jurisdiction and structure. We evaluate each project and coordinate required permitting based on the scope of work.</p></details>
+      </div>
     </div>
   </section>
 
