@@ -50,6 +50,7 @@ CARD_SIZES = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
 HERO_SIZES = "100vw"
 PAGE_HERO_SIZES = "(max-width: 900px) 100vw, 50vw"
 LCP_HERO = "/assets/images/hero/IMG_0078-hero.jpg"
+INDEXNOW_KEY = "0e914d9815b99d4daab617a77b50ccac"
 
 
 def p(path: str) -> str:
@@ -2667,6 +2668,10 @@ def build_redirects() -> None:
         )
 
 
+def write_indexnow_key() -> None:
+    write(f"{INDEXNOW_KEY}.txt", f"{INDEXNOW_KEY}\n")
+
+
 def build_robots_llms() -> None:
     write(
         "robots.txt",
@@ -2674,6 +2679,9 @@ def build_robots_llms() -> None:
 Allow: /
 
 Sitemap: {DOMAIN}/sitemap.xml
+
+# IndexNow key (Bing / Yandex instant indexing)
+# {DOMAIN}/{INDEXNOW_KEY}.txt
 """,
     )
     write(
@@ -2843,6 +2851,7 @@ def main() -> None:
     build_thank_you_404()
     build_redirects()
     build_robots_llms()
+    write_indexnow_key()
     build_docs()
     print("DONE")
     if BASE:

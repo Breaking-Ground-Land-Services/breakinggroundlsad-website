@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://breakinggroundlsad.com/sitemap.xml
+
+# IndexNow key (Bing / Yandex instant indexing)
+# https://breakinggroundlsad.com/0e914d9815b99d4daab617a77b50ccac.txt
