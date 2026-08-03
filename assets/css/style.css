@@ -430,6 +430,7 @@ img.hero-slide-bg.hero-lcp-img {
   padding: 1.05rem 1.2rem 1.15rem;
   border-radius: 20px;
   color: var(--cream);
+  color-scheme: light;
   background: linear-gradient(
     180deg,
     rgba(15, 23, 42, 0.94) 0%,
@@ -484,36 +485,6 @@ img.hero-slide-bg.hero-lcp-img {
   color: var(--yellow-on-dark);
   text-shadow: var(--yellow-outline);
 }
-.form-grid--hero input,
-.form-grid--hero textarea {
-  padding: 0.55rem 0.7rem;
-  border-radius: 10px;
-  background: #ffffff;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  color: var(--ink);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-.form-grid--hero input::placeholder,
-.form-grid--hero textarea::placeholder {
-  color: rgba(15, 23, 42, 0.45);
-}
-.form-grid--hero input:focus,
-.form-grid--hero textarea:focus {
-  outline: 0;
-  background: #ffffff;
-  border-color: rgba(234, 179, 8, 0.85);
-  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.28);
-}
-.form-grid--hero input:-webkit-autofill,
-.form-grid--hero input:-webkit-autofill:hover,
-.form-grid--hero input:-webkit-autofill:focus,
-.form-grid--hero textarea:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
-  -webkit-text-fill-color: var(--ink);
-  caret-color: var(--ink);
-  transition: background-color 9999s ease-out 0s;
-}
-.form-grid--hero textarea { min-height: 3.5rem; resize: vertical; }
 .form-grid--hero .btn {
   width: 100%;
   margin-top: 0.15rem;
@@ -912,12 +883,79 @@ label .req {
   text-shadow: var(--yellow-outline);
   font-weight: 700;
 }
-.form-grid input, .form-grid select, .form-grid textarea {
+.form-grid:not(.form-grid--hero) input,
+.form-grid select,
+.form-grid:not(.form-grid--hero) textarea {
   width: 100%; padding: 0.75rem 0.85rem; border: 1px solid #d5cbbd; border-radius: var(--radius);
   font: inherit; background: #fff; color: var(--ink);
 }
-.form-grid textarea { min-height: 110px; resize: vertical; }
+.form-grid:not(.form-grid--hero) textarea { min-height: 110px; resize: vertical; }
 .form-note { font-size: 0.875rem; color: var(--muted); margin-top: 0.5rem; }
+
+/* Hero lead forms — keep inputs light in dark cards and OS dark mode */
+.hero-card .form-grid.form-grid--hero input,
+.hero-card .form-grid.form-grid--hero textarea,
+.cta-band__form.hero-card .form-grid.form-grid--hero input,
+.cta-band__form.hero-card .form-grid.form-grid--hero textarea {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border-radius: 10px;
+  color-scheme: light;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  color: var(--ink) !important;
+  caret-color: var(--ink);
+  box-shadow: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.hero-card .form-grid.form-grid--hero input::placeholder,
+.hero-card .form-grid.form-grid--hero textarea::placeholder,
+.cta-band__form.hero-card .form-grid.form-grid--hero input::placeholder,
+.cta-band__form.hero-card .form-grid.form-grid--hero textarea::placeholder {
+  color: rgba(15, 23, 42, 0.45);
+  opacity: 1;
+}
+.hero-card .form-grid.form-grid--hero input:hover,
+.hero-card .form-grid.form-grid--hero textarea:hover,
+.hero-card .form-grid.form-grid--hero input:focus,
+.hero-card .form-grid.form-grid--hero textarea:focus,
+.hero-card .form-grid.form-grid--hero input:active,
+.hero-card .form-grid.form-grid--hero textarea:active,
+.cta-band__form.hero-card .form-grid.form-grid--hero input:hover,
+.cta-band__form.hero-card .form-grid.form-grid--hero textarea:hover,
+.cta-band__form.hero-card .form-grid.form-grid--hero input:focus,
+.cta-band__form.hero-card .form-grid.form-grid--hero textarea:focus,
+.cta-band__form.hero-card .form-grid.form-grid--hero input:active,
+.cta-band__form.hero-card .form-grid.form-grid--hero textarea:active {
+  outline: 0;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border-color: rgba(234, 179, 8, 0.85);
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.28);
+  color: var(--ink) !important;
+}
+.hero-card .form-grid.form-grid--hero input:-webkit-autofill,
+.hero-card .form-grid.form-grid--hero input:-webkit-autofill:hover,
+.hero-card .form-grid.form-grid--hero input:-webkit-autofill:focus,
+.hero-card .form-grid.form-grid--hero input:-webkit-autofill:active,
+.hero-card .form-grid.form-grid--hero textarea:-webkit-autofill,
+.cta-band__form.hero-card .form-grid.form-grid--hero input:-webkit-autofill,
+.cta-band__form.hero-card .form-grid.form-grid--hero input:-webkit-autofill:hover,
+.cta-band__form.hero-card .form-grid.form-grid--hero input:-webkit-autofill:focus,
+.cta-band__form.hero-card .form-grid.form-grid--hero input:-webkit-autofill:active,
+.cta-band__form.hero-card .form-grid.form-grid--hero textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: var(--ink) !important;
+  caret-color: var(--ink);
+  transition: background-color 9999s ease-out 0s;
+}
+.hero-card .form-grid.form-grid--hero textarea,
+.cta-band__form.hero-card .form-grid.form-grid--hero textarea {
+  min-height: 3.5rem;
+  resize: vertical;
+}
 
 .faq details {
   border-bottom: 1px solid #e0d6c8; padding: 0.9rem 0;

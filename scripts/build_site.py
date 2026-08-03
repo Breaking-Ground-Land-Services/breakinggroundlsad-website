@@ -989,7 +989,7 @@ def head(
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  {preload}  <link rel="stylesheet" href="/assets/css/style.css?v=a11y2" />
+  {preload}  <link rel="stylesheet" href="/assets/css/style.css?v=a11y3" />
   {schema_html}
 </head>
 <body>
