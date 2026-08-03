@@ -1,7 +1,7 @@
 # SITE-URLS — Breaking Ground
 
 Domain: https://breakinggroundlsad.com
-Generated: 2026-08-01
+Generated: 2026-08-03
 
 ## Preserved WordPress canonicals
 - `/` → home
