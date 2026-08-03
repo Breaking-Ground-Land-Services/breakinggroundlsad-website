@@ -264,10 +264,18 @@ def _form_hidden() -> str:
 
 
 def _formspree_defaults(*, service: str = "General inquiry", job_location: str = "Not provided") -> str:
-    return f"""  <input type="hidden" name="name" value="Website lead" />
-  <input type="hidden" name="service" value="{esc(service)}" />
+    return f"""  <input type="hidden" name="service" value="{esc(service)}" />
   <input type="hidden" name="job_location" value="{esc(job_location)}" />
   <input type="hidden" name="can_text_photos" value="Yes" />"""
+
+
+def _name_input(fid: str) -> str:
+    return _input(
+        fid,
+        name="name",
+        autocomplete="name",
+        placeholder="Your name or organization",
+    )
 
 
 def _phone_input(fid: str, *, placeholder: str = PHONE) -> str:
@@ -323,6 +331,7 @@ def estimate_form_hero() -> str:
 <form class="form-grid form-grid--hero" data-bg-form method="POST" action="{esc(FORM)}">
 {_form_hidden()}
 {_formspree_defaults()}
+  {_labeled(p, "name", "Name / organization", _name_input(f"{p}-name"))}
   {_labeled(p, "phone", "Phone", _phone_input(f"{p}-phone"), required=True)}
   {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="3", required=True, placeholder="Describe the work you need (e.g. singlewide demo in Lakeland)"), required=True)}
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
@@ -337,6 +346,7 @@ def estimate_form_contact() -> str:
 <form class="form-grid form-grid--area" data-bg-form method="POST" action="{esc(FORM)}">
 {_form_hidden()}
 {_formspree_defaults()}
+  {_labeled(p, "name", "Name / organization", _name_input(f"{p}-name"))}
   {_labeled(p, "phone", "Phone", _phone_input(f"{p}-phone"), required=True)}
   {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="3", required=True, placeholder="Describe the work you need (structure type, access, timeline…)"), required=True)}
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
@@ -352,6 +362,7 @@ def estimate_form_compact(default_service: str = "") -> str:
 <form class="form-grid form-grid--hero" data-bg-form method="POST" action="{esc(FORM)}">
 {_form_hidden()}
 {_formspree_defaults(service=service)}
+  {_labeled(p, "name", "Name / organization", _name_input(f"{p}-name"))}
   {_labeled(p, "phone", "Phone", _phone_input(f"{p}-phone"), required=True)}
   {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="3", required=True, placeholder="Describe the work you need (structure type, access, timeline…)"), required=True)}
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
@@ -368,6 +379,7 @@ def estimate_form_area(city: str = "", default_service: str = "Mobile Home Demol
 <form class="form-grid form-grid--area" data-bg-form method="POST" action="{esc(FORM)}">
 {_form_hidden()}
 {_formspree_defaults(service=service, job_location=loc)}
+  {_labeled(p, "name", "Name / organization", _name_input(f"{p}-name"))}
   {_labeled(p, "phone", "Phone", _phone_input(f"{p}-phone"), required=True)}
   {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="3", required=True, placeholder="Describe the work you need (e.g. singlewide demo, stump removal…)"), required=True)}
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>

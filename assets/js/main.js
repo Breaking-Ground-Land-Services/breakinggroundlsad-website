@@ -261,6 +261,11 @@ function initForms() {
     });
 
     form.addEventListener('submit', (event) => {
+      const name = form.querySelector('[name="name"]');
+      if (name && !name.value.trim()) {
+        name.value = 'Not provided';
+      }
+
       const digits = phone.value.replace(/\D/g, '');
       if (digits.length < 10) {
         event.preventDefault();
