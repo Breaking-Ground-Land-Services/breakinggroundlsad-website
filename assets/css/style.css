@@ -488,21 +488,30 @@ img.hero-slide-bg.hero-lcp-img {
 .form-grid--hero textarea {
   padding: 0.55rem 0.7rem;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(226, 232, 240, 0.24);
-  color: #ffffff;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  color: var(--ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .form-grid--hero input::placeholder,
 .form-grid--hero textarea::placeholder {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(15, 23, 42, 0.45);
 }
 .form-grid--hero input:focus,
 .form-grid--hero textarea:focus {
   outline: 0;
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(234, 179, 8, 0.5);
-  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.18);
+  background: #ffffff;
+  border-color: rgba(234, 179, 8, 0.85);
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.28);
+}
+.form-grid--hero input:-webkit-autofill,
+.form-grid--hero input:-webkit-autofill:hover,
+.form-grid--hero input:-webkit-autofill:focus,
+.form-grid--hero textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+  -webkit-text-fill-color: var(--ink);
+  caret-color: var(--ink);
+  transition: background-color 9999s ease-out 0s;
 }
 .form-grid--hero textarea { min-height: 3.5rem; resize: vertical; }
 .form-grid--hero .btn {

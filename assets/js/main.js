@@ -252,6 +252,24 @@ function initForms() {
   document.querySelectorAll('form[data-bg-form]').forEach((form) => {
     const pageField = form.querySelector('[name="page"]');
     if (pageField) pageField.value = location.pathname;
+
+    const phone = form.querySelector('[name="phone"]');
+    if (!phone) return;
+
+    phone.addEventListener('input', () => {
+      phone.setCustomValidity('');
+    });
+
+    form.addEventListener('submit', (event) => {
+      const digits = phone.value.replace(/\D/g, '');
+      if (digits.length < 10) {
+        event.preventDefault();
+        phone.setCustomValidity('Enter a valid phone number with at least 10 digits.');
+        phone.reportValidity();
+        return;
+      }
+      phone.setCustomValidity('');
+    });
   });
 }
 

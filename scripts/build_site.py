@@ -263,6 +263,27 @@ def _form_hidden() -> str:
   <input type="hidden" name="page" value="" />"""
 
 
+def _formspree_defaults(*, service: str = "General inquiry", job_location: str = "Not provided") -> str:
+    return f"""  <input type="hidden" name="name" value="Website lead" />
+  <input type="hidden" name="service" value="{esc(service)}" />
+  <input type="hidden" name="job_location" value="{esc(job_location)}" />
+  <input type="hidden" name="can_text_photos" value="Yes" />"""
+
+
+def _phone_input(fid: str, *, placeholder: str = PHONE) -> str:
+    return _input(
+        fid,
+        name="phone",
+        type="tel",
+        required=True,
+        autocomplete="tel",
+        inputmode="tel",
+        placeholder=placeholder,
+        pattern=r"[0-9()+\-.\s]{10,}",
+        title="Enter a valid phone number with at least 10 digits.",
+    )
+
+
 def _form_required_note(klass: str = "") -> str:
     extra = f" {klass}" if klass else ""
     return f'<p class="form-required-note{extra}"><span class="req" aria-hidden="true">*</span> Required</p>'
@@ -301,10 +322,9 @@ def estimate_form_hero() -> str:
     return f"""
 <form class="form-grid form-grid--hero" data-bg-form method="POST" action="{esc(FORM)}">
 {_form_hidden()}
-  {_labeled(p, "name", "Name", _input(f"{p}-name", name="name", required=True, autocomplete="name", placeholder="Your name"), required=True)}
-  {_labeled(p, "phone", "Phone", _input(f"{p}-phone", name="phone", type="tel", required=True, autocomplete="tel", placeholder=PHONE), required=True)}
-  {_labeled(p, "job_location", "Job location / city", _input(f"{p}-job_location", name="job_location", required=True, autocomplete="address-level2", placeholder="City or address area"), required=True)}
-  {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="2", required=True, placeholder="e.g. singlewide demo in Lakeland"), required=True)}
+{_formspree_defaults()}
+  {_labeled(p, "phone", "Phone", _phone_input(f"{p}-phone"), required=True)}
+  {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="3", required=True, placeholder="Describe the work you need (e.g. singlewide demo in Lakeland)"), required=True)}
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
   <p class="form-note">Or call {esc(PHONE)}. Photos by text speed up estimates.</p>
   {_form_required_note("form-required-note--hero")}
@@ -313,17 +333,12 @@ def estimate_form_hero() -> str:
 
 def estimate_form_contact() -> str:
     p = "contact"
-    opts = _service_options()
     return f"""
 <form class="form-grid form-grid--area" data-bg-form method="POST" action="{esc(FORM)}">
 {_form_hidden()}
-  <div class="form-grid__row">
-    {_labeled(p, "name", "Name", _input(f"{p}-name", name="name", required=True, autocomplete="name", placeholder="Your name"), required=True)}
-    {_labeled(p, "phone", "Phone", _input(f"{p}-phone", name="phone", type="tel", required=True, autocomplete="tel", placeholder=PHONE), required=True)}
-  </div>
-  {_labeled(p, "job_location", "Job location / city", _input(f"{p}-job_location", name="job_location", required=True, autocomplete="address-level2", placeholder="City or address area"), required=True)}
-  {_labeled(p, "service", "Service needed", _select(f"{p}-service", f'      <option value="">Select a service</option>\n      {opts}\n      <option value="Other">Other</option>', name="service", required=True), required=True)}
-  {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="3", required=True, placeholder="Structure type, access, timeline…"), required=True)}
+{_formspree_defaults()}
+  {_labeled(p, "phone", "Phone", _phone_input(f"{p}-phone"), required=True)}
+  {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="3", required=True, placeholder="Describe the work you need (structure type, access, timeline…)"), required=True)}
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
   <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Text photos for a faster quote.</p>
   {_form_required_note()}
@@ -332,15 +347,13 @@ def estimate_form_contact() -> str:
 
 def estimate_form_compact(default_service: str = "") -> str:
     p = "cta"
-    opts = _service_options(default_service)
+    service = default_service or "General inquiry"
     return f"""
 <form class="form-grid form-grid--hero" data-bg-form method="POST" action="{esc(FORM)}">
 {_form_hidden()}
-  {_labeled(p, "name", "Name", _input(f"{p}-name", name="name", required=True, autocomplete="name", placeholder="Your name"), required=True)}
-  {_labeled(p, "phone", "Phone", _input(f"{p}-phone", name="phone", type="tel", required=True, autocomplete="tel", placeholder=PHONE), required=True)}
-  {_labeled(p, "job_location", "Job location / city", _input(f"{p}-job_location", name="job_location", required=True, placeholder="City or address area"), required=True)}
-  {_labeled(p, "service", "Service needed", _select(f"{p}-service", f'      <option value="">Select a service</option>\n      {opts}\n      <option value="Other">Other</option>', name="service", required=True), required=True)}
-  {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="2", required=True, placeholder="Structure type, access, timeline…"), required=True)}
+{_formspree_defaults(service=service)}
+  {_labeled(p, "phone", "Phone", _phone_input(f"{p}-phone"), required=True)}
+  {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="3", required=True, placeholder="Describe the work you need (structure type, access, timeline…)"), required=True)}
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
   <p class="form-note">Or call {esc(PHONE)}. Photos by text speed up quotes.</p>
   {_form_required_note("form-required-note--hero")}
@@ -349,26 +362,14 @@ def estimate_form_compact(default_service: str = "") -> str:
 
 def estimate_form_area(city: str = "", default_service: str = "Mobile Home Demolition") -> str:
     p = "area"
-    opts = _service_options(default_service)
-    loc = city.strip()
-    loc_attrs = {
-        "name": "job_location",
-        "required": True,
-        "autocomplete": "address-level2",
-        "placeholder": f"{loc}, FL" if loc else "City or address area",
-    }
-    if loc:
-        loc_attrs["value"] = loc
+    loc = city.strip() or "Florida"
+    service = default_service or "General inquiry"
     return f"""
 <form class="form-grid form-grid--area" data-bg-form method="POST" action="{esc(FORM)}">
 {_form_hidden()}
-  <div class="form-grid__row">
-    {_labeled(p, "name", "Name", _input(f"{p}-name", name="name", required=True, autocomplete="name", placeholder="Your name"), required=True)}
-    {_labeled(p, "phone", "Phone", _input(f"{p}-phone", name="phone", type="tel", required=True, autocomplete="tel", placeholder=PHONE), required=True)}
-  </div>
-  {_labeled(p, "job_location", "Job location", _input(f"{p}-job_location", **loc_attrs), required=True)}
-  {_labeled(p, "service", "Service needed", _select(f"{p}-service", f'      <option value="">Select a service</option>\n      {opts}\n      <option value="Other">Other</option>', name="service", required=True), required=True)}
-  {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="2", required=True, placeholder="e.g. singlewide demo, stump removal…"), required=True)}
+{_formspree_defaults(service=service, job_location=loc)}
+  {_labeled(p, "phone", "Phone", _phone_input(f"{p}-phone"), required=True)}
+  {_labeled(p, "message", "What do you need?", _textarea(f"{p}-message", name="message", rows="3", required=True, placeholder="Describe the work you need (e.g. singlewide demo, stump removal…)"), required=True)}
   <button class="btn btn-primary" type="submit">Get Free Estimate</button>
   <p class="form-note">Or call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>. Text photos for a faster quote.</p>
   {_form_required_note()}
