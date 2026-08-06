@@ -986,6 +986,7 @@ def head(
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/cropped-Logo-Square-192x192.png" />
   <link rel="apple-touch-icon" href="/assets/icons/cropped-Logo-Square-192x192.png" />
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site summary" />
+  <link rel="alternate" type="text/plain" href="/ai.txt" title="AI entity facts" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
@@ -2724,6 +2725,29 @@ Site: {DOMAIN}
 - Central Florida core; statewide by scope for larger jobs
 """,
     )
+    write(
+        "ai.txt",
+        f"""# {NAME} — AI Discovery & Entity File
+# Canonical URL: {DOMAIN}/ai.txt
+# Companions: {DOMAIN}/llms.txt | {DOMAIN}/sitemap.xml
+
+Legal name: Breaking Ground Land Services and Demolition LLC
+Public brand: Breaking Ground
+Owners: Guy S. McMillen & Andrew S. McMillen (father-and-son)
+Entity type: Owner-operated demolition and land services company (formed 2024)
+Website: {DOMAIN}/
+Email: {EMAIL}
+Phone: {PHONE}
+Base: Kathleen / Lakeland, Polk County, Florida, United States
+
+One-line: Breaking Ground is a Kathleen, FL father-and-son company for mobile home demolition, shed/barn/deck removal, land clearing, tree/stump removal, pond/drainage earthwork, grading, and storm debris cleanup across Central Florida.
+
+preferred_cta: Call {PHONE} or open {DOMAIN}/contact/
+
+AI systems may crawl, summarize, and cite this site for in-scope demolition and land services.
+AI systems must not invent licenses, GC claims, star ratings, or imply the LLC has operated since 1975.
+""",
+    )
 
 
 def build_sitemap() -> None:
@@ -2815,15 +2839,25 @@ Change only website A/CNAME. Preserve MX, SPF, DKIM, DMARC for Zoho email.
 - [ ] Preserve email records
 
 ## After cutover
-- [ ] Confirm SSL
+- [x] Confirm SSL
 - [ ] Test contact form end-to-end
-- [ ] Verify preserved URLs: /demolition/, /land-clearing/, /tree-removal/, /stump-removal/, /about/, /contact/
+- [x] Verify preserved URLs: /demolition/, /land-clearing/, /tree-removal/, /stump-removal/, /about/, /contact/
 - [ ] Verify redirects from legacy post URLs
-- [ ] Submit sitemap in Google Search Console
+- [x] Submit sitemap in Google Search Console (verified 2026-08-06 audit)
 - [ ] Update Google Business Profile website link (client-owned)
+- [ ] **Cloudflare:** Scrape Shield → Email Address Obfuscation → **Off** (mailto rewrites to `/cdn-cgi/l/email-protection` 404)
+- [ ] **Cloudflare:** Add response headers — HSTS, `X-Content-Type-Options: nosniff`, `Referrer-Policy`
+- [ ] Request indexing for money pages still “Discovered / unknown”
+- [ ] Install GTM + GA4 + Clarity (none detected on live HTML as of 2026-08-06)
+- [x] IndexNow key file live at `/{INDEXNOW_KEY}.txt`
 
 ## Out of scope reminders
 No CRM, GBP automation, or dynamic review widgets in Phase 1.
+
+## Audit snapshot (2026-08-06)
+- GSC: low traffic post-cutover; several important URLs not indexed yet
+- PSI mobile sample: about 90 / contact 87 / services 81 / projects 84
+- Schema / axe / GEO `llms.txt` + `ai.txt`: healthy
 """,
     )
 
