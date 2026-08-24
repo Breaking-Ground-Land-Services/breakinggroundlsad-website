@@ -1586,6 +1586,47 @@ label .req {
   height: clamp(170px, 22vw, 240px);
   overflow: hidden;
   border-top: 1px solid rgba(148, 163, 184, 0.22);
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.35), rgba(15, 23, 42, 0.55)),
+    repeating-linear-gradient(135deg, #1e293b 0 12px, #243044 12px 24px);
+}
+.bg-map-load {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  color: #f8fafc;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+.bg-map-load:focus-visible {
+  outline: 2px solid #facc15;
+  outline-offset: -6px;
+}
+.bg-map-fallback {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.75rem;
+  z-index: 3;
+  margin: 0;
+  font-size: 0.75rem;
+}
+.bg-map-fallback a {
+  color: #f8fafc;
+  text-decoration: underline;
+}
+.bg-map-panel.is-map-loaded .bg-map-load,
+.bg-map-panel.is-map-loaded .bg-map-fallback {
+  display: none;
 }
 .bg-map-panel .bg-map-frame {
   width: 100%;

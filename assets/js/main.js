@@ -5,6 +5,7 @@
     initForms();
     initParallaxBands();
     initGoogleReviewsCarousel();
+    initMapFacade();
   }
 
   if (document.readyState === 'loading') {
@@ -13,6 +14,34 @@
     run();
   }
 })();
+
+function initMapFacade() {
+  const shell = document.getElementById('bg-map-shell');
+  const button = document.getElementById('bg-map-load');
+  if (!shell || !button) return;
+
+  const src = shell.getAttribute('data-map-src');
+  if (!src) return;
+
+  function loadMap() {
+    if (shell.classList.contains('is-map-loaded')) return;
+    const frame = document.createElement('iframe');
+    frame.className = 'bg-map-frame';
+    frame.id = 'bg-map-frame';
+    frame.title = 'Breaking Ground Land Services and Demolition on Google Maps';
+    frame.width = '600';
+    frame.height = '450';
+    frame.style.border = '0';
+    frame.allowFullscreen = true;
+    frame.loading = 'lazy';
+    frame.referrerPolicy = 'strict-origin-when-cross-origin';
+    frame.src = src;
+    shell.insertBefore(frame, shell.firstChild);
+    shell.classList.add('is-map-loaded');
+  }
+
+  button.addEventListener('click', loadMap);
+}
 
 function initGoogleReviewsCarousel() {
   const track = document.getElementById('bg-review-track');

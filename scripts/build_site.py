@@ -917,6 +917,7 @@ def head(
     main_entity: dict | str | None = None,
     about: dict | None = None,
     skip_website: bool = False,
+    robots: str = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
 ) -> str:
     img = absolute_asset(og_image or OG)
     path = canonical if not canonical.startswith("http") else canonical.replace(DOMAIN, "") or "/"
@@ -964,7 +965,7 @@ def head(
   <meta name="description" content="{esc(description)}" />
   <link rel="canonical" href="{esc(can)}" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="{DOMAIN}/sitemap.xml" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="robots" content="{esc(robots)}" />
   <meta name="author" content="{esc(LEGAL)}" />
   <meta name="geo.region" content="US-FL" />
   <meta name="geo.placename" content="Kathleen, Florida" />
@@ -990,7 +991,7 @@ def head(
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  {preload}  <link rel="stylesheet" href="/assets/css/style.css?v=a11y3" />
+  {preload}  <link rel="stylesheet" href="/assets/css/style.css?v=a11y4" />
   {schema_html}
 </head>
 <body>
@@ -1004,7 +1005,7 @@ def foot() -> str:
   </main>
   {chrome_partial("footer.html")}
   <script src="/includes.js?v=nav2" defer></script>
-  <script src="/assets/js/main.js?v=reveal3" defer></script>
+  <script src="/assets/js/main.js?v=reveal4" defer></script>
 </body>
 </html>
 """
@@ -1077,8 +1078,9 @@ def local_trust_section() -> str:
             <a href="{esc(GOOGLE_MAPS_URL)}" target="_blank" rel="noopener noreferrer">See our Google profile &amp; leave a review</a>
           </p>
         </div>
-        <div class="bg-map-panel is-map-loaded" id="bg-map-shell" aria-label="Breaking Ground Google map">
-          <iframe class="bg-map-frame" id="bg-map-frame" title="Breaking Ground Land Services and Demolition on Google Maps" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="{esc(MAP_EMBED_SRC)}"></iframe>
+        <div class="bg-map-panel" id="bg-map-shell" data-map-src="{esc(MAP_EMBED_SRC)}" aria-label="Breaking Ground Google map">
+          <button type="button" class="bg-map-load" id="bg-map-load">Load interactive map</button>
+          <p class="bg-map-fallback"><a href="{esc(GOOGLE_MAPS_URL)}" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></p>
           <div class="bg-map-overlay">
             <strong>{esc(NAME)}</strong>
             <span class="bg-map-rating" aria-label="{rating:.1f} out of 5 stars, {count} Google reviews">&#9733;&#9733;&#9733;&#9733;&#9733; {rating:.1f} &middot; {count} Google reviews</span>
@@ -1272,7 +1274,7 @@ def service_body(svc: dict) -> str:
 <p>For specialized forestry mulching programs in core Auburndale and Winter Haven markets, we may refer complementary partners when that approach better fits the property. Our strength is equipment-driven clearing combined with demolition and haul-off when structures are also in the way.</p>
 <h3>Land clearing services</h3>
 <ul>
-<li>Residential lot clearing</li>
+<li>Residential lot and property clearing</li>
 <li>Brush and overgrowth removal</li>
 <li>Fence-line and trail opening</li>
 <li>Build-site vegetation removal</li>
@@ -1322,6 +1324,7 @@ def service_body(svc: dict) -> str:
 <p>Wetlands, surface-water connections, and local rules can change scope. We flag those conditions early and coordinate permitting based on the job — while staying focused on excavation and earthwork, not engineered drainage design.</p>
 """,
         "grading-site-preparation": """
+<p>Property owners searching for gravel and grading in Kathleen, Florida call Breaking Ground for driveway gravel, lot leveling, and pad prep after demolition or clearing. We are based on Clayton Road in Kathleen and routinely grade Lakeland and Polk County lots so they drain and stay usable.</p>
 <p>Home builders, developers, and GC teams need a lot that is ready for the next trade — not a leftover demo pile or uneven clearing scar. Breaking Ground provides rough grading and site preparation after demolition or clearing so builders can mobilize pads, driveways, and foundations without reworking our mess.</p>
 <p>We are an owner-operated father-and-son crew. Guy and Andrew handle estimates and equipment directly, which keeps communication short when you are sequencing subcontractors on a Central Florida build schedule.</p>
 <h3>Builder-focused site prep</h3>
@@ -1353,6 +1356,7 @@ def service_body(svc: dict) -> str:
   <details><summary>Do you handle permits?</summary><p>Permit requirements vary by jurisdiction and structure. We evaluate each project and coordinate required permitting based on the scope of work.</p></details>
   <details><summary>Where do you work?</summary><p>We are based in Kathleen and serve Central Florida routinely. Larger demolition and site jobs are considered statewide by project scope.</p></details>
   <details><summary>Are you a general contractor?</summary><p>No. We provide smaller demolition, structure removal, land clearing, and related site services as an owner-operated equipment company.</p></details>
+  <details><summary>How long does a typical job take?</summary><p>Most shed, stump, and single-structure jobs finish in a day once we are on site. Mobile home demolition is often one to two days after utilities are disconnected and any required permits are in place. Larger land-clearing jobs depend on acreage and debris volume — the written estimate includes a schedule.</p></details>
 </div>"""
     # Expand word count with process + CTA prose
     expand = f"""
@@ -1382,9 +1386,15 @@ def area_body(area: dict) -> str:
 <p>For {esc(short)}, our published focus is mobile-home and light-structure demolition plus related debris removal. Land clearing may be available as a secondary scope on the same property when it supports the demolition or lot reset.</p>
 """
     mid = full_extra if angle == "full" else demo_only_note
+    kathleen_extra = ""
+    if area.get("slug") == "kathleen-fl":
+        kathleen_extra = """
+<p>Kathleen is our home base. Neighbors here often ask for <strong>gravel and grading</strong> — driveway gravel, lot leveling after a teardown, and pad prep before the next use of the land. Those jobs run from the same Kathleen yard as our demolition and land-clearing work. See <a href="/grading-site-preparation/">gravel &amp; grading</a> for builder and homeowner site prep.</p>
+"""
     return f"""
 {demo_lead}
 {mid}
+{kathleen_extra}
 <h3>Services commonly requested in {esc(short)}</h3>
 <ul>
 <li><a href="/mobile-home-demolition/">Mobile home demolition</a></li>
@@ -1507,8 +1517,8 @@ def build_home() -> None:
     )
     html_out = (
         head(
-            f"{SHORT} | Mobile Home Demolition & Land Services in Central Florida",
-            "Owner-operated mobile home demolition, shed removal, land clearing, and site work based in Kathleen, FL. Free estimates.",
+            f"{SHORT} | Kathleen FL Demolition & Land Clearing",
+            "Mobile home demolition, shed removal, land clearing, and stump excavation from Kathleen / Lakeland. Call (863) 899-9717 for a free estimate.",
             "/",
             breadcrumbs=[("Home", "/")],
             lcp_preload=LCP_HERO,
@@ -1714,19 +1724,39 @@ def build_services_hub() -> None:
         f'<a class="service-tile reveal" href="{esc(s["path"])}">{img_responsive(s["heroImage"], f"{s["navLabel"]} — Central Florida", sizes=TILE_SIZES)}<div class="service-tile__body"><h3>{esc(s["navLabel"])}</h3><p>{esc(s["meta"][:120])}…</p></div></a>'
         for s in SERVICES
     )
+    hub_faqs = [
+        (
+            "What work does Breaking Ground take first?",
+            "Mobile home and light-structure demolition — sheds, barns, decks, and similar buildings — with haul-off. Land clearing, stump excavation, and storm cleanup support those jobs.",
+        ),
+        (
+            "Do you serve Lakeland and Kathleen?",
+            f"Yes. We are based in Kathleen and routinely work Lakeland and Polk County. Call {PHONE} or send photos through the estimate form.",
+        ),
+        (
+            "Are you a licensed general contractor?",
+            "No. We provide smaller demolition, structure removal, land clearing, and related site services as an owner-operated equipment company. Permit needs vary by city or county.",
+        ),
+    ]
     body = f"""
 {page_hero("Services", crumb([("Home","/"),("Services","/services/")]), "/assets/images/projects/IMG_8495-scaled.jpg", "Demolition first — clearing and site work when the lot needs more.")}
+<section class="section-pad"><div class="container prose">
+<p>Breaking Ground is a Kathleen, Florida father-and-son crew for <strong>mobile home demolition</strong>, shed and barn removal, and the site work that follows. Use this hub to pick the page that matches your lot — then send photos for a written estimate.</p>
+<p>Most calls start with a structure that has to come down. After the demo we can <a href="/land-clearing/">clear the lot</a>, <a href="/stump-removal/">excavate stumps</a> (not cosmetic grinding), or haul <a href="/storm-debris-cleanup/">storm debris</a>. We do not market unrestricted building demolition or licensed general-contractor scopes.</p>
+<p>Core service area is Kathleen, Lakeland, and Polk County. Larger demolition jobs are considered farther across Central Florida when the photos and access make sense.</p>
+</div></section>
 <section class="section-pad"><div class="container"><div class="service-grid">{cards}</div>{related_links("/services/")}</div></section>
 """ + cta_band("Not sure which service fits?", "Describe the property and we will help scope it.", "Demolition")
     write(
         "services/index.html",
         head(
-            f"Demolition & Land Services | {SHORT}",
-            "Mobile home demolition, shed removal, land clearing, stump excavation, and storm cleanup in Central Florida.",
+            f"Demolition, Land Clearing & Stump Removal | {SHORT}",
+            "Kathleen / Lakeland hub for mobile home demolition, shed removal, land clearing, and stump excavation. Owner-operated. Call (863) 899-9717.",
             "/services/",
             breadcrumbs=[("Home", "/"), ("Services", "/services/")],
             page_type=["WebPage", "CollectionPage"],
             og_image="/assets/images/projects/IMG_8495-scaled.jpg",
+            faqs=hub_faqs,
             extra_schema=[
                 item_list_node(
                     "Breaking Ground services",
@@ -2550,9 +2580,18 @@ def build_service_areas() -> None:
             h1 = f"Mobile Home & Light Demolition in {short}"
             meta = f"Mobile home demolition and light structure removal in {short}, {a['county']}. Owner-operated Breaking Ground — free estimates."
         else:
-            title = f"Demolition & Land Services in {short}, FL | {SHORT}"
-            h1 = f"Demolition & Land Services in {short}"
-            meta = f"Mobile home demolition, shed removal, land clearing, and stump work in {short}, FL. Call {PHONE}."
+            if a.get("slug") == "lakeland-fl":
+                title = f"Land Clearing & Stump Removal in Lakeland, FL | {SHORT}"
+                h1 = f"Land Clearing, Stump Removal & Demolition in Lakeland"
+                meta = f"Lakeland land clearing, stump excavation (not just grinding), and mobile home demolition from Kathleen-based Breaking Ground. Call {PHONE}."
+            elif a.get("slug") == "kathleen-fl":
+                title = f"Gravel, Grading & Demolition in Kathleen, FL | {SHORT}"
+                h1 = f"Gravel, Grading & Demolition in Kathleen"
+                meta = f"Kathleen HQ for gravel and lot grading, mobile home demolition, and land clearing. Call Breaking Ground at {PHONE}."
+            else:
+                title = f"Demolition & Land Services in {short}, FL | {SHORT}"
+                h1 = f"Demolition & Land Services in {short}"
+                meta = f"Mobile home demolition, shed removal, land clearing, and stump work in {short}, FL. Call {PHONE}."
         hero_img = a.get("heroImage") or "/assets/images/projects/IMG_8286-scaled.jpg"
         credit = a.get("heroImageCredit") or {}
         lic = (credit.get("license") or "").strip()
@@ -2629,6 +2668,7 @@ def build_thank_you_404() -> None:
             "We received your estimate request.",
             "/thank-you/",
             breadcrumbs=[("Home", "/"), ("Thank You", "/thank-you/")],
+            robots="noindex, follow",
         )
         + page_hero("Thank you", crumb([("Home", "/"), ("Thank You", "/thank-you/")]), OG, "We received your request and will respond soon.")
         + f'<section class="section-pad"><div class="container prose"><p>If it is urgent, call <a href="tel:{PHONE_TEL}">{esc(PHONE)}</a>.</p><p><a href="/">Return home</a></p></div></section>'
@@ -2636,7 +2676,13 @@ def build_thank_you_404() -> None:
     )
     write(
         "404.html",
-        head("Page Not Found | " + SHORT, "The page you requested was not found.", "/", breadcrumbs=[("Home", "/")])
+        head(
+            "Page Not Found | " + SHORT,
+            "The page you requested was not found.",
+            "/",
+            breadcrumbs=[("Home", "/")],
+            robots="noindex, follow",
+        )
         + page_hero("Page not found", crumb([("Home", "/")]), OG)
         + '<section class="section-pad"><div class="container"><p><a class="btn btn-primary" href="/">Go home</a> <a class="btn btn-dark" href="/contact/">Contact us</a></p></div></section>'
         + foot(),
@@ -2660,6 +2706,12 @@ def build_redirects() -> None:
         "projects/hurricane-cleanup/index.html": "/projects/",
         "projects/lakeland-highlands-tree-removal/index.html": "/projects/dawns-job/",
         "projects/pond-earthwork-support/index.html": "/projects/bills-pond/",
+        # Legacy .html aliases (WordPress / old smoke URLs)
+        "contact.html": "/contact/",
+        "about.html": "/about/",
+        "services.html": "/services/",
+        "projects.html": "/projects/",
+        "demolition.html": "/demolition/",
     }
     for p in PROJECTS:
         for legacy in p.get("legacyUrls", []):
@@ -2674,6 +2726,7 @@ def build_redirects() -> None:
 <html lang="en"><head>
 <meta charset="utf-8" />
 <title>Redirecting…</title>
+<meta name="robots" content="noindex, follow" />
 <link rel="canonical" href="{DOMAIN}{dest}" />
 <meta http-equiv="refresh" content="0;url={dest}" />
 <script>location.replace("{dest}");</script>
@@ -2707,8 +2760,10 @@ Contact: {PHONE} | {EMAIL}
 Site: {DOMAIN}
 
 ## Primary services
+- [All services]({DOMAIN}/services/)
 - [Mobile home demolition]({DOMAIN}/mobile-home-demolition/)
 - [Demolition]({DOMAIN}/demolition/)
+- [Shed and barn removal]({DOMAIN}/shed-barn-removal/)
 - [Land clearing]({DOMAIN}/land-clearing/)
 - [Stump removal]({DOMAIN}/stump-removal/)
 - [Tree removal]({DOMAIN}/tree-removal/)
@@ -2763,15 +2818,42 @@ def build_sitemap() -> None:
         "/terms-of-service/",
         "/payment-deposit-policy/",
         "/image-use-policy/",
-        "/thank-you/",
     ]
     urls += [s["path"] for s in SERVICES]
     urls += [p["path"] for p in PROJECTS]
     urls += [f"/areas/{a['slug']}/" for a in AREAS["areas"]]
+    policy_paths = {
+        "/privacy-policy/",
+        "/terms-of-service/",
+        "/payment-deposit-policy/",
+        "/image-use-policy/",
+    }
+    money_paths = {
+        "/",
+        "/contact/",
+        "/demolition/",
+        "/mobile-home-demolition/",
+        "/shed-barn-removal/",
+        "/land-clearing/",
+        "/stump-removal/",
+        "/services/",
+        "/areas/lakeland-fl/",
+        "/areas/kathleen-fl/",
+        "/grading-site-preparation/",
+    }
     body = '<?xml version="1.0" encoding="UTF-8"?>\n'
     body += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for u in urls:
-        pri = "1.0" if u == "/" else ("0.9" if u.count("/") <= 2 else "0.7")
+        if u == "/":
+            pri = "1.0"
+        elif u in policy_paths:
+            pri = "0.3"
+        elif u in money_paths:
+            pri = "0.9"
+        elif u.startswith("/areas/"):
+            pri = "0.7"
+        else:
+            pri = "0.8"
         body += f"  <url><loc>{DOMAIN}{u}</loc><lastmod>{TODAY}</lastmod><changefreq>monthly</changefreq><priority>{pri}</priority></url>\n"
     body += "</urlset>\n"
     write("sitemap.xml", body)
@@ -2845,14 +2927,13 @@ Change only website A/CNAME. Preserve MX, SPF, DKIM, DMARC for Zoho email.
 - [ ] Verify redirects from legacy post URLs
 - [x] Submit sitemap in Google Search Console (verified 2026-08-06 audit)
 - [ ] Update Google Business Profile website link (client-owned)
-- [ ] **Cloudflare:** Scrape Shield → Email Address Obfuscation → **Off** (mailto rewrites to `/cdn-cgi/l/email-protection` 404)
-- [ ] **Cloudflare:** Add response headers — HSTS, `X-Content-Type-Options: nosniff`, `Referrer-Policy`
-- [ ] Request indexing for money pages still “Discovered / unknown”
-- [ ] Install GTM + GA4 + Clarity (none detected on live HTML as of 2026-08-06)
+- [ ] **Client-owned Cloudflare/email** (out of website scope): disable Email Address Obfuscation if mailto 404s; headers optional
+- [x] Bing Webmaster sitemap + URL batch submitted 2026-08-06
 - [x] IndexNow key file live at `/{INDEXNOW_KEY}.txt`
+- [ ] Continue GSC Request Indexing for money pages when daily quota resets
 
 ## Out of scope reminders
-No CRM, GBP automation, or dynamic review widgets in Phase 1.
+One-time static GitHub Pages build. No ongoing Cloudflare/email ownership, CRM, GBP automation, or analytics install unless separately scoped.
 
 ## Audit snapshot (2026-08-06)
 - GSC: low traffic post-cutover; several important URLs not indexed yet

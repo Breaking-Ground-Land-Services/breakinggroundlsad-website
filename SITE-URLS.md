@@ -1,7 +1,7 @@
 # SITE-URLS — Breaking Ground
 
 Domain: https://breakinggroundlsad.com
-Generated: 2026-08-05
+Generated: 2026-08-24
 
 ## Preserved WordPress canonicals
 - `/` → home
@@ -27,7 +27,7 @@ Generated: 2026-08-05
 Prefer Cloudflare 301s at DNS cutover when available.
 
 ## Indexable URL count
-79 URLs in sitemap.xml
+78 URLs in sitemap.xml
 
 ## DNS cutover
 Change only website A/CNAME. Preserve MX, SPF, DKIM, DMARC for Zoho email.

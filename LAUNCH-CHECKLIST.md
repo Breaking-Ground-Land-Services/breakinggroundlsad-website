@@ -18,14 +18,13 @@
 - [ ] Verify redirects from legacy post URLs
 - [x] Submit sitemap in Google Search Console (verified 2026-08-06 audit)
 - [ ] Update Google Business Profile website link (client-owned)
-- [ ] **Cloudflare:** Scrape Shield → Email Address Obfuscation → **Off** (mailto rewrites to `/cdn-cgi/l/email-protection` 404)
-- [ ] **Cloudflare:** Add response headers — HSTS, `X-Content-Type-Options: nosniff`, `Referrer-Policy`
-- [ ] Request indexing for money pages still “Discovered / unknown”
-- [ ] Install GTM + GA4 + Clarity (none detected on live HTML as of 2026-08-06)
+- [ ] **Client-owned Cloudflare/email** (out of website scope): disable Email Address Obfuscation if mailto 404s; headers optional
+- [x] Bing Webmaster sitemap + URL batch submitted 2026-08-06
 - [x] IndexNow key file live at `/0e914d9815b99d4daab617a77b50ccac.txt`
+- [ ] Continue GSC Request Indexing for money pages when daily quota resets
 
 ## Out of scope reminders
-No CRM, GBP automation, or dynamic review widgets in Phase 1.
+One-time static GitHub Pages build. No ongoing Cloudflare/email ownership, CRM, GBP automation, or analytics install unless separately scoped.
 
 ## Audit snapshot (2026-08-06)
 - GSC: low traffic post-cutover; several important URLs not indexed yet
